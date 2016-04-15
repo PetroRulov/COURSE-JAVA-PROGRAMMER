@@ -21,13 +21,13 @@ public class FillJPanel extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel jP = new JPanel();
-        FlowLayout fLO = new FlowLayout();
-        jP.setLayout(fLO);
+        //FlowLayout fLO = new FlowLayout();
+        //jP.setLayout(fLO);
 
-        JTextArea field = new JTextArea("VAR 1");
-        JFormattedTextField res = new JFormattedTextField("Variant # 1");
-        jP.add(field);
-        jP.add(res);
+        //JTextArea field = new JTextArea("VAR 1");
+        //JFormattedTextField res = new JFormattedTextField("Variant # 1");
+        //jP.add(field);
+        //jP.add(res);
 
         //jP.setBackground(Color.BLACK);
         //frame.setContentPane(jP);
