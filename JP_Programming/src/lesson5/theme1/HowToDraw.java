@@ -13,9 +13,9 @@ public class HowToDraw extends JPanel {
         frame.setMinimumSize(new Dimension(800, 600));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-//        JPanel jP = new JPanel();
-//        frame.getContentPane().add(jP);
-        frame.getContentPane().add(this);
+        JPanel jP = new JPanel();
+        frame.getContentPane().add(jP);
+        //frame.getContentPane().add(this);
 
         frame.pack();
         frame.setVisible(true);
