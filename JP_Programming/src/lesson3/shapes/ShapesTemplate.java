@@ -17,7 +17,7 @@ public class ShapesTemplate extends JPanel {
             throw new IOException("Check IDrawable arrays elements");
         }
 
-        JFrame frame = new JFrame("DAY 6, 2D Graphics");
+        JFrame frame = new JFrame("DAY 3, 2D Graphics");
         frame.setLocation(250, 25); // position on the screen (x, y)
         frame.setMinimumSize(new Dimension(725, 625)); // size (h x v)
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
