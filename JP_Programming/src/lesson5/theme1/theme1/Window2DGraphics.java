@@ -1,4 +1,4 @@
-package lesson5.theme1;
+package lesson5.theme1.theme1;
 
 import javax.swing.*;
 import java.awt.*;

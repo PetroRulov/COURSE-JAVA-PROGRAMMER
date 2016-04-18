@@ -1,4 +1,4 @@
-package lesson5.theme1;
+package lesson5.theme1.theme1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,7 +36,7 @@ public class FJP_WithOwnClass {
 
     public static void main(String[] args){
 
-        FJP_WithOwnClass fjp = new FJP_WithOwnClass();
+        new FJP_WithOwnClass();
 
     }
 }

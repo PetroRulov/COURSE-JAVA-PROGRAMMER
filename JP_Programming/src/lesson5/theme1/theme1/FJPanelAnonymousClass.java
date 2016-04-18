@@ -1,4 +1,4 @@
-package lesson5.theme1;
+package lesson5.theme1.theme1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +18,6 @@ public class FJPanelAnonymousClass {
                     super.paintComponent(g);
                     g.setColor(Color.GREEN);
                     g.fillRect(0, 0, 800, 600);
-
                 }
             });
 
@@ -29,7 +28,7 @@ public class FJPanelAnonymousClass {
 
     public static void main(String[] args){
 
-        FJPanelAnonymousClass fjp = new FJPanelAnonymousClass();
+        new FJPanelAnonymousClass();
     }
 }
 

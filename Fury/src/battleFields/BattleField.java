@@ -11,7 +11,7 @@ public class BattleField {
     private int pace = 1;
     private String[][] bf = {{"P", "P", "R", "P", "P", "R", "P", "P", "B"},
             {"B", "W", "B", "R", "P", "P", "P", "R", "P"}, {"P", "B", "B", "B", "W", "B", "B", "P", "P"},
-            {"W", "W", "B", "W", "B", "R", "B", "W", "W"}, {"P", "R", "B", "B", "B", "R", "B", "P", "P"},
+            {"W", "W", "B", "P", "B", "R", "B", "W", "W"}, {"P", "R", "B", "B", "B", "R", "B", "P", "P"},
             {"B", "B", "P", "P", "B", "B", "B", "B", "P"}, {"P", "B", "P", "W", "W", "B", "B", "B", "R"},
             {"B", "P", "W", "P", "B", "B", "B", "B", "B"}, {"W", "B", "W", "B", "S", "B", "P", "B", "B"}};
 

@@ -1,4 +1,4 @@
-package lesson5.theme1;
+package lesson5.theme1.theme1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,29 +21,29 @@ public class FillJPanel extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel jP = new JPanel();
-        //FlowLayout fLO = new FlowLayout();
-        //jP.setLayout(fLO);
+//        FlowLayout fLO = new FlowLayout();
+//        jP.setLayout(fLO);
 
-        //JTextArea field = new JTextArea("VAR 1");
-        //JFormattedTextField res = new JFormattedTextField("Variant # 1");
-        //jP.add(field);
-        //jP.add(res);
+        JTextArea field = new JTextArea("VAR 1");
+        JFormattedTextField res = new JFormattedTextField("Variant # 1");
+        jP.add(field);
+        jP.add(res);
 
         //jP.setBackground(Color.BLACK);
-        //frame.setContentPane(jP);
-        frame.getContentPane().add(this);
+        frame.setContentPane(jP);
+        //frame.getContentPane().add(this);
 
         frame.pack();
         frame.setVisible(true);
     }
 
-    @Override
-    protected void paintComponent(Graphics g){
-
-        super.paintComponent(g);
-        g.setColor(Color.BLUE);
-        g.fillRect(x, y, width, height);
-    }
+//    @Override
+//    protected void paintComponent(Graphics g){
+//
+//        super.paintComponent(g);
+//        g.setColor(Color.BLUE);
+//        g.fillRect(x, y, width, height);
+//    }
 
     public static void main(String[] args) throws Exception {
 

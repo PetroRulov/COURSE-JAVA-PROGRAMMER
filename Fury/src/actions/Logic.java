@@ -24,19 +24,28 @@ public class Logic {
 
         String next = null;
         if(tank.getNextQuadrant() instanceof Water){
+            if(tank.direction != Direct.UP && tank.direction != Direct.DOWN){
+                turnOpposite();
+                next = sdr.getQuadrantYX(getDownLine(tank.getX() / 64, tank.getY() / 64).getX(),
+                        getDownLine(tank.getX() / 64, tank.getY() / 64).getY());
+                System.out.println(next);
+                tank.moveToQuadrant(sdr.getQtY(next), sdr.getQtX(next));
+                chooseHQDestroyWay();
+            }
 
-            turnOpposite();
-            tank.move();
-            tank.turn(Direct.LEFT);
-            tank.move();
-            chooseHQDestroyWay();
+
+
+
+
+
+//            turnOpposite();
+//            tank.move();
+//            tank.turn(Direct.LEFT);
+//            tank.move();
+//            chooseHQDestroyWay();
 
 
 //            System.out.println(tank.getNextQuadrant().getX() + "_" + tank.getNextQuadrant().getY());
-
-
-
-
 //                next = sdr.getQuadrantYX(tank.getCheckQuadrant().getX(), tank.getCheckQuadrant().getY());
 //                tank.moveToQuadrant(sdr.getQtY(next), sdr.getQtX(next));
 //            }
@@ -47,24 +56,35 @@ public class Logic {
         }
     }
 
-//    private AbstractComponent[] getNextLine(){
-//
-//        AbstractComponent[] b = new AbstractComponent[bf.getMNQ()];
-//        int x = tank.getX() / 64;
-//        for(int i = 0; i < bf.getMNQ(); i++){
-//            //b[i] = (AbstractComponents)[x][i];
-//            //for(int j = 0; j < bf.getMNQ(); j++){
-//                //sdr.getQuadrantYX(tank.getX(), tank.getY();
-//                //Abstractcomponent[] b =
-//            }
-//        }
-//        return b;
-//    }
+    private AbstractComponent getDownLine(int x, int y) throws Exception {
+
+        AbstractComponent seeked = null;
+        System.out.println(x + "_" + y);
+        y = y + 1;
+        for(int i = 0; i < bf.getMNQ(); i++){
+            if(tank.direction == Direct.LEFT){
+                seeked = bf.getBattleField()[x--][y];
+                System.out.println(x + "_" + y);
+                if(seeked instanceof Plant || seeked instanceof Brick) {
+                    break;
+                }
+            } else {
+                seeked = bf.getBattleField()[x++][y];
+                if (seeked instanceof Plant || seeked instanceof Brick) {
+                    break;
+                }
+            }
+        }
+        return seeked;
+    }
 
     private void turnOpposite(){
 
-        if(tank.direction == Direct.DOWN){
-            tank.direction = Direct.UP;
+        if(tank.direction == Direct.RIGHT){
+            tank.direction = Direct.LEFT;
+            sdr.repaint();
+        } else{
+            tank.direction = Direct.RIGHT;
             sdr.repaint();
         }
     }
