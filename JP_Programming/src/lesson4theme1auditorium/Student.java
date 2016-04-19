@@ -50,7 +50,7 @@ public class Student {
         if (obj instanceof Student){
             Student student = (Student) obj;
             if (this.name != null && this.surName != null &&
-                this.getSurName().equals(((Student) obj).getSurName()) && this.getName().equals(((Student) obj).getName())){
+                    this.getSurName().equals(((Student) obj).getSurName()) && this.getName().equals(((Student) obj).getName())){
                 return true;
             }
         }

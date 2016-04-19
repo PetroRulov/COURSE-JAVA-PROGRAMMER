@@ -36,6 +36,8 @@ public class Imagination extends JPanel {
         g.fillRect(400, 300, 50, 50);
         g.draw3DRect(400, 300, 50, 50, true);
 
+        g.drawString("STRAWBERRY", 100, 190);
+
         g.drawImage(iStrawberry, 100, 200, new ImageObserver() {
 
             @Override
@@ -50,7 +52,7 @@ public class Imagination extends JPanel {
         JFrame frame = new JFrame("DAY 5, Imagination, Frame 5_2_4");
         frame.setLocation(300, 100);
         frame.setMinimumSize(new Dimension(800, 600));
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.getContentPane().add(new Imagination());
 
