@@ -11,7 +11,8 @@ public class Demonsration {
 
         //JFrame frame = new SimpleWindow();
         //JFrame frame = new SimpleButton();
-        JFrame frame = new SButtonWwithFL();
+        //JFrame frame = new SButtonWwithFL();
+        JFrame frame = new SButtonWwithBLt();
         frame.setVisible(true);
     }
 }

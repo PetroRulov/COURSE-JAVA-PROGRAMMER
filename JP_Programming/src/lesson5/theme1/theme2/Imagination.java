@@ -7,10 +7,12 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
+
 public class Imagination extends JPanel {
 
     private final static String IMAGE_NAME = "strawberry.jpg";
     private Image iStrawberry;
+    private Image img;
 
     public Imagination(){
 
