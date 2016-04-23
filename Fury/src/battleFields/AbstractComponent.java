@@ -15,6 +15,7 @@ public abstract class AbstractComponent implements IDrawable, IDestroyable {
     protected int x;
     protected int y;
     protected Color color;
+    protected int wayable;
 
 
     public AbstractComponent(){}
@@ -24,6 +25,7 @@ public abstract class AbstractComponent implements IDrawable, IDestroyable {
         this.name = name;
         this.sdr = sdr;
         this.bullet = bullet;
+        this.wayable = wayable;
         this.x = x;
         this.y = y;
 
@@ -42,6 +44,10 @@ public abstract class AbstractComponent implements IDrawable, IDestroyable {
 
     public int getY() {
         return y;
+    }
+
+    public int getWayable() {
+        return wayable;
     }
 
     @Override
@@ -69,6 +75,11 @@ public abstract class AbstractComponent implements IDrawable, IDestroyable {
     @Override
     public boolean isDeleted() {
         return false;
+    }
+
+    public String toString(){
+
+        return name + ", location = " + x + "_" + y;
     }
 
 }

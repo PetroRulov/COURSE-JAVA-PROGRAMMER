@@ -3,13 +3,8 @@ package tanks;
 import battleFields.BattleField;
 import enumerations.Direct;
 import actions.Slider;
-
 import java.awt.*;
 
-
-/**
- * Created by prulov on 22.03.2016.
- */
 public class BT7 extends AbstractTank {
 
     public BT7(Slider sdr, BattleField bf){
@@ -21,6 +16,7 @@ public class BT7 extends AbstractTank {
         this.tank = new Color(80, 80, 80);
         this.tower = new Color(0, 0, 0);
         this.speed = 18;
+
     }
 
 }

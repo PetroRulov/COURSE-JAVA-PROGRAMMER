@@ -4,6 +4,8 @@ import battleFields.*;
 import enumerations.Direct;
 import tanks.AbstractTank;
 
+import java.util.ArrayList;
+
 public class Logic {
 
     private AbstractTank tank;
@@ -19,210 +21,223 @@ public class Logic {
         this.bullet = sdr.getBullet();
     }
 
-    // should to be improved
-    public void detour(AbstractTank tank) throws Exception {
+    private ArrayList<AbstractComponent> frontLine(){
 
-        String next = null;
-        if(tank.getNextQuadrant() instanceof Water){
-            if(tank.direction != Direct.UP && tank.direction != Direct.DOWN){
-                turnOpposite();
-                next = sdr.getQuadrantYX(getDownLine(tank.getX() / 64, tank.getY() / 64).getX(),
-                        getDownLine(tank.getX() / 64, tank.getY() / 64).getY());
-                System.out.println(next);
-                tank.moveToQuadrant(sdr.getQtY(next), sdr.getQtX(next));
-                chooseHQDestroyWay();
+        ArrayList<AbstractComponent> fL = new ArrayList<AbstractComponent>();
+        for(int i = bf.getMNQ() - 1; i > 0; i--){
+            fL.add(bf.getBattleField()[i][4]);
+        }
+        return fL;
+    }
+
+    private boolean lineHasRock(ArrayList<AbstractComponent> list){
+
+        for(AbstractComponent i : list){
+            if(i instanceof Rock){
+                return true;
             }
-
-
-
-
-
-
-//            turnOpposite();
-//            tank.move();
-//            tank.turn(Direct.LEFT);
-//            tank.move();
-//            chooseHQDestroyWay();
-
-
-//            System.out.println(tank.getNextQuadrant().getX() + "_" + tank.getNextQuadrant().getY());
-//                next = sdr.getQuadrantYX(tank.getCheckQuadrant().getX(), tank.getCheckQuadrant().getY());
-//                tank.moveToQuadrant(sdr.getQtY(next), sdr.getQtX(next));
-//            }
-
-        } else if(tank.getNextQuadrant() instanceof Rock) {
-            System.out.println(this.tank + " is detouring the Rock!");
-            tank.fire();
-        }
-    }
-
-    private AbstractComponent getDownLine(int x, int y) throws Exception {
-
-        AbstractComponent seeked = null;
-        System.out.println(x + "_" + y);
-        y = y + 1;
-        for(int i = 0; i < bf.getMNQ(); i++){
-            if(tank.direction == Direct.LEFT){
-                seeked = bf.getBattleField()[x--][y];
-                System.out.println(x + "_" + y);
-                if(seeked instanceof Plant || seeked instanceof Brick) {
-                    break;
-                }
-            } else {
-                seeked = bf.getBattleField()[x++][y];
-                if (seeked instanceof Plant || seeked instanceof Brick) {
-                    break;
-                }
-            }
-        }
-        return seeked;
-    }
-
-    private void turnOpposite(){
-
-        if(tank.direction == Direct.RIGHT){
-            tank.direction = Direct.LEFT;
-            sdr.repaint();
-        } else{
-            tank.direction = Direct.RIGHT;
-            sdr.repaint();
-        }
-    }
-
-    private boolean ifTankNearBFBorders() {
-
-        if (tank.getX() == (bf.getMNQ() - 1) * bf.getSquad() && tank.direction == Direct.RIGHT ||
-                tank.getX() == 0 && tank.direction == Direct.LEFT ||
-                tank.getY() == (bf.getMNQ() - 1) * bf.getSquad() && tank.direction == Direct.DOWN ||
-                tank.getY() == 0 && tank.direction == Direct.UP) {
-            return true;
         }
         return false;
     }
 
-    public void chooseHQDestroyWay() throws Exception {
+    private String findFrontPlaceOfFire(ArrayList<AbstractComponent> list){
 
-        if(tank.getX() == 256) {
-            chosenHQDestoyingThirdWay(); // x = 256
+        String str = null;
+        if(lineHasRock(list)){
+            for(AbstractComponent i : list){
+                if(i instanceof Rock){
+                    if(i.getY() != 448){
+                        str = i.getX() + "_" + (i.getY() + bf.getSquad());
+                        break;
+                    } else {
+                        str = findLeftNotWater();
+                        break;
+                    }
+                }
+            }
+            return str;
+        } else {
+            for(AbstractComponent i : list){
+                if(i instanceof Water){
+                    if(i.getY() != 0){
+                        str = i.getX() + "_" + (i.getY() - bf.getSquad());
+                        break;
+                    } else {
+                        str = i.getX() + "_" + (i.getY() + bf.getSquad());
+                        break;
+                    }
+                } else {
+                    str = "256_0";
+                    break;
+                }
+            }
+            return str;
         }
+    }
 
-        if(tank.getY() < 320){
-            if(tank.getX() < bf.getMNQ() / 2 * bf.getSquad()){ // x < 256
-                chosenHQDestoyingFirstWay();
-            }
-            if(tank.getX() >= 320) {
-                chosenHQDestoyingSecondWay();
-            }
-        }
+    public String findFrontNotWater(){
 
-        // x = 0 ???
-        if(tank.getY() >= 320 && tank.getX() != 0){
-            if(tank.getX() < bf.getMNQ() / 2 * bf.getSquad()){ // x < 256
-                chosenHQDestroyingFourthWay();
+        String str = findFrontPlaceOfFire(frontLine());
+        if(str != null){
+            int xCoord = Integer.parseInt(str.split("_")[0]);
+            int yCoord = Integer.parseInt(str.split("_")[1]);
+            while(bf.getBattleField()[yCoord / 64][xCoord / 64] instanceof Water){
+                yCoord += 64;
             }
-            if(tank.getX() >= 320){
-                chosenHQDestroyingFifthWay();
+            return xCoord + "_" + yCoord;
+        } else {
+            if(tank.getX() <= 256) {
+                return findLeftNotWater();
+            } else {
+                return findRightNotWater();
             }
         }
     }
 
-    private void chosenHQDestoyingFirstWay() throws Exception {
+    private ArrayList<AbstractComponent> leftLine(){
 
-        System.out.println(this.tank + " chose First Way!!!");
-        while(!tankOnLineOfFire()){
-            tank.direction = Direct.RIGHT;
-            tank.move();
-            if(!tank.processPurityCheck()){
-                tank.turn(Direct.DOWN);
-                detour(tank); // 23
-            }
+        ArrayList<AbstractComponent> lL = new ArrayList<AbstractComponent>();
+        for(int i = (bf.getMNQ() / 2 - 1); i >= 0 ; i--){
+            lL.add(bf.getBattleField()[8][i]);
         }
-        chosenHQDestoyingThirdWay();
-        while (bullet.getY()!= ((bf.getMNQ() - 1) * bf.getSquad())){
-            tank.move();
-            if(bf.scanQuadrant(8, 4) instanceof Black){
-                break;
-            }
+        return lL;
+    }
 
+    private String findLeftPlaceOfFire(ArrayList<AbstractComponent> list){
+
+        String str = null;
+        if(lineHasRock(list)){
+            for(AbstractComponent i : list){
+                if(i instanceof Rock){
+                    if(i.getX() != 192){
+                        str = (i.getX() + bf.getSquad() ) + "_" + 512;
+                        break;
+                    } else {
+                        str = findRightNotWater();
+                        break;
+                    }
+                }
+            }
+            System.out.println("flpof1 " + str);
+            return str;
+        } else {
+            for(AbstractComponent i : list){
+                if(i instanceof Water){
+                    if(i.getX() != 0){
+                        str = (i.getX() - bf.getSquad()) + "_" + 512;
+                        break;
+                    } else {
+                        str = (i.getX() + bf.getSquad()) + "_" + 512;
+                        break;
+                    }
+                } else {
+                    str = "0_512";
+                    break;
+                }
+            }
+            System.out.println("flpof2 + " + str);
+            return str;
         }
     }
 
-    private void chosenHQDestoyingSecondWay() throws Exception {
+    private String findLeftNotWater(){
 
-        System.out.println(this.tank + " chose Second Way!!!");
-        while (tank.getY() != 512) {
-            tank.direction = Direct.DOWN;
-            tank.move();
-            if (!tank.processPurityCheck()) {
-                detour(tank); // 23
+        String str = findLeftPlaceOfFire(leftLine());
+        if(str != null){
+            int xCoord = Integer.parseInt(str.split("_")[0]);
+            //int yCoord = Integer.parseInt(str.split("_")[1]);
+            while(bf.getBattleField()[8][xCoord / 64] instanceof Water){
+                xCoord += 64;
             }
-        }
-        tank.turn(Direct.LEFT);
-        while (bullet.getX()!= ((bf.getMNQ()/ 2) * bf.getSquad())){
-            tank.fire();
-            if(bf.scanQuadrant(8, 4) instanceof Black){
-                break;
-            }
+            return xCoord + "_" + 512;
+        } else {
+            return "findLeftNotWater !!!STOP!!!";
         }
     }
 
-    private void chosenHQDestoyingThirdWay() throws Exception {
+    private ArrayList<AbstractComponent> rightLine(){
 
-        System.out.println(this.tank + " chose Third Way!!!");
-        while(true){
-            if(bf.scanQuadrant(8, 4) instanceof Black){
-                break;
+        ArrayList<AbstractComponent> rL = new ArrayList<AbstractComponent>();
+        for(int i = 5; i < bf.getMNQ(); i++){
+                rL.add(bf.getBattleField()[8][i]);
+        }
+        return rL;
+    }
+
+    //not wright!!!
+    private String findRightNotWater(){
+
+        String str = findRightPlaceOfFire(rightLine());
+        if(str != null){
+            int xCoord = Integer.parseInt(str.split("_")[0]);
+            //int yCoord = Integer.parseInt(str.split("_")[1]);
+            while(bf.getBattleField()[8][xCoord / 64] instanceof Water){
+                xCoord -= 64;
             }
-            tank.fire();
-            tank.move();
+            return xCoord + "_" + 512;
+        } else {
+            return "findLeftNotWater !!!STOP!!!";
         }
     }
 
-    private void chosenHQDestroyingFourthWay() throws Exception {
+    //not wright!!!
+    private String findRightPlaceOfFire(ArrayList<AbstractComponent> list){
 
-        System.out.println(this.tank + " chose Fourth Way!!!");
-        while (tank.getY() < 512) {
-            tank.direction = Direct.DOWN;
-            tank.move();
-            if (!tank.processPurityCheck()) {
-                detour(tank); // 23
+        String str = null;
+        if(lineHasRock(list)){
+            for(AbstractComponent i : list){
+                if(i instanceof Rock){
+                    if(i.getX() != 320){
+                        str = (i.getX() - bf.getSquad() ) + "_" + 512;
+                        break;
+                    } else {
+                        str = "!!!HQ IS UNDESTRUCTABLE!!!";
+                        break;
+                    }
+                }
             }
-        }
-        tank.turn(Direct.RIGHT);
-        while(true){
-            if(bf.scanQuadrant(8, 4) instanceof Black){
-                break;
+            System.out.println("fRpof1 " + str);
+            return str;
+        } else {
+            for(AbstractComponent i : list){
+                if(i instanceof Water){
+                    if(i.getX() != 512){
+                        str = (i.getX() + bf.getSquad()) + "_" + 512;
+                        break;
+                    } else {
+                        str = (i.getX() - bf.getSquad()) + "_" + 512;
+                        break;
+                    }
+                } else {
+                    str = "512_512";
+                    break;
+                }
             }
-            tank.fire();
+            System.out.println("fRpof2 + " + str);
+            return str;
         }
     }
 
-    private void chosenHQDestroyingFifthWay() throws Exception {
+    public void infoShow(ArrayList<AbstractComponent> list){
 
-        System.out.println(this.tank + " chose Fifth Way!!!");
-        while (tank.getY() < 512) {
-            tank.direction = Direct.DOWN;
-            tank.move();
-            if (!tank.processPurityCheck()) {
-                detour(tank); // 23
-            }
-        }
-        tank.turn(Direct.LEFT);
-        while(true){
-            if(bf.scanQuadrant(8, 4) instanceof Black){
-                break;
-            }
-            tank.fire();
+        for(AbstractComponent i : list){
+            System.out.println(i.toString());
         }
     }
 
     private boolean tankOnLineOfFire() throws Exception {
 
-        if(tank.getX() == 256){
-            tank.turn(Direct.DOWN);
+        if(tank.getX() == 256 || tank.getY() == 512){
             return true;
         }
         return false;
+    }
+
+
+    public void lookForWrightWay() throws Exception {
+
+
+
     }
 }
 

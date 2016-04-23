@@ -6,7 +6,7 @@ import interfaces.IObjectable;
 import actions.Slider;
 import actions.Bullet;
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.Random;
 
 public abstract class AbstractTank implements IObjectable {
@@ -72,49 +72,27 @@ public abstract class AbstractTank implements IObjectable {
 
     public void turn(Direct direction) throws Exception {
         this.direction = direction;
-        sdr.processTurn(this); // 164
+        sdr.processTurn(this); // Slider 191
     }
 
     public void move() throws Exception {
-        sdr.processMove(this);
+        sdr.processMove(this); // Slider 197
     }
 
     public boolean processPurityCheck() throws Exception {
 
-        if (getNextQuadrant() instanceof Brick) {
+        if (getNextQuadrant() instanceof Brick || getNextQuadrant() instanceof HQ) {
             System.out.println("tank destroying the Brick!");
             fire();
             return true;
         } else if(getNextQuadrant() instanceof Plant) {
             return true;
+        } else if(ifTankNearBFBorders()){
+            return false;
         } else {
             return false;
         }
     }
-
-//    public AbstractComponent getCheckQuad(){
-//
-//        String tankQuadrant = sdr.getQuadrantYX(x, y);
-//        AbstractComponent checkQuad = null;
-//
-//        int aH = sdr.getQtX(tankQuadrant), bV = sdr.getQtY(tankQuadrant), cV = sdr.getQtY(tankQuadrant) - 1;
-//        int dH = sdr.getQtX(tankQuadrant) + 1, eH = sdr.getQtX(tankQuadrant) - 1, fV = sdr.getQtY(tankQuadrant) + 1;
-//
-//        if (direction == Direct.UP && y != 0) {
-//            checkQuad = bf.scanQuadrant(Math.abs(cV), Math.abs(aH));
-//        }
-//        if (direction == Direct.RIGHT && x < bf.getBF_WIDTH() - bf.getSquad()) {
-//            checkQuad = bf.scanQuadrant(Math.abs(bV), Math.abs(dH));
-//        }
-//        if (direction == Direct.LEFT && x != 0) {
-//            checkQuad = bf.scanQuadrant(Math.abs(bV), Math.abs(eH));
-//        }
-//        if (direction == Direct.DOWN && y < bf.getBF_HEIGHT() - bf.getSquad()) {
-//            checkQuad = bf.scanQuadrant(Math.abs(fV), Math.abs(aH));
-//        }
-//        System.out.println(checkQuad.getName());
-//        return checkQuad;
-//    }
 
     public AbstractComponent getNextQuadrant() throws Exception {
 
@@ -156,25 +134,6 @@ public abstract class AbstractTank implements IObjectable {
         return checkQuad;
     }
 
-    public AbstractComponent getCheckQuadRight() throws Exception {
-
-        String tankQuadrant = sdr.getQuadrantYX(x, y);
-        AbstractComponent checkQuad = null;
-
-        int bV = sdr.getQtY(tankQuadrant), dH = sdr.getQtX(tankQuadrant) + 1, eH = sdr.getQtX(tankQuadrant) - 1;
-
-        if(direction == Direct.RIGHT){
-            if(x < (bf.getBF_HEIGHT() - bf.getSquad())){ // x < 512
-                checkQuad = bf.scanQuadrant(Math.abs(bV), Math.abs(dH));
-            } else { // x = 512
-                turn(Direct.LEFT);
-                checkQuad = bf.scanQuadrant(Math.abs(bV), Math.abs(eH));
-            }
-        }
-        return checkQuad;
-    }
-
-
     public boolean ifTankNearBFBorders() {
 
         if (x == (bf.getMNQ() - 1) * bf.getSquad() && direction == Direct.RIGHT ||
@@ -189,19 +148,38 @@ public abstract class AbstractTank implements IObjectable {
     public void fire() throws Exception {
 
         Bullet bullet = new Bullet((x + 28), (y + 25), direction, this);
-        sdr.processFire(bullet, this);
+        sdr.processFire(bullet, this); // Slider 245
         System.out.println(this + " fires");
     }
 
-    public void moveToQuadrant(int v, int h) throws Exception {
+    public void moveToObject(AbstractComponent obj) throws Exception {
 
-        int undScore = sdr.getXYCoord(v, h).indexOf("_");
-        int xCoord = Integer.parseInt(sdr.getXYCoord(v, h).substring(0, undScore));
-        int yCoord = Integer.parseInt(sdr.getXYCoord(v, h).substring(undScore + 1));
+        int xCoord = obj.getX();
+        int yCoord = obj.getY();
 
         while (y < yCoord) {
             turn(Direct.DOWN);
             move();
+        }
+        while (x < xCoord) {
+            turn(Direct.RIGHT);
+            move();
+        }
+        while (x > xCoord) {
+            turn(Direct.LEFT);
+            move();
+        }
+        while (y > yCoord) {
+            turn(Direct.UP);
+            move();
+        }
+    }
+
+    public void moveToCoord(int xCoord, int yCoord) throws Exception {
+
+        while (y < yCoord) {
+            turn(Direct.DOWN);
+            move(); // 78
         }
         while (x < xCoord) {
             turn(Direct.RIGHT);
@@ -218,118 +196,42 @@ public abstract class AbstractTank implements IObjectable {
         }
     }
 
-//    protected void clean() throws Exception {
-//
-//        if (y < 320) {
-//            moveToQuadrant(1, 1);
-//
-//            for (int i = 0; i < bf.getMNQ(); i++) {
-//                for (int j = 0; j < bf.getMNQ(); j++) {
-//                    if (bf.getBattleField()[i][j].equals("B")) {
-//                        moveToQuadrant(i + 1, j + 1);
-//                        addControlFireTop(i, j);
-//                    }
-//                }
-//            }
-//        } else {
-//
-//            moveToQuadrant(9, 9);
-//
-//            for (int i = bf.getMNQ() - 1; i > -1; i--) {
-//                for (int j = bf.getMNQ() - 1; j > -1; j--) {
-//                    if (bf.getBattleField()[i][j].equals("B")) {
-//                        moveToQuadrant(i + 1, j + 1);
-//                        addControlFireAlow(i, j);
-//                    }
-//                }
-//            }
-//        }
-//    }
-//
-//    boolean ifArrayEmpty(String[] arr) {
-//
-//        for (String str : arr) {
-//            if (str.equals("B")) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
-//
-//    void addControlFireTop(int i, int j) throws Exception {
-//
-//        if (ifArrayEmpty(bf.getBf()[i])) {
-//            turn(Direct.DOWN);
-//            move();
-//            if (j + 1 < 9) {
-//                turn(Direct.RIGHT);
-//                fire();
-//            }
-//            if (j + 1 == 9) {
-//                turn(Direct.LEFT);
-//                fire();
-//            }
-//            if (j + 1 > 1) {
-//                turn(Direct.LEFT);
-//                fire();
-//            }
-//            if (j + 1 == 1) {
-//                turn(Direct.RIGHT);
-//                fire();
-//            }
-//        }
-//    }
-//
-//    void addControlFireAlow(int i, int j) throws Exception {
-//
-//        if (ifArrayEmpty(bf.getBf()[i])) {
-//            turn(Direct.UP);
-//            move();
-//
-//            if (j > 0) {
-//                turn(Direct.LEFT);
-//                fire();
-//            }
-//            if (j == 0) {
-//                turn(Direct.RIGHT);
-//                fire();
-//            }
-//            if (j < 8) {
-//                turn(Direct.RIGHT);
-//                fire();
-//            }
-//            if (j == 8) {
-//                turn(Direct.LEFT);
-//                fire();
-//            }
-//        }
-//    }
-//
-//    protected void moveRandom() throws Exception {
-//        Random r = new Random();
-//        Integer i;
-//        while (true) {
-//            i = r.nextInt(5);
-//            if (i > 0) {
-//                direction = Direct.getDirect(i);
-//                sdr.processTurn(this);
-//                sdr.processMove(this);
-//            }
-//        }
-//    }
-//
-//    protected String setTankInitPos() {
-//
-//        for (int i = bf.getMNQ() - 1; i > 0; i--) {
-//            for (int j = 0; j < bf.getMNQ(); j++) {
-//                if (bf.getBattleField()[i][j].equals("") || bf.getBattleField()[i][j].equals(" ")) {
-//                    x = j * bf.getSquad();
-//                    y = i * bf.getSquad();
-//                }
-//            }
-//        }
-//        return x + "_" + y;
-//    }
+    public void moveToXCoord(int xCoord) throws Exception {
+
+        while (x < xCoord) {
+            turn(Direct.RIGHT);
+            move(); // 78
+        }
+        while (x > xCoord) {
+            turn(Direct.LEFT);
+            move();
+        }
+    }
+
+    public void moveToYCoord(int yCoord) throws Exception{
+
+        while (y < yCoord) {
+            turn(Direct.DOWN);
+            move(); // 78
+        }
+        while (y > yCoord) {
+            turn(Direct.UP);
+            move();
+        }
+    }
+
+    protected void moveRandom() throws Exception {
+        Random r = new Random();
+        Integer i;
+        while (true) {
+            i = r.nextInt(5);
+            if (i > 0) {
+                direction = Direct.getDirect(i);
+                sdr.processTurn(this);
+                sdr.processMove(this);
+            }
+        }
+    }
 
     @Override
     public void destroy(){
@@ -351,7 +253,7 @@ public abstract class AbstractTank implements IObjectable {
     }
 
     @Override
-    public void paintComponent(java.awt.Graphics g) {
+    public void paintComponent(Graphics g) {
 
         g.setColor(tank);
         g.fillRect(x + 2, y - 3, 58, 58);
@@ -369,7 +271,7 @@ public abstract class AbstractTank implements IObjectable {
     }
 
     @Override
-    public void drawComponent(java.awt.Graphics g) {
+    public void drawComponent(Graphics g) {
 
         g.setColor(tank);
         g.fillRect(x, y, 64, 64);

@@ -1,6 +1,8 @@
 package actions;
 
 import battleFields.*;
+import interfaces.IDestructable;
+import interfaces.INonDestructable;
 import tanks.*;
 import tanks.AbstractTank;
 import enumerations.Direct;
@@ -11,26 +13,29 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import java.awt.*;
+import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Random;
 
 public class Slider extends JPanel {
 
-    final boolean COLORDED_MODE = false;
     private BattleField bF = new BattleField();
     private String agrPos;
     private Bullet bullet;
     private T34 defender;
     private BT7 agressor;
     private Logic log;
+    private AI ai;
 
     public Slider() throws Exception {
 
         bF = new BattleField();
         agrPos = defineAgressorPos();
-        defender = new T34(this, bF, 64, 448, Direct.LEFT);
+        defender = new T34(this, bF, 192, 384, Direct.LEFT);
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
         bullet = new Bullet(600, 600, Direct.MINUS, agressor);
         log = new Logic(this, bF);
+        ai = new AI(bF);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
         frame.setLocation(500, 50);
@@ -43,8 +48,27 @@ public class Slider extends JPanel {
 
     public void runTheGame() throws Exception {
 
-        defender.turn(Direct.DOWN);
-        log.chooseHQDestroyWay();
+        String str = log.findFrontNotWater();
+        System.out.println("Seeked coords = " + str);
+        if (str != null && !str.equals("256_512") ) {
+            int xCoord = Integer.parseInt(str.split("_")[0]);
+            int yCoord = Integer.parseInt(str.split("_")[1]);
+            agressor.moveToCoord(xCoord, yCoord);
+
+            agressor.turn(Direct.RIGHT);
+            while (!(bF.getBattleField()[8][4] instanceof Black)) {
+                agressor.fire();
+            }
+        } else if(str.equals("256_512")){
+            System.err.println("ERROR: HQ IS UNDESTRUCTABLE");
+        } else {
+            System.err.println("!!!STOP!!!");
+        }
+
+        //log.infoShow(log.rightLine());
+
+
+        //System.out.println(log.findFrontPlaceOfFire(log.frontLine()));
 
     }
 
@@ -59,7 +83,7 @@ public class Slider extends JPanel {
                 } else if (bF.scanQuadrant(v, h) instanceof Rock && (bullet.getTank() instanceof T34)) {
                     sparklingRock(bullet, v, h);
                 } else if (bF.scanQuadrant(v, h) instanceof Rock && (bullet.getTank() instanceof BT7)) {
-                    sparkling(bullet, v, h);
+                    sparklingRock(bullet, v, h);
                     //new Rock(h * 64, v * 64).destroy();
                 } else if (bF.scanQuadrant(v, h) instanceof HQ && (bullet.getTank() instanceof BT7)) {
                     System.err.println("!!!HEADQUARTERS DESTROYED!!!");
@@ -181,52 +205,56 @@ public class Slider extends JPanel {
     }
 
     public void processTurn(AbstractTank tank) throws Exception {
+
+        Thread.sleep(tank.getSpeed());
         repaint();
-        //Thread.sleep(1000);
     }
 
     public void processMove(AbstractTank tank) throws Exception {
 
-        processTurn(tank);
-        if (ifTankNearBFBorders(tank)) {
-            tank.direction = Direct.STOP;
-        }
-        System.out.println("Moving permitted? " + tank.processPurityCheck());
-        if(tank.processPurityCheck()){ // AT-82
-            moving(tank);
-        } else {
-            log.detour(tank);
+        if(!(bF.scanQuadrant(8, 4) instanceof Black)){
+            processTurn(tank);
+            if (ifTankNearBFBorders(tank)) {
+                tank.direction = Direct.STOP;
+            }
+            System.out.println("Moving permitted? " + tank.processPurityCheck() + " - look at Slider 210!");
+            if(tank.processPurityCheck() && !(bF.scanQuadrant(8, 4) instanceof Black)){ // AT-82
+                moving(tank);
+            } else {
+                log.lookForWrightWay();
+            }
         }
     }
 
-    private boolean ifTankNearBFBorders(AbstractTank abstractTank) {
+    private boolean ifTankNearBFBorders(AbstractTank tank) {
 
-        if (abstractTank.getX() == (bF.getMNQ() - 1) * bF.getSquad() && abstractTank.getDirection() == Direct.RIGHT ||
-                abstractTank.getX() == 0 && abstractTank.getDirection() == Direct.LEFT ||
-                abstractTank.getY() == (bF.getMNQ() - 1) * bF.getSquad() && abstractTank.getDirection() == Direct.DOWN ||
-                abstractTank.getY() == 0 && abstractTank.getDirection() == Direct.UP) {
+        if (tank.getX() == (bF.getMNQ() - 1) * bF.getSquad() && tank.getDirection() == Direct.RIGHT ||
+                tank.getX() == 0 && tank.getDirection() == Direct.LEFT ||
+                tank.getY() == (bF.getMNQ() - 1) * bF.getSquad() && tank.getDirection() == Direct.DOWN ||
+                tank.getY() == 0 && tank.getDirection() == Direct.UP) {
             return true;
         }
         return false;
     }
 
-    public void moving(AbstractTank abstractTank) throws Exception {
+    public void moving(AbstractTank tank) throws Exception {
         int pace = 1;
-        processTurn(abstractTank);
+        processTurn(tank);
         int i = 0;
         while (i < bF.getSquad()) {
             i += pace;
-            if (abstractTank.direction == Direct.RIGHT) {
-                abstractTank.updateX(+pace);
-            } else if (abstractTank.direction == Direct.LEFT) {
-                abstractTank.updateX(-pace);
-            } else if (abstractTank.direction == Direct.UP) {
-                abstractTank.updateY(-pace);
-            } else if (abstractTank.direction == Direct.DOWN) {
-                abstractTank.updateY(+pace);
+            if (tank.direction == Direct.RIGHT) {
+                tank.updateX(+pace);
+            } else if (tank.direction == Direct.LEFT) {
+                tank.updateX(-pace);
+            } else if (tank.direction == Direct.UP) {
+                tank.updateY(-pace);
+            } else if (tank.direction == Direct.DOWN) {
+                tank.updateY(+pace);
             }
+            Thread.sleep(tank.getSpeed());
             repaint();
-            Thread.sleep(abstractTank.getSpeed());
+            //Thread.sleep(tank.getSpeed());
         }
     }
 
@@ -249,9 +277,9 @@ public class Slider extends JPanel {
             if (abstractTank.getDirection() == Direct.DOWN) {
                 bullet.updateY(+pace);
             }
-            if (abstractTank.getDirection() == Direct.STOP) {
-                bullet.updateX(+pace);
-            }
+//            if (abstractTank.getDirection() == Direct.STOP) {
+//                bullet.updateX(+pace);
+//            }
 
             processInterception();
             repaint();
@@ -270,7 +298,7 @@ public class Slider extends JPanel {
 
     public String defineAgressorPos() {
 
-        String str = "0_128";
+        String str = "0_0";
 //        int i = toRandomI();
 //        if (i == 0) {
 //            str = "64_0";
@@ -292,24 +320,6 @@ public class Slider extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        int i = 0;
-        Color cc;
-        for (int v = 0; v < 9; v++) {
-            for (int h = 0; h < 9; h++) {
-                if (COLORDED_MODE) {
-                    if (i % 2 == 0) {
-                        cc = new Color(252, 241, 177);
-                    } else {
-                        cc = new Color(233, 243, 255);
-                    }
-                } else {
-                    cc = new Color(180, 180, 180);
-                }
-                i++;
-                g.setColor(cc);
-                g.fillRect(h * 64, v * 64, 64, 64);
-            }
-        }
         for (int j = 0; j < bF.getDimentionY(); j++)
             for (int k = 0; k < bF.getDimentionX(); k++) {
                 if (bF.scanQuadrant(j, k) instanceof Explosive) {
@@ -329,9 +339,9 @@ public class Slider extends JPanel {
         }
     }
 
-    public Logic getLog() {
-        return log;
-    }
+//    public Logic getLog() {
+//        return log;
+//    }
 
     public BT7 getAgressor() {
         return agressor;

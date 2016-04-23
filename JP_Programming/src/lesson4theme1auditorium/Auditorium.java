@@ -93,7 +93,7 @@ public class Auditorium{
         int i = 0;
         while(iStud.hasNext()){
             i++;
-            System.out.println(i + "." + iStud.next().toString());
+            System.out.println(i + "STS." + iStud.next().toString());
         }
     }
 
