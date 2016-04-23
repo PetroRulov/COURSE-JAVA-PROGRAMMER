@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f51cdb-5926-4f53-b2e7-92751647947c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/actions/AI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/interfaces/IDestructable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/interfaces/INonDestructable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/src/lesson6/Frame_6_1_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Logic.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Logic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Logic.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Logic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/AbstractComponent.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/BattleField.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/BattleField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Brick.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Brick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/HQ.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/HQ.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Plant.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Plant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Rock.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Rock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Water.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Water.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/BT7.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/BT7.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JP_Programming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JP_Programming/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JP_Programming/src/lesson4theme1auditorium/Auditorium.java" afterPath="$PROJECT_DIR$/../JP_Programming/src/lesson4theme1auditorium/Auditorium.java" />
     </list>
     <ignored path="Gesheft.iws" />
     <ignored path=".idea/workspace.xml" />

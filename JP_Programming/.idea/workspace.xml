@@ -2,36 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00f3ceb6-8dad-4b03-9ef2-2d53bcee14f9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/actions/AI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/interfaces/IDestructable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/interfaces/INonDestructable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/Frame_6_1_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Logic.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Logic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Logic.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Logic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/AbstractComponent.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/BattleField.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/BattleField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Brick.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Brick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/HQ.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/HQ.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Plant.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Plant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Rock.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Rock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Water.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Water.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/BT7.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/BT7.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/Frame_6_1_2_1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson4theme1auditorium/Auditorium.java" afterPath="$PROJECT_DIR$/src/lesson4theme1auditorium/Auditorium.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/Frame_6_1_2.java" afterPath="$PROJECT_DIR$/src/lesson6/Frame_6_1_2.java" />
     </list>
     <ignored path="JP_Programming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,32 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SimpleArrayList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson4theme5/myarrlist/SimpleArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#531#532#0" expanded="false" />
-                <element signature="e#561#562#0" expanded="false" />
-                <element signature="e#600#601#0" expanded="false" />
-                <element signature="e#636#637#0" expanded="false" />
-                <element signature="e#669#670#0" expanded="false" />
-                <element signature="e#696#697#0" expanded="false" />
-                <element signature="e#738#739#0" expanded="false" />
-                <element signature="e#770#771#0" expanded="false" />
-                <element signature="e#3036#3037#0" expanded="false" />
-                <element signature="e#3076#3077#0" expanded="false" />
-                <element signature="e#3186#3187#0" expanded="false" />
-                <element signature="e#3222#3223#0" expanded="false" />
-                <element signature="e#3272#3273#0" expanded="false" />
-                <element signature="e#3307#3308#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Auditorium.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson4theme1auditorium/Auditorium.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,16 +36,6 @@
                 <element signature="e#1236#1237#0" expanded="false" />
                 <element signature="e#1295#1296#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Demo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson4theme5/myarrlist/Demo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -128,21 +66,8 @@
       <file leaf-file-name="Demo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson4theme1auditorium/Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="363">
               <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-              <folding>
-                <element signature="e#135#136#0" expanded="false" />
-                <element signature="e#176#177#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleLinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson4theme2/SimpleLinkedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -151,11 +76,33 @@
       <file leaf-file-name="Frame_6_1_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lesson6/Frame_6_1_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="232">
+              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Frame_6_1_2_1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson6/Frame_6_1_2_1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Calendar.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Calendar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-697">
+              <caret line="1290" column="54" selection-start-line="1290" selection-start-column="54" selection-end-line="1290" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -238,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/lesson5/theme1/gui/Demonsration.java" />
         <option value="$PROJECT_DIR$/src/lesson5/theme1/gui/SButtonWwithBLt.java" />
         <option value="$PROJECT_DIR$/src/lesson4theme1auditorium/Auditorium.java" />
+        <option value="$PROJECT_DIR$/src/lesson6/Frame_6_1_2_1.java" />
         <option value="$PROJECT_DIR$/src/lesson6/Frame_6_1_2.java" />
       </list>
     </option>
@@ -339,26 +287,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Frame_6_1_2">
-    <configuration default="false" name="DemoPro" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="lesson5.theme1.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="lesson5.theme1.gui.DemoPro" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JP_Programming" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="ALauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -427,6 +355,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="lesson6.Frame_6_1_2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JP_Programming" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Frame_6_1_2_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="lesson6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="lesson6.Frame_6_1_2_1" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -674,19 +622,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.DemoPro" />
-      <item index="1" class="java.lang.String" itemvalue="Application.ALauncher" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Demonsration" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Programm" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Frame_6_1_2" />
+      <item index="0" class="java.lang.String" itemvalue="Application.ALauncher" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Demonsration" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Programm" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Frame_6_1_2" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Frame_6_1_2_1" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Frame_6_1_2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ALauncher" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Demonsration" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Programm" />
-        <item index="4" class="java.lang.String" itemvalue="Application.DemoPro" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Frame_6_1_2_1" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ALauncher" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Demonsration" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Programm" />
       </list>
     </recent_temporary>
   </component>
@@ -753,7 +701,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461099607948</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="BirthDate">
+      <created>1461432261479</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1461432261479</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -803,7 +758,8 @@
     <MESSAGE value="Image of Strawberry added" />
     <MESSAGE value="gui package" />
     <MESSAGE value="gui package BorderLayout" />
-    <option name="LAST_COMMIT_MESSAGE" value="gui package BorderLayout" />
+    <MESSAGE value="BirthDate" />
+    <option name="LAST_COMMIT_MESSAGE" value="BirthDate" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -814,30 +770,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson4theme1auditorium/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding>
-            <element signature="e#327#328#0" expanded="false" />
-            <element signature="e#357#358#0" expanded="false" />
-            <element signature="e#388#389#0" expanded="false" />
-            <element signature="e#415#416#0" expanded="false" />
-            <element signature="e#455#456#0" expanded="false" />
-            <element signature="e#487#488#0" expanded="false" />
-            <element signature="e#533#534#0" expanded="false" />
-            <element signature="e#571#572#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson5/theme1/gui/SButtonWwithFL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson5/theme1/gui/Demonsration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -891,10 +823,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding>
-            <element signature="e#135#136#0" expanded="false" />
-            <element signature="e#176#177#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,17 +1118,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson4theme1auditorium/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding>
-            <element signature="e#135#136#0" expanded="false" />
-            <element signature="e#176#177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson4theme1auditorium/ALauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1227,10 +1145,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson4theme1auditorium/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Calendar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-697">
+          <caret line="1290" column="54" selection-start-line="1290" selection-start-column="54" selection-end-line="1290" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/Frame_6_1_2_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/Frame_6_1_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="232">
+          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
