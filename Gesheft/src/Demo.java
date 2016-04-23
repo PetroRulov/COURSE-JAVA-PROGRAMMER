@@ -23,8 +23,10 @@ public class Demo {
 
         /*-d i s p l a y i n g     S a l e s    r e p o r t s-*/
         //bad.getServ().dailyReport();
-        System.out.println();
-        bad.getServ().periodReport();
+        //System.out.println();
+        //bad.getServ().periodReport();
+
+
 
 
 

@@ -74,9 +74,33 @@ public class Water {
 
     }
 
+    public void setDrink(Drink drink) {
+        this.drink = drink;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
+    public void setQuant(int quant) {
+        this.quant = quant;
+    }
+
+    public void setTare(Tare tare) {
+        this.tare = tare;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
 }
 
 
