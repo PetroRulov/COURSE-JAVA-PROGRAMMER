@@ -2,40 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f51cdb-5926-4f53-b2e7-92751647947c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Fury/src/interfaces/IDestructable.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Logic.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Logic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Black.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Black.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gesheft/Demo.class" afterPath="$PROJECT_DIR$/out/production/Gesheft/Demo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gesheft/Launcher.class" afterPath="$PROJECT_DIR$/out/production/Gesheft/Launcher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gesheft/waters/Water.class" afterPath="$PROJECT_DIR$/out/production/Gesheft/waters/Water.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bar/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Bar/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/AI.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/AI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Logic.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Logic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/AbstractComponent.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/BattleField.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/BattleField.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Black.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Black.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Brick.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Brick.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/HQ.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/HQ.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Plant.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Plant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Rock.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Rock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/battleFields/Water.java" afterPath="$PROJECT_DIR$/../Fury/src/battleFields/Water.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AI.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/INonDestructable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/IWayable.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/McD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Gesheft/BadiganShopUI.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Gesheft/Gesh_GBL_GUI.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/strawberry.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/16052013.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/McD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson4theme1auditorium/ALauncher.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson4theme1auditorium/Auditorium.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson4theme1auditorium/Demo.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson4theme1auditorium/ListCatalogue.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson4theme1auditorium/Student.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/gui/Demonsration.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/gui/Frame.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/gui/SButtonWwithBLt.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/gui/SButtonWwithFL.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/gui/SimpleButton.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/gui/SimpleWindow.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/FJP_WithOwnClass$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/FJP_WithOwnClass.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/FJPanelAnonymousClass$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/FJPanelAnonymousClass.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/FillJPanel.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/HowToDraw.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme1/Window2DGraphics.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme2/ImageLabel.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme2/Imagination$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme2/Imagination.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme2/Inscription.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson5/theme1/theme2/Programm.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson6/Frame_6_1_2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/out/production/JP_Programming/lesson6/Frame_6_1_2_1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/strawberry.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../strawberry.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/interfaces/IWayable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gesh_GBL_GUI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JP_Programming/JP_Programming.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BadiganShopUI.java" afterPath="$PROJECT_DIR$/src/BadiganShopUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Launcher.java" afterPath="$PROJECT_DIR$/src/Launcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/waters/Water.java" afterPath="$PROJECT_DIR$/src/waters/Water.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JP_Programming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JP_Programming/.idea/workspace.xml" />
     </list>
     <ignored path="Gesheft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -572,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461450676314</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="UI for Gesheft with Layout GridBagLayout">
+      <created>1461600215114</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1461600215114</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -580,7 +594,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -590,11 +604,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.57570976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57570976" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14714494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14714494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
