@@ -1,24 +1,21 @@
 import domain.Stock;
+import interfaces.IDataProvider;
 import waters.Water;
 
+import java.util.Vector;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.Dimension;
 import java.text.NumberFormat;
 
 public class BadiganShopUI {
 
-    private Badigan bad;
-    private Stock stk;
-    private final static String IMAGE_NAME = "strawberry.jpg";
-    private ImageIcon sb = new ImageIcon(IMAGE_NAME);
+    private IDataProvider dataProvider;
+    //private Stock stk;
 
-    public BadiganShopUI(Badigan bad, Stock stk) {
+    public BadiganShopUI(/*Stock stk*/) {
 
-        this.bad = bad;
-        this.stk = stk;
-
+        //this.stk = stk;
 
         JFrame f = new JFrame("\"BADIGAN\" ALCOHOL SHOP TRANSACTION");
         f.setMinimumSize(new Dimension(800, 225));
@@ -29,7 +26,11 @@ public class BadiganShopUI {
         f.setVisible(true);
     }
 
-    private JPanel createSellingPannel(){
+    public void setStk(IDataProvider dataProvider) {
+        this.dataProvider = dataProvider;
+    }
+
+    public JPanel createSellingPannel(){
 
         JPanel panel = new JPanel();
         //panel.setLayout(new BorderLayout());
@@ -56,7 +57,10 @@ public class BadiganShopUI {
         choose.setBounds(50, 75, 150, 25);
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
         choose.setForeground(Color.ORANGE);
-        Water[] wat = stk.getWat();
+        //Water[] wat = stk.getWat();
+        //List<Water> wat = dataProvider.getListOfProducts();// !!! do not work !!!
+        //List<Water> wat = stk.getListOfProducts();
+        Vector<Water> wat = dataProvider.getVat();
         JComboBox combo = new JComboBox(wat);
         combo.setBounds(200, 75, 525, 25);
 

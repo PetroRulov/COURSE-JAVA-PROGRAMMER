@@ -1,22 +1,45 @@
 package domain;
 
+import interfaces.IDataProvider;
 import waters.*;
 import enumerations.*;
 
-public class Stock {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+public class Stock implements IDataProvider {
 
     private Water[] wat;
+    private List<Water> waters;
+    private Vector<Water> vat;
 
     public Stock(){
 
         this.wat = new Water[100];
+        this.waters = new ArrayList<>();
+        this.vat = new Vector<>();
         initStock();
+        fillStock();
+        fillVectorStock();
 
     }
 
     public Water[] getWat() {
         return wat;
     }
+
+    public List<Water> getWaters(){
+        return new ArrayList<>(waters);
+    }
+
+    @Override
+    public Vector<Water> getVat() {
+
+        fillVectorStock();
+        return new Vector<> (vat);
+    }
+
 
     /**-T h e     q u a n t i t y     o f      G o o d s     i n     S t o c k-*/
     public void printWaterArr() {
@@ -40,12 +63,45 @@ public class Stock {
 
     }
 
+    public void printWaters() {
+
+        System.out.println();
+        System.out.println("-----------------------------" + "\"BADIGAN\" WAREHOUSE" + "------------------------------|");
+        System.out.println("------------------------------------------------------------------------------|");
+        System.out.printf("%-1s%-10s%-25s%-10s%-10s%-10s%-10s%n", "|#", "| Type", "| Name", "| Tare", "| Volume", "| Price", "| Quantity |");
+        System.out.println("------------------------------------------------------------------------------|");
+        int j = 0;
+        for (int i = 0; i < waters.size(); i++) {
+            if (waters.get(i) != null) {
+                j++;
+                System.out.print(j);
+                waters.get(i).waterInfoShow();
+            }
+        }
+        System.out.println("------------------------------------------------------------------------------|");
+        System.out.println("--------------------------------------------------------- AT ALL: " + quantCounterList() + " items -|");
+        System.out.println("------------------------------------------------------------------------------|");
+
+    }
+
     private int quantRecorder(){
 
         int x = 0;
         for (int i = 0; i < wat.length; i++) {
             if (wat[i] != null) {
                 x += wat[i].getQuant();
+
+            }
+        }
+        return x;
+    }
+
+    private int quantCounterList(){
+
+        int x = 0;
+        for (int i = 0; i < waters.size(); i++) {
+            if (waters.get(i) != null) {
+                x += waters.get(i).getQuant();
 
             }
         }
@@ -136,6 +192,27 @@ public class Stock {
         wat[66] = new Tequila(Drink.TEQUILA, "1800", Tare.GLASS, 1.0, 25, 561.5, 1184.0);
 
     }
+
+
+    private void fillStock() {
+
+        for(Water w : wat){
+            if(w != null){
+                waters.add(w);
+            }
+        }
+    }
+
+    private void fillVectorStock() {
+
+        for(Water w : wat){
+            if(w != null){
+                vat.add(w);
+
+            }
+        }
+    }
+
 }
 
 
