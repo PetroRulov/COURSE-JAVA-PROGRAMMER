@@ -79,7 +79,7 @@ public abstract class AbstractComponent implements IDrawable, IDestroyable {
 
     public String toString(){
 
-        return name + ", location = " + x + "_" + y;
+        return name + ", location = " + getX() + "_" + getY();
     }
 
 }

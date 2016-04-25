@@ -1,10 +1,9 @@
 package battleFields;
 
-import interfaces.IDestructable;
-
+import interfaces.IWayable;
 import java.awt.Color;
 
-public class Plant extends AbstractComponent implements IDestructable {
+public class Plant extends AbstractComponent implements IWayable {
 
     public Plant(){}
 
@@ -17,5 +16,15 @@ public class Plant extends AbstractComponent implements IDestructable {
         this.y = y;
         this.color = new Color(180, 180, 180);
 
+    }
+
+    @Override
+    public int getXC() {
+        return x;
+    }
+
+    @Override
+    public int getYC() {
+        return y;
     }
 }

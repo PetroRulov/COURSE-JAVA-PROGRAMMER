@@ -1,7 +1,5 @@
 package battleFields;
 
-import tanks.BT7;
-
 import java.awt.Color;
 
 public class Black extends AbstractComponent {

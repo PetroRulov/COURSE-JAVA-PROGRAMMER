@@ -1,8 +1,6 @@
 package battleFields;
 
 import interfaces.INonDestructable;
-
-import javax.security.auth.Destroyable;
 import java.awt.Color;
 
 public class Rock extends AbstractComponent implements INonDestructable {

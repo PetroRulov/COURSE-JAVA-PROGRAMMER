@@ -1,7 +1,7 @@
 package actions;
 
 import battleFields.*;
-import interfaces.IDestructable;
+import interfaces.IWayable;
 import interfaces.INonDestructable;
 import tanks.*;
 import tanks.AbstractTank;
@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Random;
@@ -20,6 +21,7 @@ import java.util.Random;
 public class Slider extends JPanel {
 
     private BattleField bF = new BattleField();
+    private ArrayList<IWayable> freeWay;
     private String agrPos;
     private Bullet bullet;
     private T34 defender;
@@ -31,11 +33,11 @@ public class Slider extends JPanel {
 
         bF = new BattleField();
         agrPos = defineAgressorPos();
-        defender = new T34(this, bF, 192, 384, Direct.LEFT);
-        agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
+        defender = new T34(this, bF, 64, 448, Direct.UP);
+        agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
         bullet = new Bullet(600, 600, Direct.MINUS, agressor);
         log = new Logic(this, bF);
-        ai = new AI(bF);
+        ai = new AI(bF, freeWay, agressor);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
         frame.setLocation(500, 50);
@@ -49,27 +51,27 @@ public class Slider extends JPanel {
     public void runTheGame() throws Exception {
 
         String str = log.findFrontNotWater();
-        System.out.println("Seeked coords = " + str);
+        System.out.println("SEEKED COORDINATS = " + str);
         if (str != null && !str.equals("256_512") ) {
             int xCoord = Integer.parseInt(str.split("_")[0]);
             int yCoord = Integer.parseInt(str.split("_")[1]);
-            agressor.moveToCoord(xCoord, yCoord);
+            //agressor.moveToCoord(xCoord, yCoord);
+            agressor.moveToObject(ai.scanObject(xCoord, yCoord));
 
-            agressor.turn(Direct.RIGHT);
+            // turning to fire on HQ
+            if(agressor.getX() > 256){
+                agressor.turn(Direct.LEFT);
+            }else if(agressor.getX() == 256){
+                agressor.turn(Direct.DOWN);
+            }else{
+                agressor.turn(Direct.RIGHT);
+            }
             while (!(bF.getBattleField()[8][4] instanceof Black)) {
                 agressor.fire();
             }
         } else if(str.equals("256_512")){
-            System.err.println("ERROR: HQ IS UNDESTRUCTABLE");
-        } else {
-            System.err.println("!!!STOP!!!");
+            System.err.println("!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!");
         }
-
-        //log.infoShow(log.rightLine());
-
-
-        //System.out.println(log.findFrontPlaceOfFire(log.frontLine()));
-
     }
 
     public boolean processInterception() throws Exception {
@@ -86,17 +88,16 @@ public class Slider extends JPanel {
                     sparklingRock(bullet, v, h);
                     //new Rock(h * 64, v * 64).destroy();
                 } else if (bF.scanQuadrant(v, h) instanceof HQ && (bullet.getTank() instanceof BT7)) {
+                    sparklingHQ(bullet, v, h);
                     System.err.println("!!!HEADQUARTERS DESTROYED!!!");
                     System.err.println("!!!GAME OVER!!!");
-                    sparklingHQ(bullet, v, h);
                 }
                 return true;
             }
             if (checkInterception(getQuadrantYX(agressor.getX(), agressor.getY()), quadrant) && !bullet.getTank().equals(agressor)) {
                 agressor.destroy();
                 sparkling(bullet, v, h);
-                //Thread.sleep(3000);
-
+//                Thread.sleep(3000);
 //                agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
 //                repaint();
 //                return true;
@@ -217,11 +218,18 @@ public class Slider extends JPanel {
             if (ifTankNearBFBorders(tank)) {
                 tank.direction = Direct.STOP;
             }
-            System.out.println("Moving permitted? " + tank.processPurityCheck() + " - look at Slider 210!");
-            if(tank.processPurityCheck() && !(bF.scanQuadrant(8, 4) instanceof Black)){ // AT-82
+            System.out.println("Moving permitted? " + tank.processPurityCheck() + " - " + tank.getNextQuadrant().toString());
+            if(tank.processPurityCheck()){ // AT-83
                 moving(tank);
             } else {
-                log.lookForWrightWay();
+
+                //should to be improoved
+                for (int i = 0; i < ai.nextObjApply().size(); i++){
+                    tank.moveToObject(ai.nextObjApply().get(i));
+
+                }
+
+
             }
         }
     }
@@ -298,13 +306,13 @@ public class Slider extends JPanel {
 
     public String defineAgressorPos() {
 
-        String str = "0_0";
-//        int i = toRandomI();
-//        if (i == 0) {
-//            str = "64_0";
-//        } else {
-//            str = i == 1 ? "448_0" : "256_64";
-//        }
+        String str = "128_64";
+        int i = toRandomI();
+        if (i == 0) {
+            str = "64_0";
+        } else {
+            str = i == 1 ? "448_0" : "320_64";
+        }
         return str;
     }
 
@@ -315,7 +323,7 @@ public class Slider extends JPanel {
         return i;
     }
 
-    //MAGIC BELOW
+    //-!!!- M A G I C   B E L O W -!!!//
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

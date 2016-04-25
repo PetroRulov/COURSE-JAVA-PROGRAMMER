@@ -1,11 +1,8 @@
 package battleFields;
 
-import interfaces.IDestructable;
-import tanks.BT7;
-
 import java.awt.Color;
 
-public class HQ extends AbstractComponent implements IDestructable {
+public class HQ extends AbstractComponent {
 
     public HQ(){}
 

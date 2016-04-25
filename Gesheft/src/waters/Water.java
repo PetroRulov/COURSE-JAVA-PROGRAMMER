@@ -74,6 +74,12 @@ public class Water {
 
     }
 
+    @Override
+    public String toString(){
+
+        return getDrink() + " " + getName() + ", " + getTare() + ", " + getVolume() + ", price: " + getPrice();
+    }
+
     public void setDrink(Drink drink) {
         this.drink = drink;
     }

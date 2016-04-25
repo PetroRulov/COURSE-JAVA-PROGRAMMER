@@ -1,7 +1,6 @@
 package battleFields;
 
 import interfaces.INonDestructable;
-
 import java.awt.Color;
 
 public class Water extends AbstractComponent implements INonDestructable{

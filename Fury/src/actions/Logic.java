@@ -49,14 +49,18 @@ public class Logic {
                     if(i.getY() != 448){
                         str = i.getX() + "_" + (i.getY() + bf.getSquad());
                         break;
-                    } else {
-                        str = findLeftNotWater();
+                    } else { // if HQ is closed by a Rock from front side
+                        if(tank.getX() < 320){
+                            str = findLeftNotWater();
+                        }else{
+                            str = findRightNotWater();
+                        }
                         break;
                     }
                 }
             }
             return str;
-        } else {
+        } else { // if there is no Rocks at all
             for(AbstractComponent i : list){
                 if(i instanceof Water){
                     if(i.getY() != 0){
@@ -81,17 +85,19 @@ public class Logic {
         if(str != null){
             int xCoord = Integer.parseInt(str.split("_")[0]);
             int yCoord = Integer.parseInt(str.split("_")[1]);
-            while(bf.getBattleField()[yCoord / 64][xCoord / 64] instanceof Water){
-                yCoord += 64;
+            while(bf.getBattleField()[yCoord / bf.getSquad()][xCoord / bf.getSquad()] instanceof Water){
+                yCoord += bf.getSquad();
             }
             return xCoord + "_" + yCoord;
         } else {
-            if(tank.getX() <= 256) {
+            if(tank.getX() < 320) {
+                System.out.println("LEFT Way chosen");
                 return findLeftNotWater();
             } else {
+                System.out.println("RIGHT Way chosen");
                 return findRightNotWater();
             }
-        }
+       }
     }
 
     private ArrayList<AbstractComponent> leftLine(){
@@ -233,11 +239,5 @@ public class Logic {
         return false;
     }
 
-
-    public void lookForWrightWay() throws Exception {
-
-
-
-    }
 }
 

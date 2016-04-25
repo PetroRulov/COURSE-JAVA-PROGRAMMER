@@ -5,6 +5,7 @@ import enumerations.Direct;
 import interfaces.IObjectable;
 import actions.Slider;
 import actions.Bullet;
+import interfaces.IWayable;
 
 import java.awt.*;
 import java.util.Random;
@@ -36,8 +37,6 @@ public abstract class AbstractTank implements IObjectable {
         this.direction = direction;
         this.bullet = bullet;
     }
-
-    protected Color color;
 
     public Slider getSDR() {
         return sdr;
@@ -76,22 +75,35 @@ public abstract class AbstractTank implements IObjectable {
     }
 
     public void move() throws Exception {
-        sdr.processMove(this); // Slider 197
+        sdr.processMove(this); // Slider 227
     }
 
+    // old ONE
+//    public boolean processPurityCheck() throws Exception {
+//
+//        if (getNextQuadrant() instanceof Brick || getNextQuadrant() instanceof HQ) {
+//            System.out.println("tank destroying the Brick!");
+//            fire();
+//            return true;
+//        } else if(getNextQuadrant() instanceof Plant) {
+//            return true;
+//        } else if(ifTankNearBFBorders()){
+//            return false;
+//        } else {
+//            return false;
+//        }
+//    }
+
+    // new ONE
     public boolean processPurityCheck() throws Exception {
 
-        if (getNextQuadrant() instanceof Brick || getNextQuadrant() instanceof HQ) {
-            System.out.println("tank destroying the Brick!");
+        if (getNextQuadrant() instanceof Plant){
+            return true;
+        } else if(getNextQuadrant() instanceof Brick || getNextQuadrant() instanceof HQ) {
             fire();
             return true;
-        } else if(getNextQuadrant() instanceof Plant) {
-            return true;
-        } else if(ifTankNearBFBorders()){
-            return false;
-        } else {
-            return false;
         }
+        return false;
     }
 
     public AbstractComponent getNextQuadrant() throws Exception {
@@ -152,73 +164,61 @@ public abstract class AbstractTank implements IObjectable {
         System.out.println(this + " fires");
     }
 
-    public void moveToObject(AbstractComponent obj) throws Exception {
+    public void moveToObject(IWayable obj) throws Exception {
 
-        int xCoord = obj.getX();
-        int yCoord = obj.getY();
+        int xCoord = obj.getXC();
+        int yCoord = obj.getYC();
+
+        while (x < xCoord) {
+            turn(Direct.RIGHT);
+            move(); // 78
+        }
+
+        while (x > xCoord) {
+            turn(Direct.LEFT);
+            move(); // 78
+        }
 
         while (y < yCoord) {
             turn(Direct.DOWN);
-            move();
+            move(); // 78
         }
-        while (x < xCoord) {
-            turn(Direct.RIGHT);
-            move();
-        }
-        while (x > xCoord) {
-            turn(Direct.LEFT);
-            move();
-        }
+
         while (y > yCoord) {
             turn(Direct.UP);
-            move();
+            move(); // 78
         }
     }
 
     public void moveToCoord(int xCoord, int yCoord) throws Exception {
 
-        while (y < yCoord) {
-            turn(Direct.DOWN);
-            move(); // 78
-        }
-        while (x < xCoord) {
-            turn(Direct.RIGHT);
-            move();
-        }
-        while (x > xCoord) {
-            turn(Direct.LEFT);
-            move();
-
-        }
-        while (y > yCoord) {
-            turn(Direct.UP);
-            move();
-        }
-    }
-
-    public void moveToXCoord(int xCoord) throws Exception {
-
         while (x < xCoord) {
             turn(Direct.RIGHT);
             move(); // 78
         }
+
         while (x > xCoord) {
             turn(Direct.LEFT);
-            move();
-        }
-    }
+            move(); // 78
 
-    public void moveToYCoord(int yCoord) throws Exception{
+        }
 
         while (y < yCoord) {
             turn(Direct.DOWN);
             move(); // 78
         }
+
         while (y > yCoord) {
             turn(Direct.UP);
-            move();
+            move(); // 78
         }
+
     }
+
+
+
+
+
 
     protected void moveRandom() throws Exception {
         Random r = new Random();

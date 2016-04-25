@@ -14,7 +14,8 @@ public class Launcher {
 //        d.openBadiganRun();
 
         Badigan bad = new Badigan();
-        BadiganShopUI ui = new BadiganShopUI();
+        BadiganShopUI ui = new BadiganShopUI(bad, bad.getServ().getStk());
+        //Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(bad, bad.getServ().getStk());
     }
 
 }
