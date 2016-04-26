@@ -12,7 +12,7 @@ public class Rock extends AbstractComponent implements INonDestructable {
     public Rock(int x, int y) throws Exception{
 
         super(x, y);
-        this.wayable = 100;
+        this.wayable = 1_000;
         this.name = "R";
         this.x = x;
         this.y = y;

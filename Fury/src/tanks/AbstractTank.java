@@ -1,5 +1,6 @@
 package tanks;
 
+import actions.AgrIntel;
 import battleFields.*;
 import enumerations.Direct;
 import interfaces.IObjectable;
@@ -78,23 +79,6 @@ public abstract class AbstractTank implements IObjectable {
         sdr.processMove(this); // Slider 227
     }
 
-    // old ONE
-//    public boolean processPurityCheck() throws Exception {
-//
-//        if (getNextQuadrant() instanceof Brick || getNextQuadrant() instanceof HQ) {
-//            System.out.println("tank destroying the Brick!");
-//            fire();
-//            return true;
-//        } else if(getNextQuadrant() instanceof Plant) {
-//            return true;
-//        } else if(ifTankNearBFBorders()){
-//            return false;
-//        } else {
-//            return false;
-//        }
-//    }
-
-    // new ONE
     public boolean processPurityCheck() throws Exception {
 
         if (getNextQuadrant() instanceof Plant){
@@ -161,13 +145,12 @@ public abstract class AbstractTank implements IObjectable {
 
         Bullet bullet = new Bullet((x + 28), (y + 25), direction, this);
         sdr.processFire(bullet, this); // Slider 245
-        System.out.println(this + " fires");
     }
 
     public void moveToObject(IWayable obj) throws Exception {
 
-        int xCoord = obj.getXC();
-        int yCoord = obj.getYC();
+        int xCoord = obj.getX();
+        int yCoord = obj.getY();
 
         while (x < xCoord) {
             turn(Direct.RIGHT);
@@ -190,7 +173,9 @@ public abstract class AbstractTank implements IObjectable {
         }
     }
 
-    public void moveToCoord(int xCoord, int yCoord) throws Exception {
+    public void moveToCoord(AgrIntel.Coord c) throws Exception {
+
+        int xCoord = c.getXC() * 64, yCoord = c.getYC() * 64;
 
         while (x < xCoord) {
             turn(Direct.RIGHT);
@@ -214,11 +199,6 @@ public abstract class AbstractTank implements IObjectable {
         }
 
     }
-
-
-
-
-
 
     protected void moveRandom() throws Exception {
         Random r = new Random();

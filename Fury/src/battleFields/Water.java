@@ -10,7 +10,7 @@ public class Water extends AbstractComponent implements INonDestructable{
     public Water(int x, int y) throws Exception{
 
         super(x, y);
-        this.wayable = 1000;
+        this.wayable = 10_000;
         this.name = "W";
         this.x = x;
         this.y = y;

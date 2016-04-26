@@ -18,13 +18,4 @@ public class Plant extends AbstractComponent implements IWayable {
 
     }
 
-    @Override
-    public int getXC() {
-        return x;
-    }
-
-    @Override
-    public int getYC() {
-        return y;
-    }
 }

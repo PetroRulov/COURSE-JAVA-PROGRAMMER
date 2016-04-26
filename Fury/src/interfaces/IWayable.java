@@ -5,7 +5,9 @@ package interfaces;
  */
 public interface IWayable {
 
-    int getXC();
+    int getX();
 
-    int getYC();
+    int getY();
+
+    int getWayable();
 }

@@ -6,18 +6,18 @@ import tanks.AbstractTank;
 
 import java.util.ArrayList;
 
-public class Logic {
+public class AgrLogic {
 
     private AbstractTank tank;
     private Bullet bullet;
     private BattleField bf;
     private Slider sdr;
 
-    public Logic(Slider sdr, BattleField bf) throws Exception {
+    public AgrLogic(Slider sdr, BattleField bf, AbstractTank tank) throws Exception {
 
         this.sdr = sdr;
         this.bf = bf;
-        this.tank = sdr.getAgressor();
+        this.tank = /*sdr.getAgressor()*/ tank;
         this.bullet = sdr.getBullet();
     }
 
@@ -34,6 +34,16 @@ public class Logic {
 
         for(AbstractComponent i : list){
             if(i instanceof Rock){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean lineHasWater(ArrayList<AbstractComponent> list){
+
+        for(AbstractComponent i : list){
+            if(i instanceof Water){
                 return true;
             }
         }
@@ -109,6 +119,7 @@ public class Logic {
         return lL;
     }
 
+    // not wright!!!
     private String findLeftPlaceOfFire(ArrayList<AbstractComponent> list){
 
         String str = null;
@@ -124,24 +135,22 @@ public class Logic {
                     }
                 }
             }
-            System.out.println("flpof1 " + str);
             return str;
         } else {
-            for(AbstractComponent i : list){
-                if(i instanceof Water){
-                    if(i.getX() != 0){
-                        str = (i.getX() - bf.getSquad()) + "_" + 512;
+            for (AbstractComponent i : list) {
+                if (i instanceof Water) {
+                    if (i.getX() == 0) {
+                        str = (i.getX() + bf.getSquad()) + "_" + 512;
                         break;
                     } else {
-                        str = (i.getX() + bf.getSquad()) + "_" + 512;
+                        str = (i.getX() - bf.getSquad()) + "_" + 512;
                         break;
                     }
                 } else {
-                    str = "0_512";
+                    str = "192_512";
                     break;
                 }
             }
-            System.out.println("flpof2 + " + str);
             return str;
         }
     }
@@ -151,9 +160,12 @@ public class Logic {
         String str = findLeftPlaceOfFire(leftLine());
         if(str != null){
             int xCoord = Integer.parseInt(str.split("_")[0]);
-            //int yCoord = Integer.parseInt(str.split("_")[1]);
-            while(bf.getBattleField()[8][xCoord / 64] instanceof Water){
-                xCoord += 64;
+            while (bf.getBattleField()[8][xCoord / 64] instanceof Water) {
+                if(xCoord == 192){
+                    return findRightNotWater();
+                }else{
+                    xCoord -= 64;
+                }
             }
             return xCoord + "_" + 512;
         } else {
@@ -170,15 +182,21 @@ public class Logic {
         return rL;
     }
 
-    //not wright!!!
     private String findRightNotWater(){
 
         String str = findRightPlaceOfFire(rightLine());
         if(str != null){
             int xCoord = Integer.parseInt(str.split("_")[0]);
-            //int yCoord = Integer.parseInt(str.split("_")[1]);
-            while(bf.getBattleField()[8][xCoord / 64] instanceof Water){
-                xCoord -= 64;
+            if(xCoord == 512){
+                return xCoord + "_" + 512;
+            }else {
+                while (bf.getBattleField()[8][xCoord / 64] instanceof Water) {
+                    if(xCoord == 320){
+                        return findLeftNotWater();
+                    }else{
+                        xCoord += 64;
+                    }
+                }
             }
             return xCoord + "_" + 512;
         } else {
@@ -186,7 +204,6 @@ public class Logic {
         }
     }
 
-    //not wright!!!
     private String findRightPlaceOfFire(ArrayList<AbstractComponent> list){
 
         String str = null;
@@ -202,42 +219,24 @@ public class Logic {
                     }
                 }
             }
-            System.out.println("fRpof1 " + str);
             return str;
         } else {
-            for(AbstractComponent i : list){
-                if(i instanceof Water){
-                    if(i.getX() != 512){
-                        str = (i.getX() + bf.getSquad()) + "_" + 512;
+            for (AbstractComponent i : list) {
+                if (i instanceof Water) {
+                    if (i.getX() == 512) {
+                        str = (i.getX() - bf.getSquad()) + "_" + 512;
                         break;
                     } else {
-                        str = (i.getX() - bf.getSquad()) + "_" + 512;
+                        str = (i.getX() + bf.getSquad()) + "_" + 512;
                         break;
                     }
                 } else {
-                    str = "512_512";
+                    str = "320_512";
                     break;
                 }
             }
-            System.out.println("fRpof2 + " + str);
             return str;
         }
     }
-
-    public void infoShow(ArrayList<AbstractComponent> list){
-
-        for(AbstractComponent i : list){
-            System.out.println(i.toString());
-        }
-    }
-
-    private boolean tankOnLineOfFire() throws Exception {
-
-        if(tank.getX() == 256 || tank.getY() == 512){
-            return true;
-        }
-        return false;
-    }
-
 }
 

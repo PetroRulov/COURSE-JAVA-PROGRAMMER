@@ -17,13 +17,4 @@ public class Brick extends AbstractComponent implements IWayable{
         this.color = new Color(220, 50, 0);
     }
 
-    @Override
-    public int getXC() {
-        return x;
-    }
-
-    @Override
-    public int getYC() {
-        return y;
-    }
 }

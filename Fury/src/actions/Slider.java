@@ -2,7 +2,6 @@ package actions;
 
 import battleFields.*;
 import interfaces.IWayable;
-import interfaces.INonDestructable;
 import tanks.*;
 import tanks.AbstractTank;
 import enumerations.Direct;
@@ -12,22 +11,20 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Random;
 
 public class Slider extends JPanel {
 
     private BattleField bF = new BattleField();
+    private int[][] lab;
     private ArrayList<IWayable> freeWay;
     private String agrPos;
     private Bullet bullet;
     private T34 defender;
     private BT7 agressor;
-    private Logic log;
-    private AI ai;
+    private AgrLogic agrLog;
+    private AgrIntel agrInt;
 
     public Slider() throws Exception {
 
@@ -36,8 +33,9 @@ public class Slider extends JPanel {
         defender = new T34(this, bF, 64, 448, Direct.UP);
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
         bullet = new Bullet(600, 600, Direct.MINUS, agressor);
-        log = new Logic(this, bF);
-        ai = new AI(bF, freeWay, agressor);
+        agrLog = new AgrLogic(this, bF, agressor);
+        lab = setLab(bF.getBf());
+        agrInt = new AgrIntel(bF, lab, agressor);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
         frame.setLocation(500, 50);
@@ -50,28 +48,70 @@ public class Slider extends JPanel {
 
     public void runTheGame() throws Exception {
 
-        String str = log.findFrontNotWater();
-        System.out.println("SEEKED COORDINATS = " + str);
+        String str = agrLog.findFrontNotWater();
+        System.out.println("FIRING COORDINATES = " + str);
         if (str != null && !str.equals("256_512") ) {
             int xCoord = Integer.parseInt(str.split("_")[0]);
             int yCoord = Integer.parseInt(str.split("_")[1]);
-            //agressor.moveToCoord(xCoord, yCoord);
-            agressor.moveToObject(ai.scanObject(xCoord, yCoord));
+
+        AgrIntel.Coord start = agrInt.new Coord(agressor.getX() / 64, agressor.getY() / 64);
+        AgrIntel.Coord end = agrInt.new Coord(xCoord / 64, yCoord / 64);
+        AgrIntel.Coord[] path = agrInt.lookingForThePath(start, end);
+
+            for(AgrIntel.Coord c: path){
+                agressor.moveToCoord(c);
+            }
+            turningToHQ(agressor);
 
             // turning to fire on HQ
-            if(agressor.getX() > 256){
-                agressor.turn(Direct.LEFT);
-            }else if(agressor.getX() == 256){
-                agressor.turn(Direct.DOWN);
-            }else{
-                agressor.turn(Direct.RIGHT);
-            }
-            while (!(bF.getBattleField()[8][4] instanceof Black)) {
-                agressor.fire();
-            }
+
         } else if(str.equals("256_512")){
             System.err.println("!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!");
         }
+    }
+
+    private void turningToHQ(AbstractTank ogr) throws Exception {
+
+        if(ogr.getX() > 256){
+            ogr.turn(Direct.LEFT);
+        }else if(ogr.getX() == 256){
+            ogr.turn(Direct.DOWN);
+        }else{
+            ogr.turn(Direct.RIGHT);
+        }
+        while (!(bF.getBattleField()[8][4] instanceof Black)) {
+            ogr.fire();
+        }
+    }
+
+    public int switcherLab(String let){
+
+        switch(let) {
+            case "B":
+                return 2;
+            case "E":
+                return 0;
+            case "S":
+                return 0;
+            case "R":
+                return 0;
+            case "W":
+                return 0;
+            default:
+                return 1;
+        }
+    }
+
+    public int[][] setLab(String[][] map) throws Exception {
+
+        int[][] lab = new int[bF.getMNQ()][bF.getMNQ()];
+
+        for (int i = 0; i < bF.getMNQ(); i++){
+            for (int j = 0; j < bF.getMNQ(); j++){
+                lab[i][j] = switcherLab(map[i][j]);
+            }
+        }
+        return lab;
     }
 
     public boolean processInterception() throws Exception {
@@ -218,18 +258,8 @@ public class Slider extends JPanel {
             if (ifTankNearBFBorders(tank)) {
                 tank.direction = Direct.STOP;
             }
-            System.out.println("Moving permitted? " + tank.processPurityCheck() + " - " + tank.getNextQuadrant().toString());
             if(tank.processPurityCheck()){ // AT-83
                 moving(tank);
-            } else {
-
-                //should to be improoved
-                for (int i = 0; i < ai.nextObjApply().size(); i++){
-                    tank.moveToObject(ai.nextObjApply().get(i));
-
-                }
-
-
             }
         }
     }
@@ -285,9 +315,6 @@ public class Slider extends JPanel {
             if (abstractTank.getDirection() == Direct.DOWN) {
                 bullet.updateY(+pace);
             }
-//            if (abstractTank.getDirection() == Direct.STOP) {
-//                bullet.updateX(+pace);
-//            }
 
             processInterception();
             repaint();
@@ -306,12 +333,14 @@ public class Slider extends JPanel {
 
     public String defineAgressorPos() {
 
-        String str = "128_64";
+        String str = "64_0";
         int i = toRandomI();
-        if (i == 0) {
+        if(i == 0){
             str = "64_0";
-        } else {
-            str = i == 1 ? "448_0" : "320_64";
+        }else if(i == 1){
+            str = "128_64";
+        }else{
+            str = i == 2 ? "448_0" : "320_64";
         }
         return str;
     }
@@ -319,9 +348,14 @@ public class Slider extends JPanel {
     private int toRandomI() {
 
         Random r = new Random();
-        int i = r.nextInt(3);
+        int i = r.nextInt(4);
         return i;
     }
+
+
+
+
+
 
     //-!!!- M A G I C   B E L O W -!!!//
     @Override
@@ -346,10 +380,6 @@ public class Slider extends JPanel {
             bullet.drawComponent(g);
         }
     }
-
-//    public Logic getLog() {
-//        return log;
-//    }
 
     public BT7 getAgressor() {
         return agressor;
