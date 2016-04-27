@@ -46,7 +46,7 @@ public class AgrLogic {
 
         String str = null;
         System.out.println("fFPofFire: Checking FrontLine");
-        AbstractComponent checked = null;
+        AbstractComponent checked = getACbyCoords(256, 0);;
         if(lineHasRock(line)){
             for(AbstractComponent i : line) {
                 if (i instanceof Rock) {
@@ -58,8 +58,13 @@ public class AgrLogic {
             if(checked.getY() != 448){
                 str = 256 + "_" + (checked.getY() + bf.getSquad());
             } else { // if HQ is closed by a Rock from front side
-                System.out.println("fFPofFire: FrontLine is closed by Rock, try LeftLine");
-                str = findLeftNotWater();
+                if(tank.getX() < 320){
+                    System.out.println("fFPofFire: FrontLine is closed by Rock, try LeftLine");
+                    str = findLeftNotWater();
+                } else {
+                    System.out.println("fFPofFire: FrontLine is closed by Rock, try RightLine");
+                    str = findRightNotWater();
+                }
             }
             return str;
         } else { // if there is no Rocks at all
@@ -123,7 +128,7 @@ public class AgrLogic {
 
         String str = null;
         System.out.println("findLeftPlaceOfFire: Checking LeftLine");
-        AbstractComponent checked = null;
+        AbstractComponent checked = getACbyCoords(192, 512);
         if(lineHasRock(line)){
             for(AbstractComponent i : line) {
                 if (i instanceof Rock) {
@@ -217,7 +222,7 @@ public class AgrLogic {
 
         String str = null;
         System.out.println("findRightPlaceOfFire: Checking RIGHTLine");
-        AbstractComponent checked = null;
+        AbstractComponent checked = getACbyCoords(320, 512);
         if (lineHasRock(line)) {
             System.out.println("RightLine:");
             for (AbstractComponent i : line) {
@@ -231,7 +236,8 @@ public class AgrLogic {
             if (checked.getX() != 320 && !(isRockOrWater(checked.getX(), 448))) {
                 str = (checked.getX() - bf.getSquad()) + "_" + 512;
             } else {
-                str = "!!!HQ IS UNDESTRUCTABLE!!!";
+                System.out.println("TRY LEFTLINE AGAIN");
+                str = findLeftNotWater();
             }
             return str;
         } else { // if there is no Rock in right line
@@ -263,6 +269,19 @@ public class AgrLogic {
            return true;
         }
         return false;
+    }
+
+    public AbstractComponent getACbyCoords(int x, int y){
+
+        AbstractComponent ac = null;
+        for(AbstractComponent[] lines : bf.getBattleField()){
+            for(AbstractComponent i : lines){
+                if(i.getX() == x && i.getY() == y){
+                    ac = i;
+                }
+            }
+        }
+        return ac;
     }
 }
 
