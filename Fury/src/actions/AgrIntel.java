@@ -97,10 +97,10 @@ public class AgrIntel {
                 push(new Coord(c.getXC() - 1, c.getYC()), wayLength);
             }
         }
-        System.out.println("LENGTH OF THE PATH IS " + wayLength + " STEPS.");
+        System.out.println("AgrIntel: LENGTH OF THE PATH IS " + wayLength + " STEPS.");
 
         if(map[end.getYC()][end.getXC()]==Integer.MAX_VALUE){
-            System.err.println("THERE PATH CAN NOT BE FOUND!!!");
+            System.err.println("PATH CAN NOT BE FOUND!!!");
             return null;
         } else
             System.out.println("SEARCH FOR THE OPTIMAL PATH IS OVER, GO AHEAD!!!");

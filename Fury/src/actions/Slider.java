@@ -48,8 +48,9 @@ public class Slider extends JPanel {
 
     public void runTheGame() throws Exception {
 
+
         String str = agrLog.findFrontNotWater();
-        System.out.println("FIRING COORDINATES = " + str);
+        System.out.println("Slider: FIRING COORDINATES = " + str);
         if (str != null && !str.equals("256_512") ) {
             int xCoord = Integer.parseInt(str.split("_")[0]);
             int yCoord = Integer.parseInt(str.split("_")[1]);

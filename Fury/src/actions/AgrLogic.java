@@ -5,6 +5,7 @@ import enumerations.Direct;
 import tanks.AbstractTank;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class AgrLogic {
 
@@ -21,18 +22,19 @@ public class AgrLogic {
         this.bullet = sdr.getBullet();
     }
 
-    private ArrayList<AbstractComponent> frontLine(){
+    private AbstractComponent[] frontLine(){
 
-        ArrayList<AbstractComponent> fL = new ArrayList<AbstractComponent>();
-        for(int i = bf.getMNQ() - 1; i > 0; i--){
-            fL.add(bf.getBattleField()[i][4]);
+        AbstractComponent[] frontL = new AbstractComponent[bf.getMNQ() - 1];
+        for(int i = bf.getMNQ() - 2, j = 0; i >= 0; i--, j++){
+            frontL[j] = bf.getBattleField()[i][4];
+            System.out.println(frontL[j].toString() + ", ");
         }
-        return fL;
+        return frontL;
     }
 
-    private boolean lineHasRock(ArrayList<AbstractComponent> list){
+    private boolean lineHasRock(AbstractComponent[] line){
 
-        for(AbstractComponent i : list){
+        for(AbstractComponent i : line){
             if(i instanceof Rock){
                 return true;
             }
@@ -40,38 +42,30 @@ public class AgrLogic {
         return false;
     }
 
-    private boolean lineHasWater(ArrayList<AbstractComponent> list){
-
-        for(AbstractComponent i : list){
-            if(i instanceof Water){
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private String findFrontPlaceOfFire(ArrayList<AbstractComponent> list){
+    private String findFrontPlaceOfFire(AbstractComponent[] line){ // on line x = 256
 
         String str = null;
-        if(lineHasRock(list)){
-            for(AbstractComponent i : list){
-                if(i instanceof Rock){
-                    if(i.getY() != 448){
-                        str = i.getX() + "_" + (i.getY() + bf.getSquad());
-                        break;
-                    } else { // if HQ is closed by a Rock from front side
-                        if(tank.getX() < 320){
-                            str = findLeftNotWater();
-                        }else{
-                            str = findRightNotWater();
-                        }
-                        break;
-                    }
+        System.out.println("fFPofFire: Checking FrontLine");
+        AbstractComponent checked = null;
+        if(lineHasRock(line)){
+            for(AbstractComponent i : line) {
+                if (i instanceof Rock) {
+                    checked = i;
+                    System.out.println("front-checked = " + checked.toString());
+                    break;
                 }
+            }
+            if(checked.getY() != 448){
+                str = 256 + "_" + (checked.getY() + bf.getSquad());
+            } else { // if HQ is closed by a Rock from front side
+                System.out.println("fFPofFire: FrontLine is closed by Rock, try LeftLine");
+                str = findLeftNotWater();
             }
             return str;
         } else { // if there is no Rocks at all
-            for(AbstractComponent i : list){
+            System.out.println("RightLine Water line:");
+            for(AbstractComponent i : line){
+                System.out.println(i.toString());
                 if(i instanceof Water){
                     if(i.getY() != 0){
                         str = i.getX() + "_" + (i.getY() - bf.getSquad());
@@ -80,7 +74,7 @@ public class AgrLogic {
                         str = i.getX() + "_" + (i.getY() + bf.getSquad());
                         break;
                     }
-                } else {
+                } else { // if there is no Water and Rock
                     str = "256_0";
                     break;
                 }
@@ -97,6 +91,10 @@ public class AgrLogic {
             int yCoord = Integer.parseInt(str.split("_")[1]);
             while(bf.getBattleField()[yCoord / bf.getSquad()][xCoord / bf.getSquad()] instanceof Water){
                 yCoord += bf.getSquad();
+                if(yCoord == 512){
+                    System.out.println("findFrontNotWater: FrontLine is Closed by Water: try LeftLine");
+                    return findLeftNotWater();
+                }
             }
             return xCoord + "_" + yCoord;
         } else {
@@ -107,49 +105,57 @@ public class AgrLogic {
                 System.out.println("RIGHT Way chosen");
                 return findRightNotWater();
             }
-       }
+        }
     }
 
-    private ArrayList<AbstractComponent> leftLine(){
+    private AbstractComponent[] leftLine(){
 
-        ArrayList<AbstractComponent> lL = new ArrayList<AbstractComponent>();
-        for(int i = (bf.getMNQ() / 2 - 1); i >= 0 ; i--){
-            lL.add(bf.getBattleField()[8][i]);
+        AbstractComponent[]lL = new AbstractComponent[4];
+        System.out.println("LEFTLine:");
+        for(int i = (bf.getMNQ() / 2 - 1), j = 0; i >= 0 ; i--, j++){
+            lL[j]=bf.getBattleField()[8][i];
+            System.out.println(lL[j].toString() + ", ");
         }
         return lL;
     }
 
-    // not wright!!!
-    private String findLeftPlaceOfFire(ArrayList<AbstractComponent> list){
+    private String findLeftPlaceOfFire(AbstractComponent[] line){
 
         String str = null;
-        if(lineHasRock(list)){
-            for(AbstractComponent i : list){
-                if(i instanceof Rock){
-                    if(i.getX() != 192){
-                        str = (i.getX() + bf.getSquad() ) + "_" + 512;
-                        break;
-                    } else {
-                        str = findRightNotWater();
-                        break;
-                    }
+        System.out.println("findLeftPlaceOfFire: Checking LeftLine");
+        AbstractComponent checked = null;
+        if(lineHasRock(line)){
+            for(AbstractComponent i : line) {
+                if (i instanceof Rock) {
+                    checked = i;
+                    System.out.println("left-checked = " + checked.toString());
+                    break;
                 }
+            }
+            if(checked.getX() != 192 && !(isRockOrWater(checked.getX(), 448)) ){
+                str = (checked.getX() + bf.getSquad() ) + "_" + 512;
+            } else {
+                System.out.println("findLeftPlaceOfFire: LeftLine is closed: try RIGHT LINE!");
+                str = findRightNotWater();
             }
             return str;
         } else {
-            for (AbstractComponent i : list) {
+            for(AbstractComponent i : line) {
                 if (i instanceof Water) {
-                    if (i.getX() == 0) {
-                        str = (i.getX() + bf.getSquad()) + "_" + 512;
-                        break;
-                    } else {
-                        str = (i.getX() - bf.getSquad()) + "_" + 512;
-                        break;
-                    }
-                } else {
-                    str = "192_512";
+                    checked = i;
+                    System.out.println("right-checked = " + checked);
                     break;
                 }
+            }
+            if (checked.getX() == 0) {
+                System.out.println("MOVE BEFORE the Water");
+                str = (checked.getX() + bf.getSquad()) + "_" + 512;;
+            } else if(checked.getX() != 0) {
+                System.out.println("MOVE BEHIND the Water");
+                str = (checked.getX() - bf.getSquad()) + "_" + 512;;
+            } else {
+                System.out.println("FLPofF: no Water, LeftLine is opened - MOVE AND FIRE");
+                str = "192_512";
             }
             return str;
         }
@@ -162,6 +168,7 @@ public class AgrLogic {
             int xCoord = Integer.parseInt(str.split("_")[0]);
             while (bf.getBattleField()[8][xCoord / 64] instanceof Water) {
                 if(xCoord == 192){
+                    System.out.println("findLeftNotWater: LeftLine is Closed by Water: try RightLine");
                     return findRightNotWater();
                 }else{
                     xCoord -= 64;
@@ -173,11 +180,13 @@ public class AgrLogic {
         }
     }
 
-    private ArrayList<AbstractComponent> rightLine(){
+    public AbstractComponent[] rightLine(){
 
-        ArrayList<AbstractComponent> rL = new ArrayList<AbstractComponent>();
-        for(int i = 5; i < bf.getMNQ(); i++){
-                rL.add(bf.getBattleField()[8][i]);
+        AbstractComponent[] rL = new AbstractComponent[4];
+        System.out.println("RIGHTLine:");
+        for(int i = 5, j = 0; i < bf.getMNQ(); i++, j++){
+            rL[j] = bf.getBattleField()[8][i];
+            System.out.println(rL[j].toString() + ", ");
         }
         return rL;
     }
@@ -204,39 +213,56 @@ public class AgrLogic {
         }
     }
 
-    private String findRightPlaceOfFire(ArrayList<AbstractComponent> list){
+    private String findRightPlaceOfFire(AbstractComponent[] line) {
 
         String str = null;
-        if(lineHasRock(list)){
-            for(AbstractComponent i : list){
-                if(i instanceof Rock){
-                    if(i.getX() != 320){
-                        str = (i.getX() - bf.getSquad() ) + "_" + 512;
-                        break;
-                    } else {
-                        str = "!!!HQ IS UNDESTRUCTABLE!!!";
-                        break;
-                    }
-                }
-            }
-            return str;
-        } else {
-            for (AbstractComponent i : list) {
-                if (i instanceof Water) {
-                    if (i.getX() == 512) {
-                        str = (i.getX() - bf.getSquad()) + "_" + 512;
-                        break;
-                    } else {
-                        str = (i.getX() + bf.getSquad()) + "_" + 512;
-                        break;
-                    }
-                } else {
-                    str = "320_512";
+        System.out.println("findRightPlaceOfFire: Checking RIGHTLine");
+        AbstractComponent checked = null;
+        if (lineHasRock(line)) {
+            System.out.println("RightLine:");
+            for (AbstractComponent i : line) {
+                System.out.println(i.toString());
+                if (i instanceof Rock) {
+                    checked = i;
+                    System.out.println("right-checked = " + checked);
                     break;
                 }
             }
+            if (checked.getX() != 320 && !(isRockOrWater(checked.getX(), 448))) {
+                str = (checked.getX() - bf.getSquad()) + "_" + 512;
+            } else {
+                str = "!!!HQ IS UNDESTRUCTABLE!!!";
+            }
+            return str;
+        } else { // if there is no Rock in right line
+            for(AbstractComponent i : line) {
+                if (i instanceof Water) {
+                    checked = i;
+                    System.out.println("right-checked = " + checked);
+                    break;
+                }
+            }
+            if (checked.getX() != 512) {
+                System.out.println("MOVE BEHIND the Water");
+                str = (checked.getX() + bf.getSquad()) + "_" + 512;
+            } else if(checked.getX() == 512) {
+                System.out.println("MOVE BEFORE the Water");
+                str = (checked.getX() - bf.getSquad()) + "_" + 512;
+            } else {
+                    System.out.println("FRPofF: no Water, RightLine is opened - MOVE AND FIRE");
+                    str = "320_512";
+            }
             return str;
         }
+    }
+
+    private boolean isRockOrWater(int x, int y){
+
+        if(bf.getBattleField()[y / bf.getSquad()][x / bf.getSquad()] instanceof Rock ||
+        bf.getBattleField()[y / bf.getSquad()][x / bf.getSquad()] instanceof Water){
+           return true;
+        }
+        return false;
     }
 }
 
