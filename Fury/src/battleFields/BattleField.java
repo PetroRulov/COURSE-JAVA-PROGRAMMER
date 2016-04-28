@@ -16,7 +16,7 @@ public class BattleField {
     public BattleField() throws Exception {
         this.sFs = new StringFields();
         this.bf = sFs.defineStringBF();
-        this.battleField = fillBFWithObjects(this.bf);
+        this.battleField = fillBFWithObjects(bf);
 
     }
 

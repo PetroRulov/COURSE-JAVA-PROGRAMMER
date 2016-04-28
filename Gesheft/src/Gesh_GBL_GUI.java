@@ -1,4 +1,6 @@
+import domain.Sale;
 import domain.Stock;
+import interfaces.IDataProvider;
 import waters.Water;
 
 import javax.swing.*;
@@ -10,13 +12,17 @@ import java.util.Vector;
 
 public class Gesh_GBL_GUI {
 
-    //private Badigan bad;
-    private Stock stk;
+    private IDataProvider dataProvider;
+    private Service serv;
+    private Sale sale;
+//    private Client clt;
+//    private Stock stk;
 
-    public Gesh_GBL_GUI(Stock stk) {
+    public Gesh_GBL_GUI(Service serv) {
 
+        this.serv = serv;
         //this.bad = bad;
-        this.stk = stk;
+        //this.stk = stk;
 
         JFrame f = new JFrame("\"BADIGAN\" ALCOHOL SHOP TRANSACTION");
         f.setMinimumSize(new Dimension(800, 600));
@@ -38,6 +44,7 @@ public class Gesh_GBL_GUI {
         //date.setBorder(solidBorder);
         date.setFont(new Font("Garamond", Font.BOLD, 20));
         date.setForeground(Color.ORANGE);
+
         JTextField tfDate = new JTextField();
         tfDate.setColumns(15);
         panel.add(date, new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
@@ -75,8 +82,8 @@ public class Gesh_GBL_GUI {
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
         choose.setForeground(Color.ORANGE);
         panel.add(choose, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-        Vector<Water> wat = stk.getVat();
-        JComboBox combo = new JComboBox(wat);
+        Vector<Water> vat = serv.getBad().getStk().getVat();;
+        JComboBox combo = new JComboBox(vat);
         panel.add(combo, new GridBagConstraints(1, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 3, 0, 0), 0, 0));
 
         JLabel quant = new JLabel("Quantity: ");

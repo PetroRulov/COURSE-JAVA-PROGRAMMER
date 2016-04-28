@@ -19,9 +19,9 @@ public class Stock implements IDataProvider {
         this.wat = new Water[100];
         this.waters = new ArrayList<>();
         this.vat = new Vector<>();
-        initStock();
-        fillStock();
-        fillVectorStock();
+        initStock(); // filling Array
+        fillStock(); // filling List
+        fillVectorStock(); // filling Vector
 
     }
 
@@ -42,7 +42,7 @@ public class Stock implements IDataProvider {
 
 
     /**-T h e     q u a n t i t y     o f      G o o d s     i n     S t o c k-*/
-    public void printWaterArr() {
+    public void printWat() {
 
         System.out.println();
         System.out.println("-----------------------------" + "\"BADIGAN\" WAREHOUSE" + "------------------------------|");
@@ -192,7 +192,6 @@ public class Stock implements IDataProvider {
         wat[66] = new Tequila(Drink.TEQUILA, "1800", Tare.GLASS, 1.0, 25, 561.5, 1184.0);
 
     }
-
 
     private void fillStock() {
 

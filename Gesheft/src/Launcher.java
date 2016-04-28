@@ -13,13 +13,16 @@ public class Launcher {
 //        Demo d = new Demo();
 //        d.openBadiganRun();
 
-        //Badigan bad = new Badigan();
-        //BadiganShopUI ui = new BadiganShopUI(bad.getServ().getStk());
-        //Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(bad.getServ().getStk());
+        Service serv = new Service();
+        BadiganShopUI ui = new BadiganShopUI(serv);
 
-        BadiganShopUI ui = new BadiganShopUI(/*bad.getServ().getStk()*/);
-        ui.setStk(new Stock());
-        ui.createSellingPannel();
+//        Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(serv);
+
+        // !!! something uncleared
+//        Service serv = new Service(/*bad.getServ().getStk()*/);
+//        BadiganShopUI ui = new BadiganShopUI(serv);
+//        ui.setStk(new Stock());
+//        ui.createSellingPannel();
     }
 
 }
