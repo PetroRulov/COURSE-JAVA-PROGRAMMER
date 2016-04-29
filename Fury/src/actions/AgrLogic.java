@@ -1,25 +1,54 @@
 package actions;
 
 import battleFields.*;
+import domains.Coord;
 import enumerations.Direct;
 import tanks.AbstractTank;
-
-import java.util.ArrayList;
-import java.util.Vector;
 
 public class AgrLogic {
 
     private AbstractTank tank;
-    private Bullet bullet;
     private BattleField bf;
     private Slider sdr;
 
     public AgrLogic(Slider sdr, BattleField bf, AbstractTank tank) throws Exception {
 
-        this.sdr = sdr;
+        this.tank = tank;
         this.bf = bf;
-        this.tank = /*sdr.getAgressor()*/ tank;
-        this.bullet = sdr.getBullet();
+        this.sdr = sdr;
+    }
+
+    public void agressorsStartAttack() throws Exception {
+
+        String str = findFrontNotWater();
+        System.out.println("Slider: FIRING COORDINATES = " + str);
+        if (str != null && !str.equals("256_512") ) {
+            int xCoord = Integer.parseInt(str.split("_")[0]);
+            int yCoord = Integer.parseInt(str.split("_")[1]);
+            Coord start = new Coord(tank.getX() / 64, tank.getY() / 64);
+            Coord end = new Coord(xCoord / 64, yCoord / 64);
+            Coord[] path = sdr.getAgrInt().lookingForThePath(start, end);
+            for(Coord c: path){
+                tank.moveToCoord(c);
+            }
+            turningToHQ();
+        } else if(str.equals("256_512")){
+            System.err.println("!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!");
+        }
+    }
+
+    private void turningToHQ() throws Exception {
+
+        if(tank.getX() > 256){
+            tank.turn(Direct.LEFT);
+        }else if(tank.getX() == 256){
+            tank.turn(Direct.DOWN);
+        }else{
+            tank.turn(Direct.RIGHT);
+        }
+        while (!(bf.getBattleField()[8][4] instanceof Black)) {
+            tank.fire();
+        }
     }
 
     private AbstractComponent[] frontLine(){

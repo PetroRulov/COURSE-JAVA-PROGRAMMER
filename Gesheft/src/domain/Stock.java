@@ -14,14 +14,17 @@ public class Stock implements IDataProvider {
     private List<Water> waters;
     private Vector<Water> vat;
 
+
     public Stock(){
 
         this.wat = new Water[100];
         this.waters = new ArrayList<>();
         this.vat = new Vector<>();
+
         initStock(); // filling Array
         fillStock(); // filling List
         fillVectorStock(); // filling Vector
+
 
     }
 
@@ -39,7 +42,6 @@ public class Stock implements IDataProvider {
         fillVectorStock();
         return new Vector<> (vat);
     }
-
 
     /**-T h e     q u a n t i t y     o f      G o o d s     i n     S t o c k-*/
     public void printWat() {
@@ -102,7 +104,6 @@ public class Stock implements IDataProvider {
         for (int i = 0; i < waters.size(); i++) {
             if (waters.get(i) != null) {
                 x += waters.get(i).getQuant();
-
             }
         }
         return x;
@@ -192,6 +193,7 @@ public class Stock implements IDataProvider {
         wat[66] = new Tequila(Drink.TEQUILA, "1800", Tare.GLASS, 1.0, 25, 561.5, 1184.0);
 
     }
+
 
     private void fillStock() {
 

@@ -3,37 +3,19 @@ package actions;
 import java.util.*;
 
 import battleFields.*;
-import interfaces.*;
-import org.jetbrains.annotations.Nullable;
+import domains.Coord;
 import tanks.*;
-import enumerations.Direct;
+
+import org.jetbrains.annotations.Nullable;
 
 public class AgrIntel {
 
     private BattleField bat;
-    private List freeWay;
-    private int[][] map;
     private int[][] lab;
     private AbstractTank tank;
-    public class Coord{
+    private List freeWay;
+    private int[][] map;
 
-        private int xC;
-        private int yC;
-
-        Coord(int xC, int yC){
-            this.xC = xC;
-            this.yC = yC;
-        }
-
-        public int getXC() {
-            return xC;
-        }
-
-        public int getYC() {
-            return yC;
-        }
-
-    };
 
     public AgrIntel(){}
 
@@ -50,7 +32,7 @@ public class AgrIntel {
 
     public ArrayList<Coord> getFreeWay() {return new ArrayList<Coord>(freeWay);}
 
-    private void push(Coord c, int wayLength){
+    private void setPathLength(Coord c, int wayLength){
 
         if(map[c.getYC()][c.getXC()] <= wayLength){
             return;
@@ -77,7 +59,7 @@ public class AgrIntel {
         for(int i = 0; i < map.length; i++){
             Arrays.fill(map[i], Integer.MAX_VALUE);
         }
-        push(start, 0);
+        setPathLength(start, 0);
 
         while((c = takeOff()) != null){
             if(c.equals(end)){
@@ -85,16 +67,16 @@ public class AgrIntel {
             }
             wayLength = map[c.getYC()][c.getXC()] + lab[c.getYC()][c.getXC()];
             if((c.getYC() + 1 <lab.length) && lab[c.getYC() + 1][c.getXC()] != 0){
-                push(new Coord(c.getXC(), c.getYC() + 1), wayLength);
+                setPathLength(new Coord(c.getXC(), c.getYC() + 1), wayLength);
             }
             if((c.getYC() - 1 >= 0) && (lab[c.getYC() - 1][c.getXC()] != 0)){
-                push(new Coord(c.getXC(), c.getYC() - 1), wayLength);
+                setPathLength(new Coord(c.getXC(), c.getYC() - 1), wayLength);
             }
             if((c.getXC() + 1 < lab[c.getYC()].length) && (lab[c.getYC()][c.getXC() + 1] != 0)){
-                push(new Coord(c.getXC() + 1, c.getYC()), wayLength);
+                setPathLength(new Coord(c.getXC() + 1, c.getYC()), wayLength);
             }
             if((c.getXC() - 1 >= 0) && (lab[c.getYC()][c.getXC() - 1] != 0)){
-                push(new Coord(c.getXC() - 1, c.getYC()), wayLength);
+                setPathLength(new Coord(c.getXC() - 1, c.getYC()), wayLength);
             }
         }
         System.out.println("AgrIntel: LENGTH OF THE PATH IS " + wayLength + " STEPS.");
@@ -104,13 +86,13 @@ public class AgrIntel {
             return null;
         } else
             System.out.println("SEARCH FOR THE OPTIMAL PATH IS OVER, GO AHEAD!!!");
-        List route = new ArrayList();
+        List route = new ArrayList<Coord>();
         route.add(end);
         int x = end.getXC();
         int y = end.getYC();
         wayLength = Integer.MAX_VALUE;
         while((x!=start.getXC())||(y!=start.getYC())){
-            if(y !=8){
+            if(y != (bat.getMNQ() - 1)){
                 if(map[y + 1][x] < wayLength){pX = x; pY= y + 1; p = map[y + 1][x];}
             } else {
                 if(map[y][x] < wayLength){pX = x; pY= y; p = map[y][x];}
@@ -122,7 +104,7 @@ public class AgrIntel {
                 if(map[y][x] < wayLength){pX = x; pY = y; p = map[y][x];}
             }
 
-            if(x != 8){
+            if(x != (bat.getMNQ() - 1)){
                 if(map[y][x + 1] < wayLength){pX = x + 1; pY = y; p = map[y][x + 1];}
             } else {
                 if(map[y][x] < wayLength){pX = x; pY = y; p = map[y][x];}
@@ -136,6 +118,7 @@ public class AgrIntel {
             x = pX;
             y = pY;
             wayLength = p;
+
             route.add(new Coord(x,y));
         }
 
@@ -143,15 +126,6 @@ public class AgrIntel {
         p = route.size();
         for(Object coord: route)
             path[--p] = (Coord) coord;
-        return path;
-    }
-
-    private Coord[] setPath(List route){
-
-        int steps = route.size();
-        Coord[] path = new Coord[steps];
-        for(Object coord: route)
-            path[--steps] = (Coord) coord;
         return path;
     }
 }

@@ -1,6 +1,7 @@
 import domain.Client;
 import domain.Sale;
 import domain.Stock;
+import waters.Water;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -122,6 +123,13 @@ public class Badigan {
         sales.add( new Sale(17032016, clts.get(4), stk.getWat()[3], 2));
         sales.add( new Sale(17032016, clts.get(7), stk.getWat()[0], 3));
         sales.add( new Sale(17032016, clts.get(5), stk.getWat()[65], 1));
+
+    }
+
+    public void sellTransaction(int date, Client guest, Water wat, int quant){
+
+        Sale sale = new Sale(date, guest, wat, quant);
+        sales.add(sale);
 
     }
 }

@@ -72,6 +72,13 @@ public class Client {
         return false;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
 }
 
 

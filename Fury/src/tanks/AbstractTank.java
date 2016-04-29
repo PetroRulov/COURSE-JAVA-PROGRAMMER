@@ -2,10 +2,13 @@ package tanks;
 
 import actions.AgrIntel;
 import battleFields.*;
+import domains.Coord;
+import domains.Bullet;
+//import actions.Bullet;
 import enumerations.Direct;
 import interfaces.IObjectable;
 import actions.Slider;
-import actions.Bullet;
+
 import interfaces.IWayable;
 
 import java.awt.*;
@@ -147,55 +150,29 @@ public abstract class AbstractTank implements IObjectable {
         sdr.processFire(bullet, this); // Slider 245
     }
 
-    public void moveToObject(IWayable obj) throws Exception {
-
-        int xCoord = obj.getX();
-        int yCoord = obj.getY();
-
-        while (x < xCoord) {
-            turn(Direct.RIGHT);
-            move(); // 78
-        }
-
-        while (x > xCoord) {
-            turn(Direct.LEFT);
-            move(); // 78
-        }
-
-        while (y < yCoord) {
-            turn(Direct.DOWN);
-            move(); // 78
-        }
-
-        while (y > yCoord) {
-            turn(Direct.UP);
-            move(); // 78
-        }
-    }
-
-    public void moveToCoord(AgrIntel.Coord c) throws Exception {
+    public void moveToCoord(Coord c) throws Exception {
 
         int xCoord = c.getXC() * 64, yCoord = c.getYC() * 64;
 
         while (x < xCoord) {
             turn(Direct.RIGHT);
-            move(); // 78
+            move(); // 79
         }
 
         while (x > xCoord) {
             turn(Direct.LEFT);
-            move(); // 78
+            move(); // 79
 
         }
 
         while (y < yCoord) {
             turn(Direct.DOWN);
-            move(); // 78
+            move(); // 79
         }
 
         while (y > yCoord) {
             turn(Direct.UP);
-            move(); // 78
+            move(); // 79
         }
 
     }

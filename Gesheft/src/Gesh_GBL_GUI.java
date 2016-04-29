@@ -1,21 +1,25 @@
+import domain.Client;
 import domain.Sale;
 import domain.Stock;
 import interfaces.IDataProvider;
 import waters.Water;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.Dimension;
 import java.text.NumberFormat;
-import java.util.Vector;
+import java.util.*;
 
 public class Gesh_GBL_GUI {
 
     private IDataProvider dataProvider;
     private Service serv;
-    private Sale sale;
-//    private Client clt;
+    //private Sale sale;
+    private int watIndex = 0;
 //    private Stock stk;
 
     public Gesh_GBL_GUI(Service serv) {
@@ -59,32 +63,41 @@ public class Gesh_GBL_GUI {
         panel.add(yName, new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
         panel.add(tfName, new GridBagConstraints(1, 1, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
-//        JLabel choose = new JLabel("Choose the good: ");
-//        Water[] wat = stk.getWat();
-//        ButtonGroup watGroup = new ButtonGroup();
-//        choose.setFont(new Font("Garamond", Font.BOLD, 20));
-//        choose.setForeground(Color.ORANGE);
-//
-//        JPanel pWat = new JPanel();
-//        pWat.setLayout(new GridLayout(wat.length, 0));
-//        pWat.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
-//        for(Water w : wat){
-//            if(w != null){
-//                JRadioButton rb = new JRadioButton(w.toString());
-//                watGroup.add(rb);
-//                pWat.add(rb);
-//            }
-//        }
-//        panel.add(choose, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-//        panel.add(pWat, new GridBagConstraints(1, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 3, 0, 0), 0, 0));
-
         JLabel choose = new JLabel("Choose the good: ");
+        List<Water> wat = serv.getBad().getStk().getWaters();
+        ButtonGroup watGroup = new ButtonGroup();
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
         choose.setForeground(Color.ORANGE);
+
+        JPanel pWat = new JPanel();
+        pWat.setLayout(new GridLayout(wat.size(), 0));
+        pWat.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+
+        ActionListener rbListener = new RBListener();
+
+        for(int i = 0; i < wat.size(); i++){
+            if(wat.get(i) != null){
+                JRadioButton rb = new JRadioButton(wat.get(i).toString());
+                rb.setActionCommand(String.valueOf(i));
+                rb.addActionListener(rbListener);
+                if(i==0){
+                    rb.setSelected(true);
+                }
+                watGroup.add(rb);
+                pWat.add(rb);
+            }
+        }
+
         panel.add(choose, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-        Vector<Water> vat = serv.getBad().getStk().getVat();;
-        JComboBox combo = new JComboBox(vat);
-        panel.add(combo, new GridBagConstraints(1, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 3, 0, 0), 0, 0));
+        panel.add(pWat, new GridBagConstraints(1, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 3, 0, 0), 0, 0));
+
+//        JLabel choose = new JLabel("Choose the good: ");
+//        choose.setFont(new Font("Garamond", Font.BOLD, 20));
+//        choose.setForeground(Color.ORANGE);
+//        panel.add(choose, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+//        Vector<Water> vat = serv.getBad().getStk().getVat();;
+//        JComboBox combo = new JComboBox(vat);
+//        panel.add(combo, new GridBagConstraints(1, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 3, 0, 0), 0, 0));
 
         JLabel quant = new JLabel("Quantity: ");
         quant.setFont(new Font("Garamond", Font.BOLD, 20));
@@ -100,7 +113,35 @@ public class Gesh_GBL_GUI {
         buy.setFont(new Font("Garamond", Font.BOLD, 20));
         panel.add(buy, new GridBagConstraints(1, 4, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
+        buy.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int date = Integer.parseInt(tfDate.getText());
+                Client guest = new Client();
+                guest.setName(tfName.getText());
+
+                Water wat = serv.getBad().getStk().getWaters().get(watIndex);
+
+                int quant = Integer.parseInt(tfQuant.getText());
+                Sale sale = new Sale(date, guest, wat, quant);
+                sale.saleInfoShow();
+                serv.getBad().sellTransaction(date, guest, wat, quant);
+            }
+        });
+
         return panel;
+    }
+
+    private class RBListener implements ActionListener {
+
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+            watIndex = Integer.parseInt(e.getActionCommand());
+        }
     }
 }
 

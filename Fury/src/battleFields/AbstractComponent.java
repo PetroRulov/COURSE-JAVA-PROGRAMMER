@@ -1,6 +1,7 @@
 package battleFields;
 
-import actions.Bullet;
+//import actions.Bullet;
+import domains.Bullet;
 import actions.Slider;
 import interfaces.IDestroyable;
 import interfaces.IDrawable;

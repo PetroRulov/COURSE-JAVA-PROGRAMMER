@@ -5,6 +5,7 @@ import interfaces.IWayable;
 import tanks.*;
 import tanks.AbstractTank;
 import enumerations.Direct;
+import domains.*;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -17,7 +18,7 @@ import java.util.Random;
 public class Slider extends JPanel {
 
     private BattleField bF = new BattleField();
-    private int[][] lab;
+    private int[][] lab; // how the tanks see the BattleField;
     private ArrayList<IWayable> freeWay;
     private String agrPos;
     private Bullet bullet;
@@ -33,9 +34,9 @@ public class Slider extends JPanel {
         defender = new T34(this, bF, 64, 448, Direct.UP);
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
         bullet = new Bullet(600, 600, Direct.MINUS, agressor);
-        agrLog = new AgrLogic(this, bF, agressor);
         lab = setLab(bF.getBf());
         agrInt = new AgrIntel(bF, lab, agressor);
+        agrLog = new AgrLogic(this, bF, agressor);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
         frame.setLocation(500, 50);
@@ -46,43 +47,23 @@ public class Slider extends JPanel {
         frame.setVisible(true);
     }
 
-    public void runTheGame() throws Exception {
-
-
-        String str = agrLog.findFrontNotWater();
-        System.out.println("Slider: FIRING COORDINATES = " + str);
-        if (str != null && !str.equals("256_512") ) {
-            int xCoord = Integer.parseInt(str.split("_")[0]);
-            int yCoord = Integer.parseInt(str.split("_")[1]);
-
-        AgrIntel.Coord start = agrInt.new Coord(agressor.getX() / 64, agressor.getY() / 64);
-        AgrIntel.Coord end = agrInt.new Coord(xCoord / 64, yCoord / 64);
-        AgrIntel.Coord[] path = agrInt.lookingForThePath(start, end);
-
-            for(AgrIntel.Coord c: path){
-                agressor.moveToCoord(c);
-            }
-            turningToHQ(agressor);
-
-            // turning to fire on HQ
-
-        } else if(str.equals("256_512")){
-            System.err.println("!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!");
-        }
+    public AgrIntel getAgrInt() {
+        return agrInt;
     }
 
-    private void turningToHQ(AbstractTank ogr) throws Exception {
+    public void runTheGame() throws Exception {
 
-        if(ogr.getX() > 256){
-            ogr.turn(Direct.LEFT);
-        }else if(ogr.getX() == 256){
-            ogr.turn(Direct.DOWN);
-        }else{
-            ogr.turn(Direct.RIGHT);
+         /*displaying how agressor sees the BattleField*/
+        for (int[] lines : agrInt.getLab()) {
+            System.out.print("\n");
+            for (int i : lines) {
+                System.out.print(i + ", ");
+            }
         }
-        while (!(bF.getBattleField()[8][4] instanceof Black)) {
-            ogr.fire();
-        }
+        System.out.println();
+        System.out.println();
+
+        agrLog.agressorsStartAttack();
     }
 
     public int switcherLab(String let){
