@@ -39,7 +39,7 @@ public class Slider extends JPanel {
         agrLog = new AgrLogic(this, bF, agressor);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
-        frame.setLocation(500, 50);
+        frame.setLocation(150, 50);
         frame.setMinimumSize(new Dimension(bF.getBF_WIDTH() + 16, bF.getBF_HEIGHT() + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(this);

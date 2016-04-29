@@ -88,6 +88,7 @@ public abstract class AbstractTank implements IObjectable {
             return true;
         } else if(getNextQuadrant() instanceof Brick || getNextQuadrant() instanceof HQ) {
             fire();
+            if (getNextQuadrant() instanceof Plant)
             return true;
         }
         return false;
