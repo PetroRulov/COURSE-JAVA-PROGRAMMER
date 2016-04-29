@@ -50,9 +50,9 @@ public class StringFields {
 
 
     // BF # 5
-    private String[][] bf_5 = {{"P", "P", "P", "P", "P", "P", "P", "P", "P"},
-            {"P", "P", "P", "P", "P", "P", "B", "P", "P"}, {"P", "B", "B", "P", "P", "P", "P", "P", "P"},
-            {"P", "B", "P", "B", "B", "P", "P", "B", "P"}, {"P", "P", "P", "P", "B", "P", "P", "P", "P"},
+    private String[][] bf_5 = {{"R", "P", "P", "P", "P", "P", "P", "P", "W"},
+            {"W", "P", "P", "P", "P", "P", "P", "P", "R"}, {"P", "B", "B", "P", "P", "P", "P", "P", "P"},
+            {"R", "R", "R", "R", "R", "R", "R", "R", "R"}, {"P", "P", "P", "P", "B", "P", "P", "P", "P"},
             {"P", "P", "P", "P", "P", "P", "P", "P", "P"}, {"P", "P", "P", "P", "P", "P", "P", "P", "P"},
             {"P", "P", "P", "P", "R", "B", "P", "P", "P"}, {"W", "W", "R", "W", "S", "W", "P", "W", "W"}};
 
@@ -89,14 +89,16 @@ public class StringFields {
 
         String[][] str = bf_0;
         int i = toRandomI();
-        if(i == 0 || i == 5){
+        if(i == 0 || i == 6){
             str = bf_0;
         }else if(i == 1) {
             str = bf_1;
-        }else if(i == 2){
+        }else if(i == 2) {
             str = bf_2;
+        }else if(i == 3){
+            str = bf_3;
         }else{
-            str = i == 3 ? bf_3 : bf_4;
+            str = i == 4 ? bf_3 : bf_5;
         }
         return str;
     }
@@ -104,7 +106,7 @@ public class StringFields {
     private int toRandomI() {
 
         Random r = new Random();
-        int i = r.nextInt(5);
+        int i = r.nextInt(6);
         return i;
     }
 }

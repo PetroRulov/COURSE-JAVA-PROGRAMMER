@@ -12,6 +12,7 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -63,7 +64,13 @@ public class Slider extends JPanel {
         System.out.println();
         System.out.println();
 
-        agrLog.agressorsStartAttack();
+        try{
+            agrLog.agressorsStartAttack();
+        }catch(NullPointerException e){
+            System.err.printf("!!!NullPointerException had been catched!!!" + "\n" +
+            "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
+            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
+        }
     }
 
     public int switcherLab(String let){

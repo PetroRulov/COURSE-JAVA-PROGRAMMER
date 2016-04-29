@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba386550-2914-4f7c-ba1c-6bd0ad190677" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Black.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Black.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Explosive.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Explosive.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/HQ.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/HQ.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Plant.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Plant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Rock.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Rock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Water.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Water.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/tanks/BT7.class" afterPath="$PROJECT_DIR$/out/production/Fury/tanks/BT7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/tanks/T34.class" afterPath="$PROJECT_DIR$/out/production/Fury/tanks/T34.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/out/production/Fury/actions/Slider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/out/production/Fury/tanks/AbstractTank.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/Slider.java" afterPath="$PROJECT_DIR$/src/actions/Slider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/src/tanks/AbstractTank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleFields/StringFields.java" afterPath="$PROJECT_DIR$/src/battleFields/StringFields.java" />
     </list>
     <ignored path="Fury.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,20 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Black.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/battleFields/Black.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#928#929#0" expanded="true" />
-                <element signature="e#972#973#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Bullet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/domains/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,8 +96,8 @@
       <file leaf-file-name="AgrLogic.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/AgrLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-646">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="150">
+              <caret line="35" column="87" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Slider.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Slider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/actions/Slider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="255">
+              <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -137,32 +117,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractTank.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AgrIntel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/AgrIntel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1009">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringFields.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/battleFields/StringFields.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
+              <folding>
+                <element signature="e#3676#3677#0" expanded="true" />
+                <element signature="e#3703#3704#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractTank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tanks/AbstractTank.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="87" column="24" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BT7.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tanks/BT7.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="74" column="25" selection-start-line="49" selection-start-column="3" selection-end-line="89" selection-end-column="5" />
-              <folding>
-                <element signature="e#1759#1760#0" expanded="true" />
-                <element signature="e#1811#1812#0" expanded="true" />
-                <element signature="e#2106#2107#0" expanded="true" />
-                <element signature="e#2158#2159#0" expanded="true" />
-                <element signature="e#2453#2454#0" expanded="true" />
-                <element signature="e#2505#2506#0" expanded="true" />
-                <element signature="e#2761#2762#0" expanded="true" />
-                <element signature="e#2813#2814#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,7 +187,6 @@
         <option value="$PROJECT_DIR$/src/PathFinder.java" />
         <option value="$PROJECT_DIR$/src/actions/AI.java" />
         <option value="$PROJECT_DIR$/src/actions/Logic.java" />
-        <option value="$PROJECT_DIR$/src/battleFields/StringFields.java" />
         <option value="$PROJECT_DIR$/src/battleFields/BattleField.java" />
         <option value="$PROJECT_DIR$/src/domains/Coord.java" />
         <option value="$PROJECT_DIR$/src/actions/AgrIntel.java" />
@@ -218,8 +203,9 @@
         <option value="$PROJECT_DIR$/src/domains/Bullet.java" />
         <option value="$PROJECT_DIR$/src/battleFields/Rock.java" />
         <option value="$PROJECT_DIR$/src/battleFields/HQ.java" />
-        <option value="$PROJECT_DIR$/src/actions/Slider.java" />
         <option value="$PROJECT_DIR$/src/tanks/AbstractTank.java" />
+        <option value="$PROJECT_DIR$/src/battleFields/StringFields.java" />
+        <option value="$PROJECT_DIR$/src/actions/Slider.java" />
       </list>
     </option>
   </component>
@@ -375,7 +361,7 @@
     <property name="settings.editor.splitter.proportion" value="0.22624877" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JP_Programming" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Gesheft" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -719,7 +705,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461944920887</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="with png">
+      <created>1461946802832</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1461946802832</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -737,7 +730,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40536278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40536278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -996,26 +989,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PathFinder.java" />
-    <entry file="file://$PROJECT_DIR$/src/battleFields/StringFields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="33" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="33" />
-          <folding>
-            <element signature="e#3366#3367#0" expanded="false" />
-            <element signature="e#3393#3394#0" expanded="false" />
-            <element signature="e#3428#3429#0" expanded="false" />
-            <element signature="e#3455#3456#0" expanded="false" />
-            <element signature="e#3490#3491#0" expanded="false" />
-            <element signature="e#3517#3518#0" expanded="false" />
-            <element signature="e#3552#3553#0" expanded="false" />
-            <element signature="e#3579#3580#0" expanded="false" />
-            <element signature="e#3614#3615#0" expanded="false" />
-            <element signature="e#3641#3642#0" expanded="false" />
-            <element signature="e#3703#3704#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1044,16 +1017,6 @@
         <state relative-caret-position="45">
           <caret line="69" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/AgrIntel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1149,16 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/domains/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/battleFields/Explosive.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -1192,10 +1145,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tanks/AbstractTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleFields/StringFields.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="54" column="55" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
+          <folding>
+            <element signature="e#3676#3677#0" expanded="true" />
+            <element signature="e#3703#3704#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/AgrLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-646">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="35" column="87" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/AgrIntel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1009">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/domains/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1204,18 +1198,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/Slider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tanks/AbstractTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="87" column="24" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="72" column="9" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
