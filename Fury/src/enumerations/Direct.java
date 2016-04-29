@@ -2,7 +2,18 @@ package enumerations;
 
 public enum Direct {
 
-    UP, DOWN, RIGHT, LEFT, STOP, MINUS;
+    UP(0), DOWN(1), RIGHT(2), LEFT(3), STOP(4), MINUS(5);
+
+
+    private int indx;
+
+    private Direct(int indx) {
+        this.indx = indx;
+    }
+
+    public int getIndx() {
+        return indx;
+    }
 
     // for moveRandom() -variable int i-;
     public static Direct getDirect(int indx) {

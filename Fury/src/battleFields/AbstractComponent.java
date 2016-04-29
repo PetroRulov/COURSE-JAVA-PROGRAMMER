@@ -1,15 +1,13 @@
 package battleFields;
 
-//import actions.Bullet;
 import domains.Bullet;
 import actions.Slider;
 import interfaces.IDestroyable;
 import interfaces.IDrawable;
-import interfaces.IWayable;
 
 import java.awt.*;
 
-public abstract class AbstractComponent implements IDrawable, IDestroyable, IWayable {
+public abstract class AbstractComponent implements IDrawable, IDestroyable {
 
     final int SQUAD = 64;
     protected String name;

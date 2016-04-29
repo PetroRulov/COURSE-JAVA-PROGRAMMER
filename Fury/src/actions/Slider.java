@@ -1,7 +1,6 @@
 package actions;
 
 import battleFields.*;
-import interfaces.IWayable;
 import tanks.*;
 import tanks.AbstractTank;
 import enumerations.Direct;
@@ -12,7 +11,6 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,7 +18,6 @@ public class Slider extends JPanel {
 
     private BattleField bF = new BattleField();
     private int[][] lab; // how the tanks see the BattleField;
-    private ArrayList<IWayable> freeWay;
     private String agrPos;
     private Bullet bullet;
     private T34 defender;
@@ -40,7 +37,7 @@ public class Slider extends JPanel {
         agrLog = new AgrLogic(this, bF, agressor);
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
-        frame.setLocation(150, 50);
+        frame.setLocation(650, 50);
         frame.setMinimumSize(new Dimension(bF.getBF_WIDTH() + 16, bF.getBF_HEIGHT() + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(this);
@@ -71,6 +68,9 @@ public class Slider extends JPanel {
             "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
             "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
         }
+
+
+
     }
 
     public int switcherLab(String let){
@@ -115,7 +115,6 @@ public class Slider extends JPanel {
                     sparklingRock(bullet, v, h);
                 } else if (bF.scanQuadrant(v, h) instanceof Rock && (bullet.getTank() instanceof BT7)) {
                     sparklingRock(bullet, v, h);
-                    //new Rock(h * 64, v * 64).destroy();
                 } else if (bF.scanQuadrant(v, h) instanceof HQ && (bullet.getTank() instanceof BT7)) {
                     sparklingHQ(bullet, v, h);
                     System.err.println("!!!HEADQUARTERS DESTROYED!!!");
@@ -360,8 +359,8 @@ public class Slider extends JPanel {
                 }
             }
 
-        defender.paintComponent(g);
-        agressor.drawComponent(g);
+        defender.drawComponent(g);
+        agressor.paintComponent(g);
 
         if (bullet.getTank().equals(defender)) {
             bullet.paintComponent(g);;

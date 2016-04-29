@@ -5,7 +5,10 @@ import enumerations.Direct;
 import actions.Slider;
 
 
-import java.awt.Color;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Tiger extends AbstractTank {
 
@@ -25,7 +28,23 @@ public class Tiger extends AbstractTank {
         this.tower = new Color(0, 0, 0);
         this.armour = 1;
         this.speed = 20;
+        setImages();
 
+    }
+
+    protected void setImages(){
+
+        images = new Image[4];
+        try{
+            images[0] = ImageIO.read(new File(IMAGE_UP));
+            images[1] = ImageIO.read(new File(IMAGE_DOWN));
+            images[2] = ImageIO.read(new File(IMAGE_RIGHT));
+            images[3] = ImageIO.read(new File(IMAGE_LEFT));
+        }catch(IOException e){
+            for(Image i : images){
+                System.err.println("Can't find image : " + i.toString());
+            }
+        }
     }
 
     public void updateArmour(int destroyArmour) {

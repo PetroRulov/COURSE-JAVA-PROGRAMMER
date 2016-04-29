@@ -4,14 +4,15 @@ import actions.AgrIntel;
 import battleFields.*;
 import domains.Coord;
 import domains.Bullet;
-//import actions.Bullet;
 import enumerations.Direct;
 import interfaces.IObjectable;
 import actions.Slider;
 
-import interfaces.IWayable;
-
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.ImageObserver;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public abstract class AbstractTank implements IObjectable {
@@ -30,6 +31,13 @@ public abstract class AbstractTank implements IObjectable {
     protected Color tank = new Color(0, 100, 0);
     protected Color tower = new Color(10, 40, 0);
 
+    protected Image[] images;
+    protected String IMAGE_UP;
+    protected String IMAGE_DOWN;
+    protected String IMAGE_LEFT;
+    protected String IMAGE_RIGHT;
+
+
     protected AbstractTank(Slider sdr, BattleField bf){}
 
     protected AbstractTank(Slider sdr, BattleField bf, int x, int y, Direct direction){
@@ -41,6 +49,8 @@ public abstract class AbstractTank implements IObjectable {
         this.direction = direction;
         this.bullet = bullet;
     }
+
+    protected abstract void setImages();
 
     public Slider getSDR() {
         return sdr;
@@ -213,19 +223,13 @@ public abstract class AbstractTank implements IObjectable {
     @Override
     public void paintComponent(Graphics g) {
 
-        g.setColor(tank);
-        g.fillRect(x + 2, y - 3, 58, 58);
+        g.drawImage(images[getDirection().getIndx()], getX(), getY(), new ImageObserver() {
 
-        g.setColor(tower);
-        if (direction == Direct.UP) {
-            g.fillRect(x + 24, y - 8, 14, 42);
-        } else if (direction == Direct.DOWN) {
-            g.fillRect(x + 24, y + 24, 16, 42);
-        } else if (direction == Direct.LEFT) {
-            g.fillRect(x - 6, y + 18, 42, 16);
-        } else {
-            g.fillRect(x + 30, y + 18, 42, 16);
-        }
+            @Override
+            public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+                return false;
+            }
+        });
     }
 
     @Override

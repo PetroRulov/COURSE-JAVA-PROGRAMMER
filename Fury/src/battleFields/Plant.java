@@ -1,7 +1,5 @@
 package battleFields;
 
-import interfaces.IWayable;
-
 import javax.imageio.ImageIO;
 import java.awt.Color;
 import java.awt.*;
@@ -9,7 +7,7 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
-public class Plant extends AbstractComponent implements IWayable {
+public class Plant extends AbstractComponent {
 
     private final static String IMAGE_NAME = "plant.png";
     private Image iPlant;

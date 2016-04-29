@@ -10,17 +10,14 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by prulov on 22.03.2016.
- */
 public class T34 extends AbstractTank {
 
-    private Image[] images;
-    private final static String IMAGE_UP = "t34_UP.png";
-    private final static String IMAGE_DOWN = "t34_DOWN.png";
-    private final static String IMAGE_LEFT = "t34_LEFT.png";
-    private final static String IMAGE_RIGHT = "t34_RIGHT.png";
+    private String IMAGE_UP = "t34_UP.png";
+    private String IMAGE_DOWN = "t34_DOWN.png";
+    private String IMAGE_LEFT = "t34_LEFT.png";
+    private String IMAGE_RIGHT = "t34_RIGHT.png";
     private Image iT34;
+
 
     public T34(Slider sdr, BattleField bf){
         super(sdr, bf, 448, 64, Direct.LEFT);
@@ -32,14 +29,14 @@ public class T34 extends AbstractTank {
         setImages();
     }
 
-    private void setImages(){
+    public void setImages(){
 
         images = new Image[4];
         try{
             images[0] = ImageIO.read(new File(IMAGE_UP));
             images[1] = ImageIO.read(new File(IMAGE_DOWN));
-            images[2] = ImageIO.read(new File(IMAGE_LEFT));
-            images[3] = ImageIO.read(new File(IMAGE_RIGHT));
+            images[2] = ImageIO.read(new File(IMAGE_RIGHT));
+            images[3] = ImageIO.read(new File(IMAGE_LEFT));
         }catch(IOException e){
             for(Image i : images){
                 System.err.println("Can't find image T-34: " + i.toString());
@@ -48,7 +45,7 @@ public class T34 extends AbstractTank {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void drawComponent(Graphics g) {
 
         if(this.getDirection() == Direct.UP) {
             iT34 = images[0];
@@ -88,11 +85,6 @@ public class T34 extends AbstractTank {
             });
         }
     }
-
-
-
-
-
 }
 
 
