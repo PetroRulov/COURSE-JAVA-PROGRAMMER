@@ -14,6 +14,11 @@ public class Tiger extends AbstractTank {
 
     private int armour;
 
+    private String IMAGE_UP = "tiger_UP.png";
+    private String IMAGE_DOWN = "tiger_DOWN.png";
+    private String IMAGE_LEFT = "tiger_LEFT.png";
+    private String IMAGE_RIGHT = "tiger_RIGHT.png";
+
     public Tiger(Slider sdr, BattleField bf){
         super(sdr, bf, 64, 256, Direct.LEFT);
         this.tank = new Color(40, 40, 40);

@@ -10,13 +10,13 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-//        Demo d = new Demo();
-//        d.openBadiganRun();
+        Demo d = new Demo();
+        d.openBadiganRun();
 
-        Service serv = new Service();
-        //BadiganShopUI ui = new BadiganShopUI(serv);
+//        Service serv = new Service();
+//        BadiganShopUI ui = new BadiganShopUI(serv);
 
-        Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(serv);
+        //Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(serv);
 
         // !!! something uncleared
 //        Service serv = new Service(/*bad.getServ().getStk()*/);

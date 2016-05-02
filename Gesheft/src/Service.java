@@ -255,10 +255,6 @@ public class Service {
         return "At all " + quant + " items sold of " + amount + " hrvn.";
     }
 
-
-
-
-
     public void printClientsBase(List<Client> guest) {
 
         System.out.println("THE LIST OF \"BADIGAN\" CLIENTS");

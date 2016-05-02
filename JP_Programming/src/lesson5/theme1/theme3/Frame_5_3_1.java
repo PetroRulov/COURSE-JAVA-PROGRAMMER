@@ -1,4 +1,4 @@
-package lesson6;
+package lesson5.theme1.theme3;
 
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
@@ -11,7 +11,7 @@ import java.util.Locale;
 import static java.util.Calendar.DAY_OF_WEEK;
 import static java.util.Calendar.WEEK_OF_YEAR;
 
-public class Frame_6_1_2 {
+public class Frame_5_3_1 {
 
     public static void main(String[] args) throws ParseException {
 
@@ -32,3 +32,4 @@ public class Frame_6_1_2 {
     }
 
 }
+

@@ -1,13 +1,10 @@
-package lesson6;
+package lesson5.theme1.theme3;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by prulov on 23.04.2016.
- */
-public class Frame_6_1_2_1 {
+public class Frame_5_3_2 {
 
     public static void main(String[] args) throws ParseException {
 
@@ -21,3 +18,4 @@ public class Frame_6_1_2_1 {
         System.out.println(date);
     }
 }
+

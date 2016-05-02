@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class HQ extends AbstractComponent {
 
-    private final static String IMAGE_NAME = "eagle.png";
+    private final static String IMAGE_NAME = "hq_1.png";
     private Image iHQ;
 
     public HQ(){}
