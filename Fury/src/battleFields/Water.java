@@ -33,6 +33,11 @@ public class Water extends AbstractComponent implements INonDestructable{
     @Override
     public void paintComponent(Graphics g){
 
+        Graphics2D g2D = (Graphics2D) g;
+        Composite org = g2D.getComposite();
+        Composite translucent = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.9f);
+        g2D.setComposite(translucent);
+
         g.drawImage(iWater, x, y, new ImageObserver() {
 
             @Override
@@ -40,5 +45,6 @@ public class Water extends AbstractComponent implements INonDestructable{
                 return false;
             }
         });
+        g2D.setComposite(org);
     }
 }

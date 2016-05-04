@@ -54,7 +54,10 @@ public class Slider extends JPanel {
 
     public void runTheGame() throws Exception {
 
-         /*displaying how agressor sees the BattleField*/
+        defender.turn(Direct.DOWN);
+        defender.move();
+
+        // /*displaying how agressor sees the BattleField*/
         for (int[] lines : agrInt.getLab()) {
             System.out.print("\n");
             for (int i : lines) {

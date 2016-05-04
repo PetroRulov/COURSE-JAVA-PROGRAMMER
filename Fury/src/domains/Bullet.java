@@ -35,6 +35,9 @@ public class Bullet implements IObjectable {
         this.y = y;
         this.direction = direction;
         this.tank = tank;
+
+        //setImages();
+
         try{
             iBullet = ImageIO.read(new File(IMAGE_NAME));
         } catch (IOException e) {
@@ -91,7 +94,7 @@ public class Bullet implements IObjectable {
 
         x = -100;
         y = -100;
-        direction = Direct.MINUS;
+        direction = Direct.UP;
     }
 
     @Override
@@ -115,6 +118,8 @@ public class Bullet implements IObjectable {
         }
     }
 
+
+    // one image
     @Override
     public void drawComponent(Graphics g){
 
@@ -126,6 +131,48 @@ public class Bullet implements IObjectable {
             }
         });
     }
+
+//    public void drawComponent(Graphics g) {
+//
+//        if(this.getDirection() == Direct.UP) {
+//            iBullet = images[0];
+//            g.drawImage(iBullet, x, y, new ImageObserver() {
+//
+//                @Override
+//                public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+//                    return false;
+//                }
+//            });
+//        } else if(this.getDirection() == Direct.DOWN) {
+//            iBullet = images[1];
+//            g.drawImage(iBullet, x, y, new ImageObserver() {
+//
+//                @Override
+//                public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+//                    return false;
+//                }
+//            });
+//        } else if(this.getDirection() == Direct.LEFT) {
+//            iBullet = images[2];
+//            g.drawImage(iBullet, x, y, new ImageObserver() {
+//
+//                @Override
+//                public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+//                    return false;
+//                }
+//            });
+//        } else {
+//            iBullet = images[3];
+//            g.drawImage(iBullet, x, y, new ImageObserver() {
+//
+//                @Override
+//                public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+//                    return false;
+//                }
+//            });
+//        }
+//    }
+
 }
 
 
