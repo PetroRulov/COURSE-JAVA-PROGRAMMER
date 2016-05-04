@@ -28,8 +28,8 @@
       <file leaf-file-name="Frame_5_5_4_AngeredFriend.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lesson5/theme5/Frame_5_5_4_AngeredFriend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+            <state relative-caret-position="85">
+              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -653,7 +653,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462358833140</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="frame 5_5_4 executed with MouseDragged overrided">
+      <created>1462360619973</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1462360619973</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -704,7 +711,8 @@
     <MESSAGE value="lesson4 theme2" />
     <MESSAGE value="lesson4 full" />
     <MESSAGE value="frame 5_5_4 executed" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame 5_5_4 executed" />
+    <MESSAGE value="frame 5_5_4 executed with MouseDragged overrided" />
+    <option name="LAST_COMMIT_MESSAGE" value="frame 5_5_4 executed with MouseDragged overrided" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1199,8 +1207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson5/theme5/Frame_5_5_4_AngeredFriend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+        <state relative-caret-position="85">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
