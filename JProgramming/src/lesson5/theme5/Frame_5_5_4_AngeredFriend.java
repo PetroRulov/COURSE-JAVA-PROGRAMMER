@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.util.Random;
 
 public class Frame_5_5_4_AngeredFriend extends JPanel {
@@ -19,29 +20,52 @@ public class Frame_5_5_4_AngeredFriend extends JPanel {
         frame.setMinimumSize(new Dimension(700, 700));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        this.addMouseMotionListener(new MouseAdapter() {
+        this.addMouseMotionListener(new MouseMotionAdapter() {
 
             @Override
             public void mouseMoved(MouseEvent e) {
 
-                if(e.getX() <= 350 && e.getY() <= 350){
+                if (e.getX() <= 350 && e.getY() <= 350) {
                     x = e.getX() + 25;
                     y = e.getY() + 25;
                     repaint();
-                }else if(e.getX() > 350 && e.getY() <= 350){
+                } else if (e.getX() > 350 && e.getY() <= 350) {
                     x = e.getX() - 75;
                     y = e.getY() + 25;
                     repaint();
-                }else if(e.getX() <= 350 && e.getY() > 350) {
+                } else if (e.getX() <= 350 && e.getY() > 350) {
                     x = e.getX() + 25;
                     y = e.getY() - 75;
                     repaint();
-                }else{
+                } else {
                     x = e.getX() - 75;
                     y = e.getY() - 75;
                     repaint();
                 }
             }
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+
+                if (e.getX() <= 350 && e.getY() <= 350) {
+                    x = e.getX() + 25;
+                    y = e.getY() + 25;
+                    repaint();
+                } else if (e.getX() > 350 && e.getY() <= 350) {
+                    x = e.getX() - 75;
+                    y = e.getY() + 25;
+                    repaint();
+                } else if (e.getX() <= 350 && e.getY() > 350) {
+                    x = e.getX() + 25;
+                    y = e.getY() - 75;
+                    repaint();
+                } else {
+                    x = e.getX() - 75;
+                    y = e.getY() - 75;
+                    repaint();
+                }
+            }
+
         });
 
         frame.getContentPane().add(this);
