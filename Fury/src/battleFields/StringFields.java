@@ -21,8 +21,8 @@ public class StringFields {
     };
 
     // BF # 1
-    private String[][] bf_1 = {{"P", "P", "R", "P", "P", "R", "P", "P", "B"},
-            {"B", "P", "P", "R", "P", "P", "P", "R", "P"}, {"P", "B", "B", "B", "P", "B", "B", "P", "P"},
+    private String[][] bf_1 = {{"P", "P", "P", "P", "P", "R", "P", "P", "B"},
+            {"B", "P", "P", "R", "P", "P", "P", "P", "P"}, {"P", "B", "B", "B", "P", "B", "B", "P", "P"},
             {"W", "P", "B", "P", "B", "R", "B", "W", "W"}, {"P", "R", "B", "B", "B", "R", "P", "P", "P"},
             {"B", "B", "P", "P", "B", "B", "B", "B", "P"}, {"P", "B", "P", "W", "P", "B", "B", "B", "R"},
             {"P", "P", "W", "P", "R", "B", "B", "B", "B"}, {"R", "P", "B", "B", "S", "B", "B", "P", "W"}};
@@ -100,6 +100,7 @@ public class StringFields {
         }else{
             str = i == 4 ? bf_3 : bf_5;
         }
+
         return str;
     }
 

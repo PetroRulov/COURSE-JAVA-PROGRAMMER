@@ -66,7 +66,7 @@ public class T34 extends AbstractTank {
                 }
             });
         } else if(this.getDirection() == Direct.LEFT) {
-            iT34 = images[2];
+            iT34 = images[3];
             g.drawImage(iT34, x, y, new ImageObserver() {
 
                 @Override
@@ -75,7 +75,7 @@ public class T34 extends AbstractTank {
                 }
             });
         } else {
-            iT34 = images[3];
+            iT34 = images[2];
             g.drawImage(iT34, x, y, new ImageObserver() {
 
                 @Override

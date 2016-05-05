@@ -94,7 +94,7 @@ public class Bullet implements IObjectable {
 
         x = -100;
         y = -100;
-        direction = Direct.UP;
+        direction = Direct.STOP;
     }
 
     @Override

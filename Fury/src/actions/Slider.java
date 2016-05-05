@@ -22,9 +22,11 @@ public class Slider extends JPanel {
     private Bullet bullet;
     private T34 defender;
     private BT7 agressor;
-    //private Tiger ogr;
+    private Tiger ogr;
     private AgrLogic agrLog;
     private AgrIntel agrInt;
+    private AgrIntel tigrInt;
+    private TigerLogic tiLog;
 
     public Slider() throws Exception {
 
@@ -32,11 +34,13 @@ public class Slider extends JPanel {
         agrPos = defineAgressorPos();
         defender = new T34(this, bF, 64, 448, Direct.UP);
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
-        bullet = new Bullet(600, 600, Direct.MINUS, agressor);
+        bullet = new Bullet(600, 600, Direct.MINUS, ogr);
         lab = setLab(bF.getBf());
-        //ogr = new Tiger(this, bF, 128, 0, Direct.DOWN);
+        ogr = new Tiger(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
         agrInt = new AgrIntel(bF, lab, agressor);
+        tigrInt = new AgrIntel(bF, lab, ogr);
         agrLog = new AgrLogic(this, bF, agressor);
+        tiLog = new TigerLogic(this, bF, ogr);
 
 
         JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
@@ -52,12 +56,44 @@ public class Slider extends JPanel {
         return agrInt;
     }
 
+    public AgrIntel getTigrInt(){return tigrInt;}
+
     public void runTheGame() throws Exception {
 
-        defender.turn(Direct.DOWN);
-        defender.move();
+        // /**TIGERS WAY*/
+//        tiLog.findDefendersCoords();
+//        defender.turn(Direct.RIGHT);
+//        defender.move();
+//        defender.move();
+//        tiLog.findDefendersCoords();
 
-        // /*displaying how agressor sees the BattleField*/
+//        for(AbstractComponent i : tiLog.frontLine()){
+//            System.out.println(i.toString() + ", ");
+//        }
+//
+//
+//        System.out.println(tiLog.lineHasRock(tiLog.frontLine()));
+//        System.out.println();
+//        System.out.println(tiLog.findFrontNotWater());
+
+        //tiLog.leftLine();
+
+//        for(AbstractComponent i : tiLog.leftLine()){
+//            System.out.println(i.toString() + ", ");
+//        }
+
+        try{
+            tiLog.tigerStartAttack();
+        }catch(NullPointerException e){
+            System.err.printf("!!!NullPointerException had been catched!!!" + "\n" +
+            "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
+            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
+        }
+
+
+
+        // /**AGRESSORS WAY*/
+         /*displaying how agressor sees the BattleField*/
         for (int[] lines : agrInt.getLab()) {
             System.out.print("\n");
             for (int i : lines) {
@@ -128,22 +164,22 @@ public class Slider extends JPanel {
                 }
                 return true;
             }
-            if (checkInterception(getQuadrantYX(agressor.getX(), agressor.getY()), quadrant) && !bullet.getTank().equals(agressor)) {
-                agressor.destroy();
-                sparkling(bullet, v, h);
-                Thread.sleep(3000);
-                agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
-                repaint();
-                return true;
-            }
-//            if (checkInterception(getQuadrantYX(ogr.getX(), ogr.getY()), quadrant) && !bullet.getTank().equals(ogr)) {
-//                ogr.destroy();
+//            if (checkInterception(getQuadrantYX(agressor.getX(), agressor.getY()), quadrant) && !bullet.getTank().equals(agressor)) {
+//                agressor.destroy();
 //                sparkling(bullet, v, h);
 //                Thread.sleep(3000);
 //                agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
 //                repaint();
 //                return true;
-            //}
+//            }
+            if (checkInterception(getQuadrantYX(ogr.getX(), ogr.getY()), quadrant) && !bullet.getTank().equals(ogr)) {
+                ogr.destroy();
+                sparkling(bullet, v, h);
+//                Thread.sleep(3000);
+//                agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
+//                repaint();
+//                return true;
+            }
             if (checkInterception(getQuadrantYX(defender.getX(), defender.getY()), quadrant) && !bullet.getTank().equals(defender)) {
                 defender.destroy();
                 sparkling(bullet, v, h);
@@ -375,17 +411,21 @@ public class Slider extends JPanel {
 
         defender.drawComponent(g);
         agressor.paintComponent(g);
-        //ogr.paintComponent(g);
+        ogr.paintComponent(g);
+        bullet.drawComponent(g);
 
-        if (bullet.getTank().equals(defender)) {
-            bullet.paintComponent(g);;
-        } else {
-            bullet.drawComponent(g);
-        }
     }
 
     public BT7 getAgressor() {
         return agressor;
+    }
+
+    public Tiger getOgr(){
+        return ogr;
+    }
+
+    public T34 getDefender() {
+        return defender;
     }
 
     public BattleField getbF() {

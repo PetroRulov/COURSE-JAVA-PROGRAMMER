@@ -17,6 +17,7 @@ public abstract class AbstractComponent implements IDrawable, IDestroyable {
     protected int y;
     protected Color color;
     protected int wayable;
+    protected Image[] images;
 
 
     public AbstractComponent(){}

@@ -188,7 +188,7 @@ public abstract class AbstractTank implements IObjectable {
 
     }
 
-    protected void moveRandom() throws Exception {
+    public void moveRandom() throws Exception {
         Random r = new Random();
         Integer i;
         while (true) {

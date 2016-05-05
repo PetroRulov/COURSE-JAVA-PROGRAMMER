@@ -61,7 +61,7 @@ public class AgrLogic {
         return frontL;
     }
 
-    private boolean lineHasRock(AbstractComponent[] line){
+    public boolean lineHasRock(AbstractComponent[] line){
 
         for(AbstractComponent i : line){
             if(i instanceof Rock){
@@ -75,7 +75,7 @@ public class AgrLogic {
 
         String str = null;
         System.out.println("fFPofFire: Checking FrontLine");
-        AbstractComponent checked = getACbyCoords(256, 0);;
+        AbstractComponent checked = getACbyCoords(256, 0);
         if(lineHasRock(line)){
             for(AbstractComponent i : line) {
                 if (i instanceof Rock) {
@@ -97,7 +97,7 @@ public class AgrLogic {
             }
             return str;
         } else { // if there is no Rocks at all
-            System.out.println("RightLine Water line:");
+            System.out.println("FrontLine Water line:");
             for(AbstractComponent i : line){
                 System.out.println(i.toString());
                 if(i instanceof Water){
