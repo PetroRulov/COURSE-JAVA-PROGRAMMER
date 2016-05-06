@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba386550-2914-4f7c-ba1c-6bd0ad190677" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/actions/TigerLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/actions/AgrLogic.class" afterPath="$PROJECT_DIR$/out/production/Fury/actions/AgrLogic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/out/production/Fury/actions/Slider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Water$1.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Water$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Water.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Water.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/AbstractComponent.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/AbstractComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/HQ.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/HQ.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Plant$1.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Plant$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/Plant.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/Plant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/battleFields/StringFields.class" afterPath="$PROJECT_DIR$/out/production/Fury/battleFields/StringFields.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/domains/Bullet.class" afterPath="$PROJECT_DIR$/out/production/Fury/domains/Bullet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/out/production/Fury/tanks/AbstractTank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Fury/tanks/T34.class" afterPath="$PROJECT_DIR$/out/production/Fury/tanks/T34.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/AgrLogic.java" afterPath="$PROJECT_DIR$/src/actions/AgrLogic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/Slider.java" afterPath="$PROJECT_DIR$/src/actions/Slider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleFields/AbstractComponent.java" afterPath="$PROJECT_DIR$/src/battleFields/AbstractComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleFields/HQ.java" afterPath="$PROJECT_DIR$/src/battleFields/HQ.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleFields/Plant.java" afterPath="$PROJECT_DIR$/src/battleFields/Plant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleFields/StringFields.java" afterPath="$PROJECT_DIR$/src/battleFields/StringFields.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/battleFields/Water.java" afterPath="$PROJECT_DIR$/src/battleFields/Water.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/domains/Bullet.java" afterPath="$PROJECT_DIR$/src/domains/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/src/tanks/AbstractTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tanks/T34.java" afterPath="$PROJECT_DIR$/src/tanks/T34.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" />
     </list>
     <ignored path="Fury.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Slider.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Slider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/Slider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -87,6 +79,16 @@
                 <element signature="e#13845#13846#0" expanded="true" />
                 <element signature="e#13871#13872#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Water.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/battleFields/Water.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -721,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1462365988955</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="tiger destroys defender">
+      <created>1462452578635</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1462452578635</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -738,7 +747,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40536278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40536278" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -775,7 +784,8 @@
     <MESSAGE value="With random chosen BattleFields" />
     <MESSAGE value="with png" />
     <MESSAGE value="water composite" />
-    <option name="LAST_COMMIT_MESSAGE" value="water composite" />
+    <MESSAGE value="tiger destroys defender" />
+    <option name="LAST_COMMIT_MESSAGE" value="tiger destroys defender" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1009,14 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/battleFields/Water.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/AgrIntel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1145,6 +1147,14 @@
             <element signature="e#13845#13846#0" expanded="true" />
             <element signature="e#13871#13872#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/battleFields/Water.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
+          <folding />
         </state>
       </provider>
     </entry>
