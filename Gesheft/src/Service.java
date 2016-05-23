@@ -290,14 +290,5 @@ public class Service {
         System.out.println("-----------------------------------------------------------------------------------------------------------------|");
     }
 
-    public void addSaleToJournal(Sale sale){
-
-        if(sale != null){
-            bad.getSales().add(sale);
-        }else{
-            System.out.println("This sale is not subject to handling!");
-        }
-
-    }
 }
 

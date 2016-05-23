@@ -85,7 +85,7 @@ public abstract class AbstractTank implements IObjectable {
 
     public void turn(Direct direction) throws Exception {
         this.direction = direction;
-        sdr.processTurn(this); // Slider 191
+        sdr.processTurn(this); // Slider 279
     }
 
     public void move() throws Exception {
@@ -158,7 +158,7 @@ public abstract class AbstractTank implements IObjectable {
     public void fire() throws Exception {
 
         Bullet bullet = new Bullet((x + 28), (y + 25), direction, this);
-        sdr.processFire(bullet, this); // Slider 245
+        sdr.processFire(bullet, this); // Slider 337
     }
 
     public void moveToCoord(Coord c) throws Exception {

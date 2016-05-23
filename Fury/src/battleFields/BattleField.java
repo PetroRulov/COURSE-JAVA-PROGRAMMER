@@ -65,6 +65,13 @@ public class BattleField {
         }
     }
 
+    public void updateString(int v, int h, String str) {
+
+        if (bf[v][h] != null) {
+            bf[v][h] = str;
+        }
+    }
+
     public int getDimentionX() {
         return BF_WIDTH / squad;
     }

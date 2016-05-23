@@ -56,7 +56,7 @@ public class Bullet implements IObjectable {
 //            images[3] = ImageIO.read(new File(IMAGE_RIGHT));
 //        }catch(IOException e){
 //            for(Image i : images){
-//                System.err.println("Can't find image BT7: " + i.toString());
+//                System.err.println("Can't find Bullet image: " + i.toString());
 //            }
 //        }
 //    }
@@ -83,6 +83,7 @@ public class Bullet implements IObjectable {
 
     public void updateX(int x) {
         this.x += x;
+
     }
 
     public void updateY(int y) {
@@ -95,6 +96,7 @@ public class Bullet implements IObjectable {
         x = -100;
         y = -100;
         direction = Direct.STOP;
+        return;
     }
 
     @Override

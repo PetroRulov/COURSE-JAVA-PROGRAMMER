@@ -104,9 +104,19 @@ public class BadiganShopUI {
                 }
                 Water wat = (Water) combo.getSelectedItem();
                 int quant = Integer.parseInt(tfQuant.getText());
-                Sale sale = new Sale(date, guest, wat, quant);
-                sale.saleInfoShow();
-                //serv.addSaleToJournal(sale);
+
+                if(wat.getQuant() >= quant){
+                    serv.getBad().getStk().soldWaterMinus(wat, quant);
+                    JOptionPane.showConfirmDialog(null, "Transaction is possible!", "Transaction possibility", JOptionPane.PLAIN_MESSAGE);
+                    serv.getBad().sellTransaction(date, guest, wat, quant);
+                }else{
+                    JOptionPane.showConfirmDialog(null, "Transaction is NOT possible! \n Please, try again with new quantity of item",
+                            "Transaction possibility", JOptionPane.OK_CANCEL_OPTION);
+                }
+
+                // optional methods displaying result
+                serv.printSalesJournal(serv.getBad().getSales());
+                serv.getBad().getStk().printWat();
             }
         });
         buy.setBounds(200, 250, 325, 25);

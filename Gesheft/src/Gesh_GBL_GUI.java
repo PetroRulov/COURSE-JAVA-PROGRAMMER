@@ -18,9 +18,7 @@ public class Gesh_GBL_GUI {
 
     private IDataProvider dataProvider;
     private Service serv;
-    //private Sale sale;
     private int watIndex = 0;
-//    private Stock stk;
 
     public Gesh_GBL_GUI(Service serv) {
 

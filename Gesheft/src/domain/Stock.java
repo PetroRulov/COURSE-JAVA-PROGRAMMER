@@ -24,8 +24,6 @@ public class Stock implements IDataProvider {
         initStock(); // filling Array
         fillStock(); // filling List
         fillVectorStock(); // filling Vector
-
-
     }
 
     public Water[] getWat() {
@@ -194,7 +192,6 @@ public class Stock implements IDataProvider {
 
     }
 
-
     private void fillStock() {
 
         for(Water w : wat){
@@ -212,6 +209,20 @@ public class Stock implements IDataProvider {
 
             }
         }
+    }
+
+
+
+    public void soldWaterMinus(Water wat, int quant){
+
+        Water sold = null;
+        for(Water i : getVat()){
+            if(i.equals(wat)){
+                sold = i;
+                break;
+            }
+        }
+        sold.setQuant(sold.getQuant() - quant);
     }
 
 }

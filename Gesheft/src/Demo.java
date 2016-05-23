@@ -11,7 +11,7 @@ public class Demo {
 
         // test methods
 //        serv.printClientsBase(serv.getBad().getClts());
-        serv.printSalesJournal(serv.getBad().getSales());
+        //serv.printSalesJournal(serv.getBad().getSales());
 
         // not checked
 //        System.out.println(bad.getServ().getStk().getListOfProducts().get(5).toString());

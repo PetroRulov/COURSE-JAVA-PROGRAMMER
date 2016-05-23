@@ -80,6 +80,16 @@ public class Water {
         return getDrink() + " " + getName() + ", " + getTare() + ", " + getVolume() + ", price: " + getPrice();
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(obj instanceof Water){
+            Water w = (Water) obj;
+            return (drink != null && drink.equals(w.getDrink()) && name.equals(w.getName()) && tare.equals(w.getTare()) &&
+                    volume == (w.getVolume()) && price == (w.getPrice()));
+        }
+        return false;
+    }
+
     public void setDrink(Drink drink) {
         this.drink = drink;
     }

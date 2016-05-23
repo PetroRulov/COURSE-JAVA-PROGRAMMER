@@ -14,9 +14,10 @@ public class Launcher {
 //        d.openBadiganRun();
 
         Service serv = new Service();
-        BadiganShopUI ui = new BadiganShopUI(serv);
+        //BadiganShopUI ui = new BadiganShopUI(serv);
+        //serv.dailyReport();
 
-        //Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(serv);
+        Gesh_GBL_GUI gesh = new Gesh_GBL_GUI(serv);
 
         // !!! something uncleared
 //        Service serv = new Service(/*bad.getServ().getStk()*/);

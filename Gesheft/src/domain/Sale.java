@@ -84,10 +84,5 @@ public class Sale {
 
     }
 
-    public int setGUIDate(String str) {
-
-        return Integer.parseInt(str);
-    }
-
 }
 

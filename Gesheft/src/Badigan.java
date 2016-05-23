@@ -15,7 +15,7 @@ public class Badigan {
     private Stock stk;
     private List<Client> clts;
     private List<Client> guests;
-    private List<Sale> sales;
+    private LinkedList<Sale> sales;
 
     public Badigan() {
 
@@ -126,10 +126,20 @@ public class Badigan {
 
     }
 
+//    public LinkedList<Sale> sellTransaction(int date, Client guest, Water wat, int quant){
+//
+//        if(date != 0 && guest != null && wat != null && quant != 0){
+//            sales.add(new Sale(date, guest, wat, quant));
+//        }
+//        return sales;
+//    }
+
     public void sellTransaction(int date, Client guest, Water wat, int quant){
 
-        Sale sale = new Sale(date, guest, wat, quant);
-        sales.add(sale);
-
+        if(date != 0 && guest != null && wat != null && quant != 0){
+            sales.add(new Sale(date, guest, wat, quant));
+        }else{
+            System.out.println("This sale is not subject to handling!");
+        }
     }
 }

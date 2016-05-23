@@ -36,6 +36,7 @@ public class Slider extends JPanel {
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
         bullet = new Bullet(600, 600, Direct.MINUS, ogr);
         lab = setLab(bF.getBf());
+
         ogr = new Tiger(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
         agrInt = new AgrIntel(bF, lab, agressor);
         tigrInt = new AgrIntel(bF, lab, ogr);
@@ -61,26 +62,16 @@ public class Slider extends JPanel {
     public void runTheGame() throws Exception {
 
         // /**TIGERS WAY*/
-//        tiLog.findDefendersCoords();
-//        defender.turn(Direct.RIGHT);
-//        defender.move();
-//        defender.move();
-//        tiLog.findDefendersCoords();
+        System.out.println("How Tiger sees the battlefield:");
+        for (int[] lines : tigrInt.getLab()) {
+            System.out.print("\n");
+            for (int i : lines) {
+                System.out.print(i + ", ");
+            }
+        }
+        System.out.println();
+        System.out.println();
 
-//        for(AbstractComponent i : tiLog.frontLine()){
-//            System.out.println(i.toString() + ", ");
-//        }
-//
-//
-//        System.out.println(tiLog.lineHasRock(tiLog.frontLine()));
-//        System.out.println();
-//        System.out.println(tiLog.findFrontNotWater());
-
-        //tiLog.leftLine();
-
-//        for(AbstractComponent i : tiLog.leftLine()){
-//            System.out.println(i.toString() + ", ");
-//        }
 
         try{
             tiLog.tigerStartAttack();
@@ -89,11 +80,12 @@ public class Slider extends JPanel {
             "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
             "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
         }
-
-
+        System.out.println();
 
         // /**AGRESSORS WAY*/
          /*displaying how agressor sees the BattleField*/
+        System.out.println("How Agressor sees the battlefield:");
+        System.out.println();
         for (int[] lines : agrInt.getLab()) {
             System.out.print("\n");
             for (int i : lines) {
@@ -118,7 +110,7 @@ public class Slider extends JPanel {
 
         switch(let) {
             case "B":
-                return 2;
+                return 6;
             case "E":
                 return 0;
             case "S":
@@ -220,6 +212,7 @@ public class Slider extends JPanel {
         repaint();
         Thread.sleep(50);
         bF.updateQuadrant(v, h, new Plant(h * bF.getSquad(), v * bF.getSquad()));
+        bF.updateString(v, h, "P");
         repaint();
         Thread.sleep(50);
     }
