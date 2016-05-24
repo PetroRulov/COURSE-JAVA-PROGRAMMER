@@ -1,51 +1,50 @@
-package lesson6.adapters.observers;
-
-import lesson6.adapters.observers.domains.PrintMedia;
-import lesson6.adapters.observers.domains.Subscriber;
-import lesson6.adapters.observers.domains.Subscription;
+package lesson6.adapters.supervisor;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Observable;
+
+import lesson6.adapters.supervisor.domains.*;
 
 /**
- * Created by prulov on 23.05.2016.
+ * Created by prulov on 24.05.2016.
  */
-public class SSDept {
+public class Publisher extends Observable {
 
-    private PrintMedia pm;
     private LinkedList<Subscription> sss;
-    private List<PrintMedia> pms;
+    private List<Media> mL;
 
-    public SSDept(){
-        this.pm = pm;
+    public Publisher(){
+
         this.sss = new LinkedList<Subscription>();
-        this.pms = new ArrayList<PrintMedia>();
+        this.mL = new ArrayList<Media>();
         initPML();
-
     }
 
     private void initPML(){
 
-        pms.add(new PrintMedia("Magazine", "IT Pro", "25th of every month", 81.6));
-        pms.add(new PrintMedia("Newspaper", "IT News", "the next Thursday", 49.2));
-        pms.add(new PrintMedia("Weekly Videoblog", "Weekday America", returnWednesday(), 56.2));
+        mL.add(new Media("Magazine", "IT Pro", "25th of every month", 81.6));
+        mL.add(new Media("Newspaper", "IT News", "the next Thursday", 49.2));
+        mL.add(new Media("Weekly Videoblog", "Weekday America", returnWednesday(), 56.2));
     }
 
-    public List<PrintMedia> getPms() {
-        return new ArrayList<PrintMedia>(pms);
+    public List<Media> getML() {
+        return new ArrayList<Media>(mL);
     }
 
     public LinkedList<Subscription> getSss() {
         return new LinkedList<Subscription>(sss);
     }
 
-    public void subScriptionTransaction(Subscriber guest, PrintMedia pm){
+    public void subScriptionTransaction(Subscriber guest, Media ch){
 
-        if(guest != null && pm != null){
-            sss.add(new Subscription(guest, pm));
+        if(guest != null && ch != null && !guest.equals("") && !ch.equals("")){
+            sss.add(new Subscription(guest, ch));
+            setChanged();
+            notifyObservers();
         }else{
-            System.out.println("This subscription is not subject to handling!");
+            System.err.println("This subscription is not subject to handling!");
         }
     }
 
@@ -61,6 +60,8 @@ public class SSDept {
             if (done.get(i) != null) {
                 System.out.print(j);
                 done.get(i).subScriptionInfoShow();
+                setChanged();
+                notifyObservers();
             }
         }
         System.out.println("-----------------------------------------------------------------------------------------------------------------|");

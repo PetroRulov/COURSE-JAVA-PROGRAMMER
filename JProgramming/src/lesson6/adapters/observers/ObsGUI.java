@@ -9,6 +9,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by prulov on 23.05.2016.
@@ -17,6 +19,8 @@ public class ObsGUI {
 
     private SSDept ssDept;
     private int pmIndex = 0;
+    Subscriber sb;
+    PrintMedia pm;
 
 
     public ObsGUI(SSDept ssDept) {
@@ -93,15 +97,23 @@ public class ObsGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Subscriber sb = new Subscriber(tfName.getText(), tfEmail.getText());
-                PrintMedia pm = ssDept.getPms().get(pmIndex);
+                if(tfName.getText() != null && tfEmail.getText()!= null &&
+                        !tfName.getText().equals("") && !tfEmail.getText().equals("")){
+                    sb = new Subscriber(tfName.getText(), tfEmail.getText());
+                    pm = ssDept.getPms().get(pmIndex);
 
+                    Subscription sbs = new Subscription(sb, pm);
+                    sbs.subScriptionInfoShow();
+                    ssDept.subScriptionTransaction(sb, pm);
+                    ssDept.printSubScriptionsJournal(ssDept.getSss());
+                    sbs.sendTheMessage(sb, pm);
 
-                Subscription sbs = new Subscription(sb, pm);
-                sbs.subScriptionInfoShow();
-                ssDept.subScriptionTransaction(sb, pm);
-                ssDept.printSubScriptionsJournal(ssDept.getSss());
-                sbs.sendTheMessage(sb, pm);
+                    JOptionPane.showConfirmDialog(null, "Subscription has been successfully framed!", "Subscription message", JOptionPane.CLOSED_OPTION);
+
+                }else{
+                    JOptionPane.showConfirmDialog(null, "Please, input your name and specify your e-mail", "Subscription failed!", JOptionPane.DEFAULT_OPTION);
+                    return;
+                }
             }
         });
 

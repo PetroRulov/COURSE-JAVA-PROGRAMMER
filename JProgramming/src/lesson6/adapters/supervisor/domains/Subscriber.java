@@ -1,4 +1,4 @@
-package lesson6.adapters.observers.domains;
+package lesson6.adapters.supervisor.domains;
 
 import java.util.Observable;
 
@@ -9,8 +9,6 @@ public class Subscriber {
 
     private String ssName;
     private String eMail;
-
-    public Subscriber(){}
 
     public Subscriber(String ssName, String eMail){
 
@@ -33,4 +31,5 @@ public class Subscriber {
     public void setSsName(String ssName) {
         this.ssName = ssName;
     }
+
 }

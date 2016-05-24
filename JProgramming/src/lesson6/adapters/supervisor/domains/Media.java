@@ -1,9 +1,9 @@
-package lesson6.adapters.observers.domains;
+package lesson6.adapters.supervisor.domains;
 
 /**
- * Created by prulov on 23.05.2016.
+ * Created by prulov on 24.05.2016.
  */
-public class PrintMedia {
+public class Media {
 
     private String pmType;
     private String pmName;
@@ -11,9 +11,7 @@ public class PrintMedia {
     private double value;
     private String message;
 
-    public PrintMedia(){}
-
-    public PrintMedia(String pmType, String pmName, String quant, double value){
+    public Media(String pmType, String pmName, String quant, double value){
 
         this.pmType = pmType;
         this.pmName = pmName;
@@ -54,3 +52,4 @@ public class PrintMedia {
         return getPmType() + " \"" + getPmName() + "\", " + "€" + getValue() + " for 12 months";
     }
 }
+
