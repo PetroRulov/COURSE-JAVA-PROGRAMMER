@@ -40,11 +40,12 @@ public class Publisher extends Observable {
     public void subScriptionTransaction(Subscriber guest, Media ch){
 
         if(guest != null && ch != null && !guest.equals("") && !ch.equals("")){
-            sss.add(new Subscription(guest, ch));
+            Subscription novus = new Subscription(guest, ch);
+            sss.add(novus);
             setChanged();
-            notifyObservers();
+            notifyObservers(novus);
         }else{
-            System.err.println("This subscription is not subject to handling!");
+            System.err.println("This subscription is not SUBJECT to handling!");
         }
     }
 

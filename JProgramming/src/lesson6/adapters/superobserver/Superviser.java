@@ -5,9 +5,6 @@ import java.util.Observer;
 
 public class Superviser implements Observer {
 
-
-
-
     @Override
     public void update(Observable o, Object arg) {
 

@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="frame 6_2_6">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/superobserver/ActionEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/superobserver/ObserverPatternDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Worker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisorDemo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Media.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscriber.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscription.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" />
+    <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/observers/ObsGUI.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/observers/ObsGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/observers/SSDept.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/observers/SSDept.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/PrintMedia.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/PrintMedia.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/Subscriber.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/Subscriber.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/Subscription.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/Subscription.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java" afterPath="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java" />
     </list>
     <ignored path="JProgramming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +42,8 @@
       <file leaf-file-name="Superviser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="63" />
+            <state relative-caret-position="102">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,34 +51,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Subscriber.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscriber.java">
+      <file leaf-file-name="Observer.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="374">
+              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObsGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/observers/ObsGUI.java">
+      <file leaf-file-name="Worker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="104" column="54" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="64" />
+            <state relative-caret-position="572">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Media.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Media.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -99,8 +76,8 @@
       <file leaf-file-name="Publisher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state relative-caret-position="436">
+              <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,30 +88,48 @@
       <file leaf-file-name="Observable.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-618">
-              <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
+            <state relative-caret-position="340">
+              <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SuperVisorDemo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SuperVisorDemo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisorDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="187">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubScrGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SubScrGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="124" column="38" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+            <state relative-caret-position="334">
+              <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#879#880#0" expanded="true" />
+                <element signature="e#913#914#0" expanded="true" />
+                <element signature="e#940#941#0" expanded="true" />
+                <element signature="e#973#974#0" expanded="true" />
+                <element signature="e#998#999#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActionEvent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/ActionEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+              <folding>
+                <element signature="e#337#338#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -207,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/lesson6/adapters/superobserver/ActionEvent.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Worker.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/superobserver/ObserverPatternDemo.java" />
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/observers/SSDept.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/PrintMedia.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/observers/domains/Subscription.java" />
@@ -217,11 +211,12 @@
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisor.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/DeptSubScr.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscriber.java" />
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisorDemo.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Media.java" />
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscription.java" />
+        <option value="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java" />
+        <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java" />
+        <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisorDemo.java" />
       </list>
     </option>
   </component>
@@ -255,9 +250,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -428,6 +420,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -878,7 +873,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464012668522</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="frame 6_2_8">
+      <created>1464123170440</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1464123170440</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -932,7 +934,8 @@
     <MESSAGE value="frame 5_5_4 executed with MouseDragged overrided" />
     <MESSAGE value="frame 6_1_3" />
     <MESSAGE value="frame 6_2_6" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame 6_2_6" />
+    <MESSAGE value="frame 6_2_8" />
+    <option name="LAST_COMMIT_MESSAGE" value="frame 6_2_8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1140,7 +1143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="22" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,7 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="36" column="28" selection-start-line="7" selection-start-column="4" selection-end-line="56" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1170,61 +1170,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/ActionButtonSSEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/ActionButtonSSEvent.java" />
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisor.java" />
     <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/observers/OBSLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="34" column="17" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="e#920#921#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/ActionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding>
-            <element signature="e#337#338#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/observers/ObsGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="1598">
           <caret line="104" column="54" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1248,40 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/ObserverPatternDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-618">
-          <caret line="56" column="52" selection-start-line="56" selection-start-column="52" selection-end-line="56" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisorDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscription.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -1292,10 +1215,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/ActionEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/ObserverPatternDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="e#920#921#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="63" />
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1304,11 +1281,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="124" column="38" selection-start-line="124" selection-start-column="38" selection-end-line="124" selection-end-column="38" />
+        <state relative-caret-position="334">
+          <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#973#974#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SuperVisorDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
