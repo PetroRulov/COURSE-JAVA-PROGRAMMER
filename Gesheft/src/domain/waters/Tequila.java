@@ -1,7 +1,11 @@
-package waters;
+package domain.waters;
 
-import enumerations.*;
+import enumerations.Drink;
+import enumerations.Tare;
 
+/**
+ * Created by prulov on 26.05.2016.
+ */
 public class Tequila extends Water {
 
     public Tequila(Drink drink, String name, Tare tare, double volume, int quant, double value, double price) {

@@ -325,7 +325,7 @@ public class CalcGUI extends JPanel implements ActionListener {
         cPan.add(window, new GridBagConstraints(0, 1, 0, 1, 0, 0,
                 GridBagConstraints.LAST_LINE_END, GridBagConstraints.HORIZONTAL, new Insets(0, 10, 0, 10), 0, 0));
 
-        cPan.add(bS, new GridBagConstraints(0, 2, 2, 1, 0, 0,
+        cPan.add(bS, new GridBagConstraints(0, 2, 2, 1, 50, 0,
                 GridBagConstraints.LINE_START, GridBagConstraints.HORIZONTAL, new Insets(10, 10, 0, 10), 0, 0));
         cPan.add(mM, new GridBagConstraints(2, 2, 1, 1, 0, 0,
                 GridBagConstraints.LINE_START, GridBagConstraints.HORIZONTAL, new Insets(10, 10, 0, 10), 0, 0));

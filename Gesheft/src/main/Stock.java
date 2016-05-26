@@ -1,15 +1,19 @@
-package domain;
+package main;
 
+import enumerations.Drink;
+import enumerations.Tare;
 import interfaces.IDataProvider;
-import waters.*;
-import enumerations.*;
+import domain.waters.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class Stock implements IDataProvider {
+/**
+ * Created by prulov on 26.05.2016.
+ */
 
+public class Stock implements IDataProvider {
     private Water[] wat;
     private List<Water> waters;
     private Vector<Water> vat;
@@ -22,7 +26,7 @@ public class Stock implements IDataProvider {
         this.vat = new Vector<>();
 
         initStock(); // filling Array
-        fillStock(); // filling List
+        fillListStock(); // filling List
         fillVectorStock(); // filling Vector
     }
 
@@ -37,8 +41,8 @@ public class Stock implements IDataProvider {
     @Override
     public Vector<Water> getVat() {
 
-        fillVectorStock();
-        return new Vector<> (vat);
+        //fillVectorStock();
+        return new Vector<Water>(vat);
     }
 
     /**-T h e     q u a n t i t y     o f      G o o d s     i n     S t o c k-*/
@@ -192,7 +196,7 @@ public class Stock implements IDataProvider {
 
     }
 
-    private void fillStock() {
+    private void fillListStock() {
 
         for(Water w : wat){
             if(w != null){
@@ -211,8 +215,6 @@ public class Stock implements IDataProvider {
         }
     }
 
-
-
     public void soldWaterMinus(Water wat, int quant){
 
         Water sold = null;
@@ -226,5 +228,4 @@ public class Stock implements IDataProvider {
     }
 
 }
-
 

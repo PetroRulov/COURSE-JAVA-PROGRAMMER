@@ -1,26 +1,27 @@
+package guis;
+
 import domain.Client;
 import domain.Sale;
-import domain.Stock;
 import interfaces.IDataProvider;
-import waters.Water;
+import util.Service;
+import domain.waters.Water;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-import javax.swing.border.Border;
-import java.awt.*;
-import java.awt.Dimension;
 import java.text.NumberFormat;
-import java.util.*;
 
-public class Gesh_GBL_GUI {
+/**
+ * Created by prulov on 26.05.2016.
+ */
+public class GeshGUI {
 
     private IDataProvider dataProvider;
     private Service serv;
     private int watIndex = 0;
 
-    public Gesh_GBL_GUI(Service serv) {
+    public GeshGUI(Service serv) {
 
         this.serv = serv;
         //this.bad = bad;
@@ -62,7 +63,7 @@ public class Gesh_GBL_GUI {
         panel.add(tfName, new GridBagConstraints(1, 1, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
         JLabel choose = new JLabel("Choose the good: ");
-        List<Water> wat = serv.getBad().getStk().getWaters();
+        java.util.List<Water> wat = serv.getBad().getStk().getWaters();
         ButtonGroup watGroup = new ButtonGroup();
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
         choose.setForeground(Color.ORANGE);
@@ -142,11 +143,4 @@ public class Gesh_GBL_GUI {
         }
     }
 }
-
-
-
-
-
-
-
 

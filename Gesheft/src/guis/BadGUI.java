@@ -1,24 +1,26 @@
-import domain.Client;
-import domain.Sale;
-import domain.Stock;
-import interfaces.IDataProvider;
-import waters.Water;
+package guis;
 
+import domain.Client;
+import interfaces.IDataProvider;
+import util.Service;
+import domain.waters.Water;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
-import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
-import java.awt.Dimension;
 import java.text.NumberFormat;
+import java.util.Vector;
 
-public class BadiganShopUI {
+/**
+ * Created by prulov on 26.05.2016.
+ */
+public class BadGUI {
 
     private IDataProvider dataProvider;
     private Service serv;
 
-    public BadiganShopUI(Service serv) {
+    public BadGUI(Service serv) {
 
         this.serv = serv;
 
@@ -43,7 +45,7 @@ public class BadiganShopUI {
         //panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
         panel.setLayout(null);
         panel.setBackground(Color.BLACK);
-        Border solidBorder = BorderFactory.createLineBorder(Color.ORANGE, 1);
+        //Border solidBorder = BorderFactory.createLineBorder(Color.ORANGE, 1);
         JLabel date = new JLabel("Date (ddmmyyyy): ");
         date.setBounds(50, 50, 150, 25);
         date.setFont(new Font("Garamond", Font.ITALIC, 20));
@@ -141,7 +143,3 @@ public class BadiganShopUI {
 
 
 }
-
-
-
-

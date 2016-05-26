@@ -1,6 +1,6 @@
 package interfaces;
 
-import waters.Water;
+import domain.waters.Water;
 
 import java.util.List;
 import java.util.Vector;

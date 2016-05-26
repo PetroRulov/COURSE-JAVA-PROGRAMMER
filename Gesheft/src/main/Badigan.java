@@ -1,14 +1,14 @@
-import domain.Client;
-import domain.Sale;
-import domain.Stock;
-import waters.Water;
+package main;
+
+import domain.*;
+import domain.waters.Water;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by prulov on 22.03.2016.
+ * Created by prulov on 26.05.2016.
  */
 public class Badigan {
 
@@ -77,7 +77,6 @@ public class Badigan {
         clts.add( new Client("Schwarznegger", "Arnold"));
         clts.add( new Client("Zapoyniy", "Alkash"));
 
-
     }
 
     private void initSalesJournal(){
@@ -125,14 +124,6 @@ public class Badigan {
         sales.add( new Sale(17032016, clts.get(5), stk.getWat()[65], 1));
 
     }
-
-//    public LinkedList<Sale> sellTransaction(int date, Client guest, Water wat, int quant){
-//
-//        if(date != 0 && guest != null && wat != null && quant != 0){
-//            sales.add(new Sale(date, guest, wat, quant));
-//        }
-//        return sales;
-//    }
 
     public void sellTransaction(int date, Client guest, Water wat, int quant){
 

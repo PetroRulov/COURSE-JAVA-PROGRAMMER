@@ -1,7 +1,11 @@
-package waters;
+package domain.waters;
 
-import enumerations.*;
+import enumerations.Drink;
+import enumerations.Tare;
 
+/**
+ * Created by prulov on 26.05.2016.
+ */
 public class Water {
 
     protected Drink drink;
@@ -118,5 +122,3 @@ public class Water {
         this.volume = volume;
     }
 }
-
-

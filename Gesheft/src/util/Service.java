@@ -1,11 +1,16 @@
+package util;
+
 import domain.Client;
 import domain.Sale;
-import domain.Stock;
 import enumerations.*;
+import main.*;
 
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Created by prulov on 26.05.2016.
+ */
 public class Service {
 
     private Badigan bad;

@@ -1,4 +1,4 @@
-import domain.Sale;
+import util.Service;
 
 /**
  * Created by prulov on 22.03.2016.

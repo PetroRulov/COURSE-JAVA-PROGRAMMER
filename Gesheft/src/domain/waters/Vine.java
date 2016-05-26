@@ -1,7 +1,11 @@
-package waters;
+package domain.waters;
 
-import enumerations.*;
+import enumerations.Drink;
+import enumerations.Tare;
 
+/**
+ * Created by prulov on 26.05.2016.
+ */
 public class Vine extends Water {
 
     private String color;
@@ -28,5 +32,3 @@ public class Vine extends Water {
         return strength;
     }
 }
-
-

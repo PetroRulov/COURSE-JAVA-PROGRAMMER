@@ -1,7 +1,6 @@
 package domain;
 
-import domain.Client;
-import waters.*;
+import domain.waters.Water;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
