@@ -32,20 +32,8 @@ public class Sale {
 
     }
 
-    public void setGuest(Client guest) {
-        this.guest = guest;
-    }
-
-    public void setIncome(double income) {
-        this.income = income;
-    }
-
     public void setQuant(int quant) {
         this.quant = quant;
-    }
-
-    public void setWat(Water wat) {
-        this.wat = wat;
     }
 
     public int getDate() {

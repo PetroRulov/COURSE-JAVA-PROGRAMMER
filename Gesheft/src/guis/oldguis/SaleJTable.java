@@ -12,7 +12,7 @@ import java.awt.*;
 public class SaleJTable extends JFrame {
 
     private Service serv;
-    private String[][] salesJournal;
+    private Object[][] data;
     private String[] colNames;
 
 
@@ -24,10 +24,12 @@ public class SaleJTable extends JFrame {
         frame.setLocation(0, 0);
 
         this.serv = serv;
-        salesJournal = fillRows();
         colNames = fillColumns();
+        data = fillData();
 
-        JTable table = new JTable(salesJournal, colNames);
+        JTable table = new JTable(data, colNames);
+
+        // This creates a scroll pane as a container for the table; the table is automatically added to the container.
         JScrollPane scrollPane = new JScrollPane(table);
 
         TableColumn column = null;
@@ -54,33 +56,30 @@ public class SaleJTable extends JFrame {
             "#", "Date", "Client's surname", "Clients name", "Drink type", "Drink name", "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH"
 
         };
-
-
         return colNames;
     }
 
-    private String[][] fillRows(){
+    private Object[][] fillData(){
 
-        String[][] salesJournal = new String[serv.getBad().getVectSales().size()][11];
+        Object[][] data = new Object[serv.getBad().getVectSales().size()][11];
         int j = 1;
         for(int i = 0; i < serv.getBad().getVectSales().size(); i++){
 
-            salesJournal[i] = new String[]{
-                    String.valueOf(j++),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getDate()),
+            data[i] = new Object[]{
+                    j++,
+                    serv.getBad().getVectSales().get(i).getDate(),
                     serv.getBad().getVectSales().get(i).getGuest().getSurName(),
                     serv.getBad().getVectSales().get(i).getGuest().getName(),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getWat().getDrink()),
+                    serv.getBad().getVectSales().get(i).getWat().getDrink(),
                     serv.getBad().getVectSales().get(i).getWat().getName(),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getWat().getTare()),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getWat().getVolume()),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getQuant()),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getWat().getPrice()),
-                        String.valueOf(serv.getBad().getVectSales().get(i).getIncome())
+                    serv.getBad().getVectSales().get(i).getWat().getTare(),
+                    serv.getBad().getVectSales().get(i).getWat().getVolume(),
+                    serv.getBad().getVectSales().get(i).getQuant(),
+                    serv.getBad().getVectSales().get(i).getWat().getPrice(),
+                    serv.getBad().getVectSales().get(i).getIncome()
             };
         }
-
-        return salesJournal;
+        return data;
     }
 
 

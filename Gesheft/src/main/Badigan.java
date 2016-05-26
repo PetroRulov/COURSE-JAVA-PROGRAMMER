@@ -129,17 +129,6 @@ public class Badigan {
         }
     }
 
-//    private void initSalesArr(){
-//
-//        int i = 0;
-//        for(Sale s : sales){
-//            if(s != null){
-//                arrSales[i] = s;
-//                i++;
-//            }
-//        }
-//    }
-
     private void initVectorSales(){
 
         vectSales.add( new Sale(9032016, clts.get(0), stk.getWat()[5], 3));
