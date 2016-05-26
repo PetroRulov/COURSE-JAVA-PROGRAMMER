@@ -1,8 +1,5 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by prulov on 22.03.2016.
  */
@@ -17,11 +14,11 @@ public class Client {
     public Client(){}
 
     // for GUI
-    public Client(String surName, String name){
-
-        this.surName = surName;
-        this.name = name;
-    }
+//    public Client(String surName, String name){
+//
+//        this.surName = surName;
+//        this.name = name;
+//    }
 
     public Client(String surName, String name, int age, String sex, String eMail){
 
@@ -67,7 +64,8 @@ public class Client {
     public boolean equals(Object obj){
         if(obj instanceof Client){
             Client guest = (Client) obj;
-            return (surName != null && surName.equals(guest.getSurName()) && name.equals(guest.getName()));
+            return (surName != null && surName.equals(guest.getSurName()) && name.equals(guest.getName()) && age == guest.getAge() &&
+            sex.equals(guest.getSex()) && eMail.equals(guest.geteMail()));
         }
         return false;
     }

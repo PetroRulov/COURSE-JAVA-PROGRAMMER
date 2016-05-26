@@ -1,14 +1,11 @@
-package guis;
+package guis.oldguis;
 
-import domain.Client;
+import domain.waters.Water;
 import interfaces.IDataProvider;
 import util.Service;
-import domain.waters.Water;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.text.NumberFormat;
 import java.util.Vector;
 
@@ -89,38 +86,38 @@ public class BadGUI {
         tfQuant.setValue(1);
         tfQuant.setBounds(200, 200, 200, 25);
         JButton buy = new JButton("Buy");
-        buy.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                int date = Integer.parseInt(tfDate.getText());
-                Client guest = new Client(tfSurName.getText(), tfYName.getText());
-                for(Client n : serv.getBad().getGuests()){
-                    if(tfSurName.getText().equals(n.getSurName()) && tfYName.getText().equals(n.getName())){
-                        guest = n;
-                        break;
-                    }else{
-                        System.out.println("There is no such Client in database!");
-                    }
-                }
-                Water wat = (Water) combo.getSelectedItem();
-                int quant = Integer.parseInt(tfQuant.getText());
-
-                if(wat.getQuant() >= quant){
-                    serv.getBad().getStk().soldWaterMinus(wat, quant);
-                    JOptionPane.showConfirmDialog(null, "Transaction is possible!", "Transaction possibility", JOptionPane.PLAIN_MESSAGE);
-                    serv.getBad().sellTransaction(date, guest, wat, quant);
-                }else{
-                    JOptionPane.showConfirmDialog(null, "Transaction is NOT possible! \n Please, try again with new quantity of item",
-                            "Transaction possibility", JOptionPane.OK_CANCEL_OPTION);
-                }
-
-                // optional methods displaying result
-                serv.printSalesJournal(serv.getBad().getSales());
-                serv.getBad().getStk().printWat();
-            }
-        });
+//        buy.addActionListener(new ActionListener() {
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//                int date = Integer.parseInt(tfDate.getText());
+//                Client guest = new Client(tfSurName.getText(), tfYName.getText());
+//                for(Client n : serv.getBad().getClts()){
+//                    if(tfSurName.getText().equals(n.getSurName()) && tfYName.getText().equals(n.getName())){
+//                        guest = n;
+//                        break;
+//                    }else{
+//                        System.out.println("There is no such Client in database!");
+//                    }
+//                }
+//                Water wat = (Water) combo.getSelectedItem();
+//                int quant = Integer.parseInt(tfQuant.getText());
+//
+//                if(wat.getQuant() >= quant){
+//                    serv.getBad().getStk().soldWaterMinus(wat, quant);
+//                    JOptionPane.showConfirmDialog(null, "Transaction is possible!", "Transaction possibility", JOptionPane.PLAIN_MESSAGE);
+//                    serv.getBad().sellTransaction(date, guest, wat, quant);
+//                }else{
+//                    JOptionPane.showConfirmDialog(null, "Transaction is NOT possible! \n Please, try again with new quantity of item",
+//                            "Transaction possibility", JOptionPane.OK_CANCEL_OPTION);
+//                }
+//
+//                // optional methods displaying result
+//                serv.printSalesJournal(serv.getBad().getSales());
+//                serv.getBad().getStk().printWat();
+//            }
+//        });
         buy.setBounds(200, 250, 325, 25);
         buy.setFont(new Font("Garamond", Font.BOLD, 20));
 

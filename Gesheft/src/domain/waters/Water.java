@@ -81,7 +81,7 @@ public class Water {
     @Override
     public String toString(){
 
-        return getDrink() + " " + getName() + ", " + getTare() + ", " + getVolume() + ", price: " + getPrice();
+        return getDrink() + " " + getName() + ", " + getTare() + " " + getVolume() + "L, price: UAH " + getPrice();
     }
 
     @Override

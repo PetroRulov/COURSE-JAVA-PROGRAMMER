@@ -14,6 +14,7 @@ import java.util.Vector;
  */
 
 public class Stock implements IDataProvider {
+
     private Water[] wat;
     private List<Water> waters;
     private Vector<Water> vat;
