@@ -34,13 +34,17 @@ public class BuyControl implements ActionListener, Observer {
         int date = Integer.parseInt(gGui.getTfDate().getText());
 
         Client guest = null;
-        if(isPresent()){
+        if(clientDataAreCorrect() && isPresent()){
             JOptionPane.showConfirmDialog(null, "This Client is present in database", "Clients Database", JOptionPane.PLAIN_MESSAGE);
             guest = setClient();
-        }else{
+        }else if(clientDataAreCorrect() && !isPresent()){
             guest = setClient();
             serv.getBad().addNewClient(gGui.getTfSurName().getText(), gGui.getTfYName().getText(), Integer.parseInt(gGui.getTfAge().getText()),
                 gGui.getTfSex().getText(), gGui.getTfEmail().getText());
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct data about Client and try again!",
+                    "Clients Database", JOptionPane.PLAIN_MESSAGE);
+            return;
         }
 
         Water wat = (Water) gGui.getCombo().getSelectedItem();
@@ -75,11 +79,24 @@ public class BuyControl implements ActionListener, Observer {
 
         Client guest = new Client(gGui.getTfSurName().getText(), gGui.getTfYName().getText(), Integer.parseInt(gGui.getTfAge().getText()),
                 gGui.getTfSex().getText(), gGui.getTfEmail().getText());
+
         if(serv.getBad().getClts().contains(guest)){
             return true;
         }
         return false;
+    }
 
+    private boolean clientDataAreCorrect(){
+
+        if(gGui.getTfSurName().getText() != null && !gGui.getTfSurName().getText().equals("") &&
+                gGui.getTfYName().getText() != null && !gGui.getTfYName().getText().equals("") &&
+                Integer.parseInt(gGui.getTfAge().getText()) != 0 &&
+                gGui.getTfSex().getText() != null && !gGui.getTfSex().getText().equals("") &&
+                gGui.getTfEmail().getText() != null && !gGui.getTfEmail().getText().equals("")){
+
+            return true;
+        }
+        return false;
     }
 
     @Override

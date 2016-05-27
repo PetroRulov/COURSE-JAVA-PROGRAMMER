@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/domain/Sale.class" afterPath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/domain/Sale.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/src/GESHLauncher.java" afterPath="$PROJECT_DIR$/../Gesheft/src/GESHLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/BuyControl.java" afterPath="$PROJECT_DIR$/../Gesheft/src/guis/BuyControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/oldguis/SaleJTable.java" afterPath="$PROJECT_DIR$/../Gesheft/src/guis/oldguis/SaleJTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/src/main/Badigan.java" afterPath="$PROJECT_DIR$/../Gesheft/src/main/Badigan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/src/main/Stock.java" afterPath="$PROJECT_DIR$/../Gesheft/src/main/Stock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JProgramming.iws" />
     <ignored path=".idea/workspace.xml" />
