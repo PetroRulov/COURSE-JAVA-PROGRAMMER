@@ -16,11 +16,12 @@ import java.util.Observer;
 /**
  * Created by prulov on 26.05.2016.
  */
-public class SaleJTable extends JFrame {
+public class SaleJTable {
 
     private Service serv;
     private Object[][] data;
     private String[] colNames;
+    //private JFrame frame;
 
 
     public SaleJTable(Service serv){
@@ -43,9 +44,12 @@ public class SaleJTable extends JFrame {
 
             @Override
             public void mouseClicked(MouseEvent e) {
+
+
                 GeshGUI geshGUI = new GeshGUI(serv);
                 Observer obs = new BuyControl(serv, geshGUI);
                 serv.getBad().addObserver(obs);
+                frame.dispose();
             }
         });
 
@@ -61,7 +65,7 @@ public class SaleJTable extends JFrame {
 
 
         frame.setJMenuBar(menuBar);
-        frame.setMinimumSize(new Dimension(1250, 750));
+        frame.setMinimumSize(new Dimension(1150, 650));
         frame.setLocation(0, 0);
 
         this.serv = serv;
@@ -72,22 +76,23 @@ public class SaleJTable extends JFrame {
 
         // This creates a scroll pane as a container for the table; the table is automatically added to the container.
         JScrollPane scrollPane = new JScrollPane(table);
+        frame.getContentPane().add(scrollPane);
 
         TableColumn column = null;
         for(int i = 0; i < 11; i++){
             column = table.getColumnModel().getColumn(i);
-            if(i == 2 || i == 3){
-                column.setPreferredWidth(50);
+            if(i == 2 || i == 3 || i == 5){
+                column.setPreferredWidth(100);
             }else{
                 column.setPreferredWidth(20);
             }
         }
 
-        frame.getContentPane().add(scrollPane);
-        frame.setPreferredSize(new Dimension(450, 200));
+        //frame.setPreferredSize(new Dimension(450, 200));
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
     }
 
     private String[] fillColumns(){
@@ -121,6 +126,5 @@ public class SaleJTable extends JFrame {
         }
         return data;
     }
-
 
 }

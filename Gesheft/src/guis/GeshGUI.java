@@ -5,8 +5,14 @@ import interfaces.IDataProvider;
 import util.Service;
 
 import javax.swing.*;
+import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.text.NumberFormat;
+import java.util.Observer;
 import java.util.Vector;
 
 /**
@@ -16,6 +22,8 @@ public class GeshGUI {
 
     private IDataProvider dataProvider;
     private Service serv;
+    private JFrame f;
+    private JPanel panel;
 
     // controller's fields:
     private JTextField tfDate;
@@ -33,16 +41,53 @@ public class GeshGUI {
 
         this.serv = serv;
 
-        JFrame f = new JFrame("\"BADIGAN\" ALCOHOL SHOP TRANSACTION");
-        f.setMinimumSize(new Dimension(800, 350));
-        f.setLocation(550, 0);
-        f.getContentPane().add(createSellingPannel());
+        this.f = new JFrame("* ALCOHOL SHOP - \"BADIGAN\" - ALCOHOL SHOP *");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setMinimumSize(new Dimension(1200, 700));
+        f.setLocation(0, 0);
+
+        Font font = new Font("Verdana", Font.BOLD, 18);
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.setFont(font);
+        menuBar.add(fileMenu);
+        JMenu buyMenu = new JMenu("Buy");
+        buyMenu.setFont(font);
+        fileMenu.add(buyMenu);
+        fileMenu.addSeparator();
+
+        buyMenu.addMouseListener(new MouseAdapter(){
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                showTransactionGUI();
+
+            }
+        });
+
+        JMenuItem exitItem = new JMenuItem("Exit");
+        exitItem.setFont(font);
+        fileMenu.add(exitItem);
+
+        exitItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+        f.setJMenuBar(menuBar);
+
+        // adding the SalesTable
+        showSalesData();
+
+        // adding Transaction GUI
+
         f.pack();
         f.setVisible(true);
     }
 
-    private JPanel createSellingPannel() {
+    private JPanel createSalePannel() {
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
@@ -60,6 +105,7 @@ public class GeshGUI {
         tfDate.setForeground(Color.BLACK);
         tfDate.setColumns(6);
         tfDate.setHorizontalAlignment(JTextField.RIGHT);
+        tfDate.setText("18032016");
         panel.add(tfDate, new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel surName = new JLabel("Customer's Surname: ");
@@ -184,6 +230,81 @@ public class GeshGUI {
 
     public JTextField getTfYName() {
         return tfYName;
+    }
+
+    private JTable createSalesTable(){
+
+        Object[] colNames = fillColumns();
+        Object[][] data = fillData();
+        JTable tSales = new JTable(data, colNames);
+        TableColumn column = null;
+        for(int i = 0; i < 11; i++){
+            column = tSales.getColumnModel().getColumn(i);
+            if(i == 2 || i == 3 || i == 5){
+                column.setPreferredWidth(250);
+            }else{
+                column.setPreferredWidth(150);
+            }
+        }
+        return tSales;
+    }
+
+    private Object[] fillColumns(){
+
+        String[] heads = new String[]{
+          "#", "Date", "Client's surname", "Clients name", "Drink type", "Drink name", "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH"
+        };
+        Object[] colNames = new Object[heads.length];
+        for(int i = 0; i < 11; i++){
+            colNames[i] = heads[i];
+        }
+        return colNames;
+    }
+
+    private Object[][] fillData(){
+
+        Object[][] data = new Object[serv.getBad().getVectSales().size()][11];
+        int j = 1;
+        for(int i = 0; i < serv.getBad().getVectSales().size(); i++){
+
+            data[i] = new Object[]{
+                    j++,
+                    serv.getBad().getVectSales().get(i).getDate(),
+                    serv.getBad().getVectSales().get(i).getGuest().getSurName(),
+                    serv.getBad().getVectSales().get(i).getGuest().getName(),
+                    serv.getBad().getVectSales().get(i).getWat().getDrink(),
+                    serv.getBad().getVectSales().get(i).getWat().getName(),
+                    serv.getBad().getVectSales().get(i).getWat().getTare(),
+                    serv.getBad().getVectSales().get(i).getWat().getVolume(),
+                    serv.getBad().getVectSales().get(i).getQuant(),
+                    serv.getBad().getVectSales().get(i).getWat().getPrice(),
+                    serv.getBad().getVectSales().get(i).getIncome()
+            };
+        }
+        return data;
+    }
+
+    private void showSalesData(){
+
+        JTable table = createSalesTable();
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        f.getContentPane().add(scrollPane);
+
+    }
+
+    private void showTransactionGUI(){
+
+        f.getContentPane().removeAll();
+        panel = createSalePannel();
+        f.getContentPane().add(panel);
+
+        f.pack();
+        f.repaint();
+
+        Observer obs = new BuyControl(serv, this);
+        serv.getBad().addObserver(obs);
+
     }
 
 }

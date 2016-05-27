@@ -20,7 +20,6 @@ public class BuyControl implements ActionListener, Observer {
     private Service serv;
     private GeshGUI gGui;
 
-
     public BuyControl(Service serv, GeshGUI gGui){
 
         this.serv = serv;
@@ -103,7 +102,6 @@ public class BuyControl implements ActionListener, Observer {
     public void update(Observable o, Object arg) {
 
         if(arg instanceof Sale){
-            System.out.println();
             new SaleJTable(serv);
         }else{
             System.out.println(this.toString() + " notified.");
