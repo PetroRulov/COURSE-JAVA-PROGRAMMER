@@ -1,9 +1,8 @@
 package main;
 
+import domain.waters.*;
 import enumerations.Drink;
 import enumerations.Tare;
-import interfaces.IDataProvider;
-import domain.waters.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.Vector;
  * Created by prulov on 26.05.2016.
  */
 
-public class Stock implements IDataProvider {
+public class Stock {
 
     private Water[] wat;
     private List<Water> waters;
@@ -39,7 +38,6 @@ public class Stock implements IDataProvider {
         return new ArrayList<>(waters);
     }
 
-    @Override
     public Vector<Water> getVat() {
 
         //fillVectorStock();

@@ -1,10 +1,17 @@
 package guis.oldguis;
 
+import guis.BuyControl;
+import guis.GeshGUI;
 import util.Service;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.Observer;
 
 /**
  * Created by prulov on 26.05.2016.
@@ -20,6 +27,40 @@ public class SaleJTable extends JFrame {
 
         JFrame frame = new JFrame(" \"BADIGAN\" SALES JOURNAL");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        Font font = new Font("Verdana", Font.BOLD, 18);
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.setFont(font);
+        menuBar.add(fileMenu);
+        JMenu buyMenu = new JMenu("Buy");
+        buyMenu.setFont(font);
+        fileMenu.add(buyMenu);
+
+        fileMenu.addSeparator();
+
+        buyMenu.addMouseListener(new MouseAdapter(){
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                GeshGUI geshGUI = new GeshGUI(serv);
+                Observer obs = new BuyControl(serv, geshGUI);
+                serv.getBad().addObserver(obs);
+            }
+        });
+
+        JMenuItem exitItem = new JMenuItem("Exit");
+        exitItem.setFont(font);
+        fileMenu.add(exitItem);
+
+        exitItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+
+
+        frame.setJMenuBar(menuBar);
         frame.setMinimumSize(new Dimension(1250, 750));
         frame.setLocation(0, 0);
 
@@ -40,7 +81,6 @@ public class SaleJTable extends JFrame {
             }else{
                 column.setPreferredWidth(20);
             }
-
         }
 
         frame.getContentPane().add(scrollPane);

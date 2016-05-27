@@ -1,6 +1,7 @@
 package guis;
 
 import domain.Client;
+import domain.Sale;
 import domain.waters.Water;
 import guis.oldguis.SaleJTable;
 import util.Service;
@@ -8,11 +9,13 @@ import util.Service;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by prulov on 26.05.2016.
  */
-public class BuyControl implements ActionListener {
+public class BuyControl implements ActionListener, Observer {
 
     private Service serv;
     private GeshGUI gGui;
@@ -54,10 +57,10 @@ public class BuyControl implements ActionListener {
         }
 
         // optional methods displaying result
-        serv.printSalesJournal(serv.getBad().getSales());
+
         serv.getBad().getStk().printWat();
         serv.printClientsBase(serv.getBad().getClts());
-        new SaleJTable(serv);
+
 
     }
 
@@ -76,6 +79,18 @@ public class BuyControl implements ActionListener {
             return true;
         }
         return false;
+
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+
+        if(arg instanceof Sale){
+            System.out.println();
+            new SaleJTable(serv);
+        }else{
+            System.out.println(this.toString() + " notified.");
+        }
 
     }
 }

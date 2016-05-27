@@ -4,15 +4,12 @@ import domain.Client;
 import domain.Sale;
 import domain.waters.Water;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 /**
  * Created by prulov on 26.05.2016.
  */
-public class Badigan {
+public class Badigan extends Observable {
 
     private Stock stk;
     private List<Client> clts;
@@ -114,7 +111,10 @@ public class Badigan {
     public void sellTransaction(int date, Client guest, Water wat, int quant){
 
         if(date != 0 && guest != null && wat != null && quant != 0){
-            sales.add(new Sale(date, guest, wat, quant));
+            Sale novus = new Sale(date, guest, wat, quant);
+            sales.add(novus);
+//            setChanged();
+//            notifyObservers(novus);
         }else{
             System.err.println("This sale is not subject to handling!");
         }
@@ -123,7 +123,11 @@ public class Badigan {
     public void addNewClient(String surName, String name, int age, String sex, String eMail){
 
         if(surName != null && name != null && age != 0 && sex != null && eMail != null){
-            clts.add(new Client(surName, name, age, sex, eMail));
+            Client novus = new Client(surName, name, age, sex, eMail);
+            clts.add(novus);
+            // for ClientJTable
+//            setChanged();
+//            notifyObservers(novus);
         }else{
             System.err.println("New cannot be added because of invalid data");
         }
@@ -178,7 +182,10 @@ public class Badigan {
     public void saleVectorTransaction(int date, Client guest, Water wat, int quant){
 
         if(date != 0 && guest != null && wat != null && quant != 0){
-            vectSales.add(new Sale(date, guest, wat, quant));
+            Sale novus = new Sale(date, guest, wat, quant);
+            vectSales.add(novus);
+            setChanged();
+            notifyObservers(novus);
         }else{
             System.err.println("This sale is not subject to handling!");
         }
