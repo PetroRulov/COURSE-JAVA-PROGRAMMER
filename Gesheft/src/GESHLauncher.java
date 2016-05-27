@@ -1,4 +1,4 @@
-import guis.oldguis.SaleJTable;
+import guis.GeshGUI;
 import util.Service;
 
 /**
@@ -13,7 +13,9 @@ public class GeshLauncher {
 //        d.openBadiganRun();
 
         Service serv = new Service();
-        new SaleJTable(serv);
+        new GeshGUI(serv);
+
+        //new SaleJTable(serv);
 
     }
 }

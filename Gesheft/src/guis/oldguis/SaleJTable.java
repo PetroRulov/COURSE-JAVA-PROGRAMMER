@@ -5,6 +5,9 @@ import guis.GeshGUI;
 import util.Service;
 
 import javax.swing.*;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,11 +15,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.Observer;
+import java.util.Vector;
 
 /**
  * Created by prulov on 26.05.2016.
  */
-public class SaleJTable {
+public class SaleJTable extends DefaultTableModel {
 
     private Service serv;
     private Object[][] data;
@@ -88,6 +92,16 @@ public class SaleJTable {
             }
         }
 
+        table.getModel().addTableModelListener(new TableModelListener() {
+
+            @Override
+            public void tableChanged(TableModelEvent e) {
+
+                fireTableChanged(e);
+
+            }
+        });
+
         //frame.setPreferredSize(new Dimension(450, 200));
         frame.pack();
         frame.setLocationRelativeTo(null);
@@ -126,5 +140,15 @@ public class SaleJTable {
         }
         return data;
     }
+
+    public void newDataAvailable(TableModelEvent event) {
+        fireTableChanged(event);
+    }
+
+    public void addRow(Vector rowData) {
+        insertRow(getRowCount(), rowData);
+    }
+
+
 
 }

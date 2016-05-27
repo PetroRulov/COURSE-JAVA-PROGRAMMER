@@ -5,6 +5,7 @@ import interfaces.IDataProvider;
 import util.Service;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,7 +19,7 @@ import java.util.Vector;
 /**
  * Created by prulov on 26.05.2016.
  */
-public class GeshGUI {
+public class GeshGUI extends DefaultTableModel {
 
     private IDataProvider dataProvider;
     private Service serv;
@@ -62,7 +63,6 @@ public class GeshGUI {
             public void mouseClicked(MouseEvent e) {
 
                 showTransactionGUI();
-
             }
         });
 
@@ -71,15 +71,18 @@ public class GeshGUI {
         fileMenu.add(exitItem);
 
         exitItem.addActionListener(new ActionListener() {
+
+            @Override
             public void actionPerformed(ActionEvent e) {
+
                 System.exit(0);
             }
         });
 
         f.setJMenuBar(menuBar);
 
-        // adding the SalesTable
-        showSalesData();
+        // first initialisation of the SalesTable displaying
+        initSalesDataShow();
 
         // adding Transaction GUI
 
@@ -232,10 +235,15 @@ public class GeshGUI {
         return tfYName;
     }
 
+    public JFrame getF() {
+        return f;
+    }
+
     private JTable createSalesTable(){
 
         Object[] colNames = fillColumns();
         Object[][] data = fillData();
+
         JTable tSales = new JTable(data, colNames);
         TableColumn column = null;
         for(int i = 0; i < 11; i++){
@@ -284,7 +292,7 @@ public class GeshGUI {
         return data;
     }
 
-    private void showSalesData(){
+    private void initSalesDataShow(){
 
         JTable table = createSalesTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -293,18 +301,30 @@ public class GeshGUI {
 
     }
 
+    public void newSalesDataShow(){
+
+        f.getContentPane().removeAll();
+        JTable table = createSalesTable();
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        f.getContentPane().add(scrollPane);
+        f.pack();
+        f.repaint();
+
+    }
+
     private void showTransactionGUI(){
 
         f.getContentPane().removeAll();
         panel = createSalePannel();
         f.getContentPane().add(panel);
-
+        Observer obs = new BuyControl(serv, this);
+        serv.getBad().addObserver(obs);
         f.pack();
         f.repaint();
 
-        Observer obs = new BuyControl(serv, this);
-        serv.getBad().addObserver(obs);
-
     }
+
+
 
 }

@@ -3,7 +3,6 @@ package guis;
 import domain.Client;
 import domain.Sale;
 import domain.waters.Water;
-import guis.oldguis.SaleJTable;
 import util.Service;
 
 import javax.swing.*;
@@ -34,12 +33,13 @@ public class BuyControl implements ActionListener, Observer {
 
         Client guest = null;
         if(clientDataAreCorrect() && isPresent()){
-            JOptionPane.showConfirmDialog(null, "This Client is present in database", "Clients Database", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showConfirmDialog(null, "This Client is present in the database", "Clients Database", JOptionPane.PLAIN_MESSAGE);
             guest = setClient();
         }else if(clientDataAreCorrect() && !isPresent()){
             guest = setClient();
             serv.getBad().addNewClient(gGui.getTfSurName().getText(), gGui.getTfYName().getText(), Integer.parseInt(gGui.getTfAge().getText()),
                 gGui.getTfSex().getText(), gGui.getTfEmail().getText());
+            JOptionPane.showConfirmDialog(null, "New Client was successfully added in the database!", "Clients Database", JOptionPane.PLAIN_MESSAGE);
         }else{
             JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct data about Client and try again!",
                     "Clients Database", JOptionPane.PLAIN_MESSAGE);
@@ -102,7 +102,9 @@ public class BuyControl implements ActionListener, Observer {
     public void update(Observable o, Object arg) {
 
         if(arg instanceof Sale){
-            new SaleJTable(serv);
+
+            gGui.newSalesDataShow();
+
         }else{
             System.out.println(this.toString() + " notified.");
         }
