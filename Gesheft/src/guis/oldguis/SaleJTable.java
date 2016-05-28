@@ -1,6 +1,5 @@
 package guis.oldguis;
 
-import guis.BuyControl;
 import guis.GeshGUI;
 import util.Service;
 
@@ -14,8 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
-import java.util.Observer;
 import java.util.Vector;
 
 /**
@@ -53,8 +50,8 @@ public class SaleJTable extends DefaultTableModel {
 
                 GeshGUI geshGUI = new GeshGUI(serv);
 
-                Observer obs = new BuyControl(serv, geshGUI);
-                serv.getBad().addObserver(obs);
+//                Observer obs = new BuyControl(serv, geshGUI);
+//                serv.getBad().addObserver(obs);
                 frame.dispose();
             }
         });

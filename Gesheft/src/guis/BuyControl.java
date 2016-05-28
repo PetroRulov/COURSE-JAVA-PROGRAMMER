@@ -110,4 +110,5 @@ public class BuyControl implements ActionListener, Observer {
         }
 
     }
+
 }

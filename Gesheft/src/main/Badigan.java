@@ -3,20 +3,21 @@ package main;
 import domain.Client;
 import domain.Sale;
 import domain.waters.Water;
+import interfaces.IDataProvider;
 
 import java.util.*;
 
 /**
  * Created by prulov on 26.05.2016.
  */
-public class Badigan extends Observable {
+public class Badigan extends Observable implements IDataProvider {
 
     private Stock stk;
     private List<Client> clts;
     private LinkedList<Sale> sales;
     private Vector<Sale> vectSales;
 
-    public Badigan() {
+    public Badigan(){
 
         this.stk = new Stock();
         this.clts = new ArrayList<Client>();
@@ -190,6 +191,16 @@ public class Badigan extends Observable {
             System.err.println("This sale is not subject to handling!");
         }
     }
+
+    @Override
+    public Vector<Sale> getVat(){
+
+        if(vectSales == null){
+            initVectorSales();
+        }
+        return new Vector<Sale>(vectSales);
+    }
+
 
 
 }

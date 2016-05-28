@@ -61,6 +61,11 @@ public class GeshGUI extends DefaultTableModel {
         f.setVisible(true);
     }
 
+    public void setBadigan(IDataProvider dataProvider){
+
+        this.dataProvider = dataProvider;
+    }
+
     private JPanel createSalePannel() {
 
         JPanel panel = new JPanel();
@@ -332,7 +337,5 @@ public class GeshGUI extends DefaultTableModel {
         f.repaint();
 
     }
-
-
 
 }

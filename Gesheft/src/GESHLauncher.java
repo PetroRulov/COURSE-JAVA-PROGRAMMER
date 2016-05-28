@@ -13,9 +13,8 @@ public class GeshLauncher {
 //        d.openBadiganRun();
 
         Service serv = new Service();
-        new GeshGUI(serv);
-
-        //new SaleJTable(serv);
+        GeshGUI gGui = new GeshGUI(serv);
+        gGui.setBadigan(serv.getBad());
 
     }
 }

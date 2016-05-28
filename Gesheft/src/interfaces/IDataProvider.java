@@ -1,8 +1,7 @@
 package interfaces;
 
-import domain.waters.Water;
+import domain.Sale;
 
-import java.util.List;
 import java.util.Vector;
 
 /**
@@ -10,7 +9,8 @@ import java.util.Vector;
  */
 public interface IDataProvider {
 
-    List<Water> getWaters();
+    //List<Water> getWaters();
 
-    Vector<Water> getVat();
+
+    Vector<Sale> getVat();
 }
