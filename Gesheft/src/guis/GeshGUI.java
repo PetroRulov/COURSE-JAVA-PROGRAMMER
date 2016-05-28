@@ -22,6 +22,7 @@ import java.util.Vector;
 public class GeshGUI extends DefaultTableModel {
 
     private IDataProvider dataProvider;
+
     private Service serv;
     private JFrame f;
     private JPanel panel;
@@ -41,50 +42,20 @@ public class GeshGUI extends DefaultTableModel {
     public GeshGUI(Service serv) {
 
         this.serv = serv;
-
+        this.f.setDefaultLookAndFeelDecorated(true);
         this.f = new JFrame("* ALCOHOL SHOP - \"BADIGAN\" - ALCOHOL SHOP *");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setMinimumSize(new Dimension(1200, 700));
         f.setLocation(0, 0);
 
-        Font font = new Font("Verdana", Font.BOLD, 18);
-        JMenuBar menuBar = new JMenuBar();
-        JMenu fileMenu = new JMenu("File");
-        fileMenu.setFont(font);
-        menuBar.add(fileMenu);
-        JMenu buyMenu = new JMenu("Buy");
-        buyMenu.setFont(font);
-        fileMenu.add(buyMenu);
-        fileMenu.addSeparator();
-
-        buyMenu.addMouseListener(new MouseAdapter(){
-
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-                showTransactionGUI();
-            }
-        });
-
-        JMenuItem exitItem = new JMenuItem("Exit");
-        exitItem.setFont(font);
-        fileMenu.add(exitItem);
-
-        exitItem.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                System.exit(0);
-            }
-        });
-
-        f.setJMenuBar(menuBar);
+        // setting MenuBar to the Frame
+        initMenuBar();
 
         // first initialisation of the SalesTable displaying
         initSalesDataShow();
 
         // adding Transaction GUI
+        //showTransactionGUI();
 
         f.pack();
         f.setVisible(true);
@@ -237,6 +208,43 @@ public class GeshGUI extends DefaultTableModel {
 
     public JFrame getF() {
         return f;
+    }
+
+    private void initMenuBar(){
+
+        Font font = new Font("Verdana", Font.BOLD, 18);
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.setFont(font);
+        menuBar.add(fileMenu);
+        JMenu buyMenu = new JMenu("Buy");
+        buyMenu.setFont(font);
+        fileMenu.add(buyMenu);
+        fileMenu.addSeparator();
+
+        buyMenu.addMouseListener(new MouseAdapter(){
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                showTransactionGUI();
+            }
+        });
+
+        JMenuItem exitItem = new JMenuItem("Exit");
+        exitItem.setFont(font);
+        fileMenu.add(exitItem);
+
+        exitItem.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                System.exit(0);
+            }
+        });
+
+        f.setJMenuBar(menuBar);
     }
 
     private JTable createSalesTable(){
