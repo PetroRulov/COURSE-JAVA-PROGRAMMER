@@ -14,7 +14,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.NumberFormat;
-import java.util.Iterator;
 import java.util.Observer;
 import java.util.Vector;
 
@@ -309,7 +308,8 @@ public class GeshGUI extends DefaultTableModel {
 
     private Object[][] fillData(){
 
-        Object[][] data = new Object[this.serv.getBad().getSellings().size()][11];
+        Object[][] data = new Object[serv.getBad().getSellings().size()][11];
+        System.out.println(serv.getBad().getSellings().size());
         int j = 1;
         int i = 0;
 
@@ -328,21 +328,37 @@ public class GeshGUI extends DefaultTableModel {
 //                    serv.getBad().getSellings().get(i).getIncome()
 //            };
 //        }
-        for(Iterator<Sale> sale = serv.getBad().getSellings().iterator(); sale.hasNext();){
+        for(Sale sale : serv.getBad().getSellings()){
             data[i] = new Object[]{
                     j++,
-                    sale.next().getDate(),
-                    sale.next().getGuest().getSurName(),
-                    sale.next().getGuest().getName(),
-                    sale.next().getWat().getDrink(),
-                    sale.next().getWat().getName(),
-                    sale.next().getWat().getTare(),
-                    sale.next().getWat().getVolume(),
-                    sale.next().getQuant(),
-                    sale.next().getWat().getPrice(),
-                    sale.next().getIncome()
+                    sale.getDate(),
+                    sale.getGuest().getSurName(),
+                    sale.getGuest().getName(),
+                    sale.getWat().getDrink(),
+                    sale.getWat().getName(),
+                    sale.getWat().getTare(),
+                    sale.getWat().getVolume(),
+                    sale.getQuant(),
+                    sale.getWat().getPrice(),
+                    sale.getIncome()
             };
         }
+
+//        for(Iterator<Sale> sale = serv.getBad().getSellings().iterator(); sale.hasNext();){
+//            data[i] = new Object[]{
+//                    j++,
+//                    sale.next().getDate(),
+//                    sale.next().getGuest().getSurName(),
+//                    sale.next().getGuest().getName(),
+//                    sale.next().getWat().getDrink(),
+//                    sale.next().getWat().getName(),
+//                    sale.next().getWat().getTare(),
+//                    sale.next().getWat().getVolume(),
+//                    sale.next().getQuant(),
+//                    sale.next().getWat().getPrice(),
+//                    sale.next().getIncome()
+//            };
+//        }
         return data;
     }
 

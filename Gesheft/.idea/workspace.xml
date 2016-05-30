@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f51cdb-5926-4f53-b2e7-92751647947c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/ugis/FurGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/ugis/Splash.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Fury/src/ugis/StartControl.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/FLauncher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/guis/oldguis/SaleJTable.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Fury/src/FLauncher.java" afterPath="$PROJECT_DIR$/../Fury/src/FurLauncher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$2.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$3.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$4.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/Tiger.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/Tiger.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gesheft/interfaces/IDataProvider.class" afterPath="$PROJECT_DIR$/out/production/Gesheft/interfaces/IDataProvider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/AbstractTank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/BT7.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/BT7.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/T34.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/T34.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/tanks/Tiger.java" afterPath="$PROJECT_DIR$/../Fury/src/tanks/Tiger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guis/BuyControl.java" afterPath="$PROJECT_DIR$/src/guis/BuyControl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guis/GeshGUI.java" afterPath="$PROJECT_DIR$/src/guis/GeshGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guis/Splash.java" afterPath="$PROJECT_DIR$/src/guis/Splash.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/interfaces/IDataProvider.java" afterPath="$PROJECT_DIR$/src/interfaces/IDataProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Badigan.java" afterPath="$PROJECT_DIR$/src/main/Badigan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" />
     </list>
     <ignored path="Gesheft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeshGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GeshGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/guis/GeshGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="344" column="9" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
+            <state relative-caret-position="-142">
+              <caret line="312" column="18" selection-start-line="312" selection-start-column="18" selection-end-line="312" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,15 +83,65 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="14212">
               <caret line="889" column="0" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#0#39347#0" expanded="false" />
+                <element signature="e#8008#8009#0" expanded="false" />
+                <element signature="e#8036#8037#0" expanded="false" />
+                <element signature="e#8248#8249#0" expanded="false" />
+                <element signature="e#8275#8276#0" expanded="false" />
+                <element signature="e#8748#8749#0" expanded="false" />
+                <element signature="e#8787#8788#0" expanded="false" />
+                <element signature="e#8938#8939#0" expanded="false" />
+                <element signature="e#8965#8966#0" expanded="false" />
+                <element signature="e#11209#11210#0" expanded="false" />
+                <element signature="e#11247#11248#0" expanded="false" />
+                <element signature="e#15878#15879#0" expanded="false" />
+                <element signature="e#15927#15928#0" expanded="false" />
+                <element signature="e#16099#16100#0" expanded="false" />
+                <element signature="e#16149#16150#0" expanded="false" />
+                <element signature="e#16416#16417#0" expanded="false" />
+                <element signature="e#16470#16471#0" expanded="false" />
+                <element signature="e#19921#19922#0" expanded="false" />
+                <element signature="e#19954#19955#0" expanded="false" />
+                <element signature="e#20484#20485#0" expanded="false" />
+                <element signature="e#20520#20521#0" expanded="false" />
+                <element signature="e#20770#20771#0" expanded="false" />
+                <element signature="e#20799#20800#0" expanded="false" />
+                <element signature="e#23214#23215#0" expanded="false" />
+                <element signature="e#23241#23242#0" expanded="false" />
+                <element signature="e#23699#23700#0" expanded="false" />
+                <element signature="e#23735#23736#0" expanded="false" />
+                <element signature="e#24161#24162#0" expanded="false" />
+                <element signature="e#24193#24194#0" expanded="false" />
+                <element signature="e#26756#26757#0" expanded="false" />
+                <element signature="e#26803#26804#0" expanded="false" />
+                <element signature="e#27125#27126#0" expanded="false" />
+                <element signature="e#27169#27170#0" expanded="false" />
+                <element signature="e#27499#27500#0" expanded="false" />
+                <element signature="e#27539#27540#0" expanded="false" />
+                <element signature="e#27577#27578#0" expanded="false" />
+                <element signature="e#27621#27622#0" expanded="false" />
+                <element signature="e#29442#29443#0" expanded="false" />
+                <element signature="e#29489#29490#0" expanded="false" />
+                <element signature="e#29728#29729#0" expanded="false" />
+                <element signature="e#29776#29777#0" expanded="false" />
+                <element signature="e#29802#29803#0" expanded="false" />
+                <element signature="e#29847#29848#0" expanded="false" />
+                <element signature="e#29878#29879#0" expanded="false" />
+                <element signature="e#29914#29915#0" expanded="false" />
+                <element signature="e#36042#36043#0" expanded="false" />
+                <element signature="e#36098#36099#0" expanded="false" />
+                <element signature="e#39243#39244#0" expanded="false" />
+                <element signature="e#39336#39337#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Badigan.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Badigan.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Badigan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="-510">
               <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -230,9 +252,9 @@
         <option value="$PROJECT_DIR$/src/GeshLauncher.java" />
         <option value="$PROJECT_DIR$/src/guis/Splash.java" />
         <option value="$PROJECT_DIR$/src/interfaces/IDataProvider.java" />
-        <option value="$PROJECT_DIR$/src/guis/GeshGUI.java" />
         <option value="$PROJECT_DIR$/src/guis/BuyControl.java" />
         <option value="$PROJECT_DIR$/src/main/Badigan.java" />
+        <option value="$PROJECT_DIR$/src/guis/GeshGUI.java" />
       </list>
     </option>
   </component>
@@ -855,7 +877,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464579217422</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="with LinkedList&lt;Sale&gt;?">
+      <created>1464640284200</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1464640284200</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -915,7 +944,8 @@
     <MESSAGE value="with IDataProvider implementation" />
     <MESSAGE value="with SplashScreen" />
     <MESSAGE value="with SplashScreen Loading and Beer!" />
-    <option name="LAST_COMMIT_MESSAGE" value="with SplashScreen Loading and Beer!" />
+    <MESSAGE value="with LinkedList&lt;Sale&gt;?" />
+    <option name="LAST_COMMIT_MESSAGE" value="with LinkedList&lt;Sale&gt;?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -967,6 +997,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,6 +1075,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,6 +1241,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,7 +1285,7 @@
         <state relative-caret-position="-1496">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1277,16 +1310,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14212">
           <caret line="889" column="0" selection-start-line="889" selection-start-column="0" selection-end-line="889" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/guis/GeshGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="344" column="9" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#39347#0" expanded="false" />
+            <element signature="e#8008#8009#0" expanded="false" />
+            <element signature="e#8036#8037#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8275#8276#0" expanded="false" />
+            <element signature="e#8748#8749#0" expanded="false" />
+            <element signature="e#8787#8788#0" expanded="false" />
+            <element signature="e#8938#8939#0" expanded="false" />
+            <element signature="e#8965#8966#0" expanded="false" />
+            <element signature="e#11209#11210#0" expanded="false" />
+            <element signature="e#11247#11248#0" expanded="false" />
+            <element signature="e#15878#15879#0" expanded="false" />
+            <element signature="e#15927#15928#0" expanded="false" />
+            <element signature="e#16099#16100#0" expanded="false" />
+            <element signature="e#16149#16150#0" expanded="false" />
+            <element signature="e#16416#16417#0" expanded="false" />
+            <element signature="e#16470#16471#0" expanded="false" />
+            <element signature="e#19921#19922#0" expanded="false" />
+            <element signature="e#19954#19955#0" expanded="false" />
+            <element signature="e#20484#20485#0" expanded="false" />
+            <element signature="e#20520#20521#0" expanded="false" />
+            <element signature="e#20770#20771#0" expanded="false" />
+            <element signature="e#20799#20800#0" expanded="false" />
+            <element signature="e#23214#23215#0" expanded="false" />
+            <element signature="e#23241#23242#0" expanded="false" />
+            <element signature="e#23699#23700#0" expanded="false" />
+            <element signature="e#23735#23736#0" expanded="false" />
+            <element signature="e#24161#24162#0" expanded="false" />
+            <element signature="e#24193#24194#0" expanded="false" />
+            <element signature="e#26756#26757#0" expanded="false" />
+            <element signature="e#26803#26804#0" expanded="false" />
+            <element signature="e#27125#27126#0" expanded="false" />
+            <element signature="e#27169#27170#0" expanded="false" />
+            <element signature="e#27499#27500#0" expanded="false" />
+            <element signature="e#27539#27540#0" expanded="false" />
+            <element signature="e#27577#27578#0" expanded="false" />
+            <element signature="e#27621#27622#0" expanded="false" />
+            <element signature="e#29442#29443#0" expanded="false" />
+            <element signature="e#29489#29490#0" expanded="false" />
+            <element signature="e#29728#29729#0" expanded="false" />
+            <element signature="e#29776#29777#0" expanded="false" />
+            <element signature="e#29802#29803#0" expanded="false" />
+            <element signature="e#29847#29848#0" expanded="false" />
+            <element signature="e#29878#29879#0" expanded="false" />
+            <element signature="e#29914#29915#0" expanded="false" />
+            <element signature="e#36042#36043#0" expanded="false" />
+            <element signature="e#36098#36099#0" expanded="false" />
+            <element signature="e#39243#39244#0" expanded="false" />
+            <element signature="e#39336#39337#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1301,8 +1374,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Badigan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="-510">
           <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/guis/GeshGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-142">
+          <caret line="312" column="18" selection-start-line="312" selection-start-column="18" selection-end-line="312" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
