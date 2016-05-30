@@ -1,8 +1,9 @@
 package interfaces;
 
+import domain.Client;
 import domain.Sale;
 
-import java.util.Vector;
+import java.util.List;
 
 /**
  * Created by prulov on 25.04.2016.
@@ -12,5 +13,7 @@ public interface IDataProvider {
     //List<Water> getWaters();
 
 
-    Vector<Sale> getVat();
+    List<Sale> getSales();
+
+    List<Client> getClts();
 }

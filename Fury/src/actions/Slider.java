@@ -1,22 +1,22 @@
 package actions;
 
 import battleFields.*;
-import tanks.*;
-import tanks.AbstractTank;
+import domains.Bullet;
 import enumerations.Direct;
-import domains.*;
+import tanks.AbstractTank;
+import tanks.BT7;
+import tanks.T34;
+import tanks.Tiger;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.WindowConstants;
-import java.util.ArrayList;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
+import java.util.Vector;
 
 public class Slider extends JPanel {
 
     private BattleField bF = new BattleField();
+    private JFrame frame;
     private int[][] lab; // how the tanks see the BattleField;
     private String agrPos;
     private Bullet bullet;
@@ -27,24 +27,30 @@ public class Slider extends JPanel {
     private AgrIntel agrInt;
     private AgrIntel tigrInt;
     private TigerLogic tiLog;
+    private Vector<AbstractTank> tanks;
 
     public Slider() throws Exception {
 
         bF = new BattleField();
+
         agrPos = defineAgressorPos();
         defender = new T34(this, bF, 64, 448, Direct.UP);
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
         bullet = new Bullet(600, 600, Direct.MINUS, ogr);
         lab = setLab(bF.getBf());
 
+        agrPos = defineAgressorPos();
         ogr = new Tiger(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
         agrInt = new AgrIntel(bF, lab, agressor);
         tigrInt = new AgrIntel(bF, lab, ogr);
         agrLog = new AgrLogic(this, bF, agressor);
         tiLog = new TigerLogic(this, bF, ogr);
 
+        tanks = new Vector<AbstractTank>();
+        initTanks();
 
-        JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
+        //JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
+        frame = new JFrame("BATTLE FIELD, DAY 2");
         frame.setLocation(650, 50);
         frame.setMinimumSize(new Dimension(bF.getBF_WIDTH() + 16, bF.getBF_HEIGHT() + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -58,6 +64,18 @@ public class Slider extends JPanel {
     }
 
     public AgrIntel getTigrInt(){return tigrInt;}
+
+    public Vector<AbstractTank> getTanks() {
+        return new Vector<AbstractTank>(tanks);
+    }
+
+    private void initTanks(){
+
+        tanks.add(defender);
+        tanks.add(agressor);
+        tanks.add(ogr);
+
+    }
 
     public void runTheGame() throws Exception {
 
@@ -427,6 +445,10 @@ public class Slider extends JPanel {
 
     public Bullet getBullet() {
         return bullet;
+    }
+
+    public JFrame getFrame() {
+        return frame;
     }
 }
 

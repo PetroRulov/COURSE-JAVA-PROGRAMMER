@@ -1,5 +1,6 @@
 package guis;
 
+import domain.Sale;
 import domain.waters.Water;
 import interfaces.IDataProvider;
 import util.Service;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.NumberFormat;
+import java.util.Iterator;
 import java.util.Observer;
 import java.util.Vector;
 
@@ -68,7 +70,7 @@ public class GeshGUI extends DefaultTableModel {
 
     private JPanel createSalePannel() {
 
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new GridBagLayout());
         panel.setBackground(Color.BLACK);
 
@@ -282,25 +284,63 @@ public class GeshGUI extends DefaultTableModel {
         return colNames;
     }
 
+//    private Object[][] fillData(){
+//
+//        Object[][] data = new Object[this.serv.getBad().getSales().size()][11];
+//        int j = 1;
+//
+//        for(int i = 0; i < serv.getBad().getSales().size(); i++){
+//        data[i] = new Object[]{
+//                j++,
+//                serv.getBad().getSales().get(i).getDate(),
+//                serv.getBad().getSales().get(i).getGuest().getSurName(),
+//                serv.getBad().getSales().get(i).getGuest().getName(),
+//                serv.getBad().getSales().get(i).getWat().getDrink(),
+//                serv.getBad().getSales().get(i).getWat().getName(),
+//                serv.getBad().getSales().get(i).getWat().getTare(),
+//                serv.getBad().getSales().get(i).getWat().getVolume(),
+//                serv.getBad().getSales().get(i).getQuant(),
+//                serv.getBad().getSales().get(i).getWat().getPrice(),
+//                serv.getBad().getSales().get(i).getIncome()
+//            };
+//        }
+//        return data;
+//    }
+
     private Object[][] fillData(){
 
-        //Object[][] data = new Object[serv.getBad().getVectSales().size()][11];
-        Object[][] data = new Object[serv.getBad().getVat().size()][11];
+        Object[][] data = new Object[this.serv.getBad().getSellings().size()][11];
         int j = 1;
-        for(int i = 0; i < serv.getBad().getVat().size(); i++){
+        int i = 0;
 
+//        for(int i = 0; i < serv.getBad().getSellings().size(); i++){
+//            data[i] = new Object[]{
+//                    j++,
+//                    serv.getBad().getSellings().get(i).getDate(),
+//                    serv.getBad().getSellings().get(i).getGuest().getSurName(),
+//                    serv.getBad().getSellings().get(i).getGuest().getName(),
+//                    serv.getBad().getSellings().get(i).getWat().getDrink(),
+//                    serv.getBad().getSellings().get(i).getWat().getName(),
+//                    serv.getBad().getSellings().get(i).getWat().getTare(),
+//                    serv.getBad().getSellings().get(i).getWat().getVolume(),
+//                    serv.getBad().getSellings().get(i).getQuant(),
+//                    serv.getBad().getSellings().get(i).getWat().getPrice(),
+//                    serv.getBad().getSellings().get(i).getIncome()
+//            };
+//        }
+        for(Iterator<Sale> sale = serv.getBad().getSellings().iterator(); sale.hasNext();){
             data[i] = new Object[]{
                     j++,
-                    serv.getBad().getVat().get(i).getDate(),
-                    serv.getBad().getVat().get(i).getGuest().getSurName(),
-                    serv.getBad().getVat().get(i).getGuest().getName(),
-                    serv.getBad().getVat().get(i).getWat().getDrink(),
-                    serv.getBad().getVat().get(i).getWat().getName(),
-                    serv.getBad().getVat().get(i).getWat().getTare(),
-                    serv.getBad().getVat().get(i).getWat().getVolume(),
-                    serv.getBad().getVat().get(i).getQuant(),
-                    serv.getBad().getVat().get(i).getWat().getPrice(),
-                    serv.getBad().getVat().get(i).getIncome()
+                    sale.next().getDate(),
+                    sale.next().getGuest().getSurName(),
+                    sale.next().getGuest().getName(),
+                    sale.next().getWat().getDrink(),
+                    sale.next().getWat().getName(),
+                    sale.next().getWat().getTare(),
+                    sale.next().getWat().getVolume(),
+                    sale.next().getQuant(),
+                    sale.next().getWat().getPrice(),
+                    sale.next().getIncome()
             };
         }
         return data;

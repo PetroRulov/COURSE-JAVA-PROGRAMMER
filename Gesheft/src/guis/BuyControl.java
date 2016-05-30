@@ -53,7 +53,6 @@ public class BuyControl implements ActionListener, Observer {
             serv.getBad().getStk().soldWaterMinus(wat, quant);
             JOptionPane.showConfirmDialog(null, "Transaction is possible!", "Transaction possibility", JOptionPane.PLAIN_MESSAGE);
             serv.getBad().sellTransaction(date, guest, wat, quant);
-            serv.getBad().saleVectorTransaction(date, guest, wat, quant);
         }else{
             JOptionPane.showConfirmDialog(null, "Transaction is NOT possible! \n Please, try again with new quantity of item",
                     "Transaction possibility", JOptionPane.OK_CANCEL_OPTION);
@@ -63,7 +62,6 @@ public class BuyControl implements ActionListener, Observer {
 
         serv.getBad().getStk().printWat();
         serv.printClientsBase(serv.getBad().getClts());
-
 
     }
 
@@ -92,7 +90,6 @@ public class BuyControl implements ActionListener, Observer {
                 Integer.parseInt(gGui.getTfAge().getText()) != 0 &&
                 gGui.getTfSex().getText() != null && !gGui.getTfSex().getText().equals("") &&
                 gGui.getTfEmail().getText() != null && !gGui.getTfEmail().getText().equals("")){
-
             return true;
         }
         return false;

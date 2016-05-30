@@ -23,6 +23,7 @@ public class BT7 extends AbstractTank {
 
     public BT7(Slider sdr, BattleField bf, int x, int y, Direct direction) throws Exception {
         super(sdr, bf, x, y, direction);
+        this.name = "Tank BT7";
         this.tank = new Color(80, 80, 80);
         this.tower = new Color(0, 0, 0);
         this.speed = 18;

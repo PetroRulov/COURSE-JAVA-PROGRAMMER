@@ -25,6 +25,7 @@ public class T34 extends AbstractTank {
 
     public T34(Slider sdr, BattleField bf, int x, int y, Direct direction) throws Exception {
         super(sdr, bf, x, y, direction);
+        this.name = "Tank T-34";
         this.speed = 8;
         setImages();
     }

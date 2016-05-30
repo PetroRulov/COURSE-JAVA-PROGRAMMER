@@ -29,6 +29,7 @@ public class Tiger extends AbstractTank {
 
     public Tiger(Slider sdr, BattleField bf, int x, int y, Direct direction) throws Exception {
         super(sdr, bf, x, y, direction);
+        this.name = "Tank TIGER";
         this.tank = new Color(40, 40, 40);
         this.tower = new Color(0, 0, 0);
         this.armour = 1;

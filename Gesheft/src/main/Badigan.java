@@ -14,36 +14,47 @@ public class Badigan extends Observable implements IDataProvider {
 
     private Stock stk;
     private List<Client> clts;
-    private LinkedList<Sale> sales;
-    private Vector<Sale> vectSales;
+    private List<Sale> sales;
+    private List sellings;
 
     public Badigan(){
 
         this.stk = new Stock();
-        this.clts = new ArrayList<Client>();
+        this.clts = new ArrayList<>();
         initClientsBase();
-        this.sales = new LinkedList<Sale>();
+        this.sales = new ArrayList<>();
         initSalesJournal();
-
-        this.vectSales = new Vector<Sale>();
-        initVectorSales();
+        this.sellings = new LinkedList<Sale>();
+        initSellings();
 
     }
 
     public List<Client> getClts() {
+
+        if(clts == null){
+            initClientsBase();
+        }
         return new ArrayList<Client>(clts);
     }
 
     public List<Sale> getSales() {
-        return new LinkedList<Sale>(sales);
+
+        if(sales == null){
+            initSalesJournal();
+        }
+        return new ArrayList<Sale>(sales);
+    }
+
+    public List<Sale> getSellings() {
+
+        if(sellings == null){
+            initSellings();
+        }
+        return new LinkedList<Sale>(sellings);
     }
 
     public Stock getStk() {
         return stk;
-    }
-
-    public Vector<Sale> getVectSales() {
-        return new Vector<Sale>(vectSales);
     }
 
     private void initClientsBase(){
@@ -114,8 +125,8 @@ public class Badigan extends Observable implements IDataProvider {
         if(date != 0 && guest != null && wat != null && quant != 0){
             Sale novus = new Sale(date, guest, wat, quant);
             sales.add(novus);
-//            setChanged();
-//            notifyObservers(novus);
+            setChanged();
+            notifyObservers(novus);
         }else{
             System.err.println("This sale is not subject to handling!");
         }
@@ -134,73 +145,49 @@ public class Badigan extends Observable implements IDataProvider {
         }
     }
 
-    private void initVectorSales(){
+    private void initSellings(){
 
-        vectSales.add( new Sale(9032016, clts.get(0), stk.getWat()[5], 3));
-        vectSales.add( new Sale(9032016, clts.get(7), stk.getWat()[4], 1));
-        vectSales.add( new Sale(9032016, clts.get(3), stk.getWat()[1], 5));
-        vectSales.add( new Sale(9032016, clts.get(9), stk.getWat()[0], 2));
-        vectSales.add( new Sale(9032016, clts.get(4), stk.getWat()[2], 3));
-        vectSales.add( new Sale(9032016, clts.get(0), stk.getWat()[3], 5));
-        vectSales.add( new Sale(10032016, clts.get(1), stk.getWat()[9], 1));
-        vectSales.add( new Sale(10032016, clts.get(11), stk.getWat()[17], 4));
-        vectSales.add( new Sale(10032016, clts.get(2), stk.getWat()[34], 8));
-        vectSales.add( new Sale(11032016, clts.get(10), stk.getWat()[45], 6));
-        vectSales.add( new Sale(11032016, clts.get(3), stk.getWat()[61], 5));
-        vectSales.add( new Sale(11032016, clts.get(9), stk.getWat()[66], 4));
-        vectSales.add( new Sale(11032016, clts.get(4), stk.getWat()[62], 2));
-        vectSales.add( new Sale(11032016, clts.get(8), stk.getWat()[59], 1));
-        vectSales.add( new Sale(12032016, clts.get(5), stk.getWat()[9], 1));
-        vectSales.add( new Sale(12032016, clts.get(7), stk.getWat()[44], 2));
-        vectSales.add( new Sale(12032016, clts.get(7), stk.getWat()[36], 3));
-        vectSales.add( new Sale(12032016, clts.get(6), stk.getWat()[30], 4));
-        vectSales.add( new Sale(12032016, clts.get(11), stk.getWat()[38], 3));
-        vectSales.add( new Sale(12032016, clts.get(0), stk.getWat()[27], 5));
-        vectSales.add( new Sale(13032016, clts.get(1), stk.getWat()[41], 4));
-        vectSales.add( new Sale(13032016, clts.get(10), stk.getWat()[23], 3));
-        vectSales.add( new Sale(13032016, clts.get(2), stk.getWat()[45], 2));
-        vectSales.add( new Sale(13032016, clts.get(9), stk.getWat()[19], 1));
-        vectSales.add( new Sale(13032016, clts.get(3), stk.getWat()[48], 3));
-        vectSales.add( new Sale(13032016, clts.get(8), stk.getWat()[17], 3));
-        vectSales.add( new Sale(14032016, clts.get(4), stk.getWat()[50], 4));
-        vectSales.add( new Sale(14032016, clts.get(7), stk.getWat()[9], 6));
-        vectSales.add( new Sale(14032016, clts.get(5), stk.getWat()[14], 3));
-        vectSales.add( new Sale(14032016, clts.get(6), stk.getWat()[52], 7));
-        vectSales.add( new Sale(15032016, clts.get(1), stk.getWat()[12], 3));
-        vectSales.add( new Sale(15032016, clts.get(11), stk.getWat()[55], 2));
-        vectSales.add( new Sale(15032016, clts.get(0), stk.getWat()[9], 1));
-        vectSales.add( new Sale(15032016, clts.get(10), stk.getWat()[58], 1));
-        vectSales.add( new Sale(16032016, clts.get(2), stk.getWat()[7], 1));
-        vectSales.add( new Sale(16032016, clts.get(9), stk.getWat()[60], 8));
-        vectSales.add( new Sale(16032016, clts.get(3), stk.getWat()[5], 5));
-        vectSales.add( new Sale(16032016, clts.get(8), stk.getWat()[62], 3));
-        vectSales.add( new Sale(17032016, clts.get(4), stk.getWat()[3], 2));
-        vectSales.add( new Sale(17032016, clts.get(7), stk.getWat()[0], 3));
-        vectSales.add( new Sale(17032016, clts.get(5), stk.getWat()[65], 1));
+        sellings.add( new Sale(9032016, clts.get(0), stk.getWat()[5], 3));
+        sellings.add( new Sale(9032016, clts.get(7), stk.getWat()[4], 1));
+        sellings.add( new Sale(9032016, clts.get(3), stk.getWat()[1], 5));
+        sellings.add( new Sale(9032016, clts.get(9), stk.getWat()[0], 2));
+        sellings.add( new Sale(9032016, clts.get(4), stk.getWat()[2], 3));
+        sellings.add( new Sale(9032016, clts.get(0), stk.getWat()[3], 5));
+        sellings.add( new Sale(10032016, clts.get(1), stk.getWat()[9], 1));
+        sellings.add( new Sale(10032016, clts.get(11), stk.getWat()[17], 4));
+        sellings.add( new Sale(10032016, clts.get(2), stk.getWat()[34], 8));
+        sellings.add( new Sale(11032016, clts.get(10), stk.getWat()[45], 6));
+        sellings.add( new Sale(11032016, clts.get(3), stk.getWat()[61], 5));
+        sellings.add( new Sale(11032016, clts.get(9), stk.getWat()[66], 4));
+        sellings.add( new Sale(11032016, clts.get(4), stk.getWat()[62], 2));
+        sellings.add( new Sale(11032016, clts.get(8), stk.getWat()[59], 1));
+        sellings.add( new Sale(12032016, clts.get(5), stk.getWat()[9], 1));
+        sellings.add( new Sale(12032016, clts.get(7), stk.getWat()[44], 2));
+        sellings.add( new Sale(12032016, clts.get(7), stk.getWat()[36], 3));
+        sellings.add( new Sale(12032016, clts.get(6), stk.getWat()[30], 4));
+        sellings.add( new Sale(12032016, clts.get(11), stk.getWat()[38], 3));
+        sellings.add( new Sale(12032016, clts.get(0), stk.getWat()[27], 5));
+        sellings.add( new Sale(13032016, clts.get(1), stk.getWat()[41], 4));
+        sellings.add( new Sale(13032016, clts.get(10), stk.getWat()[23], 3));
+        sellings.add( new Sale(13032016, clts.get(2), stk.getWat()[45], 2));
+        sellings.add( new Sale(13032016, clts.get(9), stk.getWat()[19], 1));
+        sellings.add( new Sale(13032016, clts.get(3), stk.getWat()[48], 3));
+        sellings.add( new Sale(13032016, clts.get(8), stk.getWat()[17], 3));
+        sellings.add( new Sale(14032016, clts.get(4), stk.getWat()[50], 4));
+        sellings.add( new Sale(14032016, clts.get(7), stk.getWat()[9], 6));
+        sellings.add( new Sale(14032016, clts.get(5), stk.getWat()[14], 3));
+        sellings.add( new Sale(14032016, clts.get(6), stk.getWat()[52], 7));
+        sellings.add( new Sale(15032016, clts.get(1), stk.getWat()[12], 3));
+        sellings.add( new Sale(15032016, clts.get(11), stk.getWat()[55], 2));
+        sellings.add( new Sale(15032016, clts.get(0), stk.getWat()[9], 1));
+        sellings.add( new Sale(15032016, clts.get(10), stk.getWat()[58], 1));
+        sellings.add( new Sale(16032016, clts.get(2), stk.getWat()[7], 1));
+        sellings.add( new Sale(16032016, clts.get(9), stk.getWat()[60], 8));
+        sellings.add( new Sale(16032016, clts.get(3), stk.getWat()[5], 5));
+        sellings.add( new Sale(16032016, clts.get(8), stk.getWat()[62], 3));
+        sellings.add( new Sale(17032016, clts.get(4), stk.getWat()[3], 2));
+        sellings.add( new Sale(17032016, clts.get(7), stk.getWat()[0], 3));
+        sellings.add( new Sale(17032016, clts.get(5), stk.getWat()[65], 1));
 
     }
-
-    public void saleVectorTransaction(int date, Client guest, Water wat, int quant){
-
-        if(date != 0 && guest != null && wat != null && quant != 0){
-            Sale novus = new Sale(date, guest, wat, quant);
-            vectSales.add(novus);
-            setChanged();
-            notifyObservers(novus);
-        }else{
-            System.err.println("This sale is not subject to handling!");
-        }
-    }
-
-    @Override
-    public Vector<Sale> getVat(){
-
-        if(vectSales == null){
-            initVectorSales();
-        }
-        return new Vector<Sale>(vectSales);
-    }
-
-
-
 }

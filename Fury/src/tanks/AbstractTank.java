@@ -1,22 +1,19 @@
 package tanks;
 
-import actions.AgrIntel;
+import actions.Slider;
 import battleFields.*;
-import domains.Coord;
 import domains.Bullet;
+import domains.Coord;
 import enumerations.Direct;
 import interfaces.IObjectable;
-import actions.Slider;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.ImageObserver;
-import java.io.File;
-import java.io.IOException;
 import java.util.Random;
 
 public abstract class AbstractTank implements IObjectable {
 
+    protected String name;
     protected long speed = 12;
     protected int x;
     protected int y;
@@ -42,6 +39,7 @@ public abstract class AbstractTank implements IObjectable {
 
     protected AbstractTank(Slider sdr, BattleField bf, int x, int y, Direct direction){
 
+        this.name = name;
         this.sdr = sdr;
         this.bf = bf;
         this.x = x;
@@ -82,6 +80,9 @@ public abstract class AbstractTank implements IObjectable {
         this.y += y;
     }
 
+    public String getName() {
+        return name;
+    }
 
     public void turn(Direct direction) throws Exception {
         this.direction = direction;
@@ -186,6 +187,12 @@ public abstract class AbstractTank implements IObjectable {
             move(); // 79
         }
 
+    }
+
+    @Override
+    public String toString(){
+
+        return getName();
     }
 
     public void moveRandom() throws Exception {
