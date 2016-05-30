@@ -64,6 +64,17 @@ public class Service {
             }
         }
         System.out.println("----------------------------------------------------------");
+        System.out.println("BEER:");
+        System.out.println("----------------------------------------------------------");
+
+        for (int i = 0; i < bad.getStk().getWat().length; i++) {
+            if (bad.getStk().getWat()[i] != null && bad.getStk().getWat()[i].getDrink().equals(Drink.BEER)) {
+                j++;
+                System.out.print(j);
+                bad.getStk().getWat()[i].waterCatalogue();
+            }
+        }
+        System.out.println("----------------------------------------------------------");
         System.out.println("BURBON:");
         System.out.println("----------------------------------------------------------");
 

@@ -193,6 +193,16 @@ public class Stock {
         wat[65] = new Tequila(Drink.TEQUILA, "HERRADURA", Tare.GLASS, 0.7, 20, 384.5, 775.0);
         wat[66] = new Tequila(Drink.TEQUILA, "1800", Tare.GLASS, 1.0, 25, 561.5, 1184.0);
 
+        //BEER
+        wat[67] = new Beer(Drink.BEER, "WARSTEINER, Lager", Tare.GLASS, 0.5, 100, 24.5, 48.0);
+        wat[68] = new Beer(Drink.BEER, "HOEGAARDEN", Tare.GLASS, 0.66, 150, 19.8, 44.0);
+        wat[69] = new Beer(Drink.BEER, "BRIDGEPORT, ALE", Tare.GLASS, 0.5, 100, 18.5, 36.0);
+        wat[70] = new Beer(Drink.BEER, "PAULANER, München", Tare.GLASS, 0.64, 100, 24.5, 49.0);
+        wat[71] = new Beer(Drink.BEER, "ERDINGER \"Festweiße\"", Tare.GLASS, 0.7, 100, 24.5, 50.0);
+        wat[72] = new Beer(Drink.BEER, "BUDWEISER \"Budvar\"", Tare.GLASS, 0.5, 150, 21.5, 44.0);
+        wat[73] = new Beer(Drink.BEER, "GAMBRINUS \"Bílé\"", Tare.GLASS, 0.7, 125, 21.5, 44.0);
+        wat[74] = new Beer(Drink.BEER, "GUINNES", Tare.GLASS, 0.74, 50, 21.6, 52.4);
+
     }
 
     private void fillListStock() {
