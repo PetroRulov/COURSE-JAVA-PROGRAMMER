@@ -284,22 +284,23 @@ public class GeshGUI extends DefaultTableModel {
 
     private Object[][] fillData(){
 
-        Object[][] data = new Object[serv.getBad().getVectSales().size()][11];
+        //Object[][] data = new Object[serv.getBad().getVectSales().size()][11];
+        Object[][] data = new Object[serv.getBad().getVat().size()][11];
         int j = 1;
-        for(int i = 0; i < serv.getBad().getVectSales().size(); i++){
+        for(int i = 0; i < serv.getBad().getVat().size(); i++){
 
             data[i] = new Object[]{
                     j++,
-                    serv.getBad().getVectSales().get(i).getDate(),
-                    serv.getBad().getVectSales().get(i).getGuest().getSurName(),
-                    serv.getBad().getVectSales().get(i).getGuest().getName(),
-                    serv.getBad().getVectSales().get(i).getWat().getDrink(),
-                    serv.getBad().getVectSales().get(i).getWat().getName(),
-                    serv.getBad().getVectSales().get(i).getWat().getTare(),
-                    serv.getBad().getVectSales().get(i).getWat().getVolume(),
-                    serv.getBad().getVectSales().get(i).getQuant(),
-                    serv.getBad().getVectSales().get(i).getWat().getPrice(),
-                    serv.getBad().getVectSales().get(i).getIncome()
+                    serv.getBad().getVat().get(i).getDate(),
+                    serv.getBad().getVat().get(i).getGuest().getSurName(),
+                    serv.getBad().getVat().get(i).getGuest().getName(),
+                    serv.getBad().getVat().get(i).getWat().getDrink(),
+                    serv.getBad().getVat().get(i).getWat().getName(),
+                    serv.getBad().getVat().get(i).getWat().getTare(),
+                    serv.getBad().getVat().get(i).getWat().getVolume(),
+                    serv.getBad().getVat().get(i).getQuant(),
+                    serv.getBad().getVat().get(i).getWat().getPrice(),
+                    serv.getBad().getVat().get(i).getIncome()
             };
         }
         return data;

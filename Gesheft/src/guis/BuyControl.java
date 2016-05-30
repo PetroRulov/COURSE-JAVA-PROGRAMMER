@@ -102,9 +102,7 @@ public class BuyControl implements ActionListener, Observer {
     public void update(Observable o, Object arg) {
 
         if(arg instanceof Sale){
-
             gGui.newSalesDataShow();
-
         }else{
             System.out.println(this.toString() + " notified.");
         }
