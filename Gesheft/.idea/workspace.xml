@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f51cdb-5926-4f53-b2e7-92751647947c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/domain/waters/Beer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Gesheft/enumerations/Drink.class" afterPath="$PROJECT_DIR$/out/production/Gesheft/enumerations/Drink.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/enumerations/Drink.java" afterPath="$PROJECT_DIR$/src/enumerations/Drink.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Stock.java" afterPath="$PROJECT_DIR$/src/main/Stock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/Service.java" afterPath="$PROJECT_DIR$/src/util/Service.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GESHLauncher.java" afterPath="$PROJECT_DIR$/src/GESHLauncher.java" />
     </list>
     <ignored path="Gesheft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -690,7 +688,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464573798712</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="with SplashScreen Loading and Beer!">
+      <created>1464578455249</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1464578455249</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -749,7 +754,8 @@
     <MESSAGE value="with BarMenu File:Buy-Exit" />
     <MESSAGE value="with IDataProvider implementation" />
     <MESSAGE value="with SplashScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="with SplashScreen" />
+    <MESSAGE value="with SplashScreen Loading and Beer!" />
+    <option name="LAST_COMMIT_MESSAGE" value="with SplashScreen Loading and Beer!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
