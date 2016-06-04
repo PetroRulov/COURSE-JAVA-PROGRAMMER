@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/container/Box.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lesson7/model/Model.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson7/model/domains/Beer.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/domains/Beer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson7/model/domains/Juice.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/domains/Juice.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson7/model/domains/Water.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/domains/Water.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson7/model/enums/Drink.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/enums/Drink.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson7/generics/container/Box.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/Box.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JProgramming.iws" />
@@ -30,16 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Publisher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Lesson7.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson7/Lesson7.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -83,16 +71,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Box.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/container/Box.java">
+      <file leaf-file-name="Box.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/Box.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
+            <state relative-caret-position="527">
               <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
               <folding>
-                <element signature="e#168#169#0" expanded="true" />
-                <element signature="e#195#196#0" expanded="true" />
-                <element signature="e#230#231#0" expanded="true" />
-                <element signature="e#262#263#0" expanded="true" />
+                <element signature="e#169#170#0" expanded="true" />
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#231#232#0" expanded="true" />
+                <element signature="e#263#264#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaterBox.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-66">
+              <caret line="10" column="40" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#270#271#0" expanded="true" />
+                <element signature="e#312#313#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#396#397#0" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenericMethodDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="19" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Wildcards.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,26 +143,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubScrGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/SubScrGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="138" column="24" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Subscriber.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscriber.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -160,10 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lesson5/theme5/Frame_5_5_4_AngeredFriend.java" />
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/Target.java" />
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/AdapterByObject.java" />
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/AdapterByClass.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/Adaptee.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/math/var2/Operations.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/math/var2/calc/Calculator.java" />
@@ -210,7 +216,11 @@
         <option value="$PROJECT_DIR$/src/lesson7/model/domains/Juice.java" />
         <option value="$PROJECT_DIR$/src/lesson7/model/domains/Water.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/domains/Juice.java" />
+        <option value="$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java" />
+        <option value="$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/container/Box.java" />
+        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/Box.java" />
+        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java" />
       </list>
     </option>
   </component>
@@ -316,6 +326,32 @@
               <option name="myItemId" value="generics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="methods" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lesson7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -339,7 +375,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="container" />
+              <option name="myItemId" value="containers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,26 +392,6 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Box">
-    <configuration default="false" name="Frame_5_5_4_AngeredFriend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="lesson5.theme5.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="lesson5.theme5.Frame_5_5_4_AngeredFriend" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JProgramming" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="SuperVisorDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -384,26 +400,6 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="lesson6.adapters.supervisor.SuperVisorDemo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JProgramming" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="AngryFriend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="lesson6.adapters.mvc.ctb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="lesson6.adapters.mvc.ctb.AngryFriend" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -439,11 +435,51 @@
     <configuration default="false" name="Box" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="lesson7.generics.container.*" />
+          <option name="PATTERN" value="lesson7.generics.containers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="lesson7.generics.container.Box" />
+      <option name="MAIN_CLASS_NAME" value="lesson7.generics.containers.Box" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JProgramming" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="GenericMethodDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="lesson7.generics.methods.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="lesson7.generics.methods.GenericMethodDemo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JProgramming" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Wildcards" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="lesson7.generics.methods.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="lesson7.generics.methods.Wildcards" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -691,19 +727,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Frame_5_5_4_AngeredFriend" />
-      <item index="1" class="java.lang.String" itemvalue="Application.SuperVisorDemo" />
-      <item index="2" class="java.lang.String" itemvalue="Application.AngryFriend" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Demo" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Box" />
+      <item index="0" class="java.lang.String" itemvalue="Application.SuperVisorDemo" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Demo" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Box" />
+      <item index="3" class="java.lang.String" itemvalue="Application.GenericMethodDemo" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Wildcards" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Box" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SuperVisorDemo" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Demo" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AngryFriend" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Frame_5_5_4_AngeredFriend" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Wildcards" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GenericMethodDemo" />
+        <item index="3" class="java.lang.String" itemvalue="Application.SuperVisorDemo" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Demo" />
       </list>
     </recent_temporary>
   </component>
@@ -819,7 +855,14 @@
       <option name="project" value="LOCAL" />
       <updated>1465062402979</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="frame_7_1_3">
+      <created>1465065118110</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1465065118110</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -833,7 +876,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34542587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34542587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -876,7 +919,8 @@
     <MESSAGE value="frame 6_2_8" />
     <MESSAGE value="frame 6_2_8 observer's method update() called by observable's working method called by listener" />
     <MESSAGE value="frame_7_1_1" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame_7_1_1" />
+    <MESSAGE value="frame_7_1_3" />
+    <option name="LAST_COMMIT_MESSAGE" value="frame_7_1_3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -887,46 +931,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/superobserver/ObserverPatternDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x64)/Java/jdk1.8.0_71/src.zip!/java/util/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="129" column="60" selection-start-line="129" selection-start-column="60" selection-end-line="129" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#7247#0" expanded="false" />
-            <element signature="e#2047#2048#0" expanded="false" />
-            <element signature="e#2083#2084#0" expanded="false" />
-            <element signature="e#2952#2953#0" expanded="false" />
-            <element signature="e#2988#2989#0" expanded="false" />
-            <element signature="e#3747#3748#0" expanded="false" />
-            <element signature="e#3784#3785#0" expanded="false" />
-            <element signature="e#5696#5697#0" expanded="false" />
-            <element signature="e#5735#5736#0" expanded="false" />
-            <element signature="e#5937#5938#0" expanded="false" />
-            <element signature="e#5967#5968#0" expanded="false" />
-            <element signature="e#6483#6484#0" expanded="false" />
-            <element signature="e#6514#6515#0" expanded="false" />
-            <element signature="e#6978#6979#0" expanded="false" />
-            <element signature="e#7008#7009#0" expanded="false" />
-            <element signature="e#7210#7211#0" expanded="false" />
-            <element signature="e#7243#7244#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/mvc/ctb/AFLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson6/adapters/mvc/Ctb.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1300,15 +1304,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/container/Box.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
+        <state relative-caret-position="200">
+          <caret line="19" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/Box.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
           <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
-            <element signature="e#168#169#0" expanded="true" />
-            <element signature="e#195#196#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#263#264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-66">
+          <caret line="10" column="40" selection-start-line="7" selection-start-column="3" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
           </folding>
         </state>
       </provider>

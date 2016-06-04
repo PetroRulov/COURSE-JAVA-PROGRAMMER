@@ -1,4 +1,4 @@
-package lesson7.generics.container;
+package lesson7.generics.containers;
 
 /**
  * Created by prulov on 04.06.2016.
