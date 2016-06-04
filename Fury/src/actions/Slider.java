@@ -7,6 +7,7 @@ import tanks.AbstractTank;
 import tanks.BT7;
 import tanks.T34;
 import tanks.Tiger;
+import ugis.FuryGUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +26,7 @@ public class Slider extends JPanel {
     private AgrIntel agrInt;
     private AgrIntel tigrInt;
     private  TigerLogic tiLog;
-
+    private JFrame frame;
 
     public Slider() throws Exception {
 
@@ -47,8 +48,8 @@ public class Slider extends JPanel {
         agrLog = new AgrLogic(this, bF, agressor);
         tiLog = new TigerLogic(this, bF, ogr);
 
-
-        JFrame frame = new JFrame("FURY BATTLEFIELD");
+        //JFrame frame = new JFrame("FURY BATTLEFIELD");
+        frame = new JFrame("FURY BATTLEFIELD");
         frame.setLocation(0, 0);
         frame.setMinimumSize(new Dimension(bF.getBF_WIDTH() + 16, bF.getBF_HEIGHT() + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -107,7 +108,7 @@ public class Slider extends JPanel {
         }catch(NullPointerException e){
             System.err.printf("!!!NullPointerException had been catched!!!" + "\n" +
             "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
-            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
+            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " GAME OVER!");
         }
         return this;
     }
@@ -158,7 +159,11 @@ public class Slider extends JPanel {
                         bF.scanQuadrant(v, h) instanceof HQ && (bullet.getTank() instanceof Tiger)) {
                     sparklingHQ(bullet, v, h);
                     System.err.println("!!!HEADQUARTERS DESTROYED!!!");
-                    System.err.println("!!!GAME OVER!!!");
+                    System.out.println("!!!G A M E   O V E R!!!");
+                    //frame.getContentPane().removeAll();
+                    frame.dispose();
+                    new FuryGUI();
+
                 }
                 return true;
             }
@@ -240,7 +245,7 @@ public class Slider extends JPanel {
         Thread.sleep(50);
     }
 
-    public void sparklingHQ(Bullet bullet, int v, int h) throws Exception {
+    public boolean sparklingHQ(Bullet bullet, int v, int h) throws Exception {
 
         bF.updateQuadrant(v, h, new Explosive(h * bF.getSquad(), v * bF.getSquad()));
         repaint();
@@ -255,6 +260,7 @@ public class Slider extends JPanel {
         bF.updateQuadrant(v, h, new Black(h * bF.getSquad(), v * bF.getSquad()));
         repaint();
         Thread.sleep(50);
+        return true;
     }
 
     private boolean bulletInBFBorders() {

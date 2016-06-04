@@ -17,11 +17,12 @@ public class SubScrGUI implements Observer {
     private int pmIndex = 0;
     private Subscriber sb;
     private Media m;
+    private JFrame f;
 
     public SubScrGUI(Publisher publ) {
 
         this.publ = publ;
-        JFrame f = new JFrame("PRINT MEDIA SUBSCRIPTION");
+        f = new JFrame("PRINT MEDIA SUBSCRIPTION");
         f.setMinimumSize(new Dimension(800, 350));
         f.setLocation(100, 100);
         f.getContentPane().add(createSubscriptionPannel());
@@ -135,6 +136,7 @@ public class SubScrGUI implements Observer {
             System.out.println("To the e-mail: " + sb.geteMail() + " has been delivered the next message: ");
             System.out.println(m.setMessage());
             ((Publisher) o).printSubScriptionsJournal(((Publisher) o).getSss());
+            f.dispose();
         }else{
             System.out.println(this.toString() + " notified.");
         }
