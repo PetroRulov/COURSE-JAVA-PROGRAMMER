@@ -1,4 +1,4 @@
-package lesson7.model.enums;
+package lesson7.generics.enums;
 
 /**
  * Created by prulov on 04.06.2016.

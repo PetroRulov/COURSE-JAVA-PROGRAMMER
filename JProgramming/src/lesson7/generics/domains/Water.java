@@ -1,6 +1,6 @@
-package lesson7.model.domains;
+package lesson7.generics.domains;
 
-import lesson7.model.enums.Drink;
+import lesson7.generics.enums.Drink;
 
 /**
  * Created by prulov on 04.06.2016.

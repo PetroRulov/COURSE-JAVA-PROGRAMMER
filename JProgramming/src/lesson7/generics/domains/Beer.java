@@ -1,13 +1,13 @@
-package lesson7.model.domains;
+package lesson7.generics.domains;
 
-import lesson7.model.enums.Drink;
+import lesson7.generics.enums.Drink;
 
 /**
  * Created by prulov on 04.06.2016.
  */
-public class Juice extends Water {
+public class Beer extends Water {
 
-    public Juice(Drink drink, String name, double volume, int quant, double value, double price) {
+    public Beer(Drink drink, String name, double volume, int quant, double value, double price) {
 
         this.drink = drink;
         this.name = name;
