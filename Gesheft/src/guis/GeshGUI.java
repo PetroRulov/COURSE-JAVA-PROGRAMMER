@@ -13,7 +13,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Observer;
 import java.util.Vector;
 
@@ -46,7 +49,7 @@ public class GeshGUI extends DefaultTableModel {
         this.f.setDefaultLookAndFeelDecorated(true);
         this.f = new JFrame("* ALCOHOL SHOP - \"BADIGAN\" - ALCOHOL SHOP *");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setMinimumSize(new Dimension(1200, 700));
+        f.setMinimumSize(new Dimension(1360, 725));
         f.setLocation(0, 0);
 
         // setting MenuBar to the Frame
@@ -85,7 +88,7 @@ public class GeshGUI extends DefaultTableModel {
         tfDate.setForeground(Color.BLACK);
         tfDate.setColumns(6);
         tfDate.setHorizontalAlignment(JTextField.RIGHT);
-        tfDate.setText("18032016");
+        tfDate.setText(dateFormat(new Date(System.currentTimeMillis())));
         panel.add(tfDate, new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel surName = new JLabel("Customer's Surname: ");
@@ -216,6 +219,13 @@ public class GeshGUI extends DefaultTableModel {
         return f;
     }
 
+    public String dateFormat(Date d){
+
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        return df.format(d);
+
+    }
+
     private void initMenuBar(){
 
         Font font = new Font("Verdana", Font.BOLD, 18);
@@ -259,13 +269,18 @@ public class GeshGUI extends DefaultTableModel {
         Object[][] data = fillData();
 
         JTable tSales = new JTable(data, colNames);
+        tSales.setAutoCreateRowSorter(false);
         TableColumn column = null;
         for(int i = 0; i < 11; i++){
             column = tSales.getColumnModel().getColumn(i);
-            if(i == 2 || i == 3 || i == 5){
-                column.setPreferredWidth(250);
-            }else{
+            if(i == 0) {
+                column.setPreferredWidth(30);
+            }else if(i == 1){
+                column.setPreferredWidth(90);
+            }else if(i == 2 || i == 5){
                 column.setPreferredWidth(150);
+            }else{
+                column.setPreferredWidth(120);
             }
         }
         return tSales;
@@ -283,52 +298,13 @@ public class GeshGUI extends DefaultTableModel {
         return colNames;
     }
 
-//    private Object[][] fillData(){
-//
-//        Object[][] data = new Object[this.serv.getBad().getSales().size()][11];
-//        int j = 1;
-//
-//        for(int i = 0; i < serv.getBad().getSales().size(); i++){
-//        data[i] = new Object[]{
-//                j++,
-//                serv.getBad().getSales().get(i).getDate(),
-//                serv.getBad().getSales().get(i).getGuest().getSurName(),
-//                serv.getBad().getSales().get(i).getGuest().getName(),
-//                serv.getBad().getSales().get(i).getWat().getDrink(),
-//                serv.getBad().getSales().get(i).getWat().getName(),
-//                serv.getBad().getSales().get(i).getWat().getTare(),
-//                serv.getBad().getSales().get(i).getWat().getVolume(),
-//                serv.getBad().getSales().get(i).getQuant(),
-//                serv.getBad().getSales().get(i).getWat().getPrice(),
-//                serv.getBad().getSales().get(i).getIncome()
-//            };
-//        }
-//        return data;
-//    }
 
     private Object[][] fillData(){
 
-        Object[][] data = new Object[serv.getBad().getSellings().size()][11];
-        System.out.println(serv.getBad().getSellings().size());
-        int j = 1;
-        int i = 0;
+        Object[][] data = new Object[serv.getBad().getSales().size()][11];
+        int j = 1, i = 0;
 
-//        for(int i = 0; i < serv.getBad().getSellings().size(); i++){
-//            data[i] = new Object[]{
-//                    j++,
-//                    serv.getBad().getSellings().get(i).getDate(),
-//                    serv.getBad().getSellings().get(i).getGuest().getSurName(),
-//                    serv.getBad().getSellings().get(i).getGuest().getName(),
-//                    serv.getBad().getSellings().get(i).getWat().getDrink(),
-//                    serv.getBad().getSellings().get(i).getWat().getName(),
-//                    serv.getBad().getSellings().get(i).getWat().getTare(),
-//                    serv.getBad().getSellings().get(i).getWat().getVolume(),
-//                    serv.getBad().getSellings().get(i).getQuant(),
-//                    serv.getBad().getSellings().get(i).getWat().getPrice(),
-//                    serv.getBad().getSellings().get(i).getIncome()
-//            };
-//        }
-        for(Sale sale : serv.getBad().getSellings()){
+        for(Sale sale : serv.getBad().getSales()){
             data[i] = new Object[]{
                     j++,
                     sale.getDate(),
@@ -342,23 +318,8 @@ public class GeshGUI extends DefaultTableModel {
                     sale.getWat().getPrice(),
                     sale.getIncome()
             };
+            i++;
         }
-
-//        for(Iterator<Sale> sale = serv.getBad().getSellings().iterator(); sale.hasNext();){
-//            data[i] = new Object[]{
-//                    j++,
-//                    sale.next().getDate(),
-//                    sale.next().getGuest().getSurName(),
-//                    sale.next().getGuest().getName(),
-//                    sale.next().getWat().getDrink(),
-//                    sale.next().getWat().getName(),
-//                    sale.next().getWat().getTare(),
-//                    sale.next().getWat().getVolume(),
-//                    sale.next().getQuant(),
-//                    sale.next().getWat().getPrice(),
-//                    sale.next().getIncome()
-//            };
-//        }
         return data;
     }
 
@@ -371,7 +332,7 @@ public class GeshGUI extends DefaultTableModel {
 
     }
 
-    public void newSalesDataShow(){
+    public void newSalesTableShow(){
 
         f.getContentPane().removeAll();
         JTable table = createSalesTable();

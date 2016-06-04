@@ -14,8 +14,10 @@ public class Splash {
         Thread.sleep(2000);
 
         Graphics2D g = splash.createGraphics();
+        g.setColor(Color.BLUE);
+        g.setFont(new Font("Garamond", Font.ITALIC, 18));
+        g.drawString("\"BADIGAN\" ALCOHOL SHOP", 75, 20);
         g.setColor(Color.GREEN);
-        g.setFont(new Font("Garamond", Font.ITALIC, 21));
         g.drawString("LOADING...", 15, 265);
         String s = "_";
         for(int i = 0; i < 7; i++){

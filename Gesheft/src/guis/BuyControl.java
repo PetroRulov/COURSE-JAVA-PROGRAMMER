@@ -29,7 +29,7 @@ public class BuyControl implements ActionListener, Observer {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        int date = Integer.parseInt(gGui.getTfDate().getText());
+        String date = gGui.getTfDate().getText();
 
         Client guest = null;
         if(clientDataAreCorrect() && isPresent()){
@@ -99,7 +99,7 @@ public class BuyControl implements ActionListener, Observer {
     public void update(Observable o, Object arg) {
 
         if(arg instanceof Sale){
-            gGui.newSalesDataShow();
+            gGui.newSalesTableShow();
         }else{
             System.out.println(this.toString() + " notified.");
         }

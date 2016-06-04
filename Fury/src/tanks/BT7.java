@@ -16,6 +16,7 @@ public class BT7 extends AbstractTank {
     private String IMAGE_LEFT = "bt7_LEFT.png";
     private String IMAGE_RIGHT = "bt7_RIGHT.png";
 
+    public BT7(){}
 
     public BT7(Slider sdr, BattleField bf){
         super(sdr, bf, 128, 128, Direct.LEFT);

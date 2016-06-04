@@ -15,17 +15,14 @@ public class Badigan extends Observable implements IDataProvider {
     private Stock stk;
     private List<Client> clts;
     private List<Sale> sales;
-    private List sellings;
 
     public Badigan(){
 
         this.stk = new Stock();
         this.clts = new ArrayList<>();
         initClientsBase();
-        this.sales = new ArrayList<>();
+        this.sales = new LinkedList<Sale>();
         initSalesJournal();
-        this.sellings = new LinkedList<Sale>();
-        initSellings();
 
     }
 
@@ -42,15 +39,7 @@ public class Badigan extends Observable implements IDataProvider {
         if(sales == null){
             initSalesJournal();
         }
-        return new ArrayList<Sale>(sales);
-    }
-
-    public List<Sale> getSellings() {
-
-        if(sellings == null){
-            initSellings();
-        }
-        return new LinkedList<Sale>(sellings);
+        return new LinkedList<Sale>(sales);
     }
 
     public Stock getStk() {
@@ -76,53 +65,53 @@ public class Badigan extends Observable implements IDataProvider {
 
     private void initSalesJournal(){
 
-        sales.add( new Sale(9032016, clts.get(0), stk.getWat()[5], 3));
-        sales.add( new Sale(9032016, clts.get(7), stk.getWat()[4], 1));
-        sales.add( new Sale(9032016, clts.get(3), stk.getWat()[1], 5));
-        sales.add( new Sale(9032016, clts.get(9), stk.getWat()[0], 2));
-        sales.add( new Sale(9032016, clts.get(4), stk.getWat()[2], 3));
-        sales.add( new Sale(9032016, clts.get(0), stk.getWat()[3], 5));
-        sales.add( new Sale(10032016, clts.get(1), stk.getWat()[9], 1));
-        sales.add( new Sale(10032016, clts.get(11), stk.getWat()[17], 4));
-        sales.add( new Sale(10032016, clts.get(2), stk.getWat()[34], 8));
-        sales.add( new Sale(11032016, clts.get(10), stk.getWat()[45], 6));
-        sales.add( new Sale(11032016, clts.get(3), stk.getWat()[61], 5));
-        sales.add( new Sale(11032016, clts.get(9), stk.getWat()[66], 4));
-        sales.add( new Sale(11032016, clts.get(4), stk.getWat()[62], 2));
-        sales.add( new Sale(11032016, clts.get(8), stk.getWat()[59], 1));
-        sales.add( new Sale(12032016, clts.get(5), stk.getWat()[9], 1));
-        sales.add( new Sale(12032016, clts.get(7), stk.getWat()[44], 2));
-        sales.add( new Sale(12032016, clts.get(7), stk.getWat()[36], 3));
-        sales.add( new Sale(12032016, clts.get(6), stk.getWat()[30], 4));
-        sales.add( new Sale(12032016, clts.get(11), stk.getWat()[38], 3));
-        sales.add( new Sale(12032016, clts.get(0), stk.getWat()[27], 5));
-        sales.add( new Sale(13032016, clts.get(1), stk.getWat()[41], 4));
-        sales.add( new Sale(13032016, clts.get(10), stk.getWat()[23], 3));
-        sales.add( new Sale(13032016, clts.get(2), stk.getWat()[45], 2));
-        sales.add( new Sale(13032016, clts.get(9), stk.getWat()[19], 1));
-        sales.add( new Sale(13032016, clts.get(3), stk.getWat()[48], 3));
-        sales.add( new Sale(13032016, clts.get(8), stk.getWat()[17], 3));
-        sales.add( new Sale(14032016, clts.get(4), stk.getWat()[50], 4));
-        sales.add( new Sale(14032016, clts.get(7), stk.getWat()[9], 6));
-        sales.add( new Sale(14032016, clts.get(5), stk.getWat()[14], 3));
-        sales.add( new Sale(14032016, clts.get(6), stk.getWat()[52], 7));
-        sales.add( new Sale(15032016, clts.get(1), stk.getWat()[12], 3));
-        sales.add( new Sale(15032016, clts.get(11), stk.getWat()[55], 2));
-        sales.add( new Sale(15032016, clts.get(0), stk.getWat()[9], 1));
-        sales.add( new Sale(15032016, clts.get(10), stk.getWat()[58], 1));
-        sales.add( new Sale(16032016, clts.get(2), stk.getWat()[7], 1));
-        sales.add( new Sale(16032016, clts.get(9), stk.getWat()[60], 8));
-        sales.add( new Sale(16032016, clts.get(3), stk.getWat()[5], 5));
-        sales.add( new Sale(16032016, clts.get(8), stk.getWat()[62], 3));
-        sales.add( new Sale(17032016, clts.get(4), stk.getWat()[3], 2));
-        sales.add( new Sale(17032016, clts.get(7), stk.getWat()[0], 3));
-        sales.add( new Sale(17032016, clts.get(5), stk.getWat()[65], 1));
+        sales.add( new Sale("01.06.2016", clts.get(0), stk.getWat()[5], 3));
+        sales.add( new Sale("01.06.2016", clts.get(7), stk.getWat()[4], 1));
+        sales.add( new Sale("01.06.2016", clts.get(3), stk.getWat()[1], 5));
+        sales.add( new Sale("01.06.2016", clts.get(9), stk.getWat()[0], 2));
+        sales.add( new Sale("01.06.2016", clts.get(4), stk.getWat()[2], 3));
+        sales.add( new Sale("01.06.2016", clts.get(0), stk.getWat()[3], 5));
+        sales.add( new Sale("02.06.2016", clts.get(1), stk.getWat()[9], 1));
+        sales.add( new Sale("02.06.2016", clts.get(11), stk.getWat()[17], 4));
+        sales.add( new Sale("02.06.2016", clts.get(2), stk.getWat()[34], 8));
+        sales.add( new Sale("02.06.2016", clts.get(10), stk.getWat()[45], 6));
+        sales.add( new Sale("03.06.2016", clts.get(3), stk.getWat()[61], 5));
+        sales.add( new Sale("03.06.2016", clts.get(9), stk.getWat()[66], 4));
+        sales.add( new Sale("03.06.2016", clts.get(4), stk.getWat()[62], 2));
+        sales.add( new Sale("03.06.2016", clts.get(8), stk.getWat()[59], 1));
+        sales.add( new Sale("04.06.2016", clts.get(5), stk.getWat()[9], 1));
+        sales.add( new Sale("04.06.2016", clts.get(7), stk.getWat()[44], 2));
+        sales.add( new Sale("04.06.2016", clts.get(7), stk.getWat()[36], 3));
+        sales.add( new Sale("04.06.2016", clts.get(6), stk.getWat()[30], 4));
+        sales.add( new Sale("04.06.2016", clts.get(11), stk.getWat()[38], 3));
+        sales.add( new Sale("04.06.2016", clts.get(0), stk.getWat()[27], 5));
+        sales.add( new Sale("05.06.2016", clts.get(1), stk.getWat()[41], 4));
+        sales.add( new Sale("05.06.2016", clts.get(10), stk.getWat()[23], 3));
+        sales.add( new Sale("05.06.2016", clts.get(2), stk.getWat()[45], 2));
+        sales.add( new Sale("05.06.2016", clts.get(9), stk.getWat()[19], 1));
+        sales.add( new Sale("05.06.2016", clts.get(3), stk.getWat()[48], 3));
+        sales.add( new Sale("05.06.2016", clts.get(8), stk.getWat()[17], 3));
+        sales.add( new Sale("06.06.2016", clts.get(4), stk.getWat()[50], 4));
+        sales.add( new Sale("06.06.2016", clts.get(7), stk.getWat()[9], 6));
+        sales.add( new Sale("06.06.2016", clts.get(5), stk.getWat()[14], 3));
+        sales.add( new Sale("06.06.2016", clts.get(6), stk.getWat()[52], 7));
+        sales.add( new Sale("07.06.2016", clts.get(1), stk.getWat()[12], 3));
+        sales.add( new Sale("07.06.2016", clts.get(11), stk.getWat()[55], 2));
+        sales.add( new Sale("07.06.2016", clts.get(0), stk.getWat()[9], 1));
+        sales.add( new Sale("07.06.2016", clts.get(10), stk.getWat()[58], 1));
+        sales.add( new Sale("08.06.2016", clts.get(2), stk.getWat()[7], 1));
+        sales.add( new Sale("08.06.2016", clts.get(9), stk.getWat()[60], 8));
+        sales.add( new Sale("08.06.2016", clts.get(3), stk.getWat()[5], 5));
+        sales.add( new Sale("08.06.2016", clts.get(8), stk.getWat()[62], 3));
+        sales.add( new Sale("09.06.2016", clts.get(4), stk.getWat()[3], 2));
+        sales.add( new Sale("09.06.2016", clts.get(7), stk.getWat()[0], 3));
+        sales.add( new Sale("09.06.2016", clts.get(5), stk.getWat()[65], 1));
 
     }
 
-    public void sellTransaction(int date, Client guest, Water wat, int quant){
+    public void sellTransaction(String date, Client guest, Water wat, int quant){
 
-        if(date != 0 && guest != null && wat != null && quant != 0){
+        if(date != null && guest != null && wat != null && quant != 0){
             Sale novus = new Sale(date, guest, wat, quant);
             sales.add(novus);
             setChanged();
@@ -145,49 +134,5 @@ public class Badigan extends Observable implements IDataProvider {
         }
     }
 
-    private void initSellings(){
 
-        sellings.add( new Sale(9032016, clts.get(0), stk.getWat()[5], 3));
-        sellings.add( new Sale(9032016, clts.get(7), stk.getWat()[4], 1));
-        sellings.add( new Sale(9032016, clts.get(3), stk.getWat()[1], 5));
-        sellings.add( new Sale(9032016, clts.get(9), stk.getWat()[0], 2));
-        sellings.add( new Sale(9032016, clts.get(4), stk.getWat()[2], 3));
-        sellings.add( new Sale(9032016, clts.get(0), stk.getWat()[3], 5));
-        sellings.add( new Sale(10032016, clts.get(1), stk.getWat()[9], 1));
-        sellings.add( new Sale(10032016, clts.get(11), stk.getWat()[17], 4));
-        sellings.add( new Sale(10032016, clts.get(2), stk.getWat()[34], 8));
-        sellings.add( new Sale(11032016, clts.get(10), stk.getWat()[45], 6));
-        sellings.add( new Sale(11032016, clts.get(3), stk.getWat()[61], 5));
-        sellings.add( new Sale(11032016, clts.get(9), stk.getWat()[66], 4));
-        sellings.add( new Sale(11032016, clts.get(4), stk.getWat()[62], 2));
-        sellings.add( new Sale(11032016, clts.get(8), stk.getWat()[59], 1));
-        sellings.add( new Sale(12032016, clts.get(5), stk.getWat()[9], 1));
-        sellings.add( new Sale(12032016, clts.get(7), stk.getWat()[44], 2));
-        sellings.add( new Sale(12032016, clts.get(7), stk.getWat()[36], 3));
-        sellings.add( new Sale(12032016, clts.get(6), stk.getWat()[30], 4));
-        sellings.add( new Sale(12032016, clts.get(11), stk.getWat()[38], 3));
-        sellings.add( new Sale(12032016, clts.get(0), stk.getWat()[27], 5));
-        sellings.add( new Sale(13032016, clts.get(1), stk.getWat()[41], 4));
-        sellings.add( new Sale(13032016, clts.get(10), stk.getWat()[23], 3));
-        sellings.add( new Sale(13032016, clts.get(2), stk.getWat()[45], 2));
-        sellings.add( new Sale(13032016, clts.get(9), stk.getWat()[19], 1));
-        sellings.add( new Sale(13032016, clts.get(3), stk.getWat()[48], 3));
-        sellings.add( new Sale(13032016, clts.get(8), stk.getWat()[17], 3));
-        sellings.add( new Sale(14032016, clts.get(4), stk.getWat()[50], 4));
-        sellings.add( new Sale(14032016, clts.get(7), stk.getWat()[9], 6));
-        sellings.add( new Sale(14032016, clts.get(5), stk.getWat()[14], 3));
-        sellings.add( new Sale(14032016, clts.get(6), stk.getWat()[52], 7));
-        sellings.add( new Sale(15032016, clts.get(1), stk.getWat()[12], 3));
-        sellings.add( new Sale(15032016, clts.get(11), stk.getWat()[55], 2));
-        sellings.add( new Sale(15032016, clts.get(0), stk.getWat()[9], 1));
-        sellings.add( new Sale(15032016, clts.get(10), stk.getWat()[58], 1));
-        sellings.add( new Sale(16032016, clts.get(2), stk.getWat()[7], 1));
-        sellings.add( new Sale(16032016, clts.get(9), stk.getWat()[60], 8));
-        sellings.add( new Sale(16032016, clts.get(3), stk.getWat()[5], 5));
-        sellings.add( new Sale(16032016, clts.get(8), stk.getWat()[62], 3));
-        sellings.add( new Sale(17032016, clts.get(4), stk.getWat()[3], 2));
-        sellings.add( new Sale(17032016, clts.get(7), stk.getWat()[0], 3));
-        sellings.add( new Sale(17032016, clts.get(5), stk.getWat()[65], 1));
-
-    }
 }

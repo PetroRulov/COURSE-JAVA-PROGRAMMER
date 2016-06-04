@@ -18,6 +18,7 @@ public class T34 extends AbstractTank {
     private String IMAGE_RIGHT = "t34_RIGHT.png";
     private Image iT34;
 
+    public T34(){}
 
     public T34(Slider sdr, BattleField bf){
         super(sdr, bf, 448, 64, Direct.LEFT);

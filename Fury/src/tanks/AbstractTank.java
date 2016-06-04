@@ -34,6 +34,7 @@ public abstract class AbstractTank implements IObjectable {
     protected String IMAGE_LEFT;
     protected String IMAGE_RIGHT;
 
+    protected AbstractTank(){}
 
     protected AbstractTank(Slider sdr, BattleField bf){}
 

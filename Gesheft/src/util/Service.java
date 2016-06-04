@@ -159,7 +159,7 @@ public class Service {
             System.out.println("---------------------------------------------------------------------------------------------------------------|");
             int j = 0;
             for (int i = 0; i < bad.getSales().size(); i++) {
-                if (bad.getSales().get(i) != null && bad.getSales().get(i).getDate() == date) {
+                if (bad.getSales().get(i) != null && bad.getSales().get(i).getDate().equals(date)) {
                     j++;
                     System.out.print(j);
                     bad.getSales().get(i).saleInfoShow();
@@ -178,7 +178,7 @@ public class Service {
 
         int quant = 0, amount = 0;
         for (int i = 0; i < bad.getSales().size(); i++) {
-            if (bad.getSales().get(i) != null && bad.getSales().get(i).getDate() == d) {
+            if (bad.getSales().get(i) != null && bad.getSales().get(i).getDate().equals(d)) {
                 quant += bad.getSales().get(i).getQuant();
                 amount += bad.getSales().get(i).getIncome();
             }
@@ -190,7 +190,7 @@ public class Service {
 
         int x = 0;
         for (int i = 0; i < bad.getSales().size(); i++) {
-            if (bad.getSales().get(i) != null && bad.getSales().get(i).getDate() == d) {
+            if (bad.getSales().get(i) != null && bad.getSales().get(i).getDate().equals(d)) {
                 x = i;
                 break;
             }

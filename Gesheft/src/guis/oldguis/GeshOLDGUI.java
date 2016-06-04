@@ -117,7 +117,7 @@ public class GeshOLDGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                int date = Integer.parseInt(tfDate.getText());
+                String date = tfDate.getText();
                 Client guest = new Client();
                 guest.setName(tfName.getText());
 

@@ -11,12 +11,10 @@ import tanks.Tiger;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
-import java.util.Vector;
 
 public class Slider extends JPanel {
 
-    private BattleField bF = new BattleField();
-    private JFrame frame;
+    private BattleField bF;
     private int[][] lab; // how the tanks see the BattleField;
     private String agrPos;
     private Bullet bullet;
@@ -26,37 +24,40 @@ public class Slider extends JPanel {
     private AgrLogic agrLog;
     private AgrIntel agrInt;
     private AgrIntel tigrInt;
-    private TigerLogic tiLog;
-    private Vector<AbstractTank> tanks;
+    private  TigerLogic tiLog;
+
 
     public Slider() throws Exception {
 
         bF = new BattleField();
+        lab = setLab(bF.getBf());
+
+        defender = new T34(this, bF, 64, 448, Direct.UP);
 
         agrPos = defineAgressorPos();
-        defender = new T34(this, bF, 64, 448, Direct.UP);
         agressor = new BT7(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.RIGHT);
-        bullet = new Bullet(600, 600, Direct.MINUS, ogr);
-        lab = setLab(bF.getBf());
 
         agrPos = defineAgressorPos();
         ogr = new Tiger(this, bF, Integer.parseInt(agrPos.split("_")[0]), Integer.parseInt(agrPos.split("_")[1]), Direct.DOWN);
+
+        bullet = new Bullet(600, 600, Direct.MINUS, ogr);
+
         agrInt = new AgrIntel(bF, lab, agressor);
         tigrInt = new AgrIntel(bF, lab, ogr);
         agrLog = new AgrLogic(this, bF, agressor);
         tiLog = new TigerLogic(this, bF, ogr);
 
-        tanks = new Vector<AbstractTank>();
-        initTanks();
 
-        //JFrame frame = new JFrame("BATTLE FIELD, DAY 2");
-        frame = new JFrame("BATTLE FIELD, DAY 2");
-        frame.setLocation(650, 50);
+        JFrame frame = new JFrame("FURY BATTLEFIELD");
+        frame.setLocation(0, 0);
         frame.setMinimumSize(new Dimension(bF.getBF_WIDTH() + 16, bF.getBF_HEIGHT() + 40));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.getContentPane().add(this);
         frame.pack();
         frame.setVisible(true);
+
+        //runTheGame();
+
     }
 
     public AgrIntel getAgrInt() {
@@ -65,19 +66,7 @@ public class Slider extends JPanel {
 
     public AgrIntel getTigrInt(){return tigrInt;}
 
-    public Vector<AbstractTank> getTanks() {
-        return new Vector<AbstractTank>(tanks);
-    }
-
-    private void initTanks(){
-
-        tanks.add(defender);
-        tanks.add(agressor);
-        tanks.add(ogr);
-
-    }
-
-    public void runTheGame() throws Exception {
+    public Slider runTheGame() throws Exception {
 
         // /**TIGERS WAY*/
         System.out.println("How Tiger sees the battlefield:");
@@ -120,8 +109,7 @@ public class Slider extends JPanel {
             "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
             "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
         }
-
-
+        return this;
     }
 
     public int switcherLab(String let){
@@ -403,9 +391,6 @@ public class Slider extends JPanel {
 
 
 
-
-
-
     //-!!!- M A G I C   B E L O W -!!!//
     @Override
     protected void paintComponent(Graphics g) {
@@ -447,9 +432,6 @@ public class Slider extends JPanel {
         return bullet;
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
 }
 
 

@@ -8,16 +8,15 @@ import java.util.Date;
 
 public class Sale {
 
-    private int date = dateFormat(new Date(System.currentTimeMillis()));
+    private String date = dateFormat(new Date(System.currentTimeMillis()));
     private Client guest;
     private Water wat;
     private int quant;
     private double income;
 
-
     public Sale(){}
 
-    public Sale(int date, Client guest, Water wat, int quant){
+    public Sale(String date, Client guest, Water wat, int quant){
 
         this.date = date;
         this.guest = guest;
@@ -28,15 +27,36 @@ public class Sale {
 
     private double setIncome(){
 
-        return income = this.quant * this.wat.getPrice();
+        income = this.quant * this.wat.getPrice();
 
+        String str = String.valueOf(income);
+        int dotIndex = str.indexOf(".");
+
+        String before = String.valueOf((int) income);
+        String incStr = null;
+        if((str.length()-dotIndex)>=3){
+            incStr = String.valueOf((int) income) + "." + str.substring(dotIndex+1, (dotIndex+3));
+        }else{
+            incStr = str;
+        }
+
+        String first = incStr.substring(incStr.length()-2, incStr.length()-1);
+        String second = incStr.substring(incStr.length()-1);
+        if(second.equals("9")){
+            if(!first.equals("9")){
+                incStr = before + "." + String.valueOf(Integer.parseInt(first)+1);
+            }else{
+                incStr = String.valueOf(Integer.parseInt(before)+1);
+            }
+        }
+        return income = Double.parseDouble(incStr);
     }
 
     public void setQuant(int quant) {
         this.quant = quant;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -56,10 +76,10 @@ public class Sale {
         return wat;
     }
 
-    public int dateFormat(Date d){
+    public String dateFormat(Date d){
 
-        DateFormat df = new SimpleDateFormat("yyyyMMdd");
-        return Integer.parseInt((df.format(d)));
+        DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
+        return df.format(d);
 
     }
 
