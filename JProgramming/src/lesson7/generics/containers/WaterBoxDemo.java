@@ -79,8 +79,15 @@ public class WaterBoxDemo {
 
             System.out.println(products.getWaters().get(i).toString());
         }
+        System.out.println();
+        products.sorterWBbyPriceIncrease(waters);
+        products.setWaters(waters);
+        System.out.println("WATERBOX PRODUCTS sorted by Prices increasing displayed:");
 
-        //System.out.println(products.getWaters()+ "\n");
+        for(int i = 0; i < products.getWaters().size(); i++ ){
+
+            System.out.println(products.getWaters().get(i).toString());
+        }
 
     }
 }

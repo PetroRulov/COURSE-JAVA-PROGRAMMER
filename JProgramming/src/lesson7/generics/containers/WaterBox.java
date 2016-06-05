@@ -42,11 +42,17 @@ public class WaterBox<T extends Water> {
 
     public void sorterWBbyPriceDecrease(List<T> waters){
 
-        waters.sort(new PriceComparator());
+        waters.sort(new PriceDecreaseComparator());
+    }
+
+    public void sorterWBbyPriceIncrease(List<T> waters){
+
+        waters.sort(new PriceIncreaseComparator());
     }
 }
 
-class PriceComparator implements Comparator<Water> {
+
+class PriceDecreaseComparator implements Comparator<Water> {
 
     @Override
     public int compare(Water a, Water b) {
@@ -54,4 +60,11 @@ class PriceComparator implements Comparator<Water> {
     }
 }
 
+class PriceIncreaseComparator implements Comparator<Water> {
+
+    @Override
+    public int compare(Water a, Water b) {
+        return a.getPrice() < b.getPrice() ? -1 : a.getPrice() == b.getPrice() ? 0 : 1;
+    }
+}
 
