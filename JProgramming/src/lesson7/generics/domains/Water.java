@@ -61,7 +61,9 @@ public abstract class Water {
     @Override
     public String toString(){
 
-        return getDrink() + " " + getName() + ", " + " " + getVolume() + "L, price: UAH " + getPrice();
+        return getDrink() + " " + getName() + ", " + " " + getVolume() + "L, price: UAH " + getPrice() + ", value: UAH " + getValue();
+
+        //return String.format("{drink=%s, name=%s, volume=%d, price=%d}", drink, name, volume, price);
     }
 
     @Override

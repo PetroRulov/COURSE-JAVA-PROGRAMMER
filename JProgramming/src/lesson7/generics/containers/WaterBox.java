@@ -3,6 +3,7 @@ package lesson7.generics.containers;
 import lesson7.generics.domains.Water;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -10,17 +11,17 @@ import java.util.List;
  */
 public class WaterBox<T extends Water> {
 
-    private List<Water> waters;
+    private List<T> waters;
 
     public WaterBox(){
         waters = new ArrayList<>();
     }
 
-    public List<Water> getWaters() {
+    public List<T> getWaters() {
         return new ArrayList<>(waters);
     }
 
-    public void setWaters(List<Water> waters) {
+    public void setWaters(List<T> waters) {
         this.waters = waters;
     }
 
@@ -38,4 +39,19 @@ public class WaterBox<T extends Water> {
 
         return (T) waters.get(x);
     }
+
+    public void sorterWBbyPriceDecrease(List<T> waters){
+
+        waters.sort(new PriceComparator());
+    }
 }
+
+class PriceComparator implements Comparator<Water> {
+
+    @Override
+    public int compare(Water a, Water b) {
+        return a.getPrice() < b.getPrice() ? 1 : a.getPrice() == b.getPrice() ? 0 : -1;
+    }
+}
+
+

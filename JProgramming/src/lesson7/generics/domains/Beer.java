@@ -7,6 +7,8 @@ import lesson7.generics.enums.Drink;
  */
 public class Beer extends Water {
 
+    public Beer(){}
+
     public Beer(Drink drink, String name, double volume, int quant, double value, double price) {
 
         this.drink = drink;
