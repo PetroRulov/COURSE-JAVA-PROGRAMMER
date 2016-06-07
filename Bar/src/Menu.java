@@ -24,7 +24,7 @@ public class Menu {
 //    	System.out.println();
 //    	bar.addNewProduct();
         // two just added ingredients should already be in new product;
-//        bar.barMenuShow();
+        bar.barMenuShow();
 
         bar.printIngrs();
         bar.changeIngredientPrice();

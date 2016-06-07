@@ -17,6 +17,7 @@ public class FuryGUI extends JPanel {
     private JFrame f;
     private Slider slid;
     private ArrayList<String> results;
+    private int n = 3;
 
     public FuryGUI() throws Exception {
 
@@ -47,11 +48,13 @@ public class FuryGUI extends JPanel {
         JTextField tfResult = new JTextField(40);
         tfResult.setFont(new Font("Garamond", Font.BOLD, 20));
         tfResult.setForeground(Color.ORANGE);
-        if (results.size() == 0 || results.size() == 1 ) {
-            tfResult.setText("0 objects destroyed");
-        }else {
-            tfResult.setText("1 HQ was destroyed");
-        }
+        tfResult.setText("1 HQ was destroyed");
+
+//        if (results.size() == 0 || results.size() == 1 ) {
+//            tfResult.setText("0 objects destroyed");
+//        }else {
+//            tfResult.setText("1 HQ was destroyed");
+//        }
 
         panel.add(tfResult, new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
@@ -66,23 +69,19 @@ public class FuryGUI extends JPanel {
         combo.setForeground(Color.BLACK);
         panel.add(combo, new GridBagConstraints(1, 1, 10, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        JButton start = new JButton("!!!START THE GAME!!!");
-        start.setFont(new Font("Garamond", Font.BOLD, 20));
-        panel.add(start, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        final JButton[] start = {new JButton("!!!START THE GAME!!!")};
+        start[0].setFont(new Font("Garamond", Font.BOLD, 20));
+        panel.add(start[0], new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        start.addActionListener(new ActionListener() {
+        start[0].addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 f.dispose();
-                //f.getContentPane().removeAll();
-                Slider slide = null;
-                if(combo.getSelectedItem().equals("Tank T-34")) try {
-                    slide = new Slider().runTheGame();
+                if(combo.getSelectedItem().equals("Tank T-34")) {
 
-                } catch (Exception e1) {
-                    e1.printStackTrace();
+                    setN(5);
                 }
             }
         });
@@ -97,29 +96,21 @@ public class FuryGUI extends JPanel {
         tanks.add("Tank BT7");
         tanks.add("Tank Tiger");
         return tanks;
-
-    }
-
-    public static void main(String[] args) throws Exception {
-
-        //new Splash();
-        //Slider slider = new Slider();
-        //slider.runTheGame();
-        new FuryGUI();
-
     }
 
     public ArrayList<String> getResults() {
         return new ArrayList<String>(results);
     }
 
-    public void showNewStartGUI(){
+    public void setN(int n) {
+        this.n = n;
+    }
 
-        f.getContentPane().removeAll();
-        JPanel panel = createTankChoosingPannel();
-        f.getContentPane().add(panel);
-        f.pack();
-        f.repaint();
+    public boolean youCanStartTheGame(){
 
+        if(n < 4){
+            return true;
+        }
+        return false;
     }
 }

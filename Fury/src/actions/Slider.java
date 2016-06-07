@@ -8,6 +8,7 @@ import tanks.BT7;
 import tanks.T34;
 import tanks.Tiger;
 import ugis.FuryGUI;
+import ugis.FuryLauncher;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +29,8 @@ public class Slider extends JPanel {
     private  TigerLogic tiLog;
     private JFrame frame;
 
+    private FuryGUI fG;
+
     public Slider() throws Exception {
 
         bF = new BattleField();
@@ -43,10 +46,13 @@ public class Slider extends JPanel {
 
         bullet = new Bullet(600, 600, Direct.MINUS, ogr);
 
-        agrInt = new AgrIntel(bF, lab, agressor);
         tigrInt = new AgrIntel(bF, lab, ogr);
-        agrLog = new AgrLogic(this, bF, agressor);
         tiLog = new TigerLogic(this, bF, ogr);
+
+        agrInt = new AgrIntel(bF, lab, agressor);
+        agrLog = new AgrLogic(this, bF, agressor);
+
+
 
         //JFrame frame = new JFrame("FURY BATTLEFIELD");
         frame = new JFrame("FURY BATTLEFIELD");
@@ -67,7 +73,7 @@ public class Slider extends JPanel {
 
     public AgrIntel getTigrInt(){return tigrInt;}
 
-    public Slider runTheGame() throws Exception {
+    public void runTheGame() throws Exception {
 
         // /**TIGERS WAY*/
         System.out.println("How Tiger sees the battlefield:");
@@ -84,14 +90,14 @@ public class Slider extends JPanel {
         try{
             tiLog.tigerStartAttack();
         }catch(NullPointerException e){
-            System.err.printf("!!!NullPointerException had been catched!!!" + "\n" +
+            System.out.printf("!!!NullPointerException had been catched!!!" + "\n" +
             "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
-            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " G A M E   O V E R!");
+            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " TILOG: NEW GAME IS IMPOSSIBLE!");
         }
         System.out.println();
 
         // /**AGRESSORS WAY*/
-         /*displaying how agressor sees the BattleField*/
+         /*displaying how the agressor sees the BattleField*/
         System.out.println("How Agressor sees the battlefield:");
         System.out.println();
         for (int[] lines : agrInt.getLab()) {
@@ -106,11 +112,10 @@ public class Slider extends JPanel {
         try{
             agrLog.agressorsStartAttack();
         }catch(NullPointerException e){
-            System.err.printf("!!!NullPointerException had been catched!!!" + "\n" +
+            System.out.printf("!!!NullPointerException had been catched!!!" + "\n" +
             "!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!" + "\n" +
-            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + " GAME OVER!");
+            "!!!THERE IS NO SUITABLE PATH TO HQ!!!" + "\n" + "AGRLOG: GAME OVER!");
         }
-        return this;
     }
 
     public int switcherLab(String let){
@@ -160,9 +165,13 @@ public class Slider extends JPanel {
                     sparklingHQ(bullet, v, h);
                     System.err.println("!!!HEADQUARTERS DESTROYED!!!");
                     System.out.println("!!!G A M E   O V E R!!!");
-                    //frame.getContentPane().removeAll();
+
+
+                    Thread.sleep(2000);
                     frame.dispose();
-                    new FuryGUI();
+                    new FuryLauncher(fG, bF);
+                    //frame.pack();
+                    //repaint();
 
                 }
                 return true;

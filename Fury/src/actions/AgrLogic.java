@@ -21,6 +21,7 @@ public class AgrLogic {
     public void agressorsStartAttack() throws Exception {
 
         String str = findFrontNotWater();
+        System.out.println("AgrStartAttack: " + str);
         System.out.println("Slider: FIRING COORDINATES = " + str);
         if (str != null && !str.equals("256_512") ) {
             int xCoord = Integer.parseInt(str.split("_")[0]);
@@ -33,7 +34,7 @@ public class AgrLogic {
             }
             turningToHQ();
         } else if(str.equals("256_512")){
-            System.err.println("!!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!");
+            System.out.println("AGRLOGIC MESSAGE: !!!ERROR: THE HQ IS UNDESTRUCTABLE ON THIS BATTLEFIELD!!!");
         }
     }
 
