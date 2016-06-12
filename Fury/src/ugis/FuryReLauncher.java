@@ -5,14 +5,14 @@ import battleFields.BattleField;
 import battleFields.Black;
 
 
-public class FuryLauncher {
+public class FuryReLauncher {
 
     private Slider slider;
     private BattleField bF;
     private FuryGUI fG;
 
 
-    public FuryLauncher(FuryGUI fG, BattleField bF)throws Exception {
+    public FuryReLauncher(FuryGUI fG, BattleField bF)throws Exception {
 
         if (bF.getBattleField()[8][4] instanceof Black){
 

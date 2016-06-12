@@ -8,7 +8,7 @@ import tanks.BT7;
 import tanks.T34;
 import tanks.Tiger;
 import ugis.FuryGUI;
-import ugis.FuryLauncher;
+import ugis.FuryReLauncher;
 
 import javax.swing.*;
 import java.awt.*;
@@ -168,8 +168,9 @@ public class Slider extends JPanel {
 
 
                     Thread.sleep(2000);
-                    frame.dispose();
-                    new FuryLauncher(fG, bF);
+                    //frame.dispose();
+                    frame.setVisible(false);
+                    new FuryReLauncher(fG, bF);
                     //frame.pack();
                     //repaint();
 
