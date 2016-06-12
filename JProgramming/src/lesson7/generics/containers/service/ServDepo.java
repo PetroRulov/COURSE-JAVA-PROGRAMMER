@@ -30,9 +30,14 @@ public class ServDepo<IServicable> implements java.io.Serializable {
         this.serviceData = serviceData;
     }
 
-    public void addWater(IServicable servObj){
+    public void addServObj(IServicable servObj){
 
         serviceData.add(servObj);
+    }
+
+    public void removeServObj(IServicable servObj){
+
+        serviceData.remove(servObj);
     }
 
     public IServicable getServObjFromServiceList(int x){

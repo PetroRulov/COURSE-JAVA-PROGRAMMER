@@ -17,6 +17,8 @@ public class DemoService {
         service.setName("service");
         Service servak = new Service();
         servak.setName("servak");
+        Service serviz = new Service();
+        serviz.setName("serviz");
 
         List<IServicable> servoData = new ArrayList<>();
 
@@ -31,5 +33,13 @@ public class DemoService {
             System.out.println("ServObject " + (i + 1) + " = " +  sd.getServObjFromServiceList(i).toString());
         }
 
+        sd.addServObj(serviz);
+        sd.removeServObj(service);
+        System.out.println();
+
+        for(int i = 0; i < sd.getServiceData().size(); i++){
+
+            System.out.println("ServObject " + (i + 1) + " = " +  sd.getServObjFromServiceList(i).toString());
+        }
     }
 }

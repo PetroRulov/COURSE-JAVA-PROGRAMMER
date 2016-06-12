@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Bar/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/service/DemoService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/service/IServicable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Fury/src/FurLauncher.java" afterPath="$PROJECT_DIR$/../Fury/src/Launcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../Fury/src/ugis/FuryLauncher.java" afterPath="$PROJECT_DIR$/../Fury/src/ugis/FuryReLauncher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson7/Lesson7.java" afterPath="$PROJECT_DIR$/src/lesson7/TestGetSystemProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bar/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Bar/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/Slider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson7/generics/containers/service/Service.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/service/Service.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson7/generics/containers/service/DemoService.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/service/DemoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java" />
     </list>
     <ignored path="JProgramming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,8 +43,8 @@
       <file leaf-file-name="DemoService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/DemoService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="351">
+              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,8 +65,8 @@
       <file leaf-file-name="WaterBox.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="37" column="10" selection-start-line="37" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="238">
+              <caret line="33" column="0" selection-start-line="32" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -146,8 +136,8 @@
       <file leaf-file-name="ServDepo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+            <state relative-caret-position="436">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,8 +215,8 @@
         <option value="$PROJECT_DIR$/src/lesson7/Lesson7.java" />
         <option value="$PROJECT_DIR$/src/lesson7/TestGetSystemProperties.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/IServiceRepositary.java" />
-        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/Service.java" />
+        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/DemoService.java" />
       </list>
     </option>
@@ -936,7 +926,14 @@
       <option name="project" value="LOCAL" />
       <updated>1465322635311</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="frame_7_2_2 ServDepo">
+      <created>1465724904359</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1465724904359</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -997,7 +994,8 @@
     <MESSAGE value="frame_7_1_6" />
     <MESSAGE value="frame_7_1_7 with Comparator" />
     <MESSAGE value="frame_7_2_2 ServiceRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame_7_2_2 ServiceRepository" />
+    <MESSAGE value="frame_7_2_2 ServDepo" />
+    <option name="LAST_COMMIT_MESSAGE" value="frame_7_2_2 ServDepo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1376,14 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="37" column="10" selection-start-line="37" selection-start-column="4" selection-end-line="40" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1396,10 +1386,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/WaterBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="33" column="0" selection-start-line="32" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/ServDepo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
+        <state relative-caret-position="436">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1408,8 +1406,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/DemoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="351">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
