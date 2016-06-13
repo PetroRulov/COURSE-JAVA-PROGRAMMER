@@ -62,7 +62,7 @@ public class DemoService {
 
         sDE.sorterAZ(dataServ);
         System.out.println();
-        System.out.println("EMPTY CONSTRUCTOR FOR SERVDEPO:");
+        System.out.println("EMPTY CONSTRUCTOR FOR SERVDEPO (compared by name A-Z):");
 
         for(int i = 0; i < sDE.getServiceData().size(); i++){
 
