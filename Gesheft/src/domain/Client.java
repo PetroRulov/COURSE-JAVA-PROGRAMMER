@@ -13,13 +13,6 @@ public class Client {
 
     public Client(){}
 
-    // for GUI
-//    public Client(String surName, String name){
-//
-//        this.surName = surName;
-//        this.name = name;
-//    }
-
     public Client(String surName, String name, int age, String sex, String eMail){
 
         this.surName = surName;

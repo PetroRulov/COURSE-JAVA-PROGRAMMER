@@ -25,7 +25,7 @@ public class Sale {
         this.income = setIncome();
     }
 
-    private double setIncome(){
+    public double setIncome(){
 
         income = this.quant * this.wat.getPrice();
 
@@ -52,6 +52,10 @@ public class Sale {
         return income = Double.parseDouble(incStr);
     }
 
+    public int getQuant() {
+        return quant;
+    }
+
     public void setQuant(int quant) {
         this.quant = quant;
     }
@@ -66,10 +70,6 @@ public class Sale {
 
     public double getIncome() {
         return income;
-    }
-
-    public int getQuant() {
-        return quant;
     }
 
     public Water getWat() {
