@@ -1,5 +1,6 @@
 package guis;
 
+import controllers.*;
 import domain.Sale;
 import domain.waters.Water;
 import interfaces.IDataProvider;
@@ -16,9 +17,10 @@ import java.awt.event.MouseEvent;
 import java.text.DateFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Observer;
-import java.util.Vector;
 
 /**
  * Created by prulov on 26.05.2016.
@@ -31,17 +33,22 @@ public class GeshGUI extends DefaultTableModel {
     private JFrame f;
     private JPanel panel;
 
+    // data
+    private List<Water> goods = new ArrayList<>();
+
     // controller's fields:
     private JTextField tfDate;
     private JTextField tfSurName;
-    private JTextField tfYName;
-    private JFormattedTextField tfAge;
+    private JTextField tfName;
+    private JTextField tfAge;
     private JTextField tfSex;
     private JTextField tfEmail;
-    private JComboBox combo;
-    private JFormattedTextField tfQuant;
-    private JButton buy;
 
+    private JFormattedTextField tfBID; // Client's ID for transaction
+    private JFormattedTextField tfClID; // Client's ID for Client's Database
+    private JFormattedTextField tfQuant;
+
+    private JComboBox combo;
 
     public GeshGUI(Service serv) {
 
@@ -58,9 +65,6 @@ public class GeshGUI extends DefaultTableModel {
         // first initialisation of the SalesTable displaying
         initSalesDataShow();
 
-        // adding Transaction GUI
-        //showTransactionGUI();
-
         f.pack();
         f.setVisible(true);
     }
@@ -76,12 +80,23 @@ public class GeshGUI extends DefaultTableModel {
         panel.setLayout(new GridBagLayout());
         panel.setBackground(Color.BLACK);
 
+        goods = serv.getBad().getStk().getWaters();
+
         NumberFormat nf = NumberFormat.getInstance();
 
-        JLabel date = new JLabel("Date (ddMMyyyy): ");
+        ImageIcon icon = new ImageIcon(getClass().getResource("strawberry.gif"));
+        JLabel picture = new JLabel(icon);
+        picture.setFont(picture.getFont().deriveFont(Font.ITALIC));
+        picture.setHorizontalAlignment(JLabel.LEFT);
+        //picture.setIcon(icon);
+        picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
+        panel.add(picture, new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+
+        JLabel date = new JLabel("Date (dd.MM.yyyy): ");
         date.setFont(new Font("Garamond", Font.BOLD, 20));
         date.setForeground(Color.ORANGE);
-        panel.add(date, new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        panel.add(date, new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         tfDate = new JTextField();
         tfDate.setFont(new Font("Garamond", Font.BOLD, 20));
@@ -89,150 +104,259 @@ public class GeshGUI extends DefaultTableModel {
         tfDate.setColumns(6);
         tfDate.setHorizontalAlignment(JTextField.RIGHT);
         tfDate.setText(dateFormat(new Date(System.currentTimeMillis())));
-        panel.add(tfDate, new GridBagConstraints(1, 0, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        panel.add(tfDate, new GridBagConstraints(1, 1, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        JLabel surName = new JLabel("Customer's Surname: ");
-        surName.setFont(new Font("Garamond", Font.ITALIC, 20));
-        surName.setForeground(Color.ORANGE);
-        panel.add(surName, new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        JLabel id = new JLabel("Customer's identify #: ");
+        id.setFont(new Font("Garamond", Font.ITALIC, 20));
+        id.setForeground(Color.ORANGE);
+        panel.add(id, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        tfSurName = new JTextField();
-        tfSurName.setFont(new Font("Garamond", Font.ITALIC, 20));
-        tfSurName.setForeground(Color.BLACK);
-        tfSurName.setColumns(12);
-        panel.add(tfSurName, new GridBagConstraints(1, 1, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        JLabel yName = new JLabel("Name: ");
-        yName.setFont(new Font("Garamond", Font.ITALIC, 20));
-        yName.setForeground(Color.ORANGE);
-        yName.setHorizontalAlignment(JLabel.RIGHT);
-        panel.add(yName, new GridBagConstraints(4, 1, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        tfYName = new JTextField();
-        tfYName.setFont(new Font("Garamond", Font.ITALIC, 20));
-        tfYName.setForeground(Color.BLACK);
-        tfYName.setColumns(12);
-        panel.add(tfYName, new GridBagConstraints(5, 1, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        JLabel age = new JLabel("Customer's Age: ");
-        age.setFont(new Font("Garamond", Font.ITALIC, 20));
-        age.setForeground(Color.ORANGE);
-        panel.add(age, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        tfAge = new JFormattedTextField(nf);
-        tfAge.setForeground(Color.BLACK);
-        tfAge.setHorizontalAlignment(JTextField.RIGHT);
-        tfAge.setValue(0);
-        tfAge.setColumns(6);
-        panel.add(tfAge, new GridBagConstraints(1, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        JLabel sex = new JLabel("Sex: ");
-        sex.setFont(new Font("Garamond", Font.ITALIC, 20));
-        sex.setForeground(Color.ORANGE);
-        sex.setHorizontalAlignment(JLabel.RIGHT);
-        panel.add(sex, new GridBagConstraints(2, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        tfSex = new JTextField();
-        tfSex.setForeground(Color.BLACK);
-        tfSex.setColumns(6);
-        panel.add(tfSex, new GridBagConstraints(3, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        JLabel eMail = new JLabel("E-mail: ");
-        eMail.setFont(new Font("Garamond", Font.ITALIC, 20));
-        eMail.setForeground(Color.ORANGE);
-        eMail.setHorizontalAlignment(JLabel.RIGHT);
-        panel.add(eMail, new GridBagConstraints(4, 2, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-
-        tfEmail = new JTextField();
-        tfEmail.setForeground(Color.BLACK);
-        tfEmail.setColumns(16);
-        panel.add(tfEmail, new GridBagConstraints(5, 2, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        tfBID = new JFormattedTextField(nf);
+        tfBID.setFont(new Font("Garamond", Font.ITALIC, 20));
+        tfBID.setForeground(Color.BLACK);
+        tfBID.setColumns(12);
+        tfBID.setHorizontalAlignment(JTextField.RIGHT);
+        tfBID.setValue(serv.getBad().getClts().size() + 1);
+        panel.add(tfBID, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel choose = new JLabel("Choose the good: ");
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
         choose.setForeground(Color.ORANGE);
-        panel.add(choose, new GridBagConstraints(0, 3, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        panel.add(choose, new GridBagConstraints(0, 4, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        Vector<Water> vat = serv.getBad().getStk().getVat();
-        combo = new JComboBox(vat);
+        combo = new JComboBox(new MyComboBoxModel(goods));
         combo.setFont(new Font("Garamond", Font.BOLD, 20));
         combo.setForeground(Color.BLACK);
-        panel.add(combo, new GridBagConstraints(1, 3, 10, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        panel.add(combo, new GridBagConstraints(1, 4, 10, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel quant = new JLabel("Quantity: ");
         quant.setFont(new Font("Garamond", Font.BOLD, 20));
         quant.setForeground(Color.ORANGE);
-        panel.add(quant, new GridBagConstraints(0, 4, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        panel.add(quant, new GridBagConstraints(0, 5, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         tfQuant = new JFormattedTextField(nf);
         tfQuant.setFont(new Font("Garamond", Font.BOLD, 20));
         tfQuant.setForeground(Color.BLACK);
         tfQuant.setValue(1);
         tfQuant.setHorizontalAlignment(JTextField.RIGHT);
-        panel.add(tfQuant, new GridBagConstraints(1, 4, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        panel.add(tfQuant, new GridBagConstraints(1, 5, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        buy = new JButton("Buy");
+        JButton buy = new JButton("Buy");
         buy.setFont(new Font("Garamond", Font.BOLD, 20));
-        panel.add(buy, new GridBagConstraints(1, 5, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
-        buy.addActionListener(new BuyControl(serv, this));
+        panel.add(buy, new GridBagConstraints(1, 6, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        buy.addActionListener(new SellControl(serv, this));
 
         return panel;
     }
 
-    public JButton getBuy() {
-        return buy;
-    }
+    private JPanel createAddNewClientPannel() {
 
-    public JComboBox getCombo() {
-        return combo;
-    }
+        panel = new JPanel();
+        panel.setLayout(new GridBagLayout());
+        panel.setBackground(Color.WHITE);
 
-    public JTextField getTfAge() {
-        return tfAge;
+        NumberFormat nf = NumberFormat.getInstance();
+
+        ImageIcon icon = new ImageIcon(getClass().getResource("strawberry.gif"));
+        JLabel picture = new JLabel(icon);
+        picture.setFont(picture.getFont().deriveFont(Font.ITALIC));
+        picture.setHorizontalAlignment(JLabel.LEFT);
+        //picture.setIcon(icon);
+        picture.setBorder(BorderFactory.createEmptyBorder(10,0,0,0));
+        panel.add(picture, new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel id = new JLabel("Client's ID #: ");
+        id.setFont(new Font("Garamond", Font.ITALIC, 20));
+        id.setForeground(Color.BLUE);
+        panel.add(id, new GridBagConstraints(0, 1, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfClID = new JFormattedTextField(nf);
+        tfClID.setFont(new Font("Garamond", Font.ITALIC, 20));
+        tfClID.setForeground(Color.BLACK);
+        tfClID.setColumns(12);
+        tfClID.setValue(serv.getBad().getClts().size() + 1);
+        tfClID.setHorizontalAlignment(JTextField.RIGHT);
+        panel.add(tfClID, new GridBagConstraints(1, 1, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel surName = new JLabel("Client's Surname: ");
+        surName.setFont(new Font("Garamond", Font.ITALIC, 20));
+        surName.setForeground(Color.BLUE);
+        panel.add(surName, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfSurName = new JTextField();
+        tfSurName.setFont(new Font("Garamond", Font.ITALIC, 20));
+        tfSurName.setForeground(Color.BLACK);
+        tfSurName.setColumns(12);
+        panel.add(tfSurName, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel yName = new JLabel("Name: ");
+        yName.setFont(new Font("Garamond", Font.ITALIC, 20));
+        yName.setForeground(Color.BLUE);
+        yName.setHorizontalAlignment(JLabel.RIGHT);
+        panel.add(yName, new GridBagConstraints(4, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfName = new JTextField();
+        tfName.setFont(new Font("Garamond", Font.ITALIC, 20));
+        tfName.setForeground(Color.BLACK);
+        tfName.setColumns(12);
+        panel.add(tfName, new GridBagConstraints(5, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel age = new JLabel("Client's date of birth: ");
+        age.setFont(new Font("Garamond", Font.ITALIC, 20));
+        age.setForeground(Color.BLUE);
+        panel.add(age, new GridBagConstraints(0, 3, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfAge = new JTextField();
+        tfAge.setForeground(Color.BLACK);
+        tfAge.setHorizontalAlignment(JTextField.RIGHT);
+        tfAge.setColumns(6);
+        tfAge.setText("00/00/0000");
+        panel.add(tfAge, new GridBagConstraints(1, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel sex = new JLabel("Sex: ");
+        sex.setFont(new Font("Garamond", Font.ITALIC, 20));
+        sex.setForeground(Color.BLUE);
+        sex.setHorizontalAlignment(JLabel.RIGHT);
+        panel.add(sex, new GridBagConstraints(2, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfSex = new JTextField();
+        tfSex.setForeground(Color.BLACK);
+        tfSex.setColumns(6);
+        panel.add(tfSex, new GridBagConstraints(3, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel eMail = new JLabel("E-mail: ");
+        eMail.setFont(new Font("Garamond", Font.ITALIC, 20));
+        eMail.setForeground(Color.BLUE);
+        eMail.setHorizontalAlignment(JLabel.RIGHT);
+        panel.add(eMail, new GridBagConstraints(4, 3, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfEmail = new JTextField();
+        tfEmail.setForeground(Color.BLACK);
+        tfEmail.setColumns(16);
+        panel.add(tfEmail, new GridBagConstraints(5, 3, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JButton addNewClient = new JButton("Add new Client");
+        addNewClient.setFont(new Font("Garamond", Font.BOLD, 20));
+        panel.add(addNewClient, new GridBagConstraints(1, 4, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        addNewClient.addActionListener(new AddClientControl(serv, this));
+
+        return panel;
     }
 
     public JTextField getTfDate() {
         return tfDate;
     }
 
-    public JTextField getTfEmail() {
-        return tfEmail;
-    }
+    public String getDate(){
 
-    public JFormattedTextField getTfQuant() {
-        return tfQuant;
-    }
-
-    public JTextField getTfSex() {
-        return tfSex;
+        return getTfDate().getText();
     }
 
     public JTextField getTfSurName() {
         return tfSurName;
     }
 
-    public JTextField getTfYName() {
-        return tfYName;
+    public String getSurName(){
+
+        return getTfSurName().getText();
     }
 
+    public JTextField getTfName() {
+        return tfName;
+    }
+
+    public String getName(){
+
+        return getTfName().getText();
+    }
+
+    public JTextField getTfAge() {
+        return tfAge;
+    }
+
+    public String getAge(){
+
+        return getTfAge().getText();
+    }
+
+    public JTextField getTfSex() {
+        return tfSex;
+    }
+
+    public String getSex(){
+
+        return getTfSex().getText();
+    }
+
+    public JTextField getTfEmail() {
+        return tfEmail;
+    }
+
+    public String getEmail(){
+
+        return getTfEmail().getText();
+    }
+
+    public JFormattedTextField getTfBID() {
+        return tfBID;
+    }
+
+    public String getBuyerID(){
+
+        return getTfBID().getText();
+    }
+
+    public JFormattedTextField getTfClID() {
+        return tfClID;
+    }
+
+    public String getClientID(){
+
+        return getTfClID().getText();
+    }
+
+    public JFormattedTextField getTfQuant() {
+        return tfQuant;
+    }
+
+    public String getQuantity(){
+
+        return getTfQuant().getText();
+    }
+
+
+
+    public JComboBox getCombo() {
+        return combo;
+    }
+
+    public Water getSelectedWater(){
+
+        return (Water) getCombo().getSelectedItem();
+    }
+
+    // to get main frame
     public JFrame getF() {
         return f;
     }
+
+
 
     public String dateFormat(Date d){
 
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         return df.format(d);
-
     }
 
     private void initMenuBar(){
 
         Font font = new Font("Verdana", Font.BOLD, 18);
+
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
         fileMenu.setFont(font);
         menuBar.add(fileMenu);
+
         JMenu buyMenu = new JMenu("Buy");
         buyMenu.setFont(font);
         fileMenu.add(buyMenu);
@@ -247,6 +371,21 @@ public class GeshGUI extends DefaultTableModel {
             }
         });
 
+        JMenu addClient = new JMenu("Add new Client");
+        addClient.setFont(font);
+        fileMenu.add(addClient);
+        fileMenu.addSeparator();
+
+        addClient.addMouseListener(new MouseAdapter(){
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                showAddingNewClientGUI();
+            }
+        });
+
+
         JMenuItem exitItem = new JMenuItem("Exit");
         exitItem.setFont(font);
         fileMenu.add(exitItem);
@@ -260,24 +399,25 @@ public class GeshGUI extends DefaultTableModel {
             }
         });
 
-        f.setJMenuBar(menuBar);
+        getF().setJMenuBar(menuBar);
     }
 
     private JTable createSalesTable(){
 
+        int columns = 12;
         Object[] colNames = fillColumns();
         Object[][] data = fillData();
 
         JTable tSales = new JTable(data, colNames);
         tSales.setAutoCreateRowSorter(false);
         TableColumn column = null;
-        for(int i = 0; i < 11; i++){
+        for(int i = 0; i < columns; i++){
             column = tSales.getColumnModel().getColumn(i);
-            if(i == 0) {
-                column.setPreferredWidth(30);
+            if(i == 0 || i == 2) {
+                column.setPreferredWidth(45);
             }else if(i == 1){
                 column.setPreferredWidth(90);
-            }else if(i == 2 || i == 5){
+            }else if(i == 3 || i == 6){
                 column.setPreferredWidth(150);
             }else{
                 column.setPreferredWidth(120);
@@ -288,11 +428,12 @@ public class GeshGUI extends DefaultTableModel {
 
     private Object[] fillColumns(){
 
+        int columns = 12;
         String[] heads = new String[]{
-          "#", "Date", "Client's surname", "Clients name", "Drink type", "Drink name", "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH"
-        };
+          "#", "Date", "BuyerID", "Buyer's surname", "Buyer's name", "Drink type", "Drink name", "Tare", "Volume, L", "Quantity",
+                "Price, UAH", "Income, UAH"};
         Object[] colNames = new Object[heads.length];
-        for(int i = 0; i < 11; i++){
+        for(int i = 0; i < columns; i++){
             colNames[i] = heads[i];
         }
         return colNames;
@@ -301,13 +442,15 @@ public class GeshGUI extends DefaultTableModel {
 
     private Object[][] fillData(){
 
-        Object[][] data = new Object[serv.getBad().getSales().size()][11];
+        int columns = 12;
+        Object[][] data = new Object[serv.getBad().getSales().size()][columns];
         int j = 1, i = 0;
 
         for(Sale sale : serv.getBad().getSales()){
             data[i] = new Object[]{
                     j++,
                     sale.getDate(),
+                    sale.getGuest().getId_client(),
                     sale.getGuest().getSurName(),
                     sale.getGuest().getName(),
                     sale.getWat().getDrink(),
@@ -323,37 +466,70 @@ public class GeshGUI extends DefaultTableModel {
         return data;
     }
 
+
+    // to initiate first SalesTable appearing
     private void initSalesDataShow(){
 
         JTable table = createSalesTable();
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
-        f.getContentPane().add(scrollPane);
+        getF().getContentPane().add(scrollPane);
 
     }
 
     public void newSalesTableShow(){
 
-        f.getContentPane().removeAll();
+        getF().getContentPane().removeAll();
         JTable table = createSalesTable();
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
-        f.getContentPane().add(scrollPane);
-        f.pack();
-        f.repaint();
+        getF().getContentPane().add(scrollPane);
+        getF().pack();
+        getF().repaint();
 
     }
 
     private void showTransactionGUI(){
 
-        f.getContentPane().removeAll();
+        getF().getContentPane().removeAll();
         panel = createSalePannel();
-        f.getContentPane().add(panel);
-        Observer obs = new BuyControl(serv, this);
+        getF().getContentPane().add(panel);
+        Observer obs = new SellControl(serv, this);
         serv.getBad().addObserver(obs);
-        f.pack();
-        f.repaint();
-
+        getF().pack();
+        getF().repaint();
     }
+
+    private void showAddingNewClientGUI(){
+
+        getF().getContentPane().removeAll();
+        panel = createAddNewClientPannel();
+        getF().getContentPane().add(panel);
+        Observer obs = new AddClientControl(serv, this);
+        serv.getBad().addObserver(obs);
+        getF().pack();
+        getF().repaint();
+    }
+
+    class MyComboBoxModel<E extends Water> extends AbstractListModel implements ComboBoxModel {
+
+        List<E> data = new ArrayList<>();
+        Water selection = null;
+
+        public MyComboBoxModel(List<E> data){this.data = data;}
+
+        public Object getElementAt(int index) {
+            return data.get(index);
+        }
+
+        public int getSize() {
+            return data.size();
+        }
+
+        public void setSelectedItem(Object anItem) {selection = (E) anItem;}
+
+        public Object getSelectedItem() {return selection;}
+    }
+
 
 }

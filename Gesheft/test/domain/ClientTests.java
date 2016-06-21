@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by prulov on 14.06.2016.
@@ -19,7 +18,7 @@ public class ClientTests {
     @Before
     public void init(){
 
-        clt = new Client(null, null, 0, null, null);
+        clt = new Client(0, null, null, null, null, null);
     }
 
     @Test
@@ -37,7 +36,7 @@ public class ClientTests {
     @Test
     public void checkClientAgeDefaulValue(){
 
-        assertTrue("Default age of the Client should be 0", clt.getAge() == 0);
+        assertNull("Default age of the Client should be null", clt.getDateOfBirth());
     }
 
     @Test

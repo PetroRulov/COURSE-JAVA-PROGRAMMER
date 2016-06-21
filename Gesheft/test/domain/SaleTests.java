@@ -31,8 +31,8 @@ public class SaleTests {
 
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         String date = df.format(new Date(currentTimeMillis()));
-        wat = new Water(null, null, null, 0.0, 0, 0.0, 0.0);
-        sale = new Sale(date, null, wat, 0);
+        wat = new Water(0, null, null, null, 0.0, 0, 0.0, 0.0);
+        sale = new Sale(0, date, null, wat, 0);
     }
 
     @Test

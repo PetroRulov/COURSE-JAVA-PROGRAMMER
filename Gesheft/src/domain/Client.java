@@ -5,25 +5,27 @@ package domain;
  */
 public class Client {
 
+    private int id_client;
     private String surName;
     private String name;
-    private int age;
+    private String dateOfBirth;
     private String sex;
     private String eMail;
 
     public Client(){}
 
-    public Client(String surName, String name, int age, String sex, String eMail){
+    public Client(int id_client, String surName, String name, String dateOfBirth, String sex, String eMail){
 
+        this.id_client = id_client;
         this.surName = surName;
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.sex = sex;
         this.eMail = eMail;
     }
 
-    public int getAge() {
-        return age;
+    public int getId_client() {
+        return id_client;
     }
 
     public String geteMail() {
@@ -32,6 +34,10 @@ public class Client {
 
     public String getName() {
         return name;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public String getSex() {
@@ -44,32 +50,25 @@ public class Client {
 
     public void clientInfoShow(){
 
-        System.out.printf("%-15s%-12s%-10s%-10s%-10s%n", "|"+getSurName(), "|"+getName(), "|"+getAge() + " years", "|"+getSex(), "|"+geteMail());
+        System.out.printf("%-10s%-15s%-12s%-15s%-10s%-10s%n", "|   "+getId_client(), "|"+getSurName(), "|"+getName(), "|"+getDateOfBirth(), "|"+getSex(), "|"+geteMail());
     }
 
     @Override
     public String toString(){
 
-        return getSurName() + " " + getName();
+        return getId_client() + " " + getSurName() + " " + getName();
     }
 
     @Override
     public boolean equals(Object obj){
         if(obj instanceof Client){
             Client guest = (Client) obj;
-            return (surName != null && surName.equals(guest.getSurName()) && name.equals(guest.getName()) && age == guest.getAge() &&
-            sex.equals(guest.getSex()) && eMail.equals(guest.geteMail()));
+            return (surName != null && surName.equals(guest.getSurName()) && name.equals(guest.getName()) &&
+                    dateOfBirth.equals(guest.getDateOfBirth()) && sex.equals(guest.getSex()) && eMail.equals(guest.geteMail()));
         }
         return false;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
 }
 
 

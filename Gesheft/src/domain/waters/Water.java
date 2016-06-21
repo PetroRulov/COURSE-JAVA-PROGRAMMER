@@ -8,6 +8,7 @@ import enumerations.Tare;
  */
 public class Water {
 
+    protected int id_water;
     protected Drink drink;
     protected String name;
     protected Tare tare;
@@ -18,8 +19,9 @@ public class Water {
 
     public Water(){}
 
-    public Water(Drink drink, String name, Tare tare, double volume, int quant, double value, double price){
+    public Water(int id_water, Drink drink, String name, Tare tare, double volume, int quant, double value, double price){
 
+        this.id_water = id_water;
         this.drink = drink;
         this.name = name;
         this.tare = tare;
@@ -28,6 +30,10 @@ public class Water {
         this.value = value;
         this.price = price;
 
+    }
+
+    public int getId_water() {
+        return id_water;
     }
 
     public Drink getDrink() {
@@ -81,7 +87,7 @@ public class Water {
     @Override
     public String toString(){
 
-        return getDrink() + " " + getName() + ", " + getTare() + " " + getVolume() + "L, price: UAH " + getPrice();
+        return "id #" + getId_water() + " " + getDrink() + " " + getName() + ", " + getTare() + " " + getVolume() + "L, price: UAH " + getPrice();
     }
 
     @Override

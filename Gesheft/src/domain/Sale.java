@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Sale {
 
+    private int id_sale;
     private String date = dateFormat(new Date(System.currentTimeMillis()));
     private Client guest;
     private Water wat;
@@ -16,13 +17,18 @@ public class Sale {
 
     public Sale(){}
 
-    public Sale(String date, Client guest, Water wat, int quant){
+    public Sale(int id_sale, String date, Client guest, Water wat, int quant){
 
+        this.id_sale = id_sale;
         this.date = date;
         this.guest = guest;
         this.wat = wat;
         this.quant = quant;
         this.income = setIncome();
+    }
+
+    public int getId_sale() {
+        return id_sale;
     }
 
     public double setIncome(){
@@ -80,7 +86,6 @@ public class Sale {
 
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         return df.format(d);
-
     }
 
     public void saleInfoShow() {

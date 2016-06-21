@@ -8,8 +8,9 @@ import enumerations.Tare;
  */
 public class Juice extends Water {
 
-    public Juice(Drink drink, String name, Tare tare, double volume, int quant, double value, double price) {
+    public Juice(int id_water, Drink drink, String name, Tare tare, double volume, int quant, double value, double price) {
 
+        this.id_water = id_water;
         this.drink = drink;
         this.name = name;
         this.tare = tare;

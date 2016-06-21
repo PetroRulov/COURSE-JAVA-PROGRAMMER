@@ -273,10 +273,10 @@ public class Service {
 
     public void printClientsBase(List<Client> guest) {
 
-        System.out.println("THE LIST OF \"BADIGAN\" CLIENTS");
-        System.out.println("-----------------------------------------------------------------------------|");
-        System.out.printf("%-15s%-12s%-10s%-10s%-10s%n", " |  Surname", "  | Name", "| Age", "| Sex", "| E-mail");
-        System.out.println("-----------------------------------------------------------------------------|");
+        System.out.println("LIST OF \"BADIGAN\" CLIENTS");
+        System.out.println("---------------------------------------------------------------------------------------|");
+        System.out.printf("%-10s%-15s%-12s%-15s%-10s%-10s%n", " |  ID #", " |  Surname", "  | Name", "| Date of birth", "| Sex", "| E-mail");
+        System.out.println("---------------------------------------------------------------------------------------|");
         int j = 0;
         for (int i = 0; i < guest.size(); i++) {
             j++;
@@ -285,25 +285,7 @@ public class Service {
                 guest.get(i).clientInfoShow();
             }
         }
-        System.out.println("-----------------------------------------------------------------------------|");
-    }
-
-    public void printSalesJournal(List<Sale> sales) {
-
-        System.out.println("SALES JOURNAL");
-        System.out.println("-----------------------------------------------------------------------------------------------------------------|");
-        System.out.printf("%-10s%-15s%-35s%-10s%-10s%-6s%-10s%-10s%n", "| Date", "| Clients surname and name ", "| Type and name of drink ",
-                "| Volume ", "| Price ", "|Quantity ", "| Income", "|");
-        System.out.println("-----------------------------------------------------------------------------------------------------------------|");
-        int j = 0;
-        for (int i = 0; i < sales.size(); i++) {
-            j++;
-            if (sales.get(i) != null) {
-                System.out.print(j);
-                sales.get(i).saleInfoShow();
-            }
-        }
-        System.out.println("-----------------------------------------------------------------------------------------------------------------|");
+        System.out.println("---------------------------------------------------------------------------------------|");
     }
 
 }
