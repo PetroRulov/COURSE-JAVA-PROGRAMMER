@@ -17,5 +17,6 @@ public class Beer extends Water {
         this.quant = quant;
         this.value = value;
         this.price = price;
+
     }
 }
