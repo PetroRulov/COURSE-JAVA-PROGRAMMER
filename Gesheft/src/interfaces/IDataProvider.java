@@ -2,6 +2,7 @@ package interfaces;
 
 import domain.Client;
 import domain.Sale;
+import domain.waters.Water;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public interface IDataProvider {
 
-    //List<Water> getWaters();
+    List<Water> getWaters();
 
 
     List<Sale> getSales();

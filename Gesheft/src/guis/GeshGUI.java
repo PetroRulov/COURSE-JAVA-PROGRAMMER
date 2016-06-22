@@ -69,7 +69,7 @@ public class GeshGUI extends DefaultTableModel {
         f.setVisible(true);
     }
 
-    public void setBadigan(IDataProvider dataProvider){
+    public void setDataProvider(IDataProvider dataProvider){
 
         this.dataProvider = dataProvider;
     }

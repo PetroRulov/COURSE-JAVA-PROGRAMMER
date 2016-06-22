@@ -26,6 +26,7 @@ public class Badigan extends Observable implements IDataProvider {
 
     }
 
+    @Override
     public List<Client> getClts() {
 
         if(clts == null){
@@ -34,6 +35,12 @@ public class Badigan extends Observable implements IDataProvider {
         return new ArrayList<Client>(clts);
     }
 
+    @Override
+    public List<Water> getWaters() {
+        return null;
+    }
+
+    @Override
     public List<Sale> getSales() {
 
         if(sales == null){

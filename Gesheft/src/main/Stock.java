@@ -1,8 +1,11 @@
 package main;
 
+import domain.Client;
+import domain.Sale;
 import domain.waters.*;
 import enumerations.Drink;
 import enumerations.Tare;
+import interfaces.IDataProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +14,7 @@ import java.util.List;
  * Created by prulov on 26.05.2016.
  */
 
-public class Stock {
+public class Stock implements IDataProvider {
 
     private Water[] wat;
     private List<Water> waters;
@@ -30,8 +33,19 @@ public class Stock {
         return wat;
     }
 
+    @Override
     public List<Water> getWaters(){
         return new ArrayList<>(waters);
+    }
+
+    @Override
+    public List<Sale> getSales() {
+        return null;
+    }
+
+    @Override
+    public List<Client> getClts() {
+        return null;
     }
 
     /**-T h e     q u a n t i t y     o f      G o o d s     i n     S t o c k-*/
