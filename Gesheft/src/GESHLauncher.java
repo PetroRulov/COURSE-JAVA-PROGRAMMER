@@ -17,7 +17,8 @@ public class GeshLauncher {
 
         Service serv = new Service();
         GeshGUI gGui = new GeshGUI(serv);
-        gGui.setBadigan(serv.getBad());
+        gGui.setDataProvider(serv.getBad());
+        gGui.setDataProvider(serv.getBad().getStk());
 
     }
 }

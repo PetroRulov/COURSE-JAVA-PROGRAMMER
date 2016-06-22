@@ -55,7 +55,16 @@ public class Sale {
                 incStr = String.valueOf(Integer.parseInt(before)+1);
             }
         }
-        return income = Double.parseDouble(incStr);
+        double inCome = Double.parseDouble(incStr);
+
+        if(inCome < 500.00){
+            income = inCome;
+        }else if(inCome >= 500.00 && inCome < 1000.00){
+            income = inCome * 0.95 ;
+        }else{
+            income = inCome * 0.9 ;
+        }
+        return income;
     }
 
     public int getQuant() {

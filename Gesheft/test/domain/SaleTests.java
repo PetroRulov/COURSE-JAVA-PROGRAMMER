@@ -63,7 +63,18 @@ public class SaleTests {
         }
         income = Double.parseDouble(incStr);
 
-        assertEquals(expected, income, 0.01); // expected - actual < epsylon;
+        if(income < 500.00){
+            expected = income;
+            assertEquals(expected, income, 0.01); // expected - actual < epsylon;
+        }else if(income >= 500.00 && income < 1000.00){
+            expected = income;
+            income = income * 0.95 ;
+            assertEquals(expected, income, income*0.06 );
+        }else{
+            expected = income;
+            income = income * 0.9 ;
+            assertEquals(expected, income, income*0.11 );
+        }
     }
 
     @Test
