@@ -19,7 +19,6 @@ public class Demo {
 
         // test methods
         serv.printClientsBase(serv.getBad().getClts());
-        serv.printSalesJournal(serv.getBad().getSales());
 
         // check-point
         System.err.println(serv.getBad().getStk().getWaters().get(5).toString());
