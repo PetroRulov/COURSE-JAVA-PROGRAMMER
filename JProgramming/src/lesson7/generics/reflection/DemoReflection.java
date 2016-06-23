@@ -1,53 +1,82 @@
 package lesson7.generics.reflection;
 
 import lesson7.generics.domains.Beer;
+import lesson7.generics.domains.Brendy;
+import lesson7.generics.domains.Juice;
+import lesson7.generics.domains.Vodka;
 import lesson7.generics.enums.Drink;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by prulov on 22.06.2016.
  */
 public class DemoReflection {
 
-    public static void main(String[] args) throws NoSuchMethodException, NoSuchFieldException {
+    public static void main(String[] args) throws NoSuchMethodException {
 
         Beer beer = new Beer(Drink.BEER, "Petrovskoye", 0.66, 100, 9.80, 17.90);
+        Juice juice = new Juice(Drink.JUICE, "Nice Peaches", 1.0, 50, 12.4, 25.60);
+        Vodka vodka = new Vodka(Drink.VODKA, "Utro Dobrym ne byvaet", 0.5, 25, 40.5, 90.40);
+        Brendy brendy = new Brendy(Drink.BRENDY, "Slynchev Breg", 0.5, 5, 140.4, 290.00);
 
-        System.out.println(printClassInfo(beer) + "\n");
-        System.out.println(Arrays.toString(printClassConstructors(beer))+ "\n");
-        System.out.println(Arrays.toString(printClassAnnotations(beer)) + "\n");
-        System.out.println(Arrays.toString(printClassMethods(beer)) + "\n");
-        System.out.println(Arrays.toString(printClassFields(beer)));
+        printClassInfo(Beer.class);
+        printClassMethods(Beer.class);
+        printClassFields(Beer.class);
+
+        Map<String, Object> dataMap = new HashMap<>();
+        dataMap.put("inTheMorning", juice);
+        dataMap.put("forLunch", beer);
+        dataMap.put("atFiveOclock", vodka);
+        dataMap.put("inTheEvening", brendy);
+
+        initClass(MyDay.class, dataMap);
+
 
     }
 
-    public static String printClassInfo(Beer beer){
+    public static void printClassInfo(Class beer){
 
-        return beer.getClass().getName();
+        System.out.println("Classes info is: " + beer.getSuperclass().getSimpleName() + ", " + beer.getSimpleName());
     }
 
-    public static Constructor<?>[] printClassConstructors(Beer beer) throws NoSuchMethodException {
+    public static void printClassMethods(Class beer) {
 
-        return beer.getClass().getConstructors();
+        System.out.println("Class constructors are: " + Arrays.toString(beer.getConstructors()));
+        System.out.println("Class methods are: " + Arrays.toString(beer.getMethods()));
     }
 
-    public static Annotation[] printClassAnnotations(Beer beer) {
+    public static void printClassFields(Class beer) {
 
-        return beer.getClass().getAnnotations();
+        System.out.println("Class fields are: " + Arrays.toString(beer.getClass().getFields()));
     }
 
-    public static Method[] printClassMethods(Beer beer) {
+    public static <T> void initClass(Class <T> t, Map<String, Object> map ) {
 
-        return beer.getClass().getMethods();
-    }
+        try {
+            T md = t.newInstance();
+            Class cl = md.getClass();
+            Field mdFields[] = t.getDeclaredFields();
+            System.out.println("The characteristic of " + cl.getSimpleName() + ":" );
 
-    public static Field[] printClassFields(Beer beer) {
+            for(String str : map.keySet()){
+                for(Field field : mdFields){
+                    if(str.equals(field.getName())){
+                        field.setAccessible(true);
+                        field.set(md , map.get(str));
+                    }
+                }
+            }
+            System.out.println(md.toString());
+            System.out.println("Cool Day!!!");
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
-        return beer.getClass().getFields();
     }
 }
