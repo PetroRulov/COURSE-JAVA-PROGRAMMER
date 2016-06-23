@@ -7,25 +7,24 @@ import lesson7.generics.domains.Vodka;
 import lesson7.generics.enums.Drink;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
 
 /**
  * Created by prulov on 22.06.2016.
  */
 public class DemoReflection {
 
-    public static void main(String[] args) throws NoSuchMethodException {
+    public static void main(String[] args) {
 
         Beer beer = new Beer(Drink.BEER, "Petrovskoye", 0.66, 100, 9.80, 17.90);
         Juice juice = new Juice(Drink.JUICE, "Nice Peaches", 1.0, 50, 12.4, 25.60);
         Vodka vodka = new Vodka(Drink.VODKA, "Utro Dobrym ne byvaet", 0.5, 25, 40.5, 90.40);
         Brendy brendy = new Brendy(Drink.BRENDY, "Slynchev Breg", 0.5, 5, 140.4, 290.00);
 
-        printClassInfo(Beer.class);
-        printClassMethods(Beer.class);
-        printClassFields(Beer.class);
+//        printClassInfo(Beer.class);
+//        printClassMethods(Beer.class);
+//        printClassFields(Beer.class);
 
         Map<String, Object> dataMap = new HashMap<>();
         dataMap.put("inTheMorning", juice);
@@ -33,7 +32,14 @@ public class DemoReflection {
         dataMap.put("atFiveOclock", vodka);
         dataMap.put("inTheEvening", brendy);
 
-        initClass(MyDay.class, dataMap);
+        List<Object> drinks = new ArrayList<>();
+        drinks.add(juice);
+        drinks.add(beer);
+        drinks.add(vodka);
+        drinks.add(brendy);
+
+        initObject(MyOldDays.class, dataMap);
+        initClass(MyNewDay.class, drinks);
 
 
     }
@@ -54,7 +60,7 @@ public class DemoReflection {
         System.out.println("Class fields are: " + Arrays.toString(beer.getClass().getFields()));
     }
 
-    public static <T> void initClass(Class <T> t, Map<String, Object> map ) {
+    public static <T> void initObject(Class <T> t, Map<String, Object> map ) {
 
         try {
             T md = t.newInstance();
@@ -66,7 +72,7 @@ public class DemoReflection {
                 for(Field field : mdFields){
                     if(str.equals(field.getName())){
                         field.setAccessible(true);
-                        field.set(md , map.get(str));
+                        field.set(md, map.get(str));
                     }
                 }
             }
@@ -79,4 +85,33 @@ public class DemoReflection {
         }
 
     }
+
+    public static <E> void initClass(Class <E> eT, List<Object> list) {
+
+        Class paramTypes[] = new Class[list.size()];
+        System.out.println();
+        for(int i = 0; i < paramTypes.length; i++) {
+            paramTypes[i] = list.get(i).getClass();
+        }
+
+        Object paramValues[]  = list.toArray(new Object[list.size()]);
+
+        try {
+            E mD = eT.getDeclaredConstructor(paramTypes).newInstance(paramValues);
+            Class cl = mD.getClass();
+            System.out.println("The characteristic of " + cl.getSimpleName() + ":" );
+            System.out.println(mD.toString());
+            System.out.println("Cool Day!!!");
+
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

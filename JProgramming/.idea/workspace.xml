@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/domains/Brendy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/domains/Vodka.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/reflection/MyDay.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/reflection/MyNewDay.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson7/generics/reflection/MyOldDays.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lesson7/generics/reflection/MyDay.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson7/generics/reflection/DemoReflection.java" afterPath="$PROJECT_DIR$/src/lesson7/generics/reflection/DemoReflection.java" />
     </list>
@@ -38,7 +38,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +48,8 @@
       <file leaf-file-name="Water.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson7/generics/domains/Water.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="18" column="61" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="95" />
+            <state relative-caret-position="-448">
+              <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -56,8 +58,8 @@
       <file leaf-file-name="DemoReflection.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/DemoReflection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-363">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="997">
+              <caret line="99" column="63" selection-start-line="99" selection-start-column="63" selection-end-line="99" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,11 +67,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyDay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyDay.java">
+      <file leaf-file-name="GenericMethodDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Wildcards.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="17" column="121" selection-start-line="17" selection-start-column="121" selection-end-line="17" selection-end-column="121" />
+              <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyNewDay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyNewDay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" column="17" selection-start-line="10" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyOldDays.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyOldDays.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -105,113 +139,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assert.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/Assert.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1439#1440#0" expanded="false" />
-                <element signature="e#1482#1483#0" expanded="false" />
-                <element signature="e#1856#1857#0" expanded="false" />
-                <element signature="e#1903#1904#0" expanded="false" />
-                <element signature="e#2147#2148#0" expanded="false" />
-                <element signature="e#2191#2192#0" expanded="false" />
-                <element signature="e#2657#2658#0" expanded="false" />
-                <element signature="e#2683#2684#0" expanded="false" />
-                <element signature="e#3920#3921#0" expanded="false" />
-                <element signature="e#3966#3967#0" expanded="false" />
-                <element signature="e#4403#4404#0" expanded="false" />
-                <element signature="e#4455#4456#0" expanded="false" />
-                <element signature="e#5643#5644#0" expanded="false" />
-                <element signature="e#5700#5701#0" expanded="false" />
-                <element signature="e#6912#6913#0" expanded="false" />
-                <element signature="e#6969#6970#0" expanded="false" />
-                <element signature="e#8661#8662#0" expanded="false" />
-                <element signature="e#8725#8726#0" expanded="false" />
-                <element signature="e#9414#9415#0" expanded="false" />
-                <element signature="e#9478#9479#0" expanded="false" />
-                <element signature="e#10823#10824#0" expanded="false" />
-                <element signature="e#10882#10883#0" expanded="false" />
-                <element signature="e#12048#12049#0" expanded="false" />
-                <element signature="e#12107#12108#0" expanded="false" />
-                <element signature="e#12997#12998#0" expanded="false" />
-                <element signature="e#13056#13057#0" expanded="false" />
-                <element signature="e#13946#13947#0" expanded="false" />
-                <element signature="e#14005#14006#0" expanded="false" />
-                <element signature="e#14905#14906#0" expanded="false" />
-                <element signature="e#14964#14965#0" expanded="false" />
-                <element signature="e#15844#15845#0" expanded="false" />
-                <element signature="e#15903#15904#0" expanded="false" />
-                <element signature="e#16793#16794#0" expanded="false" />
-                <element signature="e#16852#16853#0" expanded="false" />
-                <element signature="e#18149#18150#0" expanded="false" />
-                <element signature="e#18215#18216#0" expanded="false" />
-                <element signature="e#19500#19501#0" expanded="false" />
-                <element signature="e#19566#19567#0" expanded="false" />
-                <element signature="e#24178#24179#0" expanded="false" />
-                <element signature="e#24230#24231#0" expanded="false" />
-                <element signature="e#25029#25030#0" expanded="false" />
-                <element signature="e#25081#25082#0" expanded="false" />
-                <element signature="e#26139#26140#0" expanded="false" />
-                <element signature="e#26198#26199#0" expanded="false" />
-                <element signature="e#26865#26866#0" expanded="false" />
-                <element signature="e#26924#26925#0" expanded="false" />
-                <element signature="e#27303#27304#0" expanded="false" />
-                <element signature="e#27354#27355#0" expanded="false" />
-                <element signature="e#27585#27586#0" expanded="false" />
-                <element signature="e#27628#27629#0" expanded="false" />
-                <element signature="e#28338#28339#0" expanded="false" />
-                <element signature="e#28378#28379#0" expanded="false" />
-                <element signature="e#29571#29572#0" expanded="false" />
-                <element signature="e#29621#29622#0" expanded="false" />
-                <element signature="e#30628#30629#0" expanded="false" />
-                <element signature="e#30683#30684#0" expanded="false" />
-                <element signature="e#33729#33730#0" expanded="false" />
-                <element signature="e#33782#33783#0" expanded="false" />
-                <element signature="e#35031#35032#0" expanded="false" />
-                <element signature="e#35078#35079#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson7/feedcat/Cat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-              <folding>
-                <element signature="e#186#187#0" expanded="false" />
-                <element signature="e#217#218#0" expanded="false" />
-                <element signature="e#248#249#0" expanded="false" />
-                <element signature="e#275#276#0" expanded="false" />
-                <element signature="e#308#309#0" expanded="false" />
-                <element signature="e#337#338#0" expanded="false" />
-                <element signature="e#382#383#0" expanded="false" />
-                <element signature="e#415#416#0" expanded="false" />
-                <element signature="e#455#456#0" expanded="false" />
-                <element signature="e#487#488#0" expanded="false" />
-                <element signature="e#531#532#0" expanded="false" />
-                <element signature="e#567#568#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiceRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/ServiceRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -235,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Media.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/domains/Subscription.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/superobserver/Superviser.java" />
         <option value="$PROJECT_DIR$/src/lesson6/adapters/supervisor/Publisher.java" />
@@ -285,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/lesson7/generics/domains/Vodka.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/domains/Brendy.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/reflection/MyDay.java" />
+        <option value="$PROJECT_DIR$/src/lesson7/generics/reflection/MyOldDays.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/reflection/DemoReflection.java" />
       </list>
     </option>
@@ -327,9 +254,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -530,34 +456,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lesson7" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="generics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domains" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1149,7 +1050,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466606100572</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="frame_7_4_3 T initClass Creation of instance of unknown class">
+      <created>1466697000465</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1466697000465</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1248,7 +1156,8 @@
     <MESSAGE value="new frame_7_2_2 ServDepo" />
     <MESSAGE value="new frame_7_3_6 ServiceRepositoryTests" />
     <MESSAGE value="frame_7_4_2 Get info about class Beer" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame_7_4_2 Get info about class Beer" />
+    <MESSAGE value="frame_7_4_3 T initClass Creation of instance of unknown class" />
+    <option name="LAST_COMMIT_MESSAGE" value="frame_7_4_3 T initClass Creation of instance of unknown class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1259,13 +1168,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson5/gui/SButtonWwithFL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson5/gui/SimpleButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1362,20 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1597,7 +1485,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1625,26 +1515,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/domains/Water.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/Wildcards.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="18" column="61" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="95" />
+        <state relative-caret-position="289">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyDay.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/methods/GenericMethodDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="121" selection-start-line="17" selection-start-column="121" selection-end-line="17" selection-end-column="121" />
+        <state relative-caret-position="306">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyNewDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="17" selection-start-line="10" selection-start-column="0" selection-end-line="35" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyOldDays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/domains/Water.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-448">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/DemoReflection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="997">
+          <caret line="99" column="63" selection-start-line="99" selection-start-column="63" selection-end-line="99" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
