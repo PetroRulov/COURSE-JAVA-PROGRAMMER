@@ -8,16 +8,16 @@ import lesson7.generics.domains.Vodka;
 /**
  * Created by prulov on 22.06.2016.
  */
-public class MyNewDay {
+public class Never {
 
-    private Juice inTheMorning;
-    private Beer forLunch;
-    private Vodka atFiveOclock;
-    private Brendy inTheEvening;
+    private Brendy inTheMorning;
+    private Vodka forLunch;
+    private Beer atFiveOclock;
+    private Juice inTheEvening;
 
-    public MyNewDay(){}
+    public Never(){}
 
-    public MyNewDay(Juice inTheMorning , Beer forLunch, Vodka atFiveOclock , Brendy inTheEvening ){
+    public Never(Brendy inTheMorning , Vodka forLunch, Beer atFiveOclock , Juice inTheEvening ){
 
         this.inTheMorning = inTheMorning;
         this.forLunch = forLunch;

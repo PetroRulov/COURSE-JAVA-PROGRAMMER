@@ -4,10 +4,10 @@ import lesson7.generics.domains.*;
 
 public class MyOldDays {
 
-    Water inTheEvening;
-    Water forLunch;
-    Water inTheMorning;
-    Water atFiveOclock;
+    private Water inTheEvening;
+    private Water forLunch;
+    private Water inTheMorning;
+    private Water atFiveOclock;
 
     public MyOldDays(){}
 
