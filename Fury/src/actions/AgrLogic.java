@@ -18,7 +18,7 @@ public class AgrLogic {
         this.sdr = sdr;
     }
 
-    public void agressorsStartAttack() throws Exception {
+    public void agressorStartAttack() throws Exception {
 
         String str = findFrontNotWater();
         System.out.println("AgrStartAttack: " + str);
@@ -27,8 +27,10 @@ public class AgrLogic {
             int xCoord = Integer.parseInt(str.split("_")[0]);
             int yCoord = Integer.parseInt(str.split("_")[1]);
             Coord start = new Coord(tank.getX() / 64, tank.getY() / 64);
+            System.out.println("STARTCoord = " + start.toString());
             Coord end = new Coord(xCoord / 64, yCoord / 64);
-            Coord[] path = sdr.getAgrInt().lookingForThePath(start, end);
+            System.out.println("ENDCoord = " + end.toString());
+            Coord path[] = sdr.getAgrInt().lookingForThePath(start, end);
             for(Coord c: path){
                 tank.moveToCoord(c);
             }

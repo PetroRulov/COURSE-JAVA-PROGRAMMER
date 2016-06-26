@@ -31,7 +31,9 @@ public class TigerLogic {
             int xCoord = Integer.parseInt(str.split("_")[0]);
             int yCoord = Integer.parseInt(str.split("_")[1]);
             Coord start = new Coord(tank.getX() / 64, tank.getY() / 64);
+            System.out.println("STARTCoord = " + start.toString());
             Coord end = new Coord(xCoord / 64, yCoord / 64);
+            System.out.println("ENDCoord = " + end.toString());
             Coord[] path = sdr.getTigrInt().lookingForThePath(start, end);
             for(Coord c: path){
                 tank.moveToCoord(c);

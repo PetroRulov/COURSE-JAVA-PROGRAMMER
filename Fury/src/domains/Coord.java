@@ -18,4 +18,9 @@ public class Coord{
         return yC;
     }
 
+    public String toString(){
+
+        return getXC() * 64 + "_" + getYC() * 64;
+    }
+
 }

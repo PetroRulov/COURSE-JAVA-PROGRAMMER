@@ -5,13 +5,13 @@ import battleFields.*;
 import domains.Bullet;
 import domains.Coord;
 import enumerations.Direct;
-import interfaces.IObjectable;
+import interfaces.ITank;
 
 import java.awt.*;
 import java.awt.image.ImageObserver;
 import java.util.Random;
 
-public abstract class AbstractTank implements IObjectable {
+public abstract class AbstractTank implements ITank {
 
     protected String name;
     protected long speed = 12;

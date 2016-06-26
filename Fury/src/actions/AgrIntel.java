@@ -1,43 +1,37 @@
 package actions;
 
-import java.util.*;
-
-import battleFields.*;
 import domains.Coord;
-import tanks.*;
-
 import org.jetbrains.annotations.Nullable;
+import tanks.AbstractTank;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class AgrIntel {
 
-    private BattleField bat;
-    private int[][] lab;
+    private int lab[][];
     private AbstractTank tank;
     private List freeWay;
-    private int[][] map;
+    private int map[][] ;
 
 
     public AgrIntel(){}
 
-    public AgrIntel(BattleField bat,  int[][] lab, AbstractTank tank) throws Exception {
+    public AgrIntel(int lab[][], AbstractTank tank) throws Exception {
 
-        this.bat = bat;
         this.lab = lab;
         this.tank = tank;
         this.freeWay = new ArrayList<Coord>();
-        this.map = new int[bat.getMNQ()][bat.getMNQ()];
+        this.map = new int[lab.length][lab.length];
     }
 
-    public int[][] getLab() {return lab;}
+    private void setPathSteps(Coord c, int stepValue){
 
-    public ArrayList<Coord> getFreeWay() {return new ArrayList<Coord>(freeWay);}
-
-    private void setPathSteps(Coord c, int wayLength){
-
-        if(map[c.getYC()][c.getXC()] <= wayLength){
+        if(map[c.getYC()][c.getXC()] < stepValue){
             return;
         }
-        map[c.getYC()][c.getXC()] = wayLength;
+        map[c.getYC()][c.getXC()] = stepValue;
         freeWay.add(c);
     }
 
@@ -53,35 +47,38 @@ public class AgrIntel {
     @Nullable
     public Coord[] lookingForThePath(Coord start, Coord end){
 
-        int pX = 0, pY = 0, wayLength = 0, p = 0;
+        int pX = 0, pY = 0, stepValue = 0, p = 0;
         Coord c;
 
         for(int i = 0; i < map.length; i++){
             Arrays.fill(map[i], Integer.MAX_VALUE);
         }
+
         setPathSteps(start, 0);
 
         while((c = takeOffFirst()) != null){
             if(c.equals(end)){
-                System.err.println("WE FOUND THE LENGTH!");
+                System.err.println("WE FOUND THE LENGTH OF OUR PATH!");
+                break;
             }
-            wayLength = map[c.getYC()][c.getXC()] + lab[c.getYC()][c.getXC()];
+            stepValue+= lab[c.getYC()][c.getXC()];
+
             if((c.getYC() + 1 < lab.length) && lab[c.getYC() + 1][c.getXC()] != 0){ // undestructable points as zero
-                setPathSteps(new Coord(c.getXC(), c.getYC() + 1), wayLength);
+                setPathSteps(new Coord(c.getXC(), c.getYC() + 1), stepValue);
             }
             if((c.getYC() - 1 >= 0) && (lab[c.getYC() - 1][c.getXC()] != 0)){ // undestructable points as zero
-                setPathSteps(new Coord(c.getXC(), c.getYC() - 1), wayLength);
+                setPathSteps(new Coord(c.getXC(), c.getYC() - 1), stepValue);
             }
             if((c.getXC() + 1 < lab[c.getYC()].length) && (lab[c.getYC()][c.getXC() + 1] != 0)){ // undestructable points as zero
-                setPathSteps(new Coord(c.getXC() + 1, c.getYC()), wayLength);
+                setPathSteps(new Coord(c.getXC() + 1, c.getYC()), stepValue);
             }
             if((c.getXC() - 1 >= 0) && (lab[c.getYC()][c.getXC() - 1] != 0)){ // undestructable points as zero
-                setPathSteps(new Coord(c.getXC() - 1, c.getYC()), wayLength);
+                setPathSteps(new Coord(c.getXC() - 1, c.getYC()), stepValue);
             }
         }
-        System.out.println("AgrIntel: LENGTH OF THE PATH IS " + wayLength + " STEPS."); // bricks counts as 2(two)
+        System.out.println("AgrIntel(lookingForThePath): LENGTH OF THE PATH IS " + stepValue + " STEPS."); // bricks counts as 2(two)
 
-        if(map[end.getYC()][end.getXC()]==Integer.MAX_VALUE){
+        if(map[end.getYC()][end.getXC()]== Integer.MAX_VALUE){
             System.err.println("PATH CAN NOT BE FOUND!!!");
             return null;
         } else
@@ -90,50 +87,50 @@ public class AgrIntel {
         route.add(end); // starting from the end
         int x = end.getXC();
         int y = end.getYC();
-        wayLength = Integer.MAX_VALUE;
+        stepValue = Integer.MAX_VALUE;
         while((x!=start.getXC())||(y!=start.getYC())){
-            if(y != (bat.getMNQ() - 1)){
-                if(map[y + 1][x] < wayLength){
+            if(y != (lab.length - 1)){
+                if(map[y + 1][x] < stepValue){
                     pX = x; pY= y + 1; p = map[y + 1][x];
                 }
             } else {
-                if(map[y][x] < wayLength){
+                if(map[y][x] < stepValue){
                     pX = x; pY= y; p = map[y][x];
                 }
             }
 
             if(y != 0){
-                if(map[y-1][x] < wayLength){
+                if(map[y-1][x] < stepValue){
                     pX = x; pY = y - 1; p = map[y - 1][x];
                 }
             } else {
-                if(map[y][x] < wayLength){
+                if(map[y][x] < stepValue){
                     pX = x; pY = y; p = map[y][x];
                 }
             }
 
-            if(x != (bat.getMNQ() - 1)){
-                if(map[y][x + 1] < wayLength){
+            if(x != (lab.length - 1)){
+                if(map[y][x + 1] < stepValue){
                     pX = x + 1; pY = y; p = map[y][x + 1];
                 }
             } else {
-                if(map[y][x] < wayLength){
+                if(map[y][x] < stepValue){
                     pX = x; pY = y; p = map[y][x];
                 }
             }
 
             if(x != 0){
-                if(map[y][x - 1]< wayLength){
+                if(map[y][x - 1]< stepValue){
                     pX = x - 1; pY = y; p = map[y][x - 1];
                 }
             } else {
-                if(map[y][x]< wayLength){
+                if(map[y][x]< stepValue){
                     pX = x; pY = y; p = map[y][x];
                 }
             }
             x = pX;
             y = pY;
-            wayLength = p;
+            stepValue = p;
 
             route.add(new Coord(x, y)); // we recieved the way back-to-front
         }

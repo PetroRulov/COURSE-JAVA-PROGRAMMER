@@ -3,6 +3,7 @@ package lesson7.generics.containers.service;
 /**
  * Created by prulov on 07.06.2016.
  */
+@lesson7.generics.containers.service.annotations.Service
 public class Service implements IServicable {
 
     private String name;
