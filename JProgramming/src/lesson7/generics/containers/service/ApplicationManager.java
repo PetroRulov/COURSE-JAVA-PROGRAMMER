@@ -53,5 +53,4 @@ public class ApplicationManager<T> {
         return null;
     }
 
-
 }
