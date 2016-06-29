@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 @Inherited // this annotation to be inherited by all descendants of the marked class
 @Target({ElementType.TYPE , ElementType.METHOD , ElementType.CONSTRUCTOR})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Service {
+public @interface ServiceAnn {
 
     String info() default "CheckingObject";
     boolean upLoad() default false;

@@ -7,7 +7,7 @@ public class CheckAnno {
 
     public static void main(String[] args) {
 
-        inspectService(Service.class);
+        inspectService(ServiceAnn.class);
 
     }
 
@@ -16,9 +16,9 @@ public class CheckAnno {
         System.out.println(service.isAnnotation()); // is this class annotation-class or not
         System.out.println(service.getDeclaredAnnotations());
 
-        if(service.isAnnotationPresent(Service.class)){
+        if(service.isAnnotationPresent(ServiceAnn.class)){
 
-            Service ann = service.getAnnotation(Service.class);
+            ServiceAnn ann = service.getAnnotation(ServiceAnn.class);
         }
 
     }

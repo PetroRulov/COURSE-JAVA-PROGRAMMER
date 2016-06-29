@@ -1,11 +1,11 @@
 package lesson7.generics.containers.service;
 
-//import lesson7.generics.containers.service.annotations.Service;
+import lesson7.generics.containers.service.annotations.ServiceAnn;
 
 /**
  * Created by prulov on 07.06.2016.
  */
-//@Service()
+@ServiceAnn()
 public class Service implements IServicable {
 
     private String name;

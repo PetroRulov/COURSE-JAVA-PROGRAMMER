@@ -1,7 +1,7 @@
 package lesson7.generics.containers.service;
 
 import lesson7.generics.containers.service.annotations.InitService;
-import lesson7.generics.containers.service.annotations.Service;
+import lesson7.generics.containers.service.annotations.ServiceAnn;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -15,12 +15,13 @@ public class ApplicationManager<T> {
 
     public void startClassMarkedByAnno(Class<T> sCl){
 
-        if(sCl.isAnnotationPresent(Service.class)){
+        if(sCl.isAnnotationPresent(ServiceAnn.class)){
 
             checkServ = true;
-            System.out.println("Class Launched");
+            System.out.println("Class Launched!");
         }else{
-            System.out.println("That class is not marked with annotations @Service");
+            checkServ = false;
+            System.out.println("That class is not marked with annotations @ServiceAnn");
         }
     }
 
@@ -37,7 +38,7 @@ public class ApplicationManager<T> {
     public T getService(Class<T> clazz) throws Exception{
 
         for (Annotation ann : clazz.getAnnotations()) {
-            if (ann instanceof Service) {
+            if (ann instanceof ServiceAnn) {
                 for (Method method : clazz.getClass().getMethods()) {
                     for (Annotation methodAnn : method.getAnnotations()) {
                         if (methodAnn.annotationType().getSimpleName().equals(InitService.class.getSimpleName())) {
