@@ -10,12 +10,12 @@ import java.util.Map;
  */
 public class InitServiceClass implements InitServiceClassInterface {
 
-    public <T> void initObject(Class <T> t, Map<String, Object> map ) {
+    public <E> void initObject(Class <E> eT, Map<String, Object> map ) {
 
         try {
-            T md = t.newInstance();
+            E md = eT.newInstance();
             Class cl = md.getClass();
-            Field mdFields[] = t.getDeclaredFields();
+            Field mdFields[] = eT.getDeclaredFields();
             System.out.println("The characteristic of " + cl.getSimpleName() + ":" );
 
             for(String str : map.keySet()){
@@ -64,5 +64,48 @@ public class InitServiceClass implements InitServiceClassInterface {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public <E> void setPrivates(Object obj, Map<String, Object> map) {
+
+        Class cl = obj.getClass();
+        Field modFields[] = cl.getDeclaredFields();
+
+        // just to check if method works correct
+        System.out.println("OLD fields's values:");
+        for(Field field : modFields){
+            field.setAccessible(true);
+            try {
+                System.out.println(field.getName() + " = " + field.get(obj).toString());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // METHOD'S BODY
+        for(Field field : modFields){
+            for(String str : map.keySet()){
+                if(field.getType().equals(map.get(str).getClass())){
+                    field.setAccessible(true);
+                    try {
+                        field.set(obj, map.get(str));
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
+        System.out.println();
+        System.out.println("New fields's values:");
+        // just to check if method works correct
+        for(Field field : modFields){
+            field.setAccessible(true);
+            try {
+                System.out.println(field.getName() + " = " + field.get(obj).toString());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

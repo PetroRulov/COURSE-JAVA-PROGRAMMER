@@ -32,4 +32,19 @@ public class MyNewDay {
         return inTheMorning.getDrink()+"\n"+forLunch.getDrink()+"\n"+atFiveOclock.getDrink()+"\n"+inTheEvening.getDrink();
     }
 
+    public Brendy getInTheEvening() {
+        return inTheEvening;
+    }
+
+    public Vodka getAtFiveOclock() {
+        return atFiveOclock;
+    }
+
+    public Beer getForLunch() {
+        return forLunch;
+    }
+
+    public Juice getInTheMorning() {
+        return inTheMorning;
+    }
 }

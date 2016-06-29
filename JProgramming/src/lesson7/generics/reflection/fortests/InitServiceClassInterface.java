@@ -8,9 +8,11 @@ import java.util.Map;
  */
 public interface InitServiceClassInterface {
 
-    public <T> void initObject(Class <T> t, Map<String, Object> map );
+    public <E> void initObject(Class <E> eT, Map<String, Object> map );
 
     public <E> Class initClass(Class <E> eT, List<Object> list);
+
+    public <E> void setPrivates(Object obj, Map<String, Object> map);
 }
 
 
