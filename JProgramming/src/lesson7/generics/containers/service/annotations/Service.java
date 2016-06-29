@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  */
 @Documented // marked (by this annotation) class fall in JavaDoc
 @Inherited // this annotation to be inherited by all descendants of the marked class
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE , ElementType.METHOD , ElementType.CONSTRUCTOR})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Service {
 
