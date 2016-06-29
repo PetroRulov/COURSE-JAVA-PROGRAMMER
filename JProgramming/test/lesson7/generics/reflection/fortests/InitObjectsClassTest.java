@@ -6,7 +6,6 @@ import lesson7.generics.domains.Juice;
 import lesson7.generics.domains.Vodka;
 import lesson7.generics.enums.Drink;
 import lesson7.generics.reflection.MyNewDay;
-import lesson7.generics.reflection.MyOldDays;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -36,12 +35,14 @@ public class InitObjectsClassTest {
     public void init(){
 
         list = new ArrayList<>();
-        list.add(beer);
         list.add(juice);
+        list.add(beer);
         list.add(vodka);
         list.add(brendy);
 
         data = new HashMap<>();
+
+
         data.put("inTheMorning", juice);
         data.put("forLunch", beer);
         data.put("atFiveOclock", vodka);

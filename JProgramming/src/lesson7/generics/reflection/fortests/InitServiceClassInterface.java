@@ -10,7 +10,7 @@ public interface InitServiceClassInterface {
 
     public <T> void initObject(Class <T> t, Map<String, Object> map );
 
-    public <E> void initClass(Class <E> eT, List<Object> list);
+    public <E> Class initClass(Class <E> eT, List<Object> list);
 }
 
 

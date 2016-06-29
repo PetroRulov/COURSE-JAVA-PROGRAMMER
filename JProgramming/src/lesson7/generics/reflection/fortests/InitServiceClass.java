@@ -36,7 +36,7 @@ public class InitServiceClass implements InitServiceClassInterface {
 
     }
 
-    public <E> void initClass(Class <E> eT, List<Object> list) {
+    public <E> Class initClass(Class <E> eT, List<Object> list) {
 
         Class paramTypes[] = new Class[list.size()];
         System.out.println();
@@ -52,6 +52,7 @@ public class InitServiceClass implements InitServiceClassInterface {
             System.out.println("The characteristic of " + cl.getSimpleName() + ":" );
             System.out.println(mD.toString());
             System.out.println("Cool Day!!!");
+            return cl;
 
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -62,5 +63,6 @@ public class InitServiceClass implements InitServiceClassInterface {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
+        return null;
     }
 }
