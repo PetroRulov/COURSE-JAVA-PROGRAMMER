@@ -1,5 +1,6 @@
 package lesson8.files.printdata;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.FileSystems;
@@ -16,7 +17,11 @@ public class PrintData {
 
         Path path = FileSystems.getDefault().getPath("D:\\CopyFile\\Lorem.txt");
 
+        File file = new File("D:\\CopyFile\\Petro.txt");
+        Path path1 = file.toPath();
+
         InputStream in = null;
+
         try {
             in = Files.newInputStream(path, StandardOpenOption.READ);
         } catch (IOException e) {
@@ -24,6 +29,12 @@ public class PrintData {
         }
 
         printStreamData(in);
+
+        try {
+            printStreamData(Files.newInputStream(path1, StandardOpenOption.READ));
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     private static void printStreamData(InputStream in) {
