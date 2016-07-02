@@ -10,9 +10,9 @@ public class CreateTextFile {
 
     public static void main(String[] args) throws IOException {
 
-        File dir = new File("D:\\TestFolder\\");
+        File dir = new File("D:\\TestFolder");
         dir.mkdir();
-        File file = new File(dir.getAbsolutePath() + "\\test.txt");
+        File file = new File(dir.getAbsolutePath() + File.separator  + "test.txt");
         file.createNewFile();
     }
 }

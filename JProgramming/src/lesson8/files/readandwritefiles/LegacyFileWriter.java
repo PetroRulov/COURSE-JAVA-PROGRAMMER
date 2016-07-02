@@ -1,5 +1,6 @@
 package lesson8.files.readandwritefiles;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,10 +10,9 @@ import java.io.IOException;
  */
 public class LegacyFileWriter extends FileWriter {
 
-    private String fileName;
 
-    public LegacyFileWriter(String fileName) throws IOException {
-        super(String.valueOf(new FileOutputStream(fileName)));
+    public LegacyFileWriter(File file) throws IOException {
+        super(file);
     }
 
     public void write(String data, String fileName){
