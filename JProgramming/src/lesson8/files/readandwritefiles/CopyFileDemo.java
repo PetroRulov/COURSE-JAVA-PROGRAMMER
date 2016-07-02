@@ -21,6 +21,7 @@ public class CopyFileDemo {
         copyFiles(file);
 
         copyFileWithBuffer(original);
+        copyFileWithBuffer(file);
 
 
     }
