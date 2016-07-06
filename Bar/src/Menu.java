@@ -26,10 +26,10 @@ public class Menu {
         // two just added ingredients should already be in new product;
         bar.barMenuShow();
 
-        bar.printIngrs();
-        bar.changeIngredientPrice();
-        bar.changIgredientName();
-        bar.printIngrs();
+        //bar.printIngrs();
+        //bar.changeIngredientPrice();
+        //bar.changIgredientName();
+        //bar.printIngrs();
 
     }
 }

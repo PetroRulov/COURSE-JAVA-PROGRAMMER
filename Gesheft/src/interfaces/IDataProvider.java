@@ -13,7 +13,6 @@ public interface IDataProvider {
 
     List<Water> getWaters();
 
-
     List<Sale> getSales();
 
     List<Client> getClts();

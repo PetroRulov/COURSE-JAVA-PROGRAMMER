@@ -4,6 +4,7 @@ import domain.Client;
 import domain.Sale;
 import domain.waters.Water;
 import guis.GeshGUI;
+import guis.SalePanelUI;
 import util.Service;
 
 import javax.swing.*;
@@ -15,21 +16,24 @@ import java.util.Observer;
 /**
  * Created by prulov on 26.05.2016.
  */
-public class SellControl implements ActionListener, Observer {
+public class SaleControl implements ActionListener, Observer {
 
     private Service serv;
-    private GeshGUI gGui;
+    private SalePanelUI spUI;
+    private GeshGUI gGUI;
 
-    public SellControl(Service serv, GeshGUI gGui){
+    public SaleControl(Service serv, SalePanelUI spUI, GeshGUI gGUI){
 
         this.serv = serv;
-        this.gGui = gGui;
+        this.spUI = spUI;
+        this.gGUI = gGUI;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        String date = gGui.getDate();
+
+        String date = spUI.getDate();
 
         Client guest = null;
         if(clientDataAreCorrect() && isPresent()){
@@ -44,9 +48,9 @@ public class SellControl implements ActionListener, Observer {
             return;
         }
 
-        Water wat = gGui.getSelectedWater();
+        Water wat = spUI.getSelectedWater();
 
-        int quant = Integer.parseInt(gGui.getQuantity());
+        int quant = Integer.parseInt(spUI.getQuantity());
 
         if(wat.getQuant() >= quant){
             serv.getBad().getStk().soldWaterMinus(wat, quant);
@@ -57,8 +61,7 @@ public class SellControl implements ActionListener, Observer {
                     "Transaction possibility", JOptionPane.OK_CANCEL_OPTION);
         }
 
-        // optional methods displaying result in console
-
+        // optional method just to check correct work
         serv.getBad().getStk().printWaters();
     }
 
@@ -66,7 +69,7 @@ public class SellControl implements ActionListener, Observer {
 
         Client buyer = null;
         for(Client c : serv.getBad().getClts()){
-            if(c.getId_client() == Integer.parseInt(gGui.getBuyerID())){
+            if(c.getId_client() == Integer.parseInt(spUI.getBuyerID())){
                 buyer = c;
                 break;
             }
@@ -77,7 +80,7 @@ public class SellControl implements ActionListener, Observer {
     private boolean isPresent(){
 
         for(Client c : serv.getBad().getClts()){
-            if(c.getId_client() == Integer.parseInt(gGui.getBuyerID())){
+            if(c.getId_client() == Integer.parseInt(spUI.getBuyerID())){
                 return true;
             }
         }
@@ -86,7 +89,7 @@ public class SellControl implements ActionListener, Observer {
 
     private boolean clientDataAreCorrect(){
 
-        if(gGui.getBuyerID() != null && Integer.parseInt(gGui.getBuyerID()) > 0 && Integer.parseInt(gGui.getBuyerID()) != 901 ){
+        if(spUI.getBuyerID() != null && Integer.parseInt(spUI.getBuyerID()) > 0 && Integer.parseInt(spUI.getBuyerID()) != 901 ){
             return true;
         }
         return false;
@@ -101,7 +104,7 @@ public class SellControl implements ActionListener, Observer {
     public void update(Observable o, Object arg) {
 
         if (arg instanceof Sale) {
-            gGui.newSalesTableShow();
+            gGUI.salesTableShow();
         }else{
             System.out.println(this.toString() + " notified.");
         }

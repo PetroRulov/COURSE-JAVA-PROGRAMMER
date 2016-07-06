@@ -2,8 +2,8 @@ package util;
 
 import domain.Client;
 import domain.Sale;
-import enumerations.*;
-import main.*;
+import enumerations.Drink;
+import main.Badigan;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,10 +16,10 @@ public class Service {
     private Badigan bad;
     private Sale sale;
 
+
     public Service(){
 
         this.bad = new Badigan();
-        this.sale = sale;
     }
 
     public Badigan getBad() {

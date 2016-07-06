@@ -1,6 +1,8 @@
 package controllers;
 import domain.Client;
+import guis.AddNewClientPanelUI;
 import guis.GeshGUI;
+import interfaces.IDB_Manager;
 import util.Service;
 
 import javax.swing.*;
@@ -15,12 +17,16 @@ import java.util.Observer;
 public class AddClientControl implements ActionListener, Observer {
 
     private Service serv;
-    private GeshGUI gGui;
+    private AddNewClientPanelUI ancPUI;
+    private GeshGUI gGUI;
+    private IDB_Manager idbManager;
 
-    public AddClientControl(Service serv, GeshGUI gGui) {
+
+    public AddClientControl(Service serv, AddNewClientPanelUI ancPUI, GeshGUI gGUI) {
 
         this.serv = serv;
-        this.gGui = gGui;
+        this.ancPUI = ancPUI;
+        this.gGUI = gGUI;
     }
 
 
@@ -32,8 +38,10 @@ public class AddClientControl implements ActionListener, Observer {
             JOptionPane.showConfirmDialog(null, "This Client is present in the database \n Try again, please.", "Clients Database", JOptionPane.PLAIN_MESSAGE);
         }else if(clientDataAreCorrect() && !isPresent()){
             guest = setClient();
-            serv.getBad().addNewClient(Integer.parseInt(gGui.getClientID()), gGui.getSurName(), gGui.getName(), gGui.getAge(), gGui.getSex(),
-                    gGui.getEmail());
+            serv.getBad().addNewClient(Integer.parseInt(ancPUI.getClientID()), ancPUI.getSurName(), ancPUI.getName(), ancPUI.getAge(), ancPUI.getSex(),
+                    ancPUI.getEmail());
+//            idbManager.addNewClient(Integer.parseInt(ancPUI.getClientID()), ancPUI.getSurName(), ancPUI.getName(), ancPUI.getAge(), ancPUI.getSex(),
+//                    ancPUI.getEmail());
             JOptionPane.showConfirmDialog(null, "New Client was successfully added in the database!", "Clients Database", JOptionPane.PLAIN_MESSAGE);
 
             // optional methods displaying result in console
@@ -50,7 +58,7 @@ public class AddClientControl implements ActionListener, Observer {
     public void update(Observable o, Object arg) {
 
         if (arg instanceof Client) {
-            gGui.newSalesTableShow();
+            gGUI.clientsTableShow();
         }else{
             System.out.println(this.toString() + " notified.");
         }
@@ -58,15 +66,15 @@ public class AddClientControl implements ActionListener, Observer {
 
     private Client setClient(){
 
-        return new Client(Integer.parseInt(gGui.getClientID()), gGui.getSurName(), gGui.getName(),
-                gGui.getAge(), gGui.getSex(), gGui.getEmail());
+        return new Client(Integer.parseInt(ancPUI.getClientID()), ancPUI.getSurName(), ancPUI.getName(),
+                ancPUI.getAge(), ancPUI.getSex(), ancPUI.getEmail());
 
     }
 
     private boolean isPresent(){
 
         for(Client c : serv.getBad().getClts()){
-            if(c.getId_client() == Integer.parseInt(gGui.getClientID())){
+            if(c.getId_client() == Integer.parseInt(ancPUI.getClientID())){
                 return true;
             }
         }
@@ -75,11 +83,11 @@ public class AddClientControl implements ActionListener, Observer {
 
     private boolean clientDataAreCorrect(){
 
-        if(gGui.getSurName() != null && ! gGui.getSurName().equals("") &&
-                gGui.getName() != null && ! gGui.getName().equals("") &&
-                gGui.getAge() != null && ! gGui.getAge().equals("") &&
-                gGui.getSex() != null && ! gGui.getSex().equals("") &&
-                gGui.getEmail() != null && ! gGui.getEmail().equals("")){
+        if(ancPUI.getSurName() != null && ! ancPUI.getSurName().equals("") &&
+                ancPUI.getName() != null && ! ancPUI.getName().equals("") &&
+                ancPUI.getAge() != null && ! ancPUI.getAge().equals("") &&
+                ancPUI.getSex() != null && ! ancPUI.getSex().equals("") &&
+                ancPUI.getEmail() != null && ! ancPUI.getEmail().equals("")){
             return true;
         }
         return false;

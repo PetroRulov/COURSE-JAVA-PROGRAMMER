@@ -5,6 +5,7 @@ import domain.Sale;
 import domain.waters.*;
 import enumerations.Drink;
 import enumerations.Tare;
+import interfaces.IDB_Manager;
 import interfaces.IDataProvider;
 
 import java.util.ArrayList;
@@ -14,10 +15,11 @@ import java.util.List;
  * Created by prulov on 26.05.2016.
  */
 
-public class Stock implements IDataProvider {
+public class Stock implements IDataProvider, IDB_Manager {
 
     private Water[] wat;
     private List<Water> waters;
+    private IDB_Manager iDBmanager;
 
 
     public Stock(){
@@ -218,6 +220,17 @@ public class Stock implements IDataProvider {
         }
     }
 
+    @Override
+    public void sellTransaction(int id, String date, Client guest, Water wat, int quant) {
+
+    }
+
+    @Override
+    public void addNewClient(int id, String surName, String name, String age, String sex, String eMail) {
+
+    }
+
+    @Override
     public void soldWaterMinus(Water wat, int quant){
 
         Water sold = null;
@@ -230,5 +243,8 @@ public class Stock implements IDataProvider {
         sold.setQuant(sold.getQuant() - quant);
     }
 
+    public void setiDBmanager(IDB_Manager iDBmanager) {
+        this.iDBmanager = iDBmanager;
+    }
 }
 
