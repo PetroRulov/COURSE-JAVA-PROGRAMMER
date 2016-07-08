@@ -6,7 +6,7 @@ import java.io.IOException;
 /**
  * Created by prulov on 06.07.2016.
  */
-public class LegacyFileReader implements FileReader {
+public class LegacyFilesReader implements FileReader {
 
     @Override
     public String read(String fileName){
