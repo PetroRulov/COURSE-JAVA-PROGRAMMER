@@ -36,6 +36,12 @@ public class Launcher {
         reader = new DefaultFilesReader();
         System.out.println(reader.read(dPath + fileName));
 
+        writer = new JDKWriter();
+        writer.write("Hi fro JDK Writer", dir.getAbsolutePath() + fileName);
+
+        reader = new JDKReader();
+        System.out.println(reader.read(dPath + fileName));
+
     }
 
 }

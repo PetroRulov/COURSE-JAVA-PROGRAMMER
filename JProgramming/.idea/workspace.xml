@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileReader.java" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileReader.java" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson8/encoding/ECLaunch.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKReader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java" afterPath="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java" />
     </list>
     <ignored path="JProgramming.iws" />
@@ -36,28 +39,8 @@
       <file leaf-file-name="Demo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultFileReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/DefaultFileReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultFilesReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+            <state relative-caret-position="612">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java">
+      <file leaf-file-name="CopyFileDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+            <state relative-caret-position="232">
+              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,31 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LegacyFileReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/LegacyFileReader.java">
+      <file leaf-file-name="ECLaunch.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/encoding/ECLaunch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultFileWriter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="385">
+              <caret line="64" column="98" selection-start-line="64" selection-start-column="98" selection-end-line="64" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,26 +72,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LegacyFilesReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java">
+      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LegacyFileWriter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,6 +87,50 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDKReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDKWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -167,14 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/Service.java" />
-        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/annotations/AMLauncher.java" />
-        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/stubmock/StorageService.java" />
-        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/stubmock/DBStorageService.java" />
-        <option value="$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/StorageServiceStub.java" />
-        <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/stubmock/ServiceClass.java" />
-        <option value="$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/StorageServiceMock.java" />
-        <option value="$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/ServiceClassTest.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/containers/service/ApplicationManager.java" />
         <option value="$PROJECT_DIR$/test/lesson7/generics/reflection/initclass/InitClassTest.java" />
         <option value="$PROJECT_DIR$/src/lesson7/generics/reflection/InitClasFace.java" />
@@ -195,15 +180,12 @@
         <option value="$PROJECT_DIR$/src/lesson8/files/Frame1.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/PathToFile.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/ShowDirectoriesTree.java" />
-        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/LegacyFileWriter.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/DefaultFileWriter.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/CreateTextFile.java" />
-        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/printdata/MyInputSream.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/printdata/MyInputStream.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/printdata/PrintData.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/bufferedstreams/BufferedReader.java" />
-        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java" />
         <option value="$PROJECT_DIR$/src/lesson8/unicode/AsciiChart.java" />
         <option value="$PROJECT_DIR$/src/lesson8/unicode/Characters.java" />
         <option value="$PROJECT_DIR$/src/lesson8/unicode/Encoding.java" />
@@ -217,7 +199,18 @@
         <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/DefaultFileReader.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileReader.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/LegacyFileWriter.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/readers/FileReader.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/writers/FileWriter.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/writers/JDKWriter.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/readers/JDKReader.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKReader.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/encoding/FileCreater.java" />
+        <option value="$PROJECT_DIR$/src/lesson8/encoding/ECLaunch.java" />
       </list>
     </option>
   </component>
@@ -259,6 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -405,15 +399,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lesson8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="encoding" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lesson4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -445,47 +460,7 @@
       <recent name="lesson8.files.readandwritefiles" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
-    <configuration default="false" name="CopyFileDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="lesson8.files.readandwritefiles.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="lesson8.files.readandwritefiles.CopyFileDemo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JProgramming" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="AsciiChart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="lesson8.unicode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="lesson8.unicode.AsciiChart" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JProgramming" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.ECLaunch">
     <configuration default="false" name="Characters" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -534,6 +509,46 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="lesson8.files.readandwritefiles.fileinterfaces.Launcher" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JProgramming" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="CopyFileDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="lesson8.files.readandwritefiles.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="lesson8.files.readandwritefiles.CopyFileDemo" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JProgramming" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="ECLaunch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="lesson8.encoding.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="lesson8.encoding.ECLaunch" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -781,19 +796,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.CopyFileDemo" />
-      <item index="1" class="java.lang.String" itemvalue="Application.AsciiChart" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Characters" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Encoding" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Launcher" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Characters" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Encoding" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Launcher" />
+      <item index="3" class="java.lang.String" itemvalue="Application.CopyFileDemo" />
+      <item index="4" class="java.lang.String" itemvalue="Application.ECLaunch" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Launcher" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Encoding" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Characters" />
-        <item index="3" class="java.lang.String" itemvalue="Application.AsciiChart" />
-        <item index="4" class="java.lang.String" itemvalue="Application.CopyFileDemo" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ECLaunch" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CopyFileDemo" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Launcher" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Characters" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Encoding" />
       </list>
     </recent_temporary>
   </component>
@@ -1112,7 +1127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1467817258714</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="frame_8_2_6 copy file with BufferedInputOutputStream 256">
+      <created>1467980302142</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1467980302142</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1227,67 +1249,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/fortests/InitServiceClassInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/Never.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/fortests/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/fortests/InitServiceClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="84" column="24" selection-start-line="84" selection-start-column="24" selection-end-line="84" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/MyNewDay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="36" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/Launcher.java" />
-    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/reflection/fortests/InitObjectsClassTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson7/generics/reflection/DemoReflection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3145">
-          <caret line="194" column="37" selection-start-line="194" selection-start-column="8" selection-end-line="194" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson7/generics/containers/service/ApplicationManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1448,17 +1413,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/FileReader.java" />
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/AsciiChart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/Characters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="21" selection-start-line="33" selection-start-column="8" selection-end-line="38" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,40 +1463,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/FileReader.java" />
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/LegacyFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="0" selection-start-line="17" selection-start-column="4" selection-end-line="35" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/DefaultFileWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/Characters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        <state relative-caret-position="374">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1512,23 +1483,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/DefaultFileWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,20 +1499,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/LegacyFileWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson8/readers/FileReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/readers/JDKReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="21" selection-start-line="11" selection-start-column="4" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/writers/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/writers/JDKWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1566,10 +1547,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java">
+    <entry file="file://$PROJECT_DIR$/src/lesson8/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/encoding/FileCreater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1578,8 +1613,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="30" column="58" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+        <state relative-caret-position="164">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/encoding/ECLaunch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="64" column="98" selection-start-line="64" selection-start-column="98" selection-end-line="64" selection-end-column="98" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

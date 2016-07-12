@@ -9,10 +9,12 @@ import java.nio.file.StandardOpenOption;
  */
 public class CopyFileDemo {
 
-    private static final File dir = new File("D:\\CopyFile\\");
-    private static final String fileName = File.separator + "Lorem.txt";
-
     public static void main(String[] args) throws IOException {
+
+        File dir = new File("D:\\CopyFile\\");
+        dir.mkdir();
+
+        String fileName = File.separator + "Lorem.txt";
 
         File original = new File(dir.getAbsolutePath() + fileName);
         copyFile(original);
@@ -28,8 +30,9 @@ public class CopyFileDemo {
 
     private static void copyFile(File file) throws IOException {
 
-        String copyFileName = File.separator + "CopyLorem.txt";
-        File copy = new File(dir.getAbsolutePath() + copyFileName);
+        String fileName = File.separator + "Lorem.txt";
+        String copyName = File.separator + "CopyLorem.txt";
+        File copy = new File(file.getParent() + copyName);
 
         try {
             copy.createNewFile();
@@ -39,8 +42,8 @@ public class CopyFileDemo {
 
         FileReader reader = new LegacyFileReader(file);
         FileWriter writer = new LegacyFileWriter(copy);
-        ((LegacyFileWriter)writer).write(((LegacyFileReader)reader).read(dir.getAbsolutePath() + fileName) + " @Copy",
-                dir.getAbsolutePath() + copyFileName);
+        ((LegacyFileWriter)writer).write(((LegacyFileReader)reader).read(file.getParent()  + fileName) + " @Copy",
+                file.getParent() + copyName);
     }
 
     private static void copyFiles(File file) throws IOException {
