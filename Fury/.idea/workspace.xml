@@ -2,14 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba386550-2914-4f7c-ba1c-6bd0ad190677" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bar/out/production/Bar/Menu.class" afterPath="$PROJECT_DIR$/../Bar/out/production/Bar/Menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bar/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Bar/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Bar/src/Menu.java" afterPath="$PROJECT_DIR$/../Bar/src/Menu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Gesheft/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Gesheft/src/main/java/Badigan.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Gesheft/src/main/java/Stock.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/Demo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/domain/Client.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/domain/Sale.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/enumerations/Drink.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/enumerations/Tare.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/out/production/Gesheft/interfaces/IDataProvider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/Demo.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/GESHLauncher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/controllers/AddClientControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/controllers/SaleControl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/Client.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/Sale.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Beer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Brendy.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Burbon.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Juice.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Tequila.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Vine.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Vodka.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/domain/waters/Water.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/enumerations/Drink.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/enumerations/Tare.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/AddNewClientPanelUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/GeshGUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/HPPanelUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/MyComboBoxModel.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/SalePanelUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/Splash.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/TableOfClientsUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/guis/TableOfSalesUI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/interfaces/IDB_Manager.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/interfaces/IDataProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/main/Badigan.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/main/Stock.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/managers/InMemorySetter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/util/Service.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Gesheft/src/util/ToGeshSQLCon.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/out/production/Data/GUI.class" afterPath="$PROJECT_DIR$/../Data/out/production/Data/GUI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Data/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Data/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Gesheft/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Gesheft/Gesheft.iml" afterPath="$PROJECT_DIR$/../Gesheft/Gesheft.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JewShop/src/main/java/controllers/AddNewProduct.java" afterPath="$PROJECT_DIR$/../JewShop/src/main/java/controllers/AddNewProduct.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JewShop/src/main/java/guis/AddNewProductPanelUI.java" afterPath="$PROJECT_DIR$/../JewShop/src/main/java/guis/AddNewProductPanelUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/src/lesson8/archivation/Launcher.java" afterPath="$PROJECT_DIR$/../JProgramming/src/lesson8/archivation/Launcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/src/lesson8/archivation/UnZip.java" afterPath="$PROJECT_DIR$/../JProgramming/src/lesson8/archivation/UnZip.java" />
     </list>
     <ignored path="Fury.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +77,8 @@
       <file leaf-file-name="Slider.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/actions/Slider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="380" column="40" selection-start-line="380" selection-start-column="12" selection-end-line="380" selection-end-column="46" />
+            <state relative-caret-position="198">
+              <caret line="378" column="27" selection-start-line="378" selection-start-column="27" selection-end-line="378" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,11 +99,9 @@
       <file leaf-file-name="AgrIntel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/AgrIntel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
+            <state relative-caret-position="918">
               <caret line="60" column="71" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,9 +111,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
               <caret line="31" column="49" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,12 +121,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
               <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#2409#2428#0" expanded="false" />
-                <element signature="e#5760#5779#0" expanded="false" />
-                <element signature="e#9326#9345#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,12 +131,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="e#188#189#0" expanded="false" />
-                <element signature="e#213#214#0" expanded="false" />
-                <element signature="e#239#240#0" expanded="false" />
-                <element signature="e#264#265#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -213,8 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -294,6 +320,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -734,7 +762,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -746,7 +774,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14055637" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13993949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -829,9 +857,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,12 +1094,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2409#2428#0" expanded="false" />
-            <element signature="e#5760#5779#0" expanded="false" />
-            <element signature="e#9326#9345#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,9 +1109,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="31" column="49" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1098,12 +1117,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#188#189#0" expanded="false" />
-            <element signature="e#213#214#0" expanded="false" />
-            <element signature="e#239#240#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,18 +1131,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/AgrIntel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
+        <state relative-caret-position="918">
           <caret line="60" column="71" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/Slider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="380" column="40" selection-start-line="380" selection-start-column="12" selection-end-line="380" selection-end-column="46" />
+        <state relative-caret-position="198">
+          <caret line="378" column="27" selection-start-line="378" selection-start-column="27" selection-end-line="378" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

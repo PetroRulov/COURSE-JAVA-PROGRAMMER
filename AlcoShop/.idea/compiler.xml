@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Gesheft" />
+        <module name="Alcoshop" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Gesheft" target="1.5" />
+      <module name="Alcoshop" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

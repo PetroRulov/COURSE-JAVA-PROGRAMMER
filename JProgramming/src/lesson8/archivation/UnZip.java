@@ -38,22 +38,22 @@ public class UnZip implements Serializable {
         if (!dstDir.exists()) {
             dstDir.mkdir();
         }
+
+
         try(
+
                 FileInputStream fis = new FileInputStream(path);
-                ZipInputStream zis = new ZipInputStream(fis)
+                ZipInputStream zis = new ZipInputStream(fis);
+
         ) {
 
-            ZipEntry zipEntry = zis.getNextEntry();
-            String nextFileName;
-
-            while(zipEntry != null) {
-                nextFileName = zipEntry.getName();
+            ZipEntry entry;
+            while((entry = zis.getNextEntry()) != null){
+                String nextFileName = entry.getName();
                 System.out.println(nextFileName);
-
+                System.out.println(dstDirectory + File.separator + nextFileName);
                 File nextFile = new File(dstDirectory + File.separator + nextFileName);
-
-                if (zipEntry.isDirectory()) {
-                    System.out.println("WHAT'S THE FUCK???");
+                if (entry.isDirectory()) {
                     nextFile.mkdir();
                 } else {
                     new File(nextFile.getParent()+ File.separator +"/Copy"+ nextFileName);
@@ -70,9 +70,9 @@ public class UnZip implements Serializable {
                         }
                     }
                 }
-                zipEntry = zis.getNextEntry();
             }
-            zis.closeEntry();
+            zis.close();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
