@@ -1,12 +1,13 @@
 import bl.Shop;
 import datamanagers.DB_Manager;
 import view.ShopUI;
+import view.Splash;
 
 public class Main {
 
     public static void main(String[] args)throws InterruptedException {
 
-//        new Splash();
+        new Splash();
 
         Shop shop = new Shop();
 
