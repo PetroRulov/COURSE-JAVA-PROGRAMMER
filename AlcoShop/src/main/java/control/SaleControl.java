@@ -11,6 +11,7 @@ import view.panels.SalePanelUI;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -42,10 +43,10 @@ public class SaleControl implements ActionListener, Observer {
         String date = spUI.getDate();
 
         Client guest = null;
-        if(clientDataAreCorrect() && isPresent()){
+        if(clientDataAreCorrect() && clientIsPresent()){
             JOptionPane.showConfirmDialog(null, "This Client is already present in the database", "Clients Database", JOptionPane.PLAIN_MESSAGE);
             guest = setTransactionClient();
-        }else if(clientDataAreCorrect() && !isPresent()){
+        }else if(clientDataAreCorrect() && !clientIsPresent()){
             guest = setDefaultClient();
         }else{
             JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct data about Client and try again!",
@@ -61,6 +62,10 @@ public class SaleControl implements ActionListener, Observer {
             shop.getIdbI().soldWaterMinus(wat, quant);
             JOptionPane.showConfirmDialog(null, "Transaction is possible!", "Transaction possibility", JOptionPane.PLAIN_MESSAGE);
             Sale neo = new Sale(id, date, guest, wat, quant);
+            if(clientIsPresent()){
+                BigDecimal fin = neo.getIncome().multiply(new BigDecimal(0.9));
+                neo.setIncome(fin);
+            }
             shop.addSaleTransaction(neo);
         }else{
             JOptionPane.showConfirmDialog(null, "Transaction is NOT possible! \n Please, try again with new quantity of item",
@@ -68,7 +73,7 @@ public class SaleControl implements ActionListener, Observer {
         }
 
         // optional method just to check correct work
-        serv.printWaters();
+        //serv.printWaters();
     }
 
     private Client setTransactionClient(){
@@ -83,7 +88,7 @@ public class SaleControl implements ActionListener, Observer {
         return buyer;
     }
 
-    private boolean isPresent(){
+    private boolean clientIsPresent(){
 
         for(Client c : shop.getIdbI().getClts()){
             if(c.getId_client() == Integer.parseInt(spUI.getBuyerID())){
@@ -115,6 +120,5 @@ public class SaleControl implements ActionListener, Observer {
             System.out.println(this.toString() + " notified.");
         }
     }
-
 }
 

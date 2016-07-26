@@ -6,83 +6,48 @@ import java.util.zip.ZipInputStream;
 
 public class UnZip implements Serializable {
 
-    private String path;
-    private File file;
+    private int buffer = 1024;
 
-    public UnZip(String path){
+    private String path;
+    private File dest;
+
+
+    public UnZip(String path, File dest){
         this.path = path;
+        this.dest = dest;
         unZipingData();
     }
 
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public File getFile() {
-        return file;
-    }
-
-    public void setFile(File file) {
-        this.file = file;
-    }
-
     private void unZipingData() {
-        byte[] buffer = new byte[1024];
-
-        String dstDirectory = destinationDirectory(path);
-        File dstDir = new File(dstDirectory);
-        if (!dstDir.exists()) {
-            dstDir.mkdir();
-        }
-
 
         try(
+                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(path), buffer);
+                ZipInputStream zis = new ZipInputStream(bis)
 
-                FileInputStream fis = new FileInputStream(path);
-                ZipInputStream zis = new ZipInputStream(fis);
-
-        ) {
+                ){
 
             ZipEntry entry;
-            while((entry = zis.getNextEntry()) != null){
-                String nextFileName = entry.getName();
-                System.out.println(nextFileName);
-                System.out.println(dstDirectory + File.separator + nextFileName);
-                File nextFile = new File(dstDirectory + File.separator + nextFileName);
-                if (entry.isDirectory()) {
-                    nextFile.mkdir();
-                } else {
-                    new File(nextFile.getParent()+ File.separator +"/Copy"+ nextFileName);
+            while ((entry = zis.getNextEntry()) != null){
+                System.out.println("Extracting: " + entry.getName());
 
-                    try (FileOutputStream fos = new FileOutputStream(nextFile);
-                         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos);
-                    ) {
 
-                        outputStreamWriter.write(nextFileName);
-                        int length;
-                        while((length = zis.read(buffer)) > 0) {
+                BufferedOutputStream bos =
+                        new BufferedOutputStream(new FileOutputStream(dest), buffer);
 
-                            fos.write(buffer, 0, length);
-                        }
-                    }
+                byte[] data = new byte[buffer];
+                int count;
+                while ((count = zis.read(data, 0, buffer)) != -1){
+                    bos.write(data, 0 , count);
                 }
+                bos.flush();
+                bos.close();
             }
             zis.close();
+            System.out.println(" - Extract Zip archive was  done. - ");
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private String destinationDirectory(String srcZip) {
-
-        return srcZip.substring(0, srcZip.lastIndexOf("."));
-
-    }
 }

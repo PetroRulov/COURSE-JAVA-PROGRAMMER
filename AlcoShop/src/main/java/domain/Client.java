@@ -78,10 +78,16 @@ public class Client {
         System.out.printf("%-10s%-15s%-12s%-15s%-10s%-10s%n", "|   "+getId_client(), "|"+getSurName(), "|"+getName(), "|"+getDateOfBirth(), "|"+getSex(), "|"+geteMail());
     }
 
-    @Override
-    public String toString(){
+//    @Override
+//    public String toString(){
+//
+//        return getId_client() + " " + getSurName() + " " + getName();
+//    }
 
-        return getId_client() + " " + getSurName() + " " + getName();
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{id = " + id_client + ", surName " + surName +
+                ", name " + name + ", date of birth " + dateOfBirth + ", sex " + sex + ", e-mail: " + eMail + "}";
     }
 
     @Override

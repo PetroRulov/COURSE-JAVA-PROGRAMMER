@@ -54,7 +54,7 @@ public class Zip implements Serializable {
     private void zipingData(){
         File files[] = zipedData.listFiles();
         try(
-                ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(data.getPath()+".zip"));
+                ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(data.getPath() + ".zip"));
                 FileInputStream fis = new FileInputStream(data);
         ){
             for (File file: files) {
@@ -65,8 +65,10 @@ public class Zip implements Serializable {
                 zos.write(buffer);
                 zos.closeEntry();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

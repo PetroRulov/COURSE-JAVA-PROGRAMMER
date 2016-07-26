@@ -26,14 +26,14 @@ public class Sale {
         this.guest = guest;
         this.wat = wat;
         this.quant = quant;
-        this.income = setIncome();
+        this.income = calcIncome();
     }
 
     public long getId_sale() {
         return id_sale;
     }
 
-    public BigDecimal setIncome(){
+    public BigDecimal calcIncome(){
 
         MathContext mc = new MathContext(4);
         BigDecimal inCome = this.wat.getPrice().multiply(new BigDecimal(getQuant()));
@@ -87,6 +87,10 @@ public class Sale {
 
     public BigDecimal getIncome() {
         return income;
+    }
+
+    public void setIncome(BigDecimal income) {
+        this.income = income;
     }
 
     public String dateFormat(Date d){
