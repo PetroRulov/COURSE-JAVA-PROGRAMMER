@@ -58,7 +58,7 @@ public class Zip implements Serializable {
                 FileInputStream fis = new FileInputStream(data);
         ){
             for (File file: files) {
-                ZipEntry zipEntry = new ZipEntry(file.getName());
+                ZipEntry zipEntry = new ZipEntry(file.getPath());
                 zos.putNextEntry(zipEntry);
                 byte [] buffer = new byte[fis.available()];
                 fis.read(buffer);

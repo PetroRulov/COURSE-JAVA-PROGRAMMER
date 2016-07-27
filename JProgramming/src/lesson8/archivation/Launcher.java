@@ -10,11 +10,14 @@ public class Launcher {
 
     public static void main(String[] args) {
 
-        File dir = new File("D:\\CopyFile");
+        File dir = new File("D:\\TEST\\Zip");
         dir.mkdir();
 
         String fileName = File.separator + "Stock.txt";
         File original = new File(dir.getAbsolutePath() + fileName);
+
+        System.out.println(original.getAbsolutePath());
+        System.out.println(original.getParent());
 
         new Zip(original.getAbsolutePath(), original.getParent());
         original.delete();

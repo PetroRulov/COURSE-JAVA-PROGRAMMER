@@ -17,7 +17,8 @@ public class PrintData {
 
         Path path = FileSystems.getDefault().getPath("D:\\CopyFile\\Lorem.txt");
 
-        File file = new File("D:\\CopyFile\\Petro.txt");
+        File file = new File("D:\\CopyFile\\Stock.txt");
+
         Path path1 = file.toPath();
 
         InputStream in = null;
@@ -29,6 +30,7 @@ public class PrintData {
         }
 
         printStreamData(in);
+        System.out.println();
 
         try {
             printStreamData(Files.newInputStream(path1, StandardOpenOption.READ));

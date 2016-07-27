@@ -25,11 +25,9 @@ public class UnZip implements Serializable {
                 ZipInputStream zis = new ZipInputStream(bis)
 
                 ){
-
             ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null){
                 System.out.println("Extracting: " + entry.getName());
-
 
                 BufferedOutputStream bos =
                         new BufferedOutputStream(new FileOutputStream(dest), buffer);

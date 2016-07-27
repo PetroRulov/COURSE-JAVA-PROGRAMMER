@@ -25,7 +25,7 @@ public class ShowDirectoriesTree {
         File files[] = dir.listFiles();
         for(File file : files){
             if(!file.isHidden()){
-                System.out.println(file.getName());
+                System.out.println("-" + file.getName());
             }
         }
     }
