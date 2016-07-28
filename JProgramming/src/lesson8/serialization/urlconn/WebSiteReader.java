@@ -14,7 +14,7 @@ public class WebSiteReader {
 
         try{
             // index.html is a default URL’s file name
-            url = new URL("http://www.google.com" );
+            url = new URL("http://quote.yahoo.com/d/quotes.csv?s=TSLA&f=sl1d1t1c1ohgv&e=.csv" );
             urlConn = url.openConnection();
             inStream = new InputStreamReader(urlConn.getInputStream(), "UTF8");
             buff = new BufferedReader(inStream);
