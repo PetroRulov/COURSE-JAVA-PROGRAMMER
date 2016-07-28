@@ -1,9 +1,7 @@
 package lesson8.serialization.urlconn;
 
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -23,7 +21,6 @@ public class UploadFromInternet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(file.getAbsolutePath());
 
         URL eDV = null;
         URLConnection urlConn = null;
@@ -31,12 +28,30 @@ public class UploadFromInternet {
             eDV = new URL("https://docs.oracle.com/javase/tutorial/");
             urlConn = eDV.openConnection();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            System.out.println("Please, check the URL:" + e.toString() );
         }catch (IOException e){
-            e.printStackTrace();
+            System.out.println("Can’t read from the Internet: " + e.toString() );
         }
 
+        // to receive a reference at URL by URL-object's name
+        System.out.println(eDV.getProtocol() + "://"  + eDV.getHost() + eDV.getFile());
+
         System.out.println(urlConn.getContentEncoding()); // return null if content encoding is not known
+        System.out.println(eDV.getPort()); // return -1 if the port is not set
+
+        //PROXY
+//        System.setProperty("http.proxyHost", "http://proxy.mycompany.com");
+//        System.setProperty("http.proxyPort", "8080");
+//
+//        Proxy myProxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("http://proxy.mycompany.com", 8080));
+//        URL url = null;
+//        try {
+//            url = new URL("http://www.google.com/index.html");
+//            urlConn = url.openConnection(myProxy);
+//        } catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }catch (IOException e){
+//        System.out.println("Can’t read from the Internet: " + e.toString() );
 
         try (BufferedReader input = new BufferedReader(new InputStreamReader(
                 urlConn.getInputStream(), StandardCharsets.UTF_8), buffer);
@@ -48,8 +63,8 @@ public class UploadFromInternet {
             while ((inputLine = input.readLine()) != null){
                 output.write(inputLine);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        }catch (IOException e) {
+            System.out.println("Can’t close the streams: "+ e.getMessage());
         }
     }
 }
