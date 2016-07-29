@@ -54,7 +54,7 @@ public class ObjectIO {
         private static final long serialVersionUID = 0;
         
         private String surName;
-        private String name;
+        private transient String name;
         private int age;
 
         private transient List<Integer> integers;
