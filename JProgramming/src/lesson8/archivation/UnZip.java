@@ -29,20 +29,22 @@ public class UnZip implements Serializable {
             while ((entry = zis.getNextEntry()) != null){
                 System.out.println("Extracting: " + entry.getName());
 
-                BufferedOutputStream bos =
-                        new BufferedOutputStream(new FileOutputStream(dest), buffer);
+                try(BufferedOutputStream bos =
+                            new BufferedOutputStream(new FileOutputStream(dest), buffer)){
 
-                byte[] data = new byte[buffer];
-                int count;
-                while ((count = zis.read(data, 0, buffer)) != -1){
-                    bos.write(data, 0 , count);
+                    byte[] data = new byte[buffer];
+                    int count;
+                    while ((count = zis.read(data, 0, buffer)) != -1){
+                        bos.write(data, 0 , count);
+                    }
+                    bos.flush();
+                    bos.close();
+                }catch (IOException e){
+                    e.printStackTrace();
                 }
-                bos.flush();
-                bos.close();
             }
             zis.close();
             System.out.println(" - Extract Zip archive was  done. - ");
-
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -7,7 +7,7 @@ public class ZipLauncher {
     public static void main(String[] args) {
 
         int buffer = 1024;
-        String path = "D:\\Zipping\\DirForZip";
+        String path = "D:\\TEST\\ZippingOneDir\\DirForZip";
 
         String lastName = path.substring(path.lastIndexOf("\\") + 1, path.length());
         String firstDir = path.substring(0, path.lastIndexOf("\\"));

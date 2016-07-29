@@ -28,26 +28,40 @@ public class MyZip {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        ZipOutputStream zos = null;
+
         try{
-            ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(destPath), buffer));
+            zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(destPath), buffer));
             byte[] data = new byte[buffer];
             File f = new File(path + ".");
             String files[] = f.list();
 
             for (int i = 0; i < files.length; i++) {
                 System.out.println(files[i] + " added in ZIP-archive!");
-                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(path + File.separator + files[i]), buffer);
-                ZipEntry entry = new ZipEntry(files[i]);
-                zos.putNextEntry(entry);
-                int count;
-                while ((count = bis.read(data, 0, buffer)) != -1) {
-                    zos.write(data, 0, count);
+                try(
+                        FileInputStream fis = new FileInputStream(path + File.separator + files[i]);
+                        BufferedInputStream bis = new BufferedInputStream(fis, buffer)
+                        ){
+                    ZipEntry entry = new ZipEntry(files[i]);
+                    zos.putNextEntry(entry);
+                    int count;
+                    while ((count = bis.read(data, 0, buffer)) != -1) {
+                        zos.write(data, 0, count);
+                    }
+                    bis.close();
+                }catch(IOException e1){
+                    e1.printStackTrace();
                 }
-                bis.close();
             }
-            zos.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally{
+            try {
+                zos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         System.out.println();
         System.out.println("Zip-archive " + archiveName + " was created successfully!");

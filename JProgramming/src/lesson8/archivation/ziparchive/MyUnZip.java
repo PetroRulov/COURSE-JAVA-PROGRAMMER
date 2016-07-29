@@ -23,28 +23,40 @@ public class MyUnZip {
 
     public void unZipData() {
 
+        ZipInputStream zis = null;
+
         try {
-            ZipInputStream zis =
-                    new ZipInputStream(new BufferedInputStream(new FileInputStream(path), buffer));
+            zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(path), buffer));
             ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null){
                 System.out.println(entry + " extracted");
 
-                BufferedOutputStream bos =
-                        new BufferedOutputStream(new FileOutputStream(destPath + entry), buffer);
-                byte[] data = new byte[buffer];
-                int count;
-                while ((count = zis.read(data,0,buffer)) != -1){
-                    bos.write(data, 0 , count);
+                try(
+                        BufferedOutputStream bos =
+                                new BufferedOutputStream(new FileOutputStream(destPath + entry), buffer)
+                        ){
+
+                    byte[] data = new byte[buffer];
+                    int count;
+                    while ((count = zis.read(data,0,buffer)) != -1){
+                        bos.write(data, 0 , count);
+                    }
+                    bos.close();
+                    bos.flush();
+                }catch(IOException e){
+                    e.printStackTrace();
                 }
-                bos.flush();
-                bos.close();
             }
-            zis.close();
             System.out.println();
             System.out.println("ZIP-archive " + archiveName + " was extracted successfully!");
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            try {
+                zis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
