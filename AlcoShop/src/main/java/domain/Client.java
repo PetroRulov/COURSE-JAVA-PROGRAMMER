@@ -1,10 +1,12 @@
 package domain;
 
+import java.io.Serializable;
+
 /**
  * Created by prulov on 08.07.2016.
  */
 
-public class Client {
+public class Client implements Serializable {
 
     private long id_client;
     private String surName;
@@ -73,16 +75,15 @@ public class Client {
         this.eMail = eMail;
     }
 
-    public void clientInfoShow(){
+    public void clientInConsole(){
 
         System.out.printf("%-10s%-15s%-12s%-15s%-10s%-10s%n", "|   "+getId_client(), "|"+getSurName(), "|"+getName(), "|"+getDateOfBirth(), "|"+getSex(), "|"+geteMail());
     }
 
-//    @Override
-//    public String toString(){
-//
-//        return getId_client() + " " + getSurName() + " " + getName();
-//    }
+    public String clientInfoShow(){
+
+        return getId_client() + " " + getSurName() + " " + getName();
+    }
 
     @Override
     public String toString() {

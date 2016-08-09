@@ -79,11 +79,11 @@ public class AddClientControl implements ActionListener, Observer {
 
     private boolean clientDataAreCorrect(){
 
-        if(ancPUI.getSurName() != null && ! ancPUI.getSurName().equals("") &&
-                ancPUI.getName() != null && ! ancPUI.getName().equals("") &&
-                ancPUI.getAge() != null && ! ancPUI.getAge().equals("") &&
-                ancPUI.getSex() != null && ! ancPUI.getSex().equals("") &&
-                ancPUI.getEmail() != null && ! ancPUI.getEmail().equals("")){
+        if(ancPUI.getSurName() != null && ! ancPUI.getSurName().isEmpty() &&
+                ancPUI.getName() != null && ! ancPUI.getName().isEmpty() &&
+                ancPUI.getAge() != null && ! ancPUI.getAge().isEmpty() &&
+                ancPUI.getSex() != null && ! ancPUI.getSex().isEmpty() &&
+                ancPUI.getEmail() != null && ! ancPUI.getEmail().isEmpty()){
             return true;
         }
         return false;

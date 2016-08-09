@@ -11,6 +11,7 @@ public class PathToFile {
 
         File file = new File("test.txt");
 
+        System.out.println(System.getProperty("user.dir"));
         System.out.println(System.clearProperty("user.dir"));
         System.out.println(File.separator);
         System.out.println(File.pathSeparator);

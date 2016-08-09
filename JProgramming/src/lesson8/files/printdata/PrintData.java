@@ -15,9 +15,9 @@ public class PrintData {
 
     public static void main(String[] args) {
 
-        Path path = FileSystems.getDefault().getPath("D:\\CopyFile\\Lorem.txt");
+        Path path = FileSystems.getDefault().getPath("D:\\TEST\\CopyFile\\Lorem.txt");
 
-        File file = new File("D:\\CopyFile\\Stock.txt");
+        File file = new File("D:\\TEST\\CopyFile\\Stock.txt");
 
         Path path1 = file.toPath();
 

@@ -2,13 +2,14 @@ package domain;
 
 import domain.waters.Water;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Sale {
+public class Sale implements Serializable {
 
     private long id_sale;
     private String date = dateFormat(new Date(System.currentTimeMillis()));
@@ -93,7 +94,7 @@ public class Sale {
         this.income = income;
     }
 
-    public String dateFormat(Date d){
+    private String dateFormat(Date d){
 
         DateFormat df = new SimpleDateFormat("dd.MM.yyyy");
         return df.format(d);
@@ -107,4 +108,15 @@ public class Sale {
 
     }
 
+    @Override
+    public String toString() {
+        return "Sale{" +
+                "id_sale=" + id_sale +
+                ", date='" + date + '\'' +
+                ", guest=" + guest +
+                ", wat=" + wat +
+                ", quant=" + quant +
+                ", income=" + income +
+                '}';
+    }
 }

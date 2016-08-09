@@ -99,7 +99,7 @@ public class ShopUI {
             }
         });
 
-        JMenuItem salesTable = new JMenuItem("All Sales Table");
+        JMenuItem salesTable = new JMenuItem("All Sales History Table");
         salesTable.setFont(fant);
         salesTable.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_2, ActionEvent.ALT_MASK));
         tables.add(salesTable);
