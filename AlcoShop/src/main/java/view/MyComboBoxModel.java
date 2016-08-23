@@ -1,5 +1,6 @@
 package view;
 
+import domain.waters.Product;
 import domain.waters.Water;
 
 import javax.swing.*;
@@ -9,10 +10,11 @@ import java.util.List;
 /**
  * Created by prulov on 05.07.2016.
  */
-public class MyComboBoxModel<E extends Water> extends AbstractListModel implements ComboBoxModel {
+
+public class MyComboBoxModel<E extends Product> extends AbstractListModel implements ComboBoxModel {
 
     List<E> data = new ArrayList<E>();
-    Water selection = null;
+    Product selection = null;
 
     public MyComboBoxModel(List<E> data){this.data = data;}
 

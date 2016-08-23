@@ -1,10 +1,10 @@
 package domain;
 
 import domain.waters.Water;
+import domain.waters.WaysOfSale;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +17,8 @@ public class Sale implements Serializable {
     private Water wat;
     private int quant;
     private BigDecimal income;
+    private WaysOfSale wos;
+    private long orderID;
 
     public Sale(){}
 
@@ -36,7 +38,6 @@ public class Sale implements Serializable {
 
     public BigDecimal calcIncome(){
 
-        MathContext mc = new MathContext(4);
         BigDecimal inCome = this.wat.getPrice().multiply(new BigDecimal(getQuant()));
 
         if(inCome.compareTo(new BigDecimal("500")) == -1){
@@ -47,7 +48,7 @@ public class Sale implements Serializable {
         }else{
             income = inCome.multiply(new BigDecimal(0.9)) ;
         }
-        return income;
+        return income.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
     public void setId_sale(long id_sale) {
@@ -92,6 +93,22 @@ public class Sale implements Serializable {
 
     public void setIncome(BigDecimal income) {
         this.income = income;
+    }
+
+    public WaysOfSale getWos() {
+        return wos;
+    }
+
+    public void setWos(WaysOfSale wos) {
+        this.wos = wos;
+    }
+
+    public long getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(long orderID) {
+        this.orderID = orderID;
     }
 
     private String dateFormat(Date d){

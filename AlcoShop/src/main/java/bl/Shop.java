@@ -2,7 +2,10 @@ package bl;
 
 import datamanagers.IDBInterface;
 import domain.Client;
+import domain.Order;
 import domain.Sale;
+import domain.Visitor;
+import domain.waters.Product;
 import domain.waters.Water;
 
 import java.util.ArrayList;
@@ -19,15 +22,21 @@ public class Shop extends Observable {
     // shop
     private List<Client> clts;
     private List<Sale> sales;
+    private List<Order> orders;
+    private List<Visitor> visitors;
     //stock
     private List<Water> waters;
+    private List<Product> products;
 
 
     public Shop(){
 
         this.waters = new ArrayList<Water>();
+        this.products = new ArrayList<>();
         this.clts = new ArrayList<Client>();
         this.sales = new LinkedList<Sale>();
+        this.orders = new LinkedList<>();
+        this.visitors = new ArrayList<>();
     }
 
     public IDBInterface getIdbI() {
@@ -58,12 +67,28 @@ public class Shop extends Observable {
         setClts(clts);
     }
 
+    public void addNewVisitor(Visitor visitor){
+
+        visitors = idbI.updateVisitorsBase(visitor);
+        setChanged();
+        notifyObservers(visitor);
+        setVisitors(visitors);
+    }
+
     public List<Water> getWaters(){
 
         if(waters == null || waters.isEmpty()){
             idbI.initStock();
         }
         return new ArrayList<Water>(waters);
+    }
+
+    public List<Product> getProducts(){
+
+        for(Water water : getWaters()){
+            products.add((Product) water);
+        }
+        return products;
     }
 
     public List<Sale> getSales() {
@@ -78,11 +103,38 @@ public class Shop extends Observable {
         this.sales = history;
     }
 
+    public List<Order> getOrders() {
+        if(sales == null){
+            idbI.initOrdersJournal();
+        }
+        return new LinkedList<Order>(orders);
+    }
+
+    public void setOrders(List<Order> ordersHistory) {
+        this.orders = ordersHistory;
+    }
+
+    public List<Visitor> getVisitors() {
+        if(visitors == null || visitors.isEmpty()){
+            idbI.initVisitorsBase();
+        }
+        return new ArrayList<Visitor>(visitors);
+    }
+
+    public void setVisitors(List<Visitor> visitors) {
+        this.visitors = visitors;
+    }
+
     public void addSaleTransaction(Sale sale){
 
         sales = idbI.updateSales(sale);
         setChanged();
         notifyObservers(sale);
         setSales(sales);
+    }
+
+    public void addNewOrderInJournal(Order order){
+        orders = idbI.updateOrders(order);
+        setOrders(orders);
     }
 }

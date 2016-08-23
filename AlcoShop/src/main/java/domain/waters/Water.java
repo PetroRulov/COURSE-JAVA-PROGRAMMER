@@ -16,6 +16,8 @@ public class Water implements Product, Serializable {
     protected int quant;
     protected BigDecimal value;
     protected BigDecimal price;
+    protected int count;
+
 
     public Water(){}
 
@@ -29,7 +31,7 @@ public class Water implements Product, Serializable {
         this.quant = quant;
         this.value = value;
         this.price = price;
-
+        this.count = 0;
     }
 
     public long getId_water() {
@@ -88,10 +90,18 @@ public class Water implements Product, Serializable {
         this.value = value;
     }
 
-    public BigDecimal getPrice() {return price;}
+    public BigDecimal getPrice() {return price.setScale(2, BigDecimal.ROUND_HALF_UP);}
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     @Override
@@ -102,24 +112,46 @@ public class Water implements Product, Serializable {
     }
 
     @Override
-    public boolean equals(Object obj){
-        if(obj instanceof Water){
-            Water w = (Water) obj;
-            return (id_water > 0 && id_water == w.getId_water() && drink != null && drink.equals(w.getDrink()) &&
-                    name.equals(w.getName()) && tare.equals(w.getTare()) &&
-                    volume == w.getVolume() && quant == w.getQuant() && value == w.getValue() && price == w.getPrice());
-        }
-        return false;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Water)) return false;
+
+        Water water = (Water) o;
+
+        if (getId_water() != water.getId_water()) return false;
+        if (Double.compare(water.getVolume(), getVolume()) != 0) return false;
+        if (getQuant() != water.getQuant()) return false;
+        if (!getDrink().equals(water.getDrink())) return false;
+        if (!getName().equals(water.getName())) return false;
+        if (getTare() != water.getTare()) return false;
+        if (!getValue().equals(water.getValue())) return false;
+        return getPrice().equals(water.getPrice());
     }
 
-
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (getId_water() ^ (getId_water() >>> 32));
+        result = 31 * result + getDrink().hashCode();
+        result = 31 * result + getName().hashCode();
+        result = 31 * result + getTare().hashCode();
+        temp = Double.doubleToLongBits(getVolume());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + getQuant();
+        result = 31 * result + getValue().hashCode();
+        result = 31 * result + getPrice().hashCode();
+        return result;
+    }
 
     // service methods
-
     public void waterInfoShow(){
+        System.out.printf("%-1s%-10s%-25s%-10s%-10s%-10s%-10s%-10s%n", "", "|"+getDrink(), "|"+getName(), "|"+getTare(), "|"+getVolume(),
+                "|"+getPrice(), "|   " + getQuant() + "    |" + getCount() + "    |");
+    }
 
-        System.out.printf("%-1s%-10s%-25s%-10s%-10s%-10s%-10s%n", "", "|"+getDrink(), "|"+getName(), "|"+getTare(), "|"+getVolume(),
-                "|"+getPrice(), "|   " + getQuant() + "    |");
-
+    public String waterShow(){
+        return getDrink()+", "+getName()+", "+getTare()+", "+getVolume()+", "+
+                getPrice()+" - " + getCount() +" items,"+ "\n";
     }
 }

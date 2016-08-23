@@ -69,6 +69,7 @@ public class AddNewClientPanelUI {
         tfClID.setColumns(12);
         tfClID.setValue(shop.getIdbI().getClts().size() + 1);
         tfClID.setHorizontalAlignment(JTextField.RIGHT);
+        tfClID.setEditable(false);
         ncPanel.add(tfClID, new GridBagConstraints(1, 1, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel surName = new JLabel("Client's Surname: ");
@@ -136,7 +137,6 @@ public class AddNewClientPanelUI {
         addNewClient.addActionListener(new AddClientControl(shop, this, shGUI, serv));
 
         return ncPanel;
-
     }
 
     public JTextField getTfSurName() {

@@ -1,9 +1,10 @@
 package datamanagers;
 
 import domain.Client;
+import domain.Order;
 import domain.Sale;
-import domain.waters.Tare;
-import domain.waters.Water;
+import domain.Visitor;
+import domain.waters.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,23 +14,33 @@ import java.util.List;
 /**
  * Created by prulov on 08.07.2016.
  */
+
 public class DB_Manager implements IDBInterface {
 
     //shop
     private List<Client> clts;
     private List<Sale> sales;
+    private List<Visitor> visitors;
+    private List<Order> orders;
     //stock
     private List<Water> waters;
+    private List<Product> products;
 
 
     public DB_Manager(){
 
         this.waters = new ArrayList<Water>();
         waters = initStock();
+        this.products = new ArrayList<>();
+        products = getProducts();
         this.clts = new ArrayList<Client>();
         clts = initClientsBase();
         this.sales = new LinkedList<Sale>();
         sales = initSalesJournal();
+        this.visitors = new ArrayList<>();
+        visitors = initVisitorsBase();
+        this.orders = new LinkedList<>();
+        orders = initOrdersJournal();
     }
 
     @Override
@@ -45,6 +56,16 @@ public class DB_Manager implements IDBInterface {
     @Override
     public List<Water> getWaters() {
         return new ArrayList<Water>(waters);
+    }
+
+    @Override
+    public List<Visitor> getVisitors() {
+        return new ArrayList<Visitor>(visitors);
+    }
+
+    @Override
+    public List<Order> getOrders() {
+        return new LinkedList<Order>(orders);
     }
 
     public List<Water> initStock() {
@@ -209,15 +230,61 @@ public class DB_Manager implements IDBInterface {
     }
 
     @Override
+    public List<Visitor> initVisitorsBase() {
+        visitors.add(new Visitor(1, "Zima", "Ltd.", "+38(044)5210070", "12, Winter Str., Kyiv", "feedback@zima.office.com.ua"));
+        visitors.add(new Visitor(2, "Leto", "Ltd.", "+38(044)2213217", "3A, Nyzhny Val Str., Kyiv", "feedback@leto.office.com.ua"));
+        visitors.add(new Visitor(3, "Vesna", "Ltd.", "+38(044)6225014", "fl. 65, 13, Leporskogo Str., Kyiv", "feedback@vesna.office.com.ua"));
+        visitors.add(new Visitor(4, "Osen", "Ltd.", "+38(044)23807037", "49, Heroiv Dnipra Str., Kyiv", "feedback@osen.office.com.ua"));
+        return visitors;
+    }
+
+    @Override
+    public List<Order> initOrdersJournal() {
+
+        waters.get(61).setCount(5);
+        Order first = new Order(1,
+                "19.08.2016",
+                OrderStatus.RECIEVED,
+                PaymentTermsType.PREPAID,
+                waters.get(61),
+                4,
+                visitors.get(3));
+        orders.add(first);
+        return orders;
+    }
+
+    @Override
+    public List<Product> getProducts() {
+        List<Product> products = new ArrayList<>();
+        for(Water water : getWaters()){
+            products.add((Product) water);
+        }
+        return products;
+    }
+
+
+    @Override
     public List<Sale> updateSales(Sale sale){
         sales.add(sale);
         return sales;
     }
 
     @Override
+    public List<Order> updateOrders(Order order) {
+        orders.add(order);
+        return orders;
+    }
+
+    @Override
     public List<Client> updateClientBase(Client client){
         clts.add(client);
         return clts;
+    }
+
+    @Override
+    public List<Visitor> updateVisitorsBase(Visitor visitor) {
+        visitors.add(visitor);
+        return visitors;
     }
 
     @Override

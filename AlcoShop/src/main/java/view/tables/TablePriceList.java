@@ -73,7 +73,7 @@ public class TablePriceList {
                     water.getTare(),
                     water.getVolume(),
                     water.getQuant(),
-                    water.getPrice().setScale(2, BigDecimal.ROUND_HALF_UP).toString()
+                    water.getPrice()
             };
             i++;
         }

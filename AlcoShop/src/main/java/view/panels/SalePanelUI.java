@@ -31,7 +31,7 @@ public class SalePanelUI {
     private JPanel salePanel;
 
     // data
-    private List<Water> goods = new ArrayList<Water>();
+    private List<Water> goods = new ArrayList<>();
 
     //control fields
     private JTextField tfDate;
@@ -102,7 +102,6 @@ public class SalePanelUI {
         tfBID.setForeground(Color.BLACK);
         tfBID.setColumns(12);
         tfBID.setHorizontalAlignment(JTextField.RIGHT);
-        //tfBID.setValue(shop.getClts().size() + 1);
         tfBID.setValue(shop.getIdbI().getClts().size() + 1);
         salePanel.add(tfBID, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
@@ -112,6 +111,7 @@ public class SalePanelUI {
         salePanel.add(choose, new GridBagConstraints(0, 4, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         combo = new JComboBox(new MyComboBoxModel(goods));
+
         combo.setFont(new Font("Garamond", Font.BOLD, 20));
         combo.setForeground(Color.BLACK);
         salePanel.add(combo, new GridBagConstraints(1, 4, 10, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));

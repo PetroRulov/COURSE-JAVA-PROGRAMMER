@@ -4,8 +4,10 @@ import bl.Shop;
 import domain.Sale;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import java.awt.*;
 import java.math.BigDecimal;
 
 public class TableOfSales extends DefaultTableModel {
@@ -18,12 +20,11 @@ public class TableOfSales extends DefaultTableModel {
         this.shop = shop;
         this.table = createSalesTable();
         table.setFillsViewportHeight(true);
-
     }
 
     public JTable createSalesTable(){
 
-        int columns = 13;
+        int columns = 15;
         Object[] colNames = fillColumns();
         Object[][] data = fillData();
 
@@ -38,6 +39,27 @@ public class TableOfSales extends DefaultTableModel {
                 column.setPreferredWidth(90);
             }else if(i == 7) {
                 column.setPreferredWidth(210);
+            }else if(i==12){
+                column.setCellRenderer(new DefaultTableCellRenderer() {
+                    public JComponent getTableCellRendererComponent(JTable table, Object value,
+                          boolean isSelected, boolean hasFocus, int row, int col) {
+                                JLabel label =
+                                        (JLabel) super.getTableCellRendererComponent(table, value,
+                                                isSelected, hasFocus, row, col);
+
+                                label.setHorizontalAlignment(JLabel.RIGHT);
+                                if (((BigDecimal)value).compareTo(new BigDecimal("475")) == 0 ||
+                                        ((BigDecimal)value).compareTo(new BigDecimal("475")) == 1) {
+                                    label.setBackground(Color.YELLOW);
+                                    label.setForeground(Color.BLUE);
+                                    label.setFont(new Font("Garamond", Font.BOLD, 16));
+                                } else {
+                                    label.setBackground(Color.WHITE);
+                                    label.setForeground(Color.BLACK);
+                                }
+                                return label;
+                            }
+                        });
             } else {
                 column.setPreferredWidth(120);
             }
@@ -47,10 +69,10 @@ public class TableOfSales extends DefaultTableModel {
 
     private Object[] fillColumns(){
 
-        int columns = 13;
+        int columns = 15;
         String[] heads = new String[]{
-                "#", "Date", "BuyerID", "Buyer's surname", "Buyer's name", "DrinkID",  "Drink type", "Drink name", "Tare", "Volume, L", "Quantity",
-                "Price, UAH", "Income, UAH"};
+                "#", "Date", "BuyerID", "Buyer's surname", "Buyer's name", "DrinkID",  "Drink type", "Drink name",
+                "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH", "Way of sale", "Order's ID"};
         Object[] colNames = new Object[heads.length];
         for(int i = 0; i < columns; i++){
             colNames[i] = heads[i];
@@ -58,10 +80,9 @@ public class TableOfSales extends DefaultTableModel {
         return colNames;
     }
 
-
     private Object[][] fillData(){
 
-        int columns = 12;
+        int columns = 15;
         Object[][] data = new Object[shop.getIdbI().getSales().size()][columns];
         int j = 1, i = 0;
 
@@ -78,13 +99,14 @@ public class TableOfSales extends DefaultTableModel {
                     sale.getWat().getTare(),
                     sale.getWat().getVolume(),
                     sale.getQuant(),
-                    sale.getWat().getPrice().setScale(2, BigDecimal.ROUND_HALF_UP).toString(),
-                    sale.getIncome().setScale(2, BigDecimal.ROUND_HALF_UP).toString()
+                    sale.getWat().getPrice(),
+                    sale.getIncome(),
+                    sale.getWos(),
+                    sale.getOrderID()
             };
             i++;
         }
         return data;
     }
-
 }
 

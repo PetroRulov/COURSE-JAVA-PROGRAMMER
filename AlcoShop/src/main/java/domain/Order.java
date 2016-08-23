@@ -1,13 +1,11 @@
 package domain;
 
-import domain.waters.Delivery;
 import domain.waters.OrderStatus;
-import domain.waters.OrderType;
+import domain.waters.PaymentTermsType;
 import domain.waters.Water;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,27 +18,25 @@ public class Order implements Serializable {
     private long id_order;
     private String date = dateFormat(new Date(System.currentTimeMillis()));
     private OrderStatus oSt;
-    private OrderType oT;
+    private PaymentTermsType payTT;
     private Water water;
     private int quantity;
-    private Client client;
-    private Delivery delivery;
+    private Visitor client;
     private BigDecimal income;
+
 
     public Order(){}
 
-    public Order(long id_order, String date, OrderStatus oSt, OrderType oT, Water water, int quantity, Client client,
-                 Delivery delivery, BigDecimal income){
+    public Order(long id_order, String date, OrderStatus oSt, PaymentTermsType payTT, Water water,
+                 int quantity, Visitor client){
         this.id_order = id_order;
         this.date = date;
         this.oSt = oSt;
-        this.oT = oT;
+        this.payTT = payTT;
         this.water = water;
         this.quantity = quantity;
         this.client = client;
-        this.delivery = delivery;
-        this.income = calcIncome();
-
+        this.income = calcIncome(water.getCount());
     }
 
     private String dateFormat(Date d){
@@ -49,10 +45,9 @@ public class Order implements Serializable {
         return df.format(d);
     }
 
-    public BigDecimal calcIncome(){
+    public BigDecimal calcIncome(int count){
 
-        MathContext mc = new MathContext(4);
-        BigDecimal inCome = this.water.getPrice().multiply(new BigDecimal(getQuantity()));
+        BigDecimal inCome = this.water.getPrice().multiply(new BigDecimal(count));
 
         if(inCome.compareTo(new BigDecimal("500")) == -1){
             income = inCome;
@@ -62,7 +57,7 @@ public class Order implements Serializable {
         }else{
             income = inCome.multiply(new BigDecimal(0.9)) ;
         }
-        return income;
+        return income.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
     public long getId_order() {
@@ -89,12 +84,12 @@ public class Order implements Serializable {
         this.oSt = oSt;
     }
 
-    public OrderType getoT() {
-        return oT;
+    public PaymentTermsType getPayTT() {
+        return payTT;
     }
 
-    public void setoT(OrderType oT) {
-        this.oT = oT;
+    public void setPayTT(PaymentTermsType payTT) {
+        this.payTT = payTT;
     }
 
     public Water getWater() {
@@ -113,20 +108,12 @@ public class Order implements Serializable {
         this.quantity = quantity;
     }
 
-    public Client getClient() {
+    public Visitor getClient() {
         return client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(Visitor client) {
         this.client = client;
-    }
-
-    public Delivery getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(Delivery delivery) {
-        this.delivery = delivery;
     }
 
     public BigDecimal getIncome() {

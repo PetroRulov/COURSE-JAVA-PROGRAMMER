@@ -2,6 +2,7 @@ package view;
 
 import bl.Shop;
 import control.AddClientControl;
+import control.AddVisitorControl;
 import control.SaleControl;
 import util.Service;
 import view.panels.*;
@@ -26,11 +27,15 @@ public class ShopUI {
     // different panels and tables
     private HeadPanel hp;
     private SalePanelUI spUI;
+    private OrderPanelUI ordpUI;
     private AddNewClientPanelUI anclPUI;
+    private AddNewVisitorPanelUI anvsPUI;
     private SetAdjustedPeriodPanelUI perPUI;
     private SetAdjustedBuyerPanelUI buyerPUI;
     private TableOfSales tsUI;
+    private TableOfOrders toUI;
     private TableClient tclUI;
+    private TableVisitors tvsUI;
     private TablePriceList tPL;
     private AdjustedByDateTableOfSales tSabyDate;
     private AdjusyedByBuyerTableOfSales tSbyBuyer;
@@ -41,11 +46,15 @@ public class ShopUI {
         this.serv = new Service(shop);
         this.hp = new HeadPanel(shop);
         this.spUI = new SalePanelUI(shop, serv);
+        this.ordpUI = new OrderPanelUI(shop, serv);
         this.anclPUI = new AddNewClientPanelUI(shop, serv);
+        this.anvsPUI = new AddNewVisitorPanelUI(shop, serv);
         this.perPUI = new SetAdjustedPeriodPanelUI(shop, serv, this);
         this.buyerPUI = new SetAdjustedBuyerPanelUI(shop, serv, this);
         this.tsUI = new TableOfSales(shop);
+        this.toUI = new TableOfOrders(shop);
         this.tclUI = new TableClient(shop);
+        this.tvsUI = new TableVisitors(shop);
         this.tPL = new TablePriceList(shop);
         this.tSabyDate = new AdjustedByDateTableOfSales(shop, perPUI);
         this.tSbyBuyer = new AdjusyedByBuyerTableOfSales(shop, buyerPUI);
@@ -154,6 +163,34 @@ public class ShopUI {
             }
         });
 
+        JMenuItem orders = new JMenuItem("All Orders Journal");
+        orders.setFont(fant);
+        orders.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_6, ActionEvent.ALT_MASK));
+        tables.add(orders);
+        tables.addSeparator();
+
+        orders.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ordersJournalShow();
+            }
+        });
+
+        JMenuItem visitors = new JMenuItem("Visitors");
+        visitors.setFont(fant);
+        visitors.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_7, ActionEvent.ALT_MASK));
+        tables.add(visitors);
+        tables.addSeparator();
+
+        visitors.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                visitorsTableShow();
+            }
+        });
+
         JMenu buyMenu = new JMenu("NEW SALE");
         buyMenu.setFont(font);
         fileMenu.add(buyMenu);
@@ -168,19 +205,52 @@ public class ShopUI {
             }
         });
 
-        JMenu addClient = new JMenu("ADD NEW CLIENT");
-        addClient.setFont(font);
-        fileMenu.add(addClient);
+        JMenu orderMenu = new JMenu("NEW ORDER");
+        orderMenu.setFont(font);
+        fileMenu.add(orderMenu);
         fileMenu.addSeparator();
 
-        addClient.addMouseListener(new MouseAdapter(){
+        orderMenu.addMouseListener(new MouseAdapter(){
 
             @Override
             public void mouseClicked(MouseEvent e) {
 
+                showOrderGUI();
+            }
+        });
+
+        JMenu addCustomers = new JMenu("ADD NEW CUSTOMERS");
+        addCustomers.setFont(font);
+        fileMenu.add(addCustomers);
+        fileMenu.addSeparator();
+
+        JMenuItem addClient = new JMenuItem("Add new Client");
+        addClient.setFont(fant);
+        addCustomers.add(addClient);
+        addCustomers.addSeparator();
+
+        addClient.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
                 showAddingNewClientGUI();
             }
         });
+
+        JMenuItem addVisitor = new JMenuItem("Add new Visitor");
+        addVisitor.setFont(fant);
+        addCustomers.add(addVisitor);
+        addCustomers.addSeparator();
+
+        addVisitor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                showAddingNewVisitorGUI();
+            }
+        });
+
+
 
         JMenuItem exitItem = new JMenuItem("Exit");
         exitItem.setFont(font);
@@ -207,7 +277,17 @@ public class ShopUI {
         getFrame().getContentPane().add(scrollPane);
         getFrame().pack();
         getFrame().repaint();
+    }
 
+    public void ordersJournalShow(){
+
+        getFrame().getContentPane().removeAll();
+        JTable table = toUI.createOrdersTable();
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        getFrame().getContentPane().add(scrollPane);
+        getFrame().pack();
+        getFrame().repaint();
     }
 
     public void clientsTableShow(){
@@ -219,7 +299,17 @@ public class ShopUI {
         getFrame().getContentPane().add(scrollPane);
         getFrame().pack();
         getFrame().repaint();
+    }
 
+    public void visitorsTableShow(){
+
+        getFrame().getContentPane().removeAll();
+        JTable table = tvsUI.createVisitorsTable();
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+        getFrame().getContentPane().add(scrollPane);
+        getFrame().pack();
+        getFrame().repaint();
     }
 
     public void priceListShow(){
@@ -245,12 +335,32 @@ public class ShopUI {
         getFrame().repaint();
     }
 
+    private void showOrderGUI(){
+
+        getFrame().getContentPane().removeAll();
+        panel = ordpUI.createOrderPanel();
+        getFrame().getContentPane().add(panel);
+        getFrame().pack();
+        getFrame().repaint();
+    }
+
     private void showAddingNewClientGUI(){
 
         getFrame().getContentPane().removeAll();
         panel = anclPUI.createAddNewClientPanel();
         getFrame().getContentPane().add(panel);
         Observer obs = new AddClientControl(shop, anclPUI, this, serv);
+        shop.addObserver(obs);
+        getFrame().pack();
+        getFrame().repaint();
+    }
+
+    private void showAddingNewVisitorGUI(){
+
+        getFrame().getContentPane().removeAll();
+        panel = anvsPUI.createAddNewVisitorPanel();
+        getFrame().getContentPane().add(panel);
+        Observer obs = new AddVisitorControl(shop, anvsPUI, this, serv);
         shop.addObserver(obs);
         getFrame().pack();
         getFrame().repaint();

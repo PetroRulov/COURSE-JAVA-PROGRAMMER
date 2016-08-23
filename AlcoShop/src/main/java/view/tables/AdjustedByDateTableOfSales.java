@@ -30,7 +30,7 @@ public class AdjustedByDateTableOfSales {
 
     public JTable createAdjustedByDateSalesTable(String initDate, String endDate) {
 
-        int columns = 13;
+        int columns = 15;
         Object[] colNames = fillColumns();
         Object[][] data = fillData(initDate, endDate);
 
@@ -54,10 +54,10 @@ public class AdjustedByDateTableOfSales {
 
     private Object[] fillColumns(){
 
-        int columns = 13;
+        int columns = 15;
         String[] heads = new String[]{
                 "#", "Date", "BuyerID", "Buyer's surname", "Buyer's name", "DrinkID",  "Drink type", "Drink name", "Tare", "Volume, L", "Quantity",
-                "Price, UAH", "Income, UAH"};
+                "Price, UAH", "Income, UAH", "Way of sale", "Order's ID"};
         Object[] colNames = new Object[heads.length];
         for(int i = 0; i < columns; i++){
             colNames[i] = heads[i];
@@ -68,7 +68,7 @@ public class AdjustedByDateTableOfSales {
 
     private Object[][] fillData(String initDate, String endDate){
 
-        int columns = 12;
+        int columns = 15;
         Object[][] data = new Object[returnSalesByDateList(initDate, endDate).size()][columns];
         int j = 1, i = 0;
 
@@ -85,8 +85,10 @@ public class AdjustedByDateTableOfSales {
                     sale.getWat().getTare(),
                     sale.getWat().getVolume(),
                     sale.getQuant(),
-                    sale.getWat().getPrice().setScale(2, BigDecimal.ROUND_HALF_UP).toString(),
-                    sale.getIncome().setScale(2, BigDecimal.ROUND_HALF_UP).toString()
+                    sale.getWat().getPrice(),
+                    sale.getIncome(),
+                    sale.getWos(),
+                    sale.getOrderID()
             };
             i++;
         }
