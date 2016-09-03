@@ -3,6 +3,7 @@ package view;
 import bl.Shop;
 import control.AddClientControl;
 import control.AddVisitorControl;
+import control.OrderControl;
 import control.SaleControl;
 import util.Service;
 import view.panels.*;
@@ -108,7 +109,7 @@ public class ShopUI {
             }
         });
 
-        JMenuItem salesTable = new JMenuItem("All Sales History Table");
+        JMenuItem salesTable = new JMenuItem("Sales History");
         salesTable.setFont(fant);
         salesTable.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_2, ActionEvent.ALT_MASK));
         tables.add(salesTable);
@@ -163,7 +164,7 @@ public class ShopUI {
             }
         });
 
-        JMenuItem orders = new JMenuItem("All Orders Journal");
+        JMenuItem orders = new JMenuItem("Orders Journal");
         orders.setFont(fant);
         orders.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_6, ActionEvent.ALT_MASK));
         tables.add(orders);
@@ -340,6 +341,8 @@ public class ShopUI {
         getFrame().getContentPane().removeAll();
         panel = ordpUI.createOrderPanel();
         getFrame().getContentPane().add(panel);
+        Observer obs = new OrderControl(shop, ordpUI, this, serv);
+        shop.addObserver(obs);
         getFrame().pack();
         getFrame().repaint();
     }

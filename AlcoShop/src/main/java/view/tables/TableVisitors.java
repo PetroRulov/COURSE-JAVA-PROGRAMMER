@@ -20,7 +20,7 @@ public class TableVisitors extends DefaultTableModel {
     }
     public JTable createVisitorsTable() {
 
-        int columns = 7;
+        int columns = 8;
         Object[] colNames = fillColumns();
         Object[][] data = fillData();
 
@@ -29,11 +29,11 @@ public class TableVisitors extends DefaultTableModel {
         TableColumn column = null;
         for(int i = 0; i < columns; i++){
             column = tVisitors.getColumnModel().getColumn(i);
-            if(i == 0 || i == 1 || i==3) {
+            if(i == 0 || i == 1 || i==4) {
                 column.setPreferredWidth(45);
-            }else if(i == 2){
-                column.setPreferredWidth(240);
             }else if(i == 3){
+                column.setPreferredWidth(240);
+            }else if(i == 4){
                 column.setPreferredWidth(180);
             }else{
                 column.setPreferredWidth(150);
@@ -44,9 +44,9 @@ public class TableVisitors extends DefaultTableModel {
 
     private Object[] fillColumns(){
 
-        int columns = 7;
+        int columns = 8;
         String[] heads = new String[]{
-                "#", "ID", "SurName", "Name", "Tel/fax", "Address",  "E-mail"};
+                "#", "ID", "Identify #", "SurName", "Name", "Tel/fax", "Address",  "E-mail"};
         Object[] colNames = new Object[heads.length];
         for(int i = 0; i < columns; i++){
             colNames[i] = heads[i];
@@ -56,7 +56,7 @@ public class TableVisitors extends DefaultTableModel {
 
     private Object[][] fillData(){
 
-        int columns = 7;
+        int columns = 8;
         Object[][] data = new Object[shop.getIdbI().getVisitors().size()][columns];
         int j = 1, i = 0;
 
@@ -64,6 +64,7 @@ public class TableVisitors extends DefaultTableModel {
             data[i] = new Object[]{
                     j++,
                     visitor.getId_code(),
+                    visitor.getIdentify(),
                     visitor.getSurName(),
                     visitor.getName(),
                     visitor.getTelfax(),

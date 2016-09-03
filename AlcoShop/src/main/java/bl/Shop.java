@@ -135,6 +135,8 @@ public class Shop extends Observable {
 
     public void addNewOrderInJournal(Order order){
         orders = idbI.updateOrders(order);
+        setChanged();
+        notifyObservers(order);
         setOrders(orders);
     }
 }

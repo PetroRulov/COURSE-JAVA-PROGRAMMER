@@ -15,8 +15,8 @@ public class MySQL_Main {
 
         DB_MySQL_Worker mySQLWorker = new DB_MySQL_Worker();
 
-        String clientsQuery = "select * from clients where id_client > 5";
-        
+        String clientsQuery = "select * from clients where id_client < 3";
+
         try {
             Statement statement = mySQLWorker.getConnection().createStatement();
             ResultSet resultSet = statement.executeQuery(clientsQuery);
@@ -28,12 +28,9 @@ public class MySQL_Main {
                 sql.setName(resultSet.getString(3));
                 sql.setDateOfBirth(resultSet.getString(4));
                 sql.setSex(resultSet.getString(5));
-                sql.seteMail(resultSet.getString("email"));
+                sql.seteMail(resultSet.getString("eMail"));
                 System.out.println(sql);
-
-
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

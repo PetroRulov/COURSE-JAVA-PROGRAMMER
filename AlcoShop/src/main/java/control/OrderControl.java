@@ -2,6 +2,7 @@ package control;
 
 import bl.Shop;
 import domain.Order;
+import domain.Sale;
 import domain.Visitor;
 import domain.waters.*;
 import util.Service;
@@ -12,8 +13,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
+import java.util.Observable;
+import java.util.Observer;
 
-public class OrderControl implements ActionListener {
+public class OrderControl implements ActionListener, Observer {
 
     private Shop shop;
     private Service serv;
@@ -29,6 +32,16 @@ public class OrderControl implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        BigDecimal prepmnt = null;
+        if(isDigit(opUI.getPrepayment())){
+            prepmnt = new BigDecimal(opUI.getPrepayment());
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct amount of prepayment and try again!",
+                    "Error message", JOptionPane.PLAIN_MESSAGE);
+            return;
+        }
+
         Visitor guest = null;
         if(visitorIsPresent()){
             guest = setTransactionVisitor();
@@ -50,10 +63,11 @@ public class OrderControl implements ActionListener {
             if(wat.getQuant() >= count){
                 shop.getIdbI().soldWaterMinus(wat, count);
                 JOptionPane.showConfirmDialog(null, "Order execution is possible!", "Order's execution possibility", JOptionPane.PLAIN_MESSAGE);
-                Order neo = new Order(id, date, ordSt, pTT, wat, count, guest);
+                Order neo = new Order(id, date, ordSt, pTT, prepmnt, wat, count, guest);
                 BigDecimal income = neo.calcIncome(count);
                 neo.setIncome(income);
                 shop.addNewOrderInJournal(neo);
+
 
             }else{
                 JOptionPane.showConfirmDialog(null, "Order execution is NOT possible! \n Please, try again with new quantity of item",
@@ -81,5 +95,32 @@ public class OrderControl implements ActionListener {
             }
         }
         return false;
+    }
+
+    private boolean isDigit(String s) throws NumberFormatException {
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    /**
+     * This method is called whenever the observed object is changed. An
+     * application calls an <tt>Observable</tt> object's
+     * <code>notifyObservers</code> method to have all the object's
+     * observers notified of the change.
+     *
+     * @param o   the observable object.
+     * @param arg an argument passed to the <code>notifyObservers</code>
+     */
+    @Override
+    public void update(Observable o, Object arg) {
+        if (arg instanceof Order) {
+            shGUI.ordersJournalShow();
+        }else{
+            System.out.println(this.toString() + " notified.");
+        }
     }
 }

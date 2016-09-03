@@ -3,6 +3,7 @@ package view.tables;
 import bl.Shop;
 import domain.Order;
 import domain.waters.OrderStatus;
+import domain.waters.PaymentTermsType;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -20,7 +21,7 @@ public class TableOfOrders {
 
     public TableOfOrders(Shop shop){
         this.shop = shop;
-        this.columns = 19;
+        this.columns = 20;
         this.table = createOrdersTable();
         table.setFillsViewportHeight(true);
     }
@@ -32,15 +33,19 @@ public class TableOfOrders {
         JTable tabOrders = new JTable(data, colNames);
         tabOrders.setAutoCreateRowSorter(false);
         TableColumn column = null;
-        for(int i = 0; i < columns; i++){
+        for(int i = 0; i < columns; i++) {
             column = tabOrders.getColumnModel().getColumn(i);
-            if(i == 0 || i==1 || i == 5 || i==11 || i==16) {
-                column.setPreferredWidth(45);
-            }else if(i == 7){
+            if (i == 0 || i == 1 || i == 6 || i == 12 || i == 16 || i == 17) {
+                column.setPreferredWidth(27);
+            }else if(i == 6){
+                column.setPreferredWidth(36);
+            }else if(i==5 || i==8 || i==13 || i==15 || i==18){
+                column.setPreferredWidth(60);
+            }else if(i == 2 || i == 7){
                 column.setPreferredWidth(90);
-            }else if(i == 6) {
-                column.setPreferredWidth(210);
-            }else if(i==3){
+            }else if(i == 9 || i == 10 || i == 11 || i == 14) {
+                column.setPreferredWidth(120);
+            }else if(i == 3){
                 column.setCellRenderer(new DefaultTableCellRenderer() {
                     public JComponent getTableCellRendererComponent(JTable table, Object value,
                         boolean isSelected, boolean hasFocus, int row, int col) {
@@ -50,7 +55,11 @@ public class TableOfOrders {
 
                         label.setHorizontalAlignment(JLabel.RIGHT);
                         if (value.equals(OrderStatus.COMPLETED)) {
-                            label.setBackground(Color.YELLOW);
+                            label.setBackground(Color.GREEN);
+                            label.setForeground(Color.BLACK);
+                            label.setFont(new Font("Garamond", Font.BOLD, 16));
+                        } else if(value.equals(OrderStatus.SHIPPED)){
+                            label.setBackground(Color.RED);
                             label.setForeground(Color.BLUE);
                             label.setFont(new Font("Garamond", Font.BOLD, 16));
                         } else {
@@ -60,7 +69,7 @@ public class TableOfOrders {
                         return label;
                     }
                 });
-            }else if(i==18){
+            }else if(i == 4){
                 column.setPreferredWidth(180);
                 column.setCellRenderer(new DefaultTableCellRenderer() {
                     public JComponent getTableCellRendererComponent(JTable table, Object value,
@@ -70,8 +79,11 @@ public class TableOfOrders {
                                         isSelected, hasFocus, row, col);
 
                         label.setHorizontalAlignment(JLabel.RIGHT);
-                        if (((BigDecimal)value).compareTo(new BigDecimal("475")) == 0 ||
-                                ((BigDecimal)value).compareTo(new BigDecimal("475")) == 1) {
+                        if (value.equals(PaymentTermsType.UNPAID)) {
+                            label.setBackground(Color.RED);
+                            label.setForeground(Color.WHITE);
+                            label.setFont(new Font("Garamond", Font.BOLD, 16));
+                        } else if(value.equals(PaymentTermsType.PREPAID)){
                             label.setBackground(Color.YELLOW);
                             label.setForeground(Color.BLUE);
                             label.setFont(new Font("Garamond", Font.BOLD, 16));
@@ -82,16 +94,15 @@ public class TableOfOrders {
                         return label;
                     }
                 });
-            } else {
-                column.setPreferredWidth(120);
             }
         }
+        tabOrders.setGridColor(Color.GREEN);
         return tabOrders;
     }
 
     private Object[] fillColumns() {
         String[] heads = new String[]{
-                "#", "ID", "Date", "Order's status", "Payment terms",
+                "#", "ID", "Date", "Order's status", "Payment terms", "Prepayment",
                 "Visitor'sID", "Visitor's surname", "Visitor's name",
                 "Visitor's tel/fax", "Visitor's address", "Visitor's e-mail",
                 "DrinkID",  "Drink type", "Drink name", "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH"};
@@ -113,6 +124,7 @@ public class TableOfOrders {
                     order.getDate(),
                     order.getoSt(),
                     order.getPayTT(),
+                    order.getPrepayment(),
                     order.getClient().getId_code(),
                     order.getClient().getSurName(),
                     order.getClient().getName(),

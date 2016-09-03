@@ -28,6 +28,7 @@ public class AddNewVisitorPanelUI {
     private JTextField tfEmail;
 
     private JFormattedTextField tfVlID; // Visitor's ID for Client's Database
+    private JTextField tfIN;
 
     public AddNewVisitorPanelUI(Shop shop, Service serv){
         this.shop = shop;
@@ -67,10 +68,26 @@ public class AddNewVisitorPanelUI {
         tfVlID.setFont(new Font("Garamond", Font.ITALIC, 20));
         tfVlID.setForeground(Color.BLACK);
         tfVlID.setColumns(12);
-        tfVlID.setValue(shop.getIdbI().getVisitors().size() + 1);
+        //tfVlID.setValue(shop.getIdbI().getVisitors().size() + 1);
+        tfVlID.setValue(1);
         tfVlID.setHorizontalAlignment(JTextField.RIGHT);
         tfVlID.setEditable(false);
         nvPanel.add(tfVlID, new GridBagConstraints(1, 1, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JLabel ident = new JLabel("Identify #: ");
+        ident.setFont(new Font("Garamond", Font.ITALIC, 20));
+        ident.setForeground(Color.GREEN);
+        nvPanel.add(ident, new GridBagConstraints(4, 1, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfIN = new JTextField();
+        tfIN.setFont(new Font("Garamond", Font.ITALIC, 20));
+        tfIN.setForeground(Color.BLACK);
+        tfIN.setColumns(12);
+        tfIN.setText(String.valueOf(shop.getIdbI().getVisitors().size() + 1));
+        tfIN.setHorizontalAlignment(JTextField.RIGHT);
+        tfIN.setEditable(true);
+        nvPanel.add(tfIN, new GridBagConstraints(5, 1, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
 
         JLabel surName = new JLabel("Visitor's Surname: ");
         surName.setFont(new Font("Garamond", Font.ITALIC, 20));
@@ -191,5 +208,12 @@ public class AddNewVisitorPanelUI {
         return getTfVlID().getText();
     }
 
+    public JTextField getTfIN() {
+        return tfIN;
+    }
+
+    public String getIdentify(){
+        return getTfIN().getText();
+    }
 }
 

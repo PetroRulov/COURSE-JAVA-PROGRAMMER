@@ -1,5 +1,7 @@
 package com.alcoshop.database;
 
+
+
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
 import java.sql.Connection;
@@ -7,10 +9,10 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Created by prulov on 22.07.2016.
- */
+
 public class MainConTest {
+
+    //?useSSL=false
 
     private static final String URL = "jdbc:mysql://localhost:3306/alcoshop?useSSL=false";
     private static final String USERNAME = "root";

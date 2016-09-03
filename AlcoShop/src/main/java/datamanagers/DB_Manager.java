@@ -246,6 +246,7 @@ public class DB_Manager implements IDBInterface {
                 "19.08.2016",
                 OrderStatus.RECIEVED,
                 PaymentTermsType.PREPAID,
+                new BigDecimal(1000.00),
                 waters.get(61),
                 4,
                 visitors.get(3));

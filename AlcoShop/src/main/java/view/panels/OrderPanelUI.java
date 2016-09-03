@@ -48,10 +48,11 @@ public class OrderPanelUI {
     //control fields
     private JTextField tfDate;
 
-    private JFormattedTextField tfID;
-    private JFormattedTextField tfVID;
-    private JFormattedTextField tfQuant;
+    private JTextField tfID;
+    private JTextField tfVID;
+    private JTextField tfQuant;
     private JTextField tfOrderCost;
+    private JTextField tfPrePmnt;
 
     private JTextArea area;
 
@@ -91,7 +92,7 @@ public class OrderPanelUI {
 
         orderPanel.setBorder(titled);
 
-        NumberFormat nf = NumberFormat.getInstance();
+        //NumberFormat nf = NumberFormat.getInstance();
 
         URL imageURL = getClass().getClassLoader().getResource("orderNew.png");
         ImageIcon icon = new ImageIcon(imageURL);
@@ -112,12 +113,12 @@ public class OrderPanelUI {
         orderID.setForeground(Color.BLACK);
         orderPanel.add(orderID, new GridBagConstraints(0, 2, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        tfID = new JFormattedTextField(nf);
+        tfID = new JTextField();
         tfID.setFont(new Font("Garamond", Font.ITALIC, 20));
         tfID.setForeground(Color.BLACK);
         tfID.setColumns(12);
         tfID.setHorizontalAlignment(JTextField.RIGHT);
-        tfID.setValue(shop.getIdbI().getOrders().size() + 1);
+        tfID.setText(String.valueOf(shop.getIdbI().getOrders().size() + 1));
         tfID.setEditable(false);
         orderPanel.add(tfID, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
@@ -135,8 +136,21 @@ public class OrderPanelUI {
         tfOrderCost.setText("0.00");
         orderPanel.add(tfOrderCost, new GridBagConstraints(5, 2, 3, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
+        JLabel prePmnt = new JLabel("Amount of prepay");
+        prePmnt.setFont(new Font("Garamond", Font.BOLD, 20));
+        prePmnt.setForeground(Color.BLACK);
+        orderPanel.add(prePmnt, new GridBagConstraints(8, 2, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfPrePmnt = new JTextField();
+        tfPrePmnt.setFont(new Font("Garamond", Font.BOLD, 20));
+        tfPrePmnt.setForeground(Color.BLACK);
+        tfPrePmnt.setColumns(15);
+        tfPrePmnt.setHorizontalAlignment(JTextField.RIGHT);
+        tfPrePmnt.setEditable(true);
+        tfPrePmnt.setText("0.00");
+        orderPanel.add(tfPrePmnt, new GridBagConstraints(9, 2, 3, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
         JLabel date = new JLabel("Date (dd.MM.yyyy): ");
-        //date.setBackground(Color.YELLOW);
         date.setFont(new Font("Garamond", Font.BOLD, 20));
         date.setForeground(Color.BLACK);
         orderPanel.add(date, new GridBagConstraints(0, 3, 1, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
@@ -155,12 +169,12 @@ public class OrderPanelUI {
         visitorID.setForeground(Color.BLACK);
         orderPanel.add(visitorID, new GridBagConstraints(4, 3, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        tfVID = new JFormattedTextField(nf);
+        tfVID = new JTextField();
         tfVID.setFont(new Font("Garamond", Font.ITALIC, 20));
         tfVID.setForeground(Color.BLACK);
         tfVID.setColumns(12);
         tfVID.setHorizontalAlignment(JTextField.RIGHT);
-        tfVID.setValue(shop.getIdbI().getVisitors().size());
+        tfVID.setText(String.valueOf(shop.getIdbI().getVisitors().size()));
         orderPanel.add(tfVID, new GridBagConstraints(5, 3, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel orderStatus = new JLabel("Order's status:");
@@ -201,10 +215,10 @@ public class OrderPanelUI {
         quant.setForeground(Color.BLACK);
         orderPanel.add(quant, new GridBagConstraints(0, 6, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        tfQuant = new JFormattedTextField(nf);
+        tfQuant = new JTextField();
         tfQuant.setFont(new Font("Garamond", Font.BOLD, 20));
         tfQuant.setForeground(Color.BLACK);
-        tfQuant.setValue(1);
+        tfQuant.setText("1");
         tfQuant.setHorizontalAlignment(JTextField.RIGHT);
         orderPanel.add(tfQuant, new GridBagConstraints(1, 6, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
@@ -251,7 +265,7 @@ public class OrderPanelUI {
         return getTfDate().getText();
     }
 
-    public JFormattedTextField getTfID() {
+    public JTextField getTfID() {
         return tfID;
     }
 
@@ -259,12 +273,11 @@ public class OrderPanelUI {
         return getTfID().getText();
     }
 
-    public JFormattedTextField getTfVID() {
+    public JTextField getTfVID() {
         return tfVID;
     }
 
     public String getVisitorID(){
-
         return getTfVID().getText();
     }
 
@@ -292,9 +305,7 @@ public class OrderPanelUI {
         return (Water) getCombo().getSelectedItem();
     }
 
-    public JFormattedTextField getTfQuant() {
-        return tfQuant;
-    }
+    public JTextField getTfQuant(){return tfQuant;}
 
     public String getQuantity(){
         return getTfQuant().getText();
@@ -306,6 +317,14 @@ public class OrderPanelUI {
 
     public void setTextOrderValue(BigDecimal sum){
         getTfOrderCost().setText(String.valueOf(sum));
+    }
+
+    public JTextField getTfPrePmnt() {
+        return tfPrePmnt;
+    }
+
+    public String getPrepayment(){
+        return getTfPrePmnt().getText().trim();
     }
 
     public JTextArea getArea() {
@@ -324,16 +343,16 @@ public class OrderPanelUI {
 
     private List<OrderStatus> createStatusTypesList() {
         statusTypes = new ArrayList<>();
-        for(OrderStatus str : OrderStatus.values()){
-            statusTypes.add(str);
+        for(OrderStatus obj : OrderStatus.values()){
+            statusTypes.add(obj);
         }
         return statusTypes;
     }
 
     private List<PaymentTermsType> createPaymentTypeList() {
         paymentType = new ArrayList<>();
-        for(PaymentTermsType str : PaymentTermsType.values()){
-            paymentType.add(str);
+        for(PaymentTermsType obj : PaymentTermsType.values()){
+            paymentType.add(obj);
         }
         return paymentType;
     }

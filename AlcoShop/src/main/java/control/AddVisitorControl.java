@@ -38,6 +38,7 @@ public class AddVisitorControl implements ActionListener, Observer {
             JOptionPane.showConfirmDialog(null, "This Visitor is already present in the database \n Try again, please.", "Visitor's Database", JOptionPane.PLAIN_MESSAGE);
         }else if(visitorsDataAreCorrect() && !isPresent()){
             guest = setVisitor();
+            guest.setIdentify(anvPUI.getIdentify());
             shop.addNewVisitor(guest);
 
             JOptionPane.showConfirmDialog(null, "New Visitor was successfully added in the database!", "Visitor's Database", JOptionPane.PLAIN_MESSAGE);

@@ -19,6 +19,7 @@ public class Order implements Serializable {
     private String date = dateFormat(new Date(System.currentTimeMillis()));
     private OrderStatus oSt;
     private PaymentTermsType payTT;
+    private BigDecimal prepayment;
     private Water water;
     private int quantity;
     private Visitor client;
@@ -27,12 +28,13 @@ public class Order implements Serializable {
 
     public Order(){}
 
-    public Order(long id_order, String date, OrderStatus oSt, PaymentTermsType payTT, Water water,
-                 int quantity, Visitor client){
+    public Order(long id_order, String date, OrderStatus oSt, PaymentTermsType payTT, BigDecimal prepayment,
+                 Water water, int quantity, Visitor client){
         this.id_order = id_order;
         this.date = date;
         this.oSt = oSt;
         this.payTT = payTT;
+        this.prepayment = prepayment;
         this.water = water;
         this.quantity = quantity;
         this.client = client;
@@ -90,6 +92,14 @@ public class Order implements Serializable {
 
     public void setPayTT(PaymentTermsType payTT) {
         this.payTT = payTT;
+    }
+
+    public BigDecimal getPrepayment() {
+        return prepayment.setScale(2, BigDecimal.ROUND_HALF_UP);
+    }
+
+    public void setPrepayment(BigDecimal prepayment) {
+        this.prepayment = prepayment.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
     public Water getWater() {

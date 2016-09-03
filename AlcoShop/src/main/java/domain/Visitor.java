@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class Visitor implements Serializable {
 
     private long id_code;
+    private String identify;
     private String surName;
     private String name;
     private String telfax;
@@ -32,6 +33,14 @@ public class Visitor implements Serializable {
 
     public void setId_code(long id_code) {
         this.id_code = id_code;
+    }
+
+    public String getIdentify() {
+        return identify;
+    }
+
+    public void setIdentify(String identify) {
+        this.identify = identify;
     }
 
     public String getSurName() {
@@ -104,6 +113,7 @@ public class Visitor implements Serializable {
     public String toString() {
         return "Visitor{" +
                 "id_code=" + id_code +
+                ", identify=" + identify +
                 ", surName='" + surName + '\'' +
                 ", name='" + name + '\'' +
                 ", telfax='" + telfax + '\'' +

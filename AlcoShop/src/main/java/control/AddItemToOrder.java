@@ -37,6 +37,7 @@ public class AddItemToOrder implements ActionListener {
                 if (opUI.getSelectedWater().equals(list.get(i))) {
                     product = list.get(i);
                     product.setCount(Integer.parseInt(opUI.getQuantity()));
+
                 }
             }
             serv.addOrderItems(product);
@@ -50,7 +51,7 @@ public class AddItemToOrder implements ActionListener {
                 outcome = outcome.add(prod.getPrice().multiply(new BigDecimal(prod.getCount())));
             }
             opUI.setTextOrderValue(outcome);
-        }else if(Integer.parseInt(opUI.getQuantity()) <= 0){
+        }else{
             JOptionPane.showConfirmDialog(null, "Order is not formed! \n Please, select item and try again with new quantity",
                     "Order's execution possibility", JOptionPane.OK_CANCEL_OPTION);
             return;

@@ -4,9 +4,6 @@ import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
 import java.sql.*;
 
-/**
- * Created by prulov on 22.07.2016.
- */
 public class MainStatQuerry {
 
     private static final String URL = "jdbc:mysql://localhost:3306/alcoshop?useSSL=false";
@@ -26,29 +23,26 @@ public class MainStatQuerry {
                 Statement statement = connection.createStatement();
         ){
             System.out.println(connection.isClosed());
-//            statement.execute("insert into clients (surName, name, dateOfBirth, sex, email)" +
-//                    "values('Po', 'Edgar', '07/11/1877', 'male', 'interneta@eshyo.net')");
 
-//            statement.executeUpdate("update clients set surName = 'HoPo' where id_client = 14;");
+            String sql = "INSERT INTO clients(id_client, surName, name, dateOfBirth, sex, email) VALUES(1, 'Po', 'Edgar', '07/11/1877', 'male', 'interneta@eshyo.net');";
+            statement.execute(sql);
+            //statement.executeUpdate("update clients set surName = 'HoPo' where id_client = 1;");
 
 //            ResultSet result = statement.executeQuery("select * from clients");
 
-//            statement.addBatch("insert into clients (surName, name, dateOfBirth, sex, email)" +
-//                    "values('Lennon', 'John', '17/07/1957', 'male', 'jholen57@beathles.eng')");
-//            statement.addBatch("insert into clients (surName, name, dateOfBirth, sex, email)" +
-//                    "values('MacCarthney', 'Pol', '07/07/1957', 'male', 'polmac@beathles.eng')");
-//            statement.executeBatch();
+            statement.addBatch("insert into clients (id_client, surName, name, dateOfBirth, sex, email)" +
+                    "values(2, 'Lennon', 'John', '17/07/1957', 'male', 'jholen57@beathles.eng')");
+            statement.addBatch("insert into clients (id_client, surName, name, dateOfBirth, sex, email)" +
+                    "values(3, 'MacCarthney', 'Pol', '07/07/1957', 'male', 'polmac@beathles.eng')");
+            statement.executeBatch();
 //            statement.clearBatch();
 
 //            boolean connStatus = statement.isClosed();
 //            System.out.println(connStatus);
-//
+
 //            statement.getConnection();
-//
+
 //            statement.close();
-
-
-
 
         }catch (SQLException e) {
             e.printStackTrace();
