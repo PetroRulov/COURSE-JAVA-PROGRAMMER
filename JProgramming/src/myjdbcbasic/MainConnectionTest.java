@@ -1,4 +1,4 @@
-package com.alcoshop.database;
+package myjdbcbasic;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
@@ -7,7 +7,7 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MainConTest {
+public class MainConnectionTest {
 
     //?useSSL=false
 

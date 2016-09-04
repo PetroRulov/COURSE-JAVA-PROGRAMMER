@@ -259,6 +259,15 @@ public class MySQL_DB_Manager implements IDBInterface {
     @Override
     public List<Client> updateClientBase(Client client) {
         clts.add(client);
+        String sql = "INSERT INTO clients(id_client, surName, name, dateOfBirth, sex, email) VALUES(" +
+                client.getId_client()+", "+client.getSurName()+", " + client.getName()+", " +
+                client.getDateOfBirth()+", "+client.getSex()+", "+client.geteMail()+");";
+        try{
+            Statement statement = mySQLWorker.getConnection().createStatement();
+            statement.execute(sql);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         return clts;
     }
 

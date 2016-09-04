@@ -83,12 +83,20 @@ public class Shop extends Observable {
         return new ArrayList<Water>(waters);
     }
 
+    public void setWaters(List<Water> watersCatalog) {
+        this.waters = watersCatalog;
+    }
+
     public List<Product> getProducts(){
 
         for(Water water : getWaters()){
             products.add((Product) water);
         }
         return products;
+    }
+
+    public void setProducts(List<Product> productsList) {
+        this.products = productsList;
     }
 
     public List<Sale> getSales() {
@@ -99,8 +107,8 @@ public class Shop extends Observable {
         return new LinkedList<Sale>(sales);
     }
 
-    public void setSales(List<Sale> history) {
-        this.sales = history;
+    public void setSales(List<Sale> salesHistory) {
+        this.sales = salesHistory;
     }
 
     public List<Order> getOrders() {
@@ -121,12 +129,11 @@ public class Shop extends Observable {
         return new ArrayList<Visitor>(visitors);
     }
 
-    public void setVisitors(List<Visitor> visitors) {
-        this.visitors = visitors;
+    public void setVisitors(List<Visitor> visitorsBase) {
+        this.visitors = visitorsBase;
     }
 
     public void addSaleTransaction(Sale sale){
-
         sales = idbI.updateSales(sale);
         setChanged();
         notifyObservers(sale);
@@ -139,4 +146,6 @@ public class Shop extends Observable {
         notifyObservers(order);
         setOrders(orders);
     }
+
+
 }
