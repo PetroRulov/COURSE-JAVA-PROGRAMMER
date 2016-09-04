@@ -35,10 +35,10 @@ public class DB_Manager implements IDBInterface {
         products = getProducts();
         this.clts = new ArrayList<Client>();
         clts = initClientsBase();
-        this.sales = new LinkedList<Sale>();
-        sales = initSalesJournal();
         this.visitors = new ArrayList<>();
         visitors = initVisitorsBase();
+        this.sales = new LinkedList<Sale>();
+        sales = initSalesJournal();
         this.orders = new LinkedList<>();
         orders = initOrdersJournal();
     }

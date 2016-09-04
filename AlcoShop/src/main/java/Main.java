@@ -12,8 +12,8 @@ public class Main {
 
         Shop shop = new Shop();
 
-        shop.setDBManager(new DB_Manager());
-        //shop.setDBManager(new MySQL_DB_Manager());
+        //shop.setDBManager(new DB_Manager());
+        shop.setDBManager(new MySQL_DB_Manager());
 
         new ShopUI(shop);
     }

@@ -36,8 +36,11 @@ public class Sale implements Serializable {
         return id_sale;
     }
 
-    public BigDecimal calcIncome(){
+    public void setId_sale(long id_sale) {
+        this.id_sale = id_sale;
+    }
 
+    private BigDecimal calcIncome(){
         BigDecimal inCome = this.wat.getPrice().multiply(new BigDecimal(getQuant()));
 
         if(inCome.compareTo(new BigDecimal("500")) == -1){
@@ -51,8 +54,12 @@ public class Sale implements Serializable {
         return income.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
-    public void setId_sale(long id_sale) {
-        this.id_sale = id_sale;
+    public BigDecimal getIncome() {
+        return income;
+    }
+
+    public void setIncome(BigDecimal income) {
+        this.income = income;
     }
 
     public String getDate() {
@@ -85,14 +92,6 @@ public class Sale implements Serializable {
 
     public void setQuant(int quant) {
         this.quant = quant;
-    }
-
-    public BigDecimal getIncome() {
-        return income;
-    }
-
-    public void setIncome(BigDecimal income) {
-        this.income = income;
     }
 
     public WaysOfSale getWos() {
