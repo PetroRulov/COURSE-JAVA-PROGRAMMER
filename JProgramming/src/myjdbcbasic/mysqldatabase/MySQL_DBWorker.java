@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by prulov on 23.07.2016.
  */
-public class My_SQL_DBWorker {
+public class MySQL_DBWorker {
 
     private final String URL = "jdbc:mysql://localhost:3306/alcoshop?useSSL=false";
     private final String USERNAME = "root";
@@ -16,7 +16,7 @@ public class My_SQL_DBWorker {
     private Connection connection;
 
 
-    public My_SQL_DBWorker(){
+    public MySQL_DBWorker(){
         try{
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             System.out.println("DB \"alcoshop\" connection is successfully established!");

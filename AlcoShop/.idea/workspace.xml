@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5651413e-d908-491f-966d-1ee82e69c7b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JProgramming/.idea/libraries/mysql_connector_java_5_1_39.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/MainConnectionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/MainStatQuerry.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" afterPath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bl/Shop.java" afterPath="$PROJECT_DIR$/src/main/java/bl/Shop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/alcoshop/database/MainConTest.java" afterPath="$PROJECT_DIR$/src/main/java/com/alcoshop/database/MainConTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java" afterPath="$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/JProgramming.iml" afterPath="$PROJECT_DIR$/../JProgramming/JProgramming.iml" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -104,11 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DB_MySQL_Worker.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DB_MySQL_Worker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/DB_MySQL_Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="30" selection-start-line="2" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="187">
+              <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQL_Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="25" column="43" selection-start-line="2" selection-start-column="0" selection-end-line="38" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,52 +128,6 @@
               <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Water.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/domain/waters/Water.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#881#882#0" expanded="false" />
-                <element signature="e#912#913#0" expanded="false" />
-                <element signature="e#958#959#0" expanded="false" />
-                <element signature="e#998#999#0" expanded="false" />
-                <element signature="e#1030#1031#0" expanded="false" />
-                <element signature="e#1058#1059#0" expanded="false" />
-                <element signature="e#1100#1101#0" expanded="false" />
-                <element signature="e#1134#1135#0" expanded="false" />
-                <element signature="e#1165#1166#0" expanded="false" />
-                <element signature="e#1192#1193#0" expanded="false" />
-                <element signature="e#1232#1233#0" expanded="false" />
-                <element signature="e#1264#1265#0" expanded="false" />
-                <element signature="e#1293#1294#0" expanded="false" />
-                <element signature="e#1320#1321#0" expanded="false" />
-                <element signature="e#1358#1359#0" expanded="false" />
-                <element signature="e#1390#1391#0" expanded="false" />
-                <element signature="e#1423#1424#0" expanded="false" />
-                <element signature="e#1452#1453#0" expanded="false" />
-                <element signature="e#1496#1497#0" expanded="false" />
-                <element signature="e#1532#1533#0" expanded="false" />
-                <element signature="e#1561#1562#0" expanded="false" />
-                <element signature="e#1589#1590#0" expanded="false" />
-                <element signature="e#1628#1629#0" expanded="false" />
-                <element signature="e#1662#1663#0" expanded="false" />
-                <element signature="e#1698#1699#0" expanded="false" />
-                <element signature="e#1726#1727#0" expanded="false" />
-                <element signature="e#1772#1773#0" expanded="false" />
-                <element signature="e#1806#1807#0" expanded="false" />
-                <element signature="e#1940#1941#0" expanded="false" />
-                <element signature="e#1974#1975#0" expanded="false" />
-                <element signature="e#2003#2004#0" expanded="false" />
-                <element signature="e#2031#2032#0" expanded="false" />
-                <element signature="e#2070#2071#0" expanded="false" />
-                <element signature="e#2104#2105#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1250,7 +1209,7 @@
       <workItem from="1472986229605" duration="854000" />
       <workItem from="1472989514367" duration="5279000" />
       <workItem from="1472996548925" duration="1329000" />
-      <workItem from="1473006201899" duration="5824000" />
+      <workItem from="1473006201899" duration="6104000" />
     </task>
     <task id="LOCAL-00001" summary="with Maven">
       <created>1469181193820</created>
@@ -1305,7 +1264,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168574000" />
+    <option name="totallyTimeSpent" value="168854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
@@ -1462,13 +1421,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Clients.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="21" column="26" selection-start-line="19" selection-start-column="8" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/tables/TableOfSales.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -2043,8 +1995,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/DB_MySQL_Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" selection-start-line="2" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
+        <state relative-caret-position="187">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="43" selection-start-line="2" selection-start-column="0" selection-end-line="38" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

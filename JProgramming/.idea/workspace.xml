@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_39.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/MainConnectionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/MainStatQuerry.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/../AlcoShop/.idea/sqldialects.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../AlcoShop/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/bl/Shop.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/bl/Shop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/MainConTest.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/MainConTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/MySQL_DB_Manager.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/MySQL_DB_Manager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JProgramming.iml" afterPath="$PROJECT_DIR$/JProgramming.iml" />
     </list>
     <ignored path="JProgramming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,23 +32,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Launcher9.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson9/Launcher9.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FileSimpleList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson8/zconsolidation/listbasedonfile/FileSimpleList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#267#268#0" expanded="false" />
+                <element signature="e#320#321#0" expanded="false" />
+                <element signature="e#372#373#0" expanded="false" />
+                <element signature="e#407#408#0" expanded="false" />
+                <element signature="e#748#749#0" expanded="false" />
+                <element signature="e#786#787#0" expanded="false" />
+                <element signature="e#1099#1100#0" expanded="false" />
+                <element signature="e#1146#1147#0" expanded="false" />
+                <element signature="e#4452#4453#0" expanded="false" />
+                <element signature="e#4484#4485#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -98,8 +90,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="My_SQL_DBWorker.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java">
+      <file leaf-file-name="MySQL_DBWorker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
@@ -110,12 +102,27 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="MySQL_Launcher.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1473016882421" expanded="true" signature="358:399" ph="select * fro... clients" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Frame_5_3_2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson5/theme3/Frame_5_3_2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,7 +142,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
               <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,8 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lesson8/archivation/ZipLauncher.java" />
-        <option value="$PROJECT_DIR$/src/lesson8/archivation/UnZipExecutor.java" />
         <option value="$PROJECT_DIR$/src/lesson8/archivation/UnZipLauncher.java" />
         <option value="$PROJECT_DIR$/src/lesson8/archivation/ZipExecutor.java" />
         <option value="$PROJECT_DIR$/src/lesson8/archivation/UnZipped.java" />
@@ -225,6 +232,8 @@
         <option value="$PROJECT_DIR$/src/myjdbcbasic/MainConnectionTest.java" />
         <option value="$PROJECT_DIR$/src/myjdbcbasic/MainStatQuerry.java" />
         <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" />
+        <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java" />
+        <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java" />
       </list>
     </option>
   </component>
@@ -938,14 +947,7 @@
       <workItem from="1472138353770" duration="4000" />
       <workItem from="1472138377024" duration="19000" />
       <workItem from="1472467533119" duration="513000" />
-      <workItem from="1473015978369" duration="618000" />
-    </task>
-    <task id="LOCAL-00006" summary="lesson4 full">
-      <created>1462349613534</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1462349613534</updated>
+      <workItem from="1473015978369" duration="898000" />
     </task>
     <task id="LOCAL-00007" summary="frame 5_5_4 executed">
       <created>1462358833140</created>
@@ -1283,7 +1285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1469807772835</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="with DB samples">
+      <created>1473016634823</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1473016634823</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1319,7 +1328,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14708000" />
+    <option name="totallyTimeSpent" value="14988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -1366,7 +1375,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="frame_7_1_7 with Comparator" />
     <MESSAGE value="frame_7_2_2 ServiceRepository" />
     <MESSAGE value="frame_7_2_2 ServDepo" />
     <MESSAGE value="new frame_7_2_2 ServDepo" />
@@ -1391,7 +1399,8 @@
     <MESSAGE value="frame_8_3_5 utilite to zip file" />
     <MESSAGE value="frame_8_3_5 utilite to zip dir with files and to unzip it" />
     <MESSAGE value="frame_8_4_1 upload code of any site-page using URL and URLConnection" />
-    <option name="LAST_COMMIT_MESSAGE" value="frame_8_4_1 upload code of any site-page using URL and URLConnection" />
+    <MESSAGE value="with DB samples" />
+    <option name="LAST_COMMIT_MESSAGE" value="with DB samples" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1404,13 +1413,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/files/printdata/PrintData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-123">
@@ -1678,7 +1680,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1706,7 +1710,16 @@
         <state relative-caret-position="119">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#267#268#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+            <element signature="e#372#373#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#748#749#0" expanded="false" />
+            <element signature="e#786#787#0" expanded="false" />
+            <element signature="e#1099#1100#0" expanded="false" />
+            <element signature="e#1146#1147#0" expanded="false" />
+            <element signature="e#4452#4453#0" expanded="false" />
+            <element signature="e#4484#4485#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1715,7 +1728,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1750,12 +1765,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java">
+    <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1473016882421" expanded="true" signature="358:399" ph="select * fro... clients" />
           </folding>
         </state>
       </provider>
