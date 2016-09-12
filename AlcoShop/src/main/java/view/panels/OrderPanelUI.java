@@ -2,16 +2,17 @@ package view.panels;
 
 import bl.Shop;
 import control.AddItemToOrder;
+import control.DisplayVisitor;
 import control.OrderControl;
 import control.RemoveLastItemFromOrder;
 import domain.waters.OrderStatus;
 import domain.waters.PaymentTermsType;
+import domain.waters.Product;
 import domain.waters.Water;
 import util.Service;
 import view.MyComboBoxModel;
 import view.ObjectComboBoxModel;
 import view.ShopUI;
-import view.StringComboBoxModel;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -20,7 +21,6 @@ import java.awt.*;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.text.DateFormat;
-import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,7 +41,7 @@ public class OrderPanelUI {
     private JPanel orderPanel;
 
     // data
-    private List<Water> goods = new ArrayList<>();
+    private List<Product> goods = new ArrayList<>();
     private List<OrderStatus> statusTypes;
     private List<PaymentTermsType> paymentType;
 
@@ -55,13 +55,12 @@ public class OrderPanelUI {
     private JTextField tfPrePmnt;
 
     private JTextArea area;
+    private JTextArea visitorArea;
 
     private JComboBox combo;
     private JComboBox comboStatus;
     private JComboBox comboPaymentType;
 
-    //private JButton addProduct;
-    private JButton addNewOrder;
 
     public OrderPanelUI(Shop shop, Service serv){
         this.shop = shop;
@@ -79,7 +78,8 @@ public class OrderPanelUI {
         orderPanel.setBackground(Color.ORANGE);
         orderPanel.setFont(new Font("Garamond", Font.BOLD, 20));
 
-        goods = shop.getIdbI().getWaters();
+        //goods = shop.getIdbI().getWaters();
+        goods = shop.getIdbI().getProducts();
         statusTypes = createStatusTypesList();
         paymentType = createPaymentTypeList();
 
@@ -91,8 +91,6 @@ public class OrderPanelUI {
                 TitledBorder.CENTER, new Font("Garamond", Font.BOLD, 20), Color.DARK_GRAY);
 
         orderPanel.setBorder(titled);
-
-        //NumberFormat nf = NumberFormat.getInstance();
 
         URL imageURL = getClass().getClassLoader().getResource("orderNew.png");
         ImageIcon icon = new ImageIcon(imageURL);
@@ -162,12 +160,12 @@ public class OrderPanelUI {
         tfDate.setHorizontalAlignment(JTextField.RIGHT);
         tfDate.setText(dateFormat(new Date(System.currentTimeMillis())));
         tfDate.setEditable(false);
-        orderPanel.add(tfDate, new GridBagConstraints(1, 3, 3, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        orderPanel.add(tfDate, new GridBagConstraints(1, 3, 2, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        JLabel visitorID = new JLabel("Visitor's identify #: ");
+        JLabel visitorID = new JLabel("Visitor's code #: ");
         visitorID.setFont(new Font("Garamond", Font.BOLD, 20));
         visitorID.setForeground(Color.BLACK);
-        orderPanel.add(visitorID, new GridBagConstraints(4, 3, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        orderPanel.add(visitorID, new GridBagConstraints(3, 3, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         tfVID = new JTextField();
         tfVID.setFont(new Font("Garamond", Font.ITALIC, 20));
@@ -175,7 +173,13 @@ public class OrderPanelUI {
         tfVID.setColumns(12);
         tfVID.setHorizontalAlignment(JTextField.RIGHT);
         tfVID.setText(String.valueOf(shop.getIdbI().getVisitors().size()));
-        orderPanel.add(tfVID, new GridBagConstraints(5, 3, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        orderPanel.add(tfVID, new GridBagConstraints(4, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        visitorArea = new JTextArea(1,1);
+        visitorArea.setEditable(false);
+        visitorArea.setFont(new Font("Garamond", Font.BOLD, 20));
+        visitorArea.setForeground(Color.BLACK);
+        orderPanel.add(visitorArea, new GridBagConstraints(6, 3, 6, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel orderStatus = new JLabel("Order's status:");
         orderStatus.setFont(new Font("Garamond", Font.BOLD, 20));
@@ -198,6 +202,14 @@ public class OrderPanelUI {
         comboPaymentType.setForeground(Color.BLACK);
         comboPaymentType.setSelectedItem(PaymentTermsType.UNPAID);
         orderPanel.add(comboPaymentType, new GridBagConstraints(5, 4, 3, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        JButton confirmBuyer = new JButton("Confirm the Visitor");
+        confirmBuyer.setFont(new Font("Garamond", Font.BOLD, 20));
+        orderPanel.add(confirmBuyer, new GridBagConstraints(8, 4, 2, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        confirmBuyer.setBorder(empty);
+        confirmBuyer.setForeground(Color.BLACK);
+        confirmBuyer.setBackground(Color.DARK_GRAY);
+        confirmBuyer.addActionListener(new DisplayVisitor(shop, serv, this));
 
         JLabel choose = new JLabel("Choose the good: ");
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
@@ -242,7 +254,7 @@ public class OrderPanelUI {
         checkOrder.setBackground(Color.ORANGE);
         orderPanel.add(checkOrder, new GridBagConstraints(0, 7, 15, 2, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        JButton formOrder = new JButton("- TO MAKE ORDER -");
+        JButton formOrder = new JButton("- MAKE ORDER -");
         formOrder.setFont(new Font("Garamond", Font.BOLD, 24));
         formOrder.setForeground(Color.BLACK);
         formOrder.setBackground(Color.GREEN);
@@ -339,6 +351,14 @@ public class OrderPanelUI {
             j++;
         }
         getArea().setText(s.toString());
+    }
+
+    public JTextArea getVisitorArea() {
+        return visitorArea;
+    }
+
+    public void setVisitortAreaText(String str){
+        getVisitorArea().setText(str);
     }
 
     private List<OrderStatus> createStatusTypesList() {

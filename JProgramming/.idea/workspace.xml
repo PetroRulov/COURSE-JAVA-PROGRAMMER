@@ -2,9 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/mysqlcon/MySQL_DB_Worker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/control/DisplayClient.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/control/DisplayVisitor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/PreparedStatements.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/MainConTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/MainStatQuerry.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/mysqldatabase/DB_MySQL_Worker.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../AlcoShop/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/IDBInterface.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/IDBInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/MySQL_DB_Manager.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/MySQL_DB_Manager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Client.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Order.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Order.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Visitor.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Visitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/waters/Product.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/waters/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/util/Service.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/util/Service.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/OrderPanelUI.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/OrderPanelUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/SalePanelUI.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/SalePanelUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TableOfSales.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TableOfSales.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TablePriceList.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TablePriceList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/resources/test.sql" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/resources/test.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JProgramming.iws" />
@@ -32,45 +51,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FileSimpleList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/zconsolidation/listbasedonfile/FileSimpleList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="e#267#268#0" expanded="false" />
-                <element signature="e#320#321#0" expanded="false" />
-                <element signature="e#372#373#0" expanded="false" />
-                <element signature="e#407#408#0" expanded="false" />
-                <element signature="e#748#749#0" expanded="false" />
-                <element signature="e#786#787#0" expanded="false" />
-                <element signature="e#1099#1100#0" expanded="false" />
-                <element signature="e#1146#1147#0" expanded="false" />
-                <element signature="e#4452#4453#0" expanded="false" />
-                <element signature="e#4484#4485#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Frame_5_3_1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson5/theme3/Frame_5_3_1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="27" column="94" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="94" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainConnectionTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/MainConnectionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="23" column="29" selection-start-line="20" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,8 +64,8 @@
       <file leaf-file-name="MainStatQuerry.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/MainStatQuerry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="26" column="71" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="169" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1473016453902" expanded="true" signature="832:972" ph="INSERT INTO clients... " />
@@ -90,71 +76,89 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQL_DBWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java">
+      <file leaf-file-name="PreparedStatements.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/PreparedStatements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="408">
+              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1473071761281" expanded="true" signature="569:681" ph="INSERT INTO clients... " />
+                <marker date="1473071761281" expanded="true" signature="739:778" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQL_Launcher.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InitObjectsClassTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/lesson7/generics/reflection/fortests/InitObjectsClassTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceClassTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/ServiceClassTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageServiceMock.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/StorageServiceMock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageServiceStub.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/StorageServiceStub.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceRepositoryTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/ServiceRepositoryTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/ServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQL_Launcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1473016882421" expanded="true" signature="358:399" ph="select * fro... clients" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Frame_5_3_2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson5/theme3/Frame_5_3_2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/zconsolidation/listbasedonfile/SimpleList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StreamInBytes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/zconsolidation/StreamInBytes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FSLLauncher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/zconsolidation/listbasedonfile/FSLLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -183,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/lesson8/archivation/UnZipLauncher.java" />
         <option value="$PROJECT_DIR$/src/lesson8/archivation/ZipExecutor.java" />
         <option value="$PROJECT_DIR$/src/lesson8/archivation/UnZipped.java" />
         <option value="$PROJECT_DIR$/src/lesson8/files/ShowDirectoriesTree.java" />
@@ -234,6 +237,7 @@
         <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/My_SQL_DBWorker.java" />
         <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java" />
         <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java" />
+        <option value="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/PreparedStatements.java" />
       </list>
     </option>
   </component>
@@ -281,7 +285,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -332,7 +337,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="myjdbcbasic" />
+              <option name="myItemId" value="studychecktest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,22 +355,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="myjdbcbasic" />
+              <option name="myItemId" value="studychecktest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mysqldatabase" />
+              <option name="myItemId" value="interfaceinheritance" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -947,14 +951,11 @@
       <workItem from="1472138353770" duration="4000" />
       <workItem from="1472138377024" duration="19000" />
       <workItem from="1472467533119" duration="513000" />
-      <workItem from="1473015978369" duration="898000" />
-    </task>
-    <task id="LOCAL-00007" summary="frame 5_5_4 executed">
-      <created>1462358833140</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1462358833140</updated>
+      <workItem from="1473015978369" duration="968000" />
+      <workItem from="1473017578018" duration="42000" />
+      <workItem from="1473060693148" duration="5374000" />
+      <workItem from="1473241465976" duration="244000" />
+      <workItem from="1473242151405" duration="37000" />
     </task>
     <task id="LOCAL-00008" summary="frame 5_5_4 executed with MouseDragged overrided">
       <created>1462360619973</created>
@@ -1292,7 +1293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1473016634823</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="with DB samples">
+      <created>1473016898391</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1473016898391</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1328,11 +1336,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14988000" />
+    <option name="totallyTimeSpent" value="20755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1345,7 +1353,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1413,55 +1421,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/printdata/PrintData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/studychecktest/interfaceinheritance/Polymorphicable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/studychecktest/interfaceinheritance/Inheritanable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/studychecktest/interfaceinheritance/Checkable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/AsciiChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/Characters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/Encoding.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1656,7 +1615,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1664,7 +1622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1672,7 +1629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1680,9 +1636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1693,7 +1646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1701,7 +1653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1709,18 +1660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="e#267#268#0" expanded="false" />
-            <element signature="e#320#321#0" expanded="false" />
-            <element signature="e#372#373#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#748#749#0" expanded="false" />
-            <element signature="e#786#787#0" expanded="false" />
-            <element signature="e#1099#1100#0" expanded="false" />
-            <element signature="e#1146#1147#0" expanded="false" />
-            <element signature="e#4452#4453#0" expanded="false" />
-            <element signature="e#4484#4485#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1728,9 +1667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1738,24 +1674,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="27" column="94" selection-start-line="27" selection-start-column="67" selection-end-line="27" selection-end-column="94" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/MainConnectionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="23" column="29" selection-start-line="20" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/MainStatQuerry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="26" column="71" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="169" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1473016453902" expanded="true" signature="832:972" ph="INSERT INTO clients... " />
@@ -1765,24 +1705,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="306">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1473016882421" expanded="true" signature="358:399" ph="select * fro... clients" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/PreparedStatements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1473071761281" expanded="true" signature="569:681" ph="INSERT INTO clients... " />
+            <marker date="1473071761281" expanded="true" signature="739:778" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/reflection/fortests/InitObjectsClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/ServiceClassTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/StorageServiceMock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/stubmock/StorageServiceStub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/ServiceRepositoryTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/ServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

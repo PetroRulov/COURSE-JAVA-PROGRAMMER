@@ -95,7 +95,7 @@ public class Order implements Serializable {
     }
 
     public BigDecimal getPrepayment() {
-        return prepayment.setScale(2, BigDecimal.ROUND_HALF_UP);
+        return prepayment;
     }
 
     public void setPrepayment(BigDecimal prepayment) {

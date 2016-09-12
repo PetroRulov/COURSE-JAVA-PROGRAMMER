@@ -100,7 +100,6 @@ public class AdjusyedByBuyerTableOfSales {
             if(shop.getIdbI().getSales().get(i).getGuest().getId_client() == buyersID){
                 adjusted.add(shop.getIdbI().getSales().get(i));
             }
-
         }
         return adjusted;
     }

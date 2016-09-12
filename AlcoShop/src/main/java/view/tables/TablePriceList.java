@@ -1,6 +1,7 @@
 package view.tables;
 
 import bl.Shop;
+import domain.waters.Product;
 import domain.waters.Water;
 
 import javax.swing.*;
@@ -61,26 +62,23 @@ public class TablePriceList {
 
     private Object[][] fillData() {
 
-        Object[][] data = new Object[shop.getIdbI().getWaters().size()][columns];
+        Object[][] data = new Object[shop.getIdbI().getProducts().size()][columns];
         int j = 1, i = 0;
 
-        for(Water water : shop.getIdbI().getWaters()){
+        for(Product product : shop.getIdbI().getProducts()){
             data[i] = new Object[]{
                     j++,
-                    water.getId_water(),
-                    water.getDrink(),
-                    water.getName(),
-                    water.getTare(),
-                    water.getVolume(),
-                    water.getQuant(),
-                    water.getPrice()
+                    product.getId_water(),
+                    product.getDrink(),
+                    product.getName(),
+                    product.getTare(),
+                    product.getVolume(),
+                    product.getQuant(),
+                    product.getPrice()
             };
             i++;
         }
         return data;
 
     }
-
-
-
 }

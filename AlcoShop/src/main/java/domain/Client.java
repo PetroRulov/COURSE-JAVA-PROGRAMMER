@@ -82,7 +82,7 @@ public class Client implements Serializable {
 
     public String clientInfoShow(){
 
-        return getId_client() + " " + getSurName() + " " + getName();
+        return  getName()+" "+getSurName()+", ID # "+getId_client()+", e-mail: "+geteMail();
     }
 
     @Override

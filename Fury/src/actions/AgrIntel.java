@@ -1,7 +1,7 @@
 package actions;
 
 import domains.Coord;
-import org.jetbrains.annotations.Nullable;
+//import org.jetbrains.annotations.Nullable;
 import tanks.AbstractTank;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class AgrIntel {
         freeWay.add(c);
     }
 
-    @Nullable
+    //@Nullable
     private Coord takeOffFirst(){
 
         if(freeWay.isEmpty()){
@@ -44,7 +44,7 @@ public class AgrIntel {
         return (Coord) freeWay.remove(0);
     }
 
-    @Nullable
+    //@Nullable
     public Coord[] lookingForThePath(Coord start, Coord end){
 
         int pX = 0, pY = 0, stepValue = 0, p = 0;

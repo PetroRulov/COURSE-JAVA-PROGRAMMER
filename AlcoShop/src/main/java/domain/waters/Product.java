@@ -7,11 +7,22 @@ import java.math.BigDecimal;
  */
 public interface Product {
 
+    //basic
+    long getId_water();
+    String getDrink();
+    String getName();
+    Tare getTare();
+    double getVolume();
+    int getQuant();
+    BigDecimal getPrice();
+
+
+
+
+
     void setCount(int count);
 
     String waterShow();
-
-    BigDecimal getPrice();
 
     int getCount();
 }

@@ -83,6 +83,10 @@ public class Visitor implements Serializable {
         this.address = address;
     }
 
+    public String visitorInfoShow(){
+        return getSurName()+", "+getName()+", code #"+getId_code()+", identify number # "+getIdentify();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

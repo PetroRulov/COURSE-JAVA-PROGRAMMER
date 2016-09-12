@@ -1,7 +1,9 @@
 package view.panels;
 
 import bl.Shop;
+import control.DisplayClient;
 import control.SaleControl;
+import domain.waters.Product;
 import domain.waters.Water;
 import util.Service;
 import view.MyComboBoxModel;
@@ -31,13 +33,15 @@ public class SalePanelUI {
     private JPanel salePanel;
 
     // data
-    private List<Water> goods = new ArrayList<>();
+    private List<Product> goods = new ArrayList<>();
 
     //control fields
     private JTextField tfDate;
 
     private JFormattedTextField tfBID;
     private JFormattedTextField tfQuant;
+
+    private JTextArea area;
 
     private JComboBox combo;
 
@@ -66,7 +70,7 @@ public class SalePanelUI {
 
         salePanel.setBorder(titled);
 
-        goods = shop.getIdbI().getWaters();
+        goods = shop.getIdbI().getProducts();
 
         NumberFormat nf = NumberFormat.getInstance();
 
@@ -102,8 +106,14 @@ public class SalePanelUI {
         tfBID.setForeground(Color.BLACK);
         tfBID.setColumns(12);
         tfBID.setHorizontalAlignment(JTextField.RIGHT);
-        tfBID.setValue(shop.getIdbI().getClts().size() + 1);
+        tfBID.setValue(1);
         salePanel.add(tfBID, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        area = new JTextArea(1, 1);
+        area.setEditable(false);
+        area.setFont(new Font("Garamond", Font.BOLD, 20));
+        area.setForeground(Color.BLACK);
+        salePanel.add(area, new GridBagConstraints(5, 2, 6, 1, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel choose = new JLabel("Choose the good: ");
         choose.setFont(new Font("Garamond", Font.BOLD, 20));
@@ -128,12 +138,20 @@ public class SalePanelUI {
         tfQuant.setHorizontalAlignment(JTextField.RIGHT);
         salePanel.add(tfQuant, new GridBagConstraints(1, 5, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
+        JButton confirmBuyer = new JButton("Confirm the Buyer");
+        confirmBuyer.setFont(new Font("Garamond", Font.BOLD, 20));
+        salePanel.add(confirmBuyer, new GridBagConstraints(5, 5, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        confirmBuyer.setBorder(empty);
+        confirmBuyer.setForeground(Color.RED);
+        confirmBuyer.setBackground(Color.DARK_GRAY);
+        confirmBuyer.addActionListener(new DisplayClient(shop, serv, this));
+
         JButton buy = new JButton("Buy");
         buy.setFont(new Font("Garamond", Font.BOLD, 20));
         salePanel.add(buy, new GridBagConstraints(1, 6, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
         buy.setBorder(empty);
-        buy.setForeground(Color.RED);
-        buy.setBackground(Color.YELLOW);
+        buy.setForeground(Color.BLACK);
+        buy.setBackground(Color.ORANGE);
         buy.addActionListener(new SaleControl(shop, this, shGUI, serv));
 
         return salePanel;
@@ -170,6 +188,14 @@ public class SalePanelUI {
     public String getQuantity(){
 
         return getTfQuant().getText();
+    }
+
+    public JTextArea getArea() {
+        return area;
+    }
+
+    public void setTextArea(String str){
+        getArea().setText(str);
     }
 
     public JComboBox getCombo() {

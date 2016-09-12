@@ -24,7 +24,7 @@ public class TableOfSales extends DefaultTableModel {
 
     public JTable createSalesTable(){
 
-        int columns = 15;
+        int columns = 16;
         Object[] colNames = fillColumns();
         Object[][] data = fillData();
 
@@ -33,13 +33,13 @@ public class TableOfSales extends DefaultTableModel {
         TableColumn column = null;
         for(int i = 0; i < columns; i++){
             column = tSales.getColumnModel().getColumn(i);
-            if(i == 0 || i == 2 || i == 5) {
+            if(i == 0 || i == 3 || i == 6) {
                 column.setPreferredWidth(45);
             }else if(i == 1){
                 column.setPreferredWidth(90);
-            }else if(i == 7) {
+            }else if(i == 8) {
                 column.setPreferredWidth(210);
-            }else if(i==12){
+            }else if(i==13){
                 column.setCellRenderer(new DefaultTableCellRenderer() {
                     public JComponent getTableCellRendererComponent(JTable table, Object value,
                           boolean isSelected, boolean hasFocus, int row, int col) {
@@ -69,9 +69,9 @@ public class TableOfSales extends DefaultTableModel {
 
     private Object[] fillColumns(){
 
-        int columns = 15;
+        int columns = 16;
         String[] heads = new String[]{
-                "#", "Date", "BuyerID", "Buyer's surname", "Buyer's name", "DrinkID",  "Drink type", "Drink name",
+                "#", "ID", "Date", "BuyerID", "Buyer's surname", "Buyer's name", "DrinkID",  "Drink type", "Drink name",
                 "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH", "Way of sale", "Order's ID"};
         Object[] colNames = new Object[heads.length];
         for(int i = 0; i < columns; i++){
@@ -89,6 +89,7 @@ public class TableOfSales extends DefaultTableModel {
         for(Sale sale : shop.getIdbI().getSales()){
             data[i] = new Object[]{
                     j++,
+                    sale.getId_sale(),
                     sale.getDate(),
                     sale.getGuest().getId_client(),
                     sale.getGuest().getSurName(),
