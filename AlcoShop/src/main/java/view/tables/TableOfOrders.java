@@ -35,15 +35,13 @@ public class TableOfOrders {
         TableColumn column = null;
         for(int i = 0; i < columns; i++) {
             column = tabOrders.getColumnModel().getColumn(i);
-            if (i == 0 || i == 1 || i == 6 || i == 12 || i == 16 || i == 17) {
+            if (i == 0 || i == 1 || i == 4 || i == 10) {
                 column.setPreferredWidth(27);
-            }else if(i == 6){
-                column.setPreferredWidth(36);
-            }else if(i==5 || i==8 || i==13 || i==15 || i==18){
+            }else if(i == 6 || i == 11 || i == 13 || i == 14 || i == 15){
                 column.setPreferredWidth(60);
-            }else if(i == 2 || i == 7){
+            }else if(i == 2 || i == 6){
                 column.setPreferredWidth(90);
-            }else if(i == 9 || i == 10 || i == 11 || i == 14) {
+            }else if(i == 7 || i == 8 || i == 9 || i == 12) {
                 column.setPreferredWidth(120);
             }else if(i == 3){
                 column.setCellRenderer(new DefaultTableCellRenderer() {
@@ -69,7 +67,7 @@ public class TableOfOrders {
                         return label;
                     }
                 });
-            }else if(i == 4){
+            }else if(i == 19){
                 column.setPreferredWidth(180);
                 column.setCellRenderer(new DefaultTableCellRenderer() {
                     public JComponent getTableCellRendererComponent(JTable table, Object value,
@@ -102,10 +100,10 @@ public class TableOfOrders {
 
     private Object[] fillColumns() {
         String[] heads = new String[]{
-                "#", "ID", "Date", "Order's status", "Payment terms", "Prepayment",
-                "Visitor'sID", "Visitor's surname", "Visitor's name",
-                "Visitor's tel/fax", "Visitor's address", "Visitor's e-mail",
-                "DrinkID",  "Drink type", "Drink name", "Tare", "Volume, L", "Quantity", "Price, UAH", "Income, UAH"};
+                "#", "ID", "Date", "Order's status", "Visitor'sID", "Visitor's surname",
+                "Visitor's name", "Visitor's tel/fax", "Visitor's address", "Visitor's e-mail",
+                "DrinkID",  "Drink type", "Drink name", "Tare", "Volume, L", "Quantity",
+                "Price, UAH", "Prepayment", "Income, UAH", "Payment terms"};
         Object[] colNames = new Object[heads.length];
         for(int i = 0; i < columns; i++){
             colNames[i] = heads[i];
@@ -123,8 +121,6 @@ public class TableOfOrders {
                     order.getId_order(),
                     order.getDate(),
                     order.getoSt(),
-                    order.getPayTT(),
-                    order.getPrepayment(),
                     order.getClient().getId_code(),
                     order.getClient().getSurName(),
                     order.getClient().getName(),
@@ -136,9 +132,11 @@ public class TableOfOrders {
                     order.getWater().getName(),
                     order.getWater().getTare(),
                     order.getWater().getVolume(),
-                    order.getWater().getCount(),
+                    order.getQuantity(),
                     order.getWater().getPrice(),
-                    order.getIncome()
+                    order.getPrepayment(),
+                    order.getIncome(),
+                    order.getPayTT()
             };
             i++;
         }

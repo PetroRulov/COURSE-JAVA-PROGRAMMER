@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/mysqlcon/MySQL_DB_Worker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/control/DisplayClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/control/DisplayVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/PreparedStatements.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/MainConTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/MainStatQuerry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/mysqldatabase/DB_MySQL_Worker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/OrderToSalePanelUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../AlcoShop/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/IDBInterface.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/IDBInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/MySQL_DB_Manager.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/datamanagers/MySQL_DB_Manager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Client.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Order.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Visitor.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/Visitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/waters/Product.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/domain/waters/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/util/Service.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/util/Service.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/OrderPanelUI.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/OrderPanelUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/SalePanelUI.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/panels/SalePanelUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TableOfSales.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TableOfSales.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TablePriceList.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TablePriceList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/resources/test.sql" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/resources/test.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/ShopUI.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/ShopUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TableOfOrders.java" afterPath="$PROJECT_DIR$/../AlcoShop/src/main/java/view/tables/TableOfOrders.java" />
     </list>
     <ignored path="JProgramming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,31 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainConnectionTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/MainConnectionTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="29" selection-start-line="20" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainStatQuerry.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/MainStatQuerry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="71" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="169" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1473016453902" expanded="true" signature="832:972" ph="INSERT INTO clients... " />
-                <marker date="1473016453902" expanded="true" signature="1227:1397" ph="insert into clients... " />
-                <marker date="1473016453902" expanded="true" signature="1433:1605" ph="insert into clients... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PreparedStatements.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/PreparedStatements.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -140,11 +97,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServiceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/lesson7/generics/containers/service/ServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComparatorZAString.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson4/theme2/ComparatorZAString.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleLinkedList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lesson4/theme2/SimpleLinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="97" column="0" selection-start-line="93" selection-start-column="3" selection-end-line="97" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -257,7 +234,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1370" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -285,8 +262,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -363,9 +338,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lesson4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -956,6 +951,7 @@
       <workItem from="1473060693148" duration="5374000" />
       <workItem from="1473241465976" duration="244000" />
       <workItem from="1473242151405" duration="37000" />
+      <workItem from="1474391874990" duration="59000" />
     </task>
     <task id="LOCAL-00008" summary="frame 5_5_4 executed with MouseDragged overrided">
       <created>1462360619973</created>
@@ -1336,10 +1332,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20755000" />
+    <option name="totallyTimeSpent" value="20814000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1353,7 +1349,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.215478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21526718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1421,20 +1417,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson8/unicode/Encoding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/streams/PrintStreamData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/serialization/dataio/DataIO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -1688,7 +1670,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="23" column="29" selection-start-line="20" selection-start-column="8" selection-end-line="39" selection-end-column="9" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1772,6 +1756,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson4/theme2/ComparatorZAString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson4/theme2/SimpleLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="97" column="0" selection-start-line="93" selection-start-column="3" selection-end-line="97" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -33,6 +33,7 @@ public class ShopUI {
     private AddNewVisitorPanelUI anvsPUI;
     private SetAdjustedPeriodPanelUI perPUI;
     private SetAdjustedBuyerPanelUI buyerPUI;
+    private OrderToSalePanelUI oTosPUI;
     private TableOfSales tsUI;
     private TableOfOrders toUI;
     private TableClient tclUI;
@@ -50,6 +51,7 @@ public class ShopUI {
         this.ordpUI = new OrderPanelUI(shop, serv);
         this.anclPUI = new AddNewClientPanelUI(shop, serv);
         this.anvsPUI = new AddNewVisitorPanelUI(shop, serv);
+        this.oTosPUI = new OrderToSalePanelUI(shop, serv);
         this.perPUI = new SetAdjustedPeriodPanelUI(shop, serv, this);
         this.buyerPUI = new SetAdjustedBuyerPanelUI(shop, serv, this);
         this.tsUI = new TableOfSales(shop);
@@ -251,6 +253,25 @@ public class ShopUI {
             }
         });
 
+        JMenu operations = new JMenu("ORDER'S OPERATIONS");
+        operations.setFont(font);
+        fileMenu.add(operations);
+        fileMenu.addSeparator();
+
+        JMenuItem changeOrder = new JMenuItem("Set Sale from Order");
+        changeOrder.setFont(fant);
+        operations.add(changeOrder);
+        operations.addSeparator();
+
+        changeOrder.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                showSaleFromOrderGUI();
+            }
+        });
+
+
 
 
         JMenuItem exitItem = new JMenuItem("Exit");
@@ -365,6 +386,17 @@ public class ShopUI {
         getFrame().getContentPane().add(panel);
         Observer obs = new AddVisitorControl(shop, anvsPUI, this, serv);
         shop.addObserver(obs);
+        getFrame().pack();
+        getFrame().repaint();
+    }
+
+    private void showSaleFromOrderGUI(){
+
+        getFrame().getContentPane().removeAll();
+        panel = oTosPUI.createOTOSPanel();
+        getFrame().getContentPane().add(panel);
+//        Observer obs = new AddVisitorControl(shop, anvsPUI, this, serv);
+//        shop.addObserver(obs);
         getFrame().pack();
         getFrame().repaint();
     }

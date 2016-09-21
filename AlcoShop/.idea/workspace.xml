@@ -2,32 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5651413e-d908-491f-966d-1ee82e69c7b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/mysqlcon/MySQL_DB_Worker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/control/DisplayClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/control/DisplayVisitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JProgramming/src/myjdbcbasic/mysqldatabase/PreparedStatements.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/alcoshop/database/MainConTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/alcoshop/database/MainStatQuerry.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/DB_MySQL_Worker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AgrIntel.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AgrIntel.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/view/panels/OrderToSalePanelUI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PrulovCalc/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PrulovCalc/src/main/java/com/app/CalcGUI.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PrulovCalc/src/main/java/com/app/CalcLauncher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../PrulovCalc/src/main/java/com/app/Calculator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/datamanagers/IDBInterface.java" afterPath="$PROJECT_DIR$/src/main/java/datamanagers/IDBInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java" afterPath="$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Client.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Order.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Visitor.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Visitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/waters/Product.java" afterPath="$PROJECT_DIR$/src/main/java/domain/waters/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/Service.java" afterPath="$PROJECT_DIR$/src/main/java/util/Service.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/panels/OrderPanelUI.java" afterPath="$PROJECT_DIR$/src/main/java/view/panels/OrderPanelUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/panels/SalePanelUI.java" afterPath="$PROJECT_DIR$/src/main/java/view/panels/SalePanelUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" afterPath="$PROJECT_DIR$/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/tables/TableOfSales.java" afterPath="$PROJECT_DIR$/src/main/java/view/tables/TableOfSales.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/tables/TablePriceList.java" afterPath="$PROJECT_DIR$/src/main/java/view/tables/TablePriceList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/test.sql" afterPath="$PROJECT_DIR$/src/main/resources/test.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/actions/AgrIntel.java" afterPath="$PROJECT_DIR$/../Fury/src/actions/AgrIntel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/ShopUI.java" afterPath="$PROJECT_DIR$/src/main/java/view/ShopUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/view/tables/TableOfOrders.java" afterPath="$PROJECT_DIR$/src/main/java/view/tables/TableOfOrders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JProgramming/.idea/workspace.xml" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -65,253 +48,7 @@
     <favorites_list name="Alcoshop" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderPanelUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/OrderPanelUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#13655#13656#0" expanded="false" />
-                <element signature="e#13684#13685#0" expanded="false" />
-                <element signature="e#13714#13715#0" expanded="false" />
-                <element signature="e#13758#13759#0" expanded="false" />
-                <element signature="e#13793#13794#0" expanded="false" />
-                <element signature="e#13820#13821#0" expanded="false" />
-                <element signature="e#13853#13854#0" expanded="false" />
-                <element signature="e#13895#13896#0" expanded="false" />
-                <element signature="e#13931#13932#0" expanded="false" />
-                <element signature="e#13959#13960#0" expanded="false" />
-                <element signature="e#13994#13995#0" expanded="false" />
-                <element signature="e#14037#14038#0" expanded="false" />
-                <element signature="e#14078#14079#0" expanded="false" />
-                <element signature="e#14112#14113#0" expanded="false" />
-                <element signature="e#14162#14163#0" expanded="false" />
-                <element signature="e#14233#14234#0" expanded="false" />
-                <element signature="e#14279#14280#0" expanded="false" />
-                <element signature="e#14318#14319#0" expanded="false" />
-                <element signature="e#14377#14378#0" expanded="false" />
-                <element signature="e#14458#14459#0" expanded="false" />
-                <element signature="e#14493#14494#0" expanded="false" />
-                <element signature="e#14521#14522#0" expanded="false" />
-                <element signature="e#14559#14560#0" expanded="false" />
-                <element signature="e#14618#14619#0" expanded="false" />
-                <element signature="e#14705#14706#0" expanded="false" />
-                <element signature="e#14750#14751#0" expanded="false" />
-                <element signature="e#14792#14793#0" expanded="false" />
-                <element signature="e#14826#14827#0" expanded="false" />
-                <element signature="e#14878#14879#0" expanded="false" />
-                <element signature="e#14939#14940#0" expanded="false" />
-                <element signature="e#14979#14980#0" expanded="false" />
-                <element signature="e#15011#15012#0" expanded="false" />
-                <element signature="e#15047#15048#0" expanded="false" />
-                <element signature="e#15101#15102#0" expanded="false" />
-                <element signature="e#15135#15136#0" expanded="false" />
-                <element signature="e#15162#15163#0" expanded="false" />
-                <element signature="e#15523#15524#0" expanded="false" />
-                <element signature="e#15557#15558#0" expanded="false" />
-                <element signature="e#15607#15608#0" expanded="false" />
-                <element signature="e#15652#15653#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQL_DB_Manager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3519">
-              <caret line="221" column="29" selection-start-line="221" selection-start-column="23" selection-end-line="221" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#8094#8095#0" expanded="false" />
-                <element signature="e#8145#8146#0" expanded="false" />
-                <element signature="e#8201#8202#0" expanded="false" />
-                <element signature="e#8256#8257#0" expanded="false" />
-                <element signature="e#8308#8309#0" expanded="false" />
-                <element signature="e#8360#8361#0" expanded="false" />
-                <marker date="1473154210717" expanded="true" signature="1406:1420" ph="select * fro... clients" />
-                <marker date="1473154210717" expanded="true" signature="1406:1425" ph="select * fro... stock" />
-                <marker date="1473154210717" expanded="true" signature="2849:2870" ph="select * fro... clients" />
-                <marker date="1473154210717" expanded="true" signature="3733:3747" ph="select * fro... clients" />
-                <marker date="1473154210717" expanded="true" signature="3733:3752" ph="select * fro... sales" />
-                <marker date="1473154210717" expanded="true" signature="4939:4961" ph="select * fro... visitors" />
-                <marker date="1473154210717" expanded="true" signature="5898:5918" ph="select * fro... orders" />
-                <marker date="1473154210717" expanded="true" signature="8474:8596" ph="INSERT INTO sales... " />
-                <marker date="1473154210717" expanded="true" signature="9701:9840" ph="INSERT INTO orders... " />
-                <marker date="1473154210717" expanded="true" signature="10954:11012" ph="UPDATE `alco... " />
-                <marker date="1473154210717" expanded="true" signature="11689:11747" ph="INSERT INTO clients... " />
-                <marker date="1473154210717" expanded="true" signature="11689:11748" ph="INSERT INTO clients... " />
-                <marker date="1473154210717" expanded="true" signature="11689:11777" ph="INSERT INTO clients... " />
-                <marker date="1473154210717" expanded="true" signature="11689:11791" ph="INSERT INTO clients... " />
-                <marker date="1473154210717" expanded="true" signature="12547:12662" ph="INSERT INTO visitors... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TablePriceList.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/tables/TablePriceList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SalePanelUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/SalePanelUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#7179#7180#0" expanded="false" />
-                <element signature="e#7208#7209#0" expanded="false" />
-                <element signature="e#7328#7329#0" expanded="false" />
-                <element signature="e#7356#7357#0" expanded="false" />
-                <element signature="e#7480#7481#0" expanded="false" />
-                <element signature="e#7510#7511#0" expanded="false" />
-                <element signature="e#7624#7625#0" expanded="false" />
-                <element signature="e#7651#7652#0" expanded="false" />
-                <element signature="e#7693#7694#0" expanded="false" />
-                <element signature="e#7731#7732#0" expanded="false" />
-                <element signature="e#7766#7767#0" expanded="false" />
-                <element signature="e#7794#7795#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/Service.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#353#354#0" expanded="false" />
-                <element signature="e#392#393#0" expanded="false" />
-                <element signature="e#622#623#0" expanded="false" />
-                <element signature="e#672#673#0" expanded="false" />
-                <element signature="e#709#710#0" expanded="false" />
-                <element signature="e#743#744#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IDBInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/datamanagers/IDBInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/domain/waters/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Shop.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/bl/Shop.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#965#966#0" expanded="false" />
-                <element signature="e#992#993#0" expanded="false" />
-                <element signature="e#1043#1044#0" expanded="false" />
-                <element signature="e#1075#1076#0" expanded="false" />
-                <element signature="e#1306#1307#0" expanded="false" />
-                <element signature="e#1345#1346#0" expanded="false" />
-                <element signature="e#1951#1952#0" expanded="false" />
-                <element signature="e#1994#1995#0" expanded="false" />
-                <element signature="e#2219#2220#0" expanded="false" />
-                <element signature="e#2263#2264#0" expanded="false" />
-                <element signature="e#2477#2478#0" expanded="false" />
-                <element signature="e#2518#2519#0" expanded="false" />
-                <element signature="e#2739#2740#0" expanded="false" />
-                <element signature="e#2782#2783#0" expanded="false" />
-                <element signature="e#3037#3038#0" expanded="false" />
-                <element signature="e#3081#3082#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Water.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/domain/waters/Water.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="60" column="19" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#881#882#0" expanded="false" />
-                <element signature="e#912#913#0" expanded="false" />
-                <element signature="e#958#959#0" expanded="false" />
-                <element signature="e#998#999#0" expanded="false" />
-                <element signature="e#1030#1031#0" expanded="false" />
-                <element signature="e#1058#1059#0" expanded="false" />
-                <element signature="e#1100#1101#0" expanded="false" />
-                <element signature="e#1134#1135#0" expanded="false" />
-                <element signature="e#1165#1166#0" expanded="false" />
-                <element signature="e#1192#1193#0" expanded="false" />
-                <element signature="e#1232#1233#0" expanded="false" />
-                <element signature="e#1264#1265#0" expanded="false" />
-                <element signature="e#1293#1294#0" expanded="false" />
-                <element signature="e#1320#1321#0" expanded="false" />
-                <element signature="e#1358#1359#0" expanded="false" />
-                <element signature="e#1390#1391#0" expanded="false" />
-                <element signature="e#1423#1424#0" expanded="false" />
-                <element signature="e#1452#1453#0" expanded="false" />
-                <element signature="e#1496#1497#0" expanded="false" />
-                <element signature="e#1532#1533#0" expanded="false" />
-                <element signature="e#1561#1562#0" expanded="false" />
-                <element signature="e#1589#1590#0" expanded="false" />
-                <element signature="e#1628#1629#0" expanded="false" />
-                <element signature="e#1662#1663#0" expanded="false" />
-                <element signature="e#1698#1699#0" expanded="false" />
-                <element signature="e#1726#1727#0" expanded="false" />
-                <element signature="e#1772#1773#0" expanded="false" />
-                <element signature="e#1806#1807#0" expanded="false" />
-                <element signature="e#1940#1941#0" expanded="false" />
-                <element signature="e#1974#1975#0" expanded="false" />
-                <element signature="e#2003#2004#0" expanded="false" />
-                <element signature="e#2031#2032#0" expanded="false" />
-                <element signature="e#2070#2071#0" expanded="false" />
-                <element signature="e#2104#2105#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -333,7 +70,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/domain/waters/DeliveryType.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/waters/Delivery.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/SiteGuest.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/waters/WaysOfSale.java" />
@@ -357,9 +93,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/alcoshop/database/MainStatQuerry.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alcoshop/database/mysqldatabase/MySQL_Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/panels/AddNewClientPanelUI.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/ShopUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/control/OrderControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/view/tables/TableOfOrders.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/panels/AddNewVisitorPanelUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Sale.java" />
         <option value="$PROJECT_DIR$/src/main/java/datamanagers/DB_Manager.java" />
@@ -377,13 +111,16 @@
         <option value="$PROJECT_DIR$/src/main/java/view/tables/AdjusyedByBuyerTableOfSales.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Visitor.java" />
         <option value="$PROJECT_DIR$/src/main/java/control/DisplayVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java" />
         <option value="$PROJECT_DIR$/src/main/java/datamanagers/IDBInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/panels/SalePanelUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/panels/OrderPanelUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/waters/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/view/tables/TablePriceList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/tables/TableOfOrders.java" />
+        <option value="$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/ShopUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/view/panels/OrderToSalePanelUI.java" />
       </list>
     </option>
   </component>
@@ -439,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -537,73 +275,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlcoShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlcoShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlcoShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AlcoShop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="panels" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Fury" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.33103448" />
@@ -1262,7 +943,12 @@
       <workItem from="1473241906786" duration="24000" />
       <workItem from="1473252448477" duration="393000" />
       <workItem from="1473431264498" duration="109000" />
-      <workItem from="1473691944869" duration="152000" />
+      <workItem from="1473691944869" duration="5808000" />
+      <workItem from="1473746942587" duration="636000" />
+      <workItem from="1474450637937" duration="216000" />
+      <workItem from="1474450865182" duration="38000" />
+      <workItem from="1474459280021" duration="59000" />
+      <workItem from="1474461375042" duration="471000" />
     </task>
     <task id="LOCAL-00001" summary="with Maven">
       <created>1469181193820</created>
@@ -1313,11 +999,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472997693460</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="MySQL_DB_manager to retrieve, not to send">
+      <created>1473692176531</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1473692176531</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202412000" />
+    <option name="totallyTimeSpent" value="209488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
@@ -1325,7 +1018,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1335,8 +1027,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2977099" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13206106" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28396946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36183205" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1346,6 +1038,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1428,30 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.visitors">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.visitors">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.clients">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1485,16 +1154,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
-          <folding>
-            <element signature="e#2551#2552#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1578,25 +1237,6 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.visitors">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/control/OrderControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.clients">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1644,30 +1284,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.orders">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/domain/Sale.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/tables/TableOfOrders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="126" column="39" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -1726,13 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/ShopUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/SetAdjustedPeriodPanelUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1156">
@@ -1783,7 +1397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-731">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1791,35 +1404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="43" column="6" selection-start-line="43" selection-start-column="6" selection-end-line="43" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bl/Shop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#965#966#0" expanded="false" />
-            <element signature="e#992#993#0" expanded="false" />
-            <element signature="e#1043#1044#0" expanded="false" />
-            <element signature="e#1075#1076#0" expanded="false" />
-            <element signature="e#1306#1307#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1951#1952#0" expanded="false" />
-            <element signature="e#1994#1995#0" expanded="false" />
-            <element signature="e#2219#2220#0" expanded="false" />
-            <element signature="e#2263#2264#0" expanded="false" />
-            <element signature="e#2477#2478#0" expanded="false" />
-            <element signature="e#2518#2519#0" expanded="false" />
-            <element signature="e#2739#2740#0" expanded="false" />
-            <element signature="e#2782#2783#0" expanded="false" />
-            <element signature="e#3037#3038#0" expanded="false" />
-            <element signature="e#3081#3082#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1827,87 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#353#354#0" expanded="false" />
-            <element signature="e#392#393#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-            <element signature="e#672#673#0" expanded="false" />
-            <element signature="e#709#710#0" expanded="false" />
-            <element signature="e#743#744#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/SalePanelUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="107" column="55" selection-start-line="107" selection-start-column="55" selection-end-line="107" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#7179#7180#0" expanded="false" />
-            <element signature="e#7208#7209#0" expanded="false" />
-            <element signature="e#7328#7329#0" expanded="false" />
-            <element signature="e#7356#7357#0" expanded="false" />
-            <element signature="e#7480#7481#0" expanded="false" />
-            <element signature="e#7510#7511#0" expanded="false" />
-            <element signature="e#7624#7625#0" expanded="false" />
-            <element signature="e#7651#7652#0" expanded="false" />
-            <element signature="e#7693#7694#0" expanded="false" />
-            <element signature="e#7731#7732#0" expanded="false" />
-            <element signature="e#7766#7767#0" expanded="false" />
-            <element signature="e#7794#7795#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/OrderPanelUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="92" column="37" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#13655#13656#0" expanded="false" />
-            <element signature="e#13684#13685#0" expanded="false" />
-            <element signature="e#13714#13715#0" expanded="false" />
-            <element signature="e#13758#13759#0" expanded="false" />
-            <element signature="e#13793#13794#0" expanded="false" />
-            <element signature="e#13820#13821#0" expanded="false" />
-            <element signature="e#13853#13854#0" expanded="false" />
-            <element signature="e#13895#13896#0" expanded="false" />
-            <element signature="e#13931#13932#0" expanded="false" />
-            <element signature="e#13959#13960#0" expanded="false" />
-            <element signature="e#13994#13995#0" expanded="false" />
-            <element signature="e#14037#14038#0" expanded="false" />
-            <element signature="e#14078#14079#0" expanded="false" />
-            <element signature="e#14112#14113#0" expanded="false" />
-            <element signature="e#14162#14163#0" expanded="false" />
-            <element signature="e#14233#14234#0" expanded="false" />
-            <element signature="e#14279#14280#0" expanded="false" />
-            <element signature="e#14318#14319#0" expanded="false" />
-            <element signature="e#14377#14378#0" expanded="false" />
-            <element signature="e#14458#14459#0" expanded="false" />
-            <element signature="e#14493#14494#0" expanded="false" />
-            <element signature="e#14521#14522#0" expanded="false" />
-            <element signature="e#14559#14560#0" expanded="false" />
-            <element signature="e#14618#14619#0" expanded="false" />
-            <element signature="e#14705#14706#0" expanded="false" />
-            <element signature="e#14750#14751#0" expanded="false" />
-            <element signature="e#14792#14793#0" expanded="false" />
-            <element signature="e#14826#14827#0" expanded="false" />
-            <element signature="e#14878#14879#0" expanded="false" />
-            <element signature="e#14939#14940#0" expanded="false" />
-            <element signature="e#14979#14980#0" expanded="false" />
-            <element signature="e#15011#15012#0" expanded="false" />
-            <element signature="e#15047#15048#0" expanded="false" />
-            <element signature="e#15101#15102#0" expanded="false" />
-            <element signature="e#15135#15136#0" expanded="false" />
-            <element signature="e#15162#15163#0" expanded="false" />
-            <element signature="e#15523#15524#0" expanded="false" />
-            <element signature="e#15557#15558#0" expanded="false" />
-            <element signature="e#15607#15608#0" expanded="false" />
-            <element signature="e#15652#15653#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1915,43 +1418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="60" column="19" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#912#913#0" expanded="false" />
-            <element signature="e#958#959#0" expanded="false" />
-            <element signature="e#998#999#0" expanded="false" />
-            <element signature="e#1030#1031#0" expanded="false" />
-            <element signature="e#1058#1059#0" expanded="false" />
-            <element signature="e#1100#1101#0" expanded="false" />
-            <element signature="e#1134#1135#0" expanded="false" />
-            <element signature="e#1165#1166#0" expanded="false" />
-            <element signature="e#1192#1193#0" expanded="false" />
-            <element signature="e#1232#1233#0" expanded="false" />
-            <element signature="e#1264#1265#0" expanded="false" />
-            <element signature="e#1293#1294#0" expanded="false" />
-            <element signature="e#1320#1321#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1390#1391#0" expanded="false" />
-            <element signature="e#1423#1424#0" expanded="false" />
-            <element signature="e#1452#1453#0" expanded="false" />
-            <element signature="e#1496#1497#0" expanded="false" />
-            <element signature="e#1532#1533#0" expanded="false" />
-            <element signature="e#1561#1562#0" expanded="false" />
-            <element signature="e#1589#1590#0" expanded="false" />
-            <element signature="e#1628#1629#0" expanded="false" />
-            <element signature="e#1662#1663#0" expanded="false" />
-            <element signature="e#1698#1699#0" expanded="false" />
-            <element signature="e#1726#1727#0" expanded="false" />
-            <element signature="e#1772#1773#0" expanded="false" />
-            <element signature="e#1806#1807#0" expanded="false" />
-            <element signature="e#1940#1941#0" expanded="false" />
-            <element signature="e#1974#1975#0" expanded="false" />
-            <element signature="e#2003#2004#0" expanded="false" />
-            <element signature="e#2031#2032#0" expanded="false" />
-            <element signature="e#2070#2071#0" expanded="false" />
-            <element signature="e#2104#2105#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1959,48 +1425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3519">
-          <caret line="221" column="29" selection-start-line="221" selection-start-column="23" selection-end-line="221" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#8094#8095#0" expanded="false" />
-            <element signature="e#8145#8146#0" expanded="false" />
-            <element signature="e#8201#8202#0" expanded="false" />
-            <element signature="e#8256#8257#0" expanded="false" />
-            <element signature="e#8308#8309#0" expanded="false" />
-            <element signature="e#8360#8361#0" expanded="false" />
-            <marker date="1473154210717" expanded="true" signature="1406:1420" ph="select * fro... clients" />
-            <marker date="1473154210717" expanded="true" signature="1406:1425" ph="select * fro... stock" />
-            <marker date="1473154210717" expanded="true" signature="2849:2870" ph="select * fro... clients" />
-            <marker date="1473154210717" expanded="true" signature="3733:3747" ph="select * fro... clients" />
-            <marker date="1473154210717" expanded="true" signature="3733:3752" ph="select * fro... sales" />
-            <marker date="1473154210717" expanded="true" signature="4939:4961" ph="select * fro... visitors" />
-            <marker date="1473154210717" expanded="true" signature="5898:5918" ph="select * fro... orders" />
-            <marker date="1473154210717" expanded="true" signature="8474:8596" ph="INSERT INTO sales... " />
-            <marker date="1473154210717" expanded="true" signature="9701:9840" ph="INSERT INTO orders... " />
-            <marker date="1473154210717" expanded="true" signature="10954:11012" ph="UPDATE `alco... " />
-            <marker date="1473154210717" expanded="true" signature="11689:11747" ph="INSERT INTO clients... " />
-            <marker date="1473154210717" expanded="true" signature="11689:11748" ph="INSERT INTO clients... " />
-            <marker date="1473154210717" expanded="true" signature="11689:11777" ph="INSERT INTO clients... " />
-            <marker date="1473154210717" expanded="true" signature="11689:11791" ph="INSERT INTO clients... " />
-            <marker date="1473154210717" expanded="true" signature="12547:12662" ph="INSERT INTO visitors... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2008,6 +1432,144 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
           <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/tables/TableOfOrders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1989">
+          <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.orders">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="96" column="39" selection-start-line="96" selection-start-column="39" selection-end-line="96" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1940#1941#0" expanded="false" />
+            <element signature="e#1971#1972#0" expanded="false" />
+            <element signature="e#2017#2018#0" expanded="false" />
+            <element signature="e#2057#2058#0" expanded="false" />
+            <element signature="e#2088#2089#0" expanded="false" />
+            <element signature="e#2115#2116#0" expanded="false" />
+            <element signature="e#2155#2156#0" expanded="false" />
+            <element signature="e#2187#2188#0" expanded="false" />
+            <element signature="e#2222#2223#0" expanded="false" />
+            <element signature="e#2248#2249#0" expanded="false" />
+            <element signature="e#2291#2292#0" expanded="false" />
+            <element signature="e#2321#2322#0" expanded="false" />
+            <element signature="e#2363#2364#0" expanded="false" />
+            <element signature="e#2391#2392#0" expanded="false" />
+            <element signature="e#2443#2444#0" expanded="false" />
+            <element signature="e#2477#2478#0" expanded="false" />
+            <element signature="e#2607#2608#0" expanded="false" />
+            <element signature="e#2689#2690#0" expanded="false" />
+            <element signature="e#2720#2721#0" expanded="false" />
+            <element signature="e#2748#2749#0" expanded="false" />
+            <element signature="e#2789#2790#0" expanded="false" />
+            <element signature="e#2823#2824#0" expanded="false" />
+            <element signature="e#2855#2856#0" expanded="false" />
+            <element signature="e#2886#2887#0" expanded="false" />
+            <element signature="e#2931#2932#0" expanded="false" />
+            <element signature="e#2971#2972#0" expanded="false" />
+            <element signature="e#3005#3006#0" expanded="false" />
+            <element signature="e#3034#3035#0" expanded="false" />
+            <element signature="e#3079#3080#0" expanded="false" />
+            <element signature="e#3115#3116#0" expanded="false" />
+            <element signature="e#3152#3153#0" expanded="false" />
+            <element signature="e#3181#3182#0" expanded="false" />
+            <element signature="e#3229#3230#0" expanded="false" />
+            <element signature="e#3265#3266#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/control/OrderControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bl/Shop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="143" column="0" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/SalePanelUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="49" column="15" selection-start-line="47" selection-start-column="4" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/OrderToSalePanelUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/3a1b7639/7ca8a329-1e64-4fb9-9271-3754e8b016d6/alcoshop.clients">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar!/org/gjt/mm/mysql/Driver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/panels/OrderPanelUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="76" column="27" selection-start-line="75" selection-start-column="8" selection-end-line="92" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/datamanagers/MySQL_DB_Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="281" column="0" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/view/ShopUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="263" column="16" selection-start-line="263" selection-start-column="16" selection-end-line="263" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

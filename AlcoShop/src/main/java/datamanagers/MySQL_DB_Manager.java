@@ -265,19 +265,20 @@ public class MySQL_DB_Manager implements IDBInterface {
     @Override
     public List<Order> updateOrders(Order order) {
         orders.add(order);
-        String update = "INSERT INTO orders(date, oSt, payTT, prepayment, waterID, quantity, id_visitor, income) " +
-                "VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
+        String update = "INSERT INTO orders(id_order, date, oSt, payTT, prepayment, waterID, quantity, id_visitor, income) " +
+                "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement preparedStatement = null;
         try{
             preparedStatement = mySQLWorker.getConnection().prepareStatement(update);
-            preparedStatement.setString(1, order.getDate());
-            preparedStatement.setString(2, order.getoSt().name());
-            preparedStatement.setString(3, order.getPayTT().name());
-            preparedStatement.setBigDecimal(4, order.getPrepayment());
-            preparedStatement.setLong(5, order.getWater().getId_water());
-            preparedStatement.setInt(6, order.getQuantity());
-            preparedStatement.setLong(7, order.getClient().getId_code());
-            preparedStatement.setBigDecimal(8, order.getIncome());
+            preparedStatement.setLong(1, order.getId_order());
+            preparedStatement.setString(2, order.getDate());
+            preparedStatement.setString(3, order.getoSt().name());
+            preparedStatement.setString(4, order.getPayTT().name());
+            preparedStatement.setBigDecimal(5, order.getPrepayment());
+            preparedStatement.setLong(6, order.getWater().getId_water());
+            preparedStatement.setInt(7, order.getQuantity());
+            preparedStatement.setLong(8, order.getClient().getId_code());
+            preparedStatement.setBigDecimal(9, order.getIncome());
             preparedStatement.execute();
 
         } catch (SQLException e) {
