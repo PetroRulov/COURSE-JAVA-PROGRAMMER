@@ -21,13 +21,17 @@ public class AddNewClientPanelUI {
     private JPanel ncPanel;
 
     // contol fields
+    private JFormattedTextField tfClID; // Client's ID for Client's Database
     private JTextField tfSurName;
     private JTextField tfName;
-    private JTextField tfAge;
+
+    private JTextField tfDay;
+    private JTextField tfMonth;
+    private JTextField tfYear;
+
     private JTextField tfSex;
     private JTextField tfEmail;
 
-    private JFormattedTextField tfClID; // Client's ID for Client's Database
 
     public AddNewClientPanelUI(Shop shop, Service serv){
         this.shop = shop;
@@ -35,7 +39,7 @@ public class AddNewClientPanelUI {
         this.ncPanel = createAddNewClientPanel();
     }
 
-    public JPanel createAddNewClientPanel() {
+    private JPanel createAddNewClientPanel() {
 
         ncPanel = new JPanel();
         ncPanel.setLayout(new GridBagLayout());
@@ -67,7 +71,7 @@ public class AddNewClientPanelUI {
         tfClID.setFont(new Font("Garamond", Font.ITALIC, 20));
         tfClID.setForeground(Color.BLACK);
         tfClID.setColumns(12);
-        tfClID.setValue(shop.getIdbI().getClts().size() + 1);
+        tfClID.setValue(shop.getIdbI().getClts().size());
         tfClID.setHorizontalAlignment(JTextField.RIGHT);
         tfClID.setEditable(false);
         ncPanel.add(tfClID, new GridBagConstraints(1, 1, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
@@ -80,13 +84,12 @@ public class AddNewClientPanelUI {
         tfSurName = new JTextField();
         tfSurName.setFont(new Font("Garamond", Font.ITALIC, 20));
         tfSurName.setForeground(Color.BLACK);
-        tfSurName.setColumns(12);
         ncPanel.add(tfSurName, new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel yName = new JLabel("Name: ");
         yName.setFont(new Font("Garamond", Font.ITALIC, 20));
         yName.setForeground(Color.BLUE);
-        yName.setHorizontalAlignment(JLabel.RIGHT);
+        yName.setHorizontalAlignment(JLabel.CENTER);
         ncPanel.add(yName, new GridBagConstraints(4, 2, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         tfName = new JTextField();
@@ -100,42 +103,60 @@ public class AddNewClientPanelUI {
         age.setForeground(Color.BLUE);
         ncPanel.add(age, new GridBagConstraints(0, 3, 1, 1, 0, 0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        tfAge = new JTextField();
-        tfAge.setForeground(Color.BLACK);
-        tfAge.setHorizontalAlignment(JTextField.RIGHT);
-        tfAge.setColumns(6);
-        tfAge.setText("00/00/0000");
-        ncPanel.add(tfAge, new GridBagConstraints(1, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        tfDay = new JTextField();
+        tfDay.setForeground(Color.BLACK);
+        tfDay.setHorizontalAlignment(JTextField.RIGHT);
+        tfDay.setColumns(2);
+        tfDay.setText("00");
+        ncPanel.add(tfDay, new GridBagConstraints(1, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfMonth = new JTextField();
+        tfMonth.setForeground(Color.BLACK);
+        tfMonth.setHorizontalAlignment(JTextField.RIGHT);
+        tfMonth.setColumns(2);
+        tfMonth.setText("00");
+        ncPanel.add(tfMonth, new GridBagConstraints(2, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+
+        tfYear = new JTextField();
+        tfYear.setForeground(Color.BLACK);
+        tfYear.setHorizontalAlignment(JTextField.RIGHT);
+        tfYear.setColumns(4);
+        tfYear.setText("0000");
+        ncPanel.add(tfYear, new GridBagConstraints(3, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel sex = new JLabel("Sex: ");
         sex.setFont(new Font("Garamond", Font.ITALIC, 20));
         sex.setForeground(Color.BLUE);
         sex.setHorizontalAlignment(JLabel.RIGHT);
-        ncPanel.add(sex, new GridBagConstraints(2, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        ncPanel.add(sex, new GridBagConstraints(0, 4, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         tfSex = new JTextField();
         tfSex.setForeground(Color.BLACK);
-        tfSex.setColumns(6);
-        ncPanel.add(tfSex, new GridBagConstraints(3, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        tfSex.setColumns(12);
+        ncPanel.add(tfSex, new GridBagConstraints(1, 4, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JLabel eMail = new JLabel("E-mail: ");
         eMail.setFont(new Font("Garamond", Font.ITALIC, 20));
         eMail.setForeground(Color.BLUE);
         eMail.setHorizontalAlignment(JLabel.RIGHT);
-        ncPanel.add(eMail, new GridBagConstraints(4, 3, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        ncPanel.add(eMail, new GridBagConstraints(4, 4, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         tfEmail = new JTextField();
         tfEmail.setForeground(Color.BLACK);
         tfEmail.setColumns(16);
-        ncPanel.add(tfEmail, new GridBagConstraints(5, 3, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        ncPanel.add(tfEmail, new GridBagConstraints(5, 4, 1, 1, 0, 0, GridBagConstraints.LINE_END, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
         JButton addNewClient = new JButton("Add new Client");
         addNewClient.setFont(new Font("Garamond", Font.BOLD, 20));
-        ncPanel.add(addNewClient, new GridBagConstraints(1, 4, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        ncPanel.add(addNewClient, new GridBagConstraints(1, 5, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
         addNewClient.setBorder(empty);
         addNewClient.setForeground(Color.BLUE);
         addNewClient.addActionListener(new AddClientControl(shop, this, shGUI, serv));
 
+        return ncPanel;
+    }
+
+    public JPanel getNcPanel() {
         return ncPanel;
     }
 
@@ -157,14 +178,30 @@ public class AddNewClientPanelUI {
         return getTfName().getText();
     }
 
-    public JTextField getTfAge() {
-        return tfAge;
+    public JTextField getTfDay() {
+        return tfDay;
     }
 
-    public String getAge(){
-
-        return getTfAge().getText();
+    public String getDay(){
+        return getTfDay().getText();
     }
+
+    public JTextField getTfMonth() {
+        return tfMonth;
+    }
+
+    public String getMonth(){
+        return getTfMonth().getText();
+    }
+
+    public JTextField getTfYear() {
+        return tfYear;
+    }
+
+    public String getYear(){
+        return getTfYear().getText();
+    }
+
 
     public JTextField getTfSex() {
         return tfSex;
@@ -192,5 +229,4 @@ public class AddNewClientPanelUI {
 
         return getTfClID().getText();
     }
-
 }

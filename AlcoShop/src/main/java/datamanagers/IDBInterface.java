@@ -16,6 +16,7 @@ public interface IDBInterface {
 
     //shop initiation
     List<Water> initStock();
+    List<Product> fillStock();
     List<Client> initClientsBase();
     List<Sale> initSalesJournal();
     List<Visitor> initVisitorsBase();
@@ -41,6 +42,6 @@ public interface IDBInterface {
     // add new Client
     List<Client> updateClientBase(Client client);
     List<Visitor> updateVisitorsBase(Visitor visitor);
-    //List<Product>updateProductsList();
+    List<Product>updateStock(Product product);
 
 }

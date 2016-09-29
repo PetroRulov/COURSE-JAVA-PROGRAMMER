@@ -51,7 +51,7 @@ public class SalePanelUI {
         this.salePanel = createSalePanel();
     }
 
-    public JPanel createSalePanel() {
+    private JPanel createSalePanel() {
 
         salePanel = new JPanel();
         salePanel.setLayout(new GridBagLayout());
@@ -154,6 +154,10 @@ public class SalePanelUI {
         buy.setBackground(Color.ORANGE);
         buy.addActionListener(new SaleControl(shop, this, shGUI, serv));
 
+        return salePanel;
+    }
+
+    public JPanel getSalePanel() {
         return salePanel;
     }
 

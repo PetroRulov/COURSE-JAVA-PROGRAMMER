@@ -98,6 +98,10 @@ public class TableOfOrders {
         return tabOrders;
     }
 
+    public JTable getTable() {
+        return table;
+    }
+
     private Object[] fillColumns() {
         String[] heads = new String[]{
                 "#", "ID", "Date", "Order's status", "Visitor'sID", "Visitor's surname",

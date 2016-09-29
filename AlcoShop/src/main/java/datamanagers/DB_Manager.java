@@ -164,6 +164,11 @@ public class DB_Manager implements IDBInterface {
     }
 
     @Override
+    public List<Product> fillStock() {
+        return null;
+    }
+
+    @Override
     public List<Client> initClientsBase(){
 
 
@@ -286,6 +291,12 @@ public class DB_Manager implements IDBInterface {
     public List<Visitor> updateVisitorsBase(Visitor visitor) {
         visitors.add(visitor);
         return visitors;
+    }
+
+    @Override
+    public List<Product> updateStock(Product product) {
+        products.add(product);
+        return products;
     }
 
     @Override

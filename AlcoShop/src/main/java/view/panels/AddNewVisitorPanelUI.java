@@ -36,7 +36,7 @@ public class AddNewVisitorPanelUI {
         this.nvPanel = createAddNewVisitorPanel();
     }
 
-    public JPanel createAddNewVisitorPanel() {
+    private JPanel createAddNewVisitorPanel() {
 
         nvPanel = new JPanel();
         nvPanel.setLayout(new GridBagLayout());
@@ -153,6 +153,10 @@ public class AddNewVisitorPanelUI {
         addNewVisitor.setForeground(Color.GREEN);
         addNewVisitor.addActionListener(new AddVisitorControl(shop, this, shGUI, serv));
 
+        return nvPanel;
+    }
+
+    public JPanel getNvPanel() {
         return nvPanel;
     }
 

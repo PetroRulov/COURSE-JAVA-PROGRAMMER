@@ -1,10 +1,7 @@
 package view;
 
 import bl.Shop;
-import control.AddClientControl;
-import control.AddVisitorControl;
-import control.OrderControl;
-import control.SaleControl;
+import control.*;
 import util.Service;
 import view.panels.*;
 import view.tables.*;
@@ -34,6 +31,7 @@ public class ShopUI {
     private SetAdjustedPeriodPanelUI perPUI;
     private SetAdjustedBuyerPanelUI buyerPUI;
     private OrderToSalePanelUI oTosPUI;
+    private AddNewProductPanelUI anpPUI;
     private TableOfSales tsUI;
     private TableOfOrders toUI;
     private TableClient tclUI;
@@ -52,6 +50,7 @@ public class ShopUI {
         this.anclPUI = new AddNewClientPanelUI(shop, serv);
         this.anvsPUI = new AddNewVisitorPanelUI(shop, serv);
         this.oTosPUI = new OrderToSalePanelUI(shop, serv);
+        this.anpPUI = new AddNewProductPanelUI(shop, serv);
         this.perPUI = new SetAdjustedPeriodPanelUI(shop, serv, this);
         this.buyerPUI = new SetAdjustedBuyerPanelUI(shop, serv, this);
         this.tsUI = new TableOfSales(shop);
@@ -70,7 +69,7 @@ public class ShopUI {
 
         frame.setJMenuBar(createMenuBar());
 
-        panel = hp.createHeadPieceUI();
+        panel = hp.gethP();
         frame.getContentPane().add(panel);
 
         frame.pack();
@@ -271,10 +270,28 @@ public class ShopUI {
             }
         });
 
+        JMenu products = new JMenu("PRODUCT'S OPERATIONS");
+        products.setFont(font);
+        fileMenu.add(products);
+        fileMenu.addSeparator();
+
+        JMenuItem addNewProduct = new JMenuItem("Add new Product");
+        addNewProduct.setFont(fant);
+        products.add(addNewProduct);
+        products.addSeparator();
+
+        addNewProduct.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                showAddingNewProductGUI();
+            }
+        });
+
+        // something else would be here
 
 
-
-        JMenuItem exitItem = new JMenuItem("Exit");
+        JMenuItem exitItem = new JMenuItem("EXIT");
         exitItem.setFont(font);
         fileMenu.add(exitItem);
 
@@ -291,7 +308,6 @@ public class ShopUI {
     }
 
     public void salesTableShow(){
-
         getFrame().getContentPane().removeAll();
         JTable table = tsUI.createSalesTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -302,7 +318,6 @@ public class ShopUI {
     }
 
     public void ordersJournalShow(){
-
         getFrame().getContentPane().removeAll();
         JTable table = toUI.createOrdersTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -313,7 +328,6 @@ public class ShopUI {
     }
 
     public void clientsTableShow(){
-
         getFrame().getContentPane().removeAll();
         JTable table = tclUI.createClientsTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -324,9 +338,8 @@ public class ShopUI {
     }
 
     public void visitorsTableShow(){
-
         getFrame().getContentPane().removeAll();
-        JTable table = tvsUI.createVisitorsTable();
+        JTable table = tvsUI.createVisitorsTable() ;
         JScrollPane scrollPane = new JScrollPane(table);
         table.setFillsViewportHeight(true);
         getFrame().getContentPane().add(scrollPane);
@@ -335,7 +348,6 @@ public class ShopUI {
     }
 
     public void priceListShow(){
-
         getFrame().getContentPane().removeAll();
         JTable table = tPL.createPriceListTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -343,13 +355,11 @@ public class ShopUI {
         getFrame().getContentPane().add(scrollPane);
         getFrame().pack();
         getFrame().repaint();
-
     }
 
     private void showTransactionGUI(){
-
         getFrame().getContentPane().removeAll();
-        panel = spUI.createSalePanel();
+        panel = spUI.getSalePanel();
         getFrame().getContentPane().add(panel);
         Observer obs = new SaleControl(shop, spUI, this, serv);
         shop.addObserver(obs);
@@ -358,9 +368,8 @@ public class ShopUI {
     }
 
     private void showOrderGUI(){
-
         getFrame().getContentPane().removeAll();
-        panel = ordpUI.createOrderPanel();
+        panel = ordpUI.getOrderPanel();
         getFrame().getContentPane().add(panel);
         Observer obs = new OrderControl(shop, ordpUI, this, serv);
         shop.addObserver(obs);
@@ -369,9 +378,8 @@ public class ShopUI {
     }
 
     private void showAddingNewClientGUI(){
-
         getFrame().getContentPane().removeAll();
-        panel = anclPUI.createAddNewClientPanel();
+        panel = anclPUI.getNcPanel();
         getFrame().getContentPane().add(panel);
         Observer obs = new AddClientControl(shop, anclPUI, this, serv);
         shop.addObserver(obs);
@@ -380,9 +388,8 @@ public class ShopUI {
     }
 
     private void showAddingNewVisitorGUI(){
-
         getFrame().getContentPane().removeAll();
-        panel = anvsPUI.createAddNewVisitorPanel();
+        panel = anvsPUI.getNvPanel();
         getFrame().getContentPane().add(panel);
         Observer obs = new AddVisitorControl(shop, anvsPUI, this, serv);
         shop.addObserver(obs);
@@ -390,10 +397,21 @@ public class ShopUI {
         getFrame().repaint();
     }
 
-    private void showSaleFromOrderGUI(){
-
+    private void showAddingNewProductGUI(){
         getFrame().getContentPane().removeAll();
-        panel = oTosPUI.createOTOSPanel();
+        panel = anpPUI.getNPPanel();
+        getFrame().getContentPane().add(panel);
+        Observer obs = new AddProductControl(shop, anpPUI, this, serv);
+        shop.addObserver(obs);
+        getFrame().pack();
+        getFrame().repaint();
+    }
+
+
+
+    private void showSaleFromOrderGUI(){
+        getFrame().getContentPane().removeAll();
+        panel = oTosPUI.getoToSPanel();
         getFrame().getContentPane().add(panel);
 //        Observer obs = new AddVisitorControl(shop, anvsPUI, this, serv);
 //        shop.addObserver(obs);

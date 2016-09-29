@@ -67,6 +67,10 @@ public class TableOfSales extends DefaultTableModel {
         return tSales;
     }
 
+    public JTable getTable() {
+        return table;
+    }
+
     private Object[] fillColumns(){
 
         int columns = 16;

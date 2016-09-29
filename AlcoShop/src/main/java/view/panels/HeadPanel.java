@@ -19,7 +19,7 @@ public class HeadPanel {
         this.hP = createHeadPieceUI();
     }
 
-    public JPanel createHeadPieceUI() {
+    private JPanel createHeadPieceUI() {
 
         hP = new JPanel();
         hP.setLayout(new GridBagLayout());
@@ -34,5 +34,9 @@ public class HeadPanel {
         hP.add(picture, new GridBagConstraints(0, 0, 0, 0, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
         return hP;
 
+    }
+
+    public JPanel gethP() {
+        return hP;
     }
 }

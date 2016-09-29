@@ -18,6 +18,7 @@ public class TableVisitors extends DefaultTableModel {
         this.table = createVisitorsTable();
         table.setFillsViewportHeight(true);
     }
+
     public JTable createVisitorsTable() {
 
         int columns = 8;
@@ -40,6 +41,10 @@ public class TableVisitors extends DefaultTableModel {
             }
         }
         return tVisitors;
+    }
+
+    public JTable getTable() {
+        return table;
     }
 
     private Object[] fillColumns(){

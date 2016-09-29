@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
  */
 public class CalcGUI extends JPanel implements ActionListener {
 
-    private Calculator calc;
+    private Calculation calc;
     private Object str;
     private String buttonText;
     private String displayed;
@@ -58,7 +58,7 @@ public class CalcGUI extends JPanel implements ActionListener {
     }
 
 
-    public CalcGUI(Calculator calc) {
+    public CalcGUI(Calculation calc) {
 
         this.calc = calc;
 

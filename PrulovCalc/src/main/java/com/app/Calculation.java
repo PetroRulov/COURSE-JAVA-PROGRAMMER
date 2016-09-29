@@ -1,14 +1,16 @@
+package com.app;
+
 /**
- * Created by prulov on 20.05.2016.
+ * Created by prulov on 21.09.2016.
  */
-public class Calculator {
+public class Calculation {
 
     private String[] oper = new String[]{"*", "/", "+", "-"};
     private double one;
     private double two;
     private double result;
 
-    public Calculator(){
+    public Calculation(){
 
         this.oper = oper;
         this.one = one;
@@ -115,3 +117,5 @@ public class Calculator {
     }
 
 }
+
+

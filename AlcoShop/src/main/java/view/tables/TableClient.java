@@ -43,6 +43,10 @@ public class TableClient extends DefaultTableModel {
         return tClients;
     }
 
+    public JTable getTable() {
+        return table;
+    }
+
     private Object[] fillColumns(){
 
         int columns = 7;

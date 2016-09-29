@@ -26,7 +26,7 @@ public class OrderToSalePanelUI {
         this.oToSPanel = createOTOSPanel();
     }
 
-    public JPanel createOTOSPanel() {
+    private JPanel createOTOSPanel() {
 
         oToSPanel = new JPanel();
         oToSPanel.setLayout(new GridBagLayout());
@@ -44,5 +44,7 @@ public class OrderToSalePanelUI {
         return oToSPanel;
     }
 
-
+    public JPanel getoToSPanel() {
+        return oToSPanel;
+    }
 }

@@ -14,6 +14,7 @@ public interface Product {
     Tare getTare();
     double getVolume();
     int getQuant();
+    BigDecimal getValue();
     BigDecimal getPrice();
 
 

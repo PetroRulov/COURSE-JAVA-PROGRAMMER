@@ -95,7 +95,7 @@ public class SaleControl implements ActionListener, Observer {
 
     private boolean clientIsPresent(){
         for(Client c : shop.getIdbI().getClts()){
-            if(c.getId_client() == Integer.parseInt(spUI.getBuyerID())){
+            if(c.getId_client() == Integer.parseInt(spUI.getBuyerID()) && c.getId_client() != 0 ){
                 return true;
             }
         }
@@ -103,14 +103,14 @@ public class SaleControl implements ActionListener, Observer {
     }
 
     private boolean clientDataAreCorrect(){
-        if(Integer.parseInt(spUI.getBuyerID()) > 0 && Integer.parseInt(spUI.getBuyerID()) != 901 ){
+        if(Integer.parseInt(spUI.getBuyerID()) >= 0){
             return true;
         }
         return false;
     }
 
     private Client setDefaultClient(){
-        return new Client(901, "default", "default", "default", "default", "default");
+        return new Client(0, "Unknown", "Unknown", "Unknown", "none", "Unknown");
     }
 
     @Override

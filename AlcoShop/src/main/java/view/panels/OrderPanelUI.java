@@ -71,14 +71,13 @@ public class OrderPanelUI {
         this.orderPanel = createOrderPanel();
     }
 
-    public JPanel createOrderPanel() {
+    private JPanel createOrderPanel() {
 
         orderPanel = new JPanel();
         orderPanel.setLayout(new GridBagLayout());
         orderPanel.setBackground(Color.ORANGE);
         orderPanel.setFont(new Font("Garamond", Font.BOLD, 20));
 
-        //goods = shop.getIdbI().getWaters();
         goods = shop.getIdbI().getProducts();
         statusTypes = createStatusTypesList();
         paymentType = createPaymentTypeList();
@@ -261,6 +260,10 @@ public class OrderPanelUI {
         orderPanel.add(formOrder, new GridBagConstraints(0, 9, 4, 2, 0, 0, GridBagConstraints.PAGE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
         formOrder.addActionListener(ordControl);
 
+        return orderPanel;
+    }
+
+    public JPanel getOrderPanel() {
         return orderPanel;
     }
 

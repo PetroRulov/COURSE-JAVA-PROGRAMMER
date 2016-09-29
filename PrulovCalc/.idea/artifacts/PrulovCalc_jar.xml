@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="PrulovCalc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PrulovCalc_jar</output-path>
+    <root id="archive" name="PrulovCalc.jar">
+      <element id="module-output" name="PrulovCalc" />
+    </root>
+  </artifact>
+</component>

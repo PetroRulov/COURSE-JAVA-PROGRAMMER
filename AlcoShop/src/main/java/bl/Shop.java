@@ -59,12 +59,19 @@ public class Shop extends Observable {
         this.clts = clientsBase;
     }
 
+    public void addNewProduct(Product product){
+        products = idbI.updateStock(product);
+        setChanged();
+        notifyObservers(product);
+        //setProducts(products);
+    }
+
     public void addNewClient(Client client){
 
         clts = idbI.updateClientBase(client);
         setChanged();
         notifyObservers(client);
-        setClts(clts);
+        //setClts(clts);
     }
 
     public void addNewVisitor(Visitor visitor){
@@ -72,7 +79,7 @@ public class Shop extends Observable {
         visitors = idbI.updateVisitorsBase(visitor);
         setChanged();
         notifyObservers(visitor);
-        setVisitors(visitors);
+        //setVisitors(visitors);
     }
 
     public List<Water> getWaters(){
@@ -87,12 +94,20 @@ public class Shop extends Observable {
         this.waters = watersCatalog;
     }
 
+//    public List<Product> getProducts(){
+//
+//        for(Water water : getWaters()){
+//            products.add((Product) water);
+//        }
+//        return products;
+//    }
+
     public List<Product> getProducts(){
 
-        for(Water water : getWaters()){
-            products.add((Product) water);
+        if(products == null || products.isEmpty()){
+            idbI.initStock();
         }
-        return products;
+        return new ArrayList<Product>(waters);
     }
 
     public void setProducts(List<Product> productsList) {
@@ -137,14 +152,14 @@ public class Shop extends Observable {
         sales = idbI.updateSales(sale);
         setChanged();
         notifyObservers(sale);
-        setSales(sales);
+        //setSales(sales);
     }
 
     public void addNewOrderInJournal(Order order){
         orders = idbI.updateOrders(order);
         setChanged();
         notifyObservers(order);
-        setOrders(orders);
+        //setOrders(orders);
     }
 
 

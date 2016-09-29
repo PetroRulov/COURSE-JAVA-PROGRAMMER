@@ -83,7 +83,7 @@ public class Water implements Product, Serializable {
     }
 
     public BigDecimal getValue() {
-        return value;
+        return value.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 
     public void setValue(BigDecimal value) {

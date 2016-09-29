@@ -32,6 +32,6 @@ public class DisplayClient implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        spUI.setTextArea(shop.getIdbI().getClts().get(Integer.parseInt(spUI.getBuyerID())-1).clientInfoShow());
+        spUI.setTextArea(shop.getIdbI().getClts().get(Integer.parseInt(spUI.getBuyerID())).clientInfoShow());
     }
 }

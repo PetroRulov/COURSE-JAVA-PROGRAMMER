@@ -40,7 +40,8 @@ public class MySQL_DB_Manager implements IDBInterface {
         this.waters = new ArrayList<Water>();
         waters = initStock();
         this.products = new ArrayList<>();
-        products = getProducts();
+        //products = getProducts();
+        products = fillStock();
         this.clts = new ArrayList<Client>();
         clts = initClientsBase();
         this.visitors = new ArrayList<>();
@@ -118,7 +119,7 @@ public class MySQL_DB_Manager implements IDBInterface {
                 Sale sql = new Sale();
                 sql.setId_sale(resultSet.getLong("id_sale"));
                 sql.setDate(resultSet.getString("date"));
-                sql.setGuest(clts.get((int)resultSet.getLong("id_client")-1));
+                sql.setGuest(clts.get((int)resultSet.getLong("id_client")));
                 sql.setWat(waters.get((int)resultSet.getLong("id_water")-1));
                 sql.setQuant(resultSet.getInt("quant"));
                 sql.setIncome(resultSet.getBigDecimal("income"));
@@ -204,10 +205,41 @@ public class MySQL_DB_Manager implements IDBInterface {
     }
 
     @Override
-    public List<Product> getProducts() {
-        List<Product> products = new ArrayList<>();
-        for(Water water : getWaters()){
-            products.add((Product) water);
+    public List<Product> getProducts(){
+        return new ArrayList<Product>(products);
+    }
+
+    @Override
+    public List<Product> fillStock() {
+        String watersQuery = "select * from stock";
+        try {
+            Statement statement = mySQLWorker.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(watersQuery);
+            while(resultSet.next()){
+                Water sql = new Water();
+                sql.setId_water(resultSet.getLong("id_water"));
+                sql.setDrink(resultSet.getString("drink"));
+                sql.setName(resultSet.getString("name"));
+                String tare = resultSet.getString("tare");
+                if(tare.equals("GLASS")){
+                    sql.setTare(Tare.GLASS);
+                }else if(tare.equals("PAT")){
+                    sql.setTare(Tare.PAT);
+                }else if(tare.equals("CLAY")){
+                    sql.setTare(Tare.CLAY);
+                }else if(tare.equals("TOY")){
+                    sql.setTare(Tare.TOY);
+                }else{
+                    sql.setTare(Tare.TETRAPAC);
+                }
+                sql.setVolume(resultSet.getDouble("volume"));
+                sql.setQuant(resultSet.getInt("quant"));
+                sql.setValue(resultSet.getBigDecimal("value"));
+                sql.setPrice(resultSet.getBigDecimal("price"));
+                products.add(sql);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return products;
     }
@@ -313,16 +345,17 @@ public class MySQL_DB_Manager implements IDBInterface {
     @Override
     public List<Client> updateClientBase(Client client) {
         clts.add(client);
-        String update = "INSERT INTO clients(surName, name, dateOfBirth, sex, email) " +
-                "VALUES(?, ?, ?, ?, ?);";
+        String update = "INSERT INTO clients(id_client, surName, name, dateOfBirth, sex, email) " +
+                "VALUES(?, ?, ?, ?, ?, ?);";
         PreparedStatement preparedStatement = null;
         try{
             preparedStatement = mySQLWorker.getConnection().prepareStatement(update);
-            preparedStatement.setString(1, client.getSurName());
-            preparedStatement.setString(2, client.getName());
-            preparedStatement.setString(3, client.getDateOfBirth());
-            preparedStatement.setString(4, client.getSex());
-            preparedStatement.setString(5, client.geteMail());
+            preparedStatement.setLong(1, client.getId_client());
+            preparedStatement.setString(2, client.getSurName());
+            preparedStatement.setString(3, client.getName());
+            preparedStatement.setString(4, client.getDateOfBirth());
+            preparedStatement.setString(5, client.getSex());
+            preparedStatement.setString(6, client.geteMail());
             preparedStatement.execute();
 
         } catch (SQLException e) {
@@ -351,5 +384,30 @@ public class MySQL_DB_Manager implements IDBInterface {
             e.printStackTrace();
         }
         return visitors;
+    }
+
+    @Override
+    public List<Product> updateStock(Product product) {
+        products.add(product);
+        String update = "INSERT INTO stock(id_water, drink, name, tare, volume, quant, value, price, count) " +
+                "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
+        PreparedStatement preparedStatement = null;
+        try{
+            preparedStatement = mySQLWorker.getConnection().prepareStatement(update);
+            preparedStatement.setLong(1, product.getId_water());
+            preparedStatement.setString(2, product.getDrink());
+            preparedStatement.setString(3, product.getName());
+            preparedStatement.setString(4, product.getTare().name());
+            preparedStatement.setDouble(5, product.getVolume());
+            preparedStatement.setInt(6, product.getQuant());
+            preparedStatement.setBigDecimal(7, product.getValue());
+            preparedStatement.setBigDecimal(8, product.getPrice());
+            preparedStatement.setInt(9, product.getCount());
+            preparedStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
     }
 }

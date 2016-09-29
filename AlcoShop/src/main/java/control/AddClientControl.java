@@ -61,10 +61,8 @@ public class AddClientControl implements ActionListener, Observer {
     }
 
     private Client setClient(){
-
         return new Client(Integer.parseInt(ancPUI.getClientID()), ancPUI.getSurName(), ancPUI.getName(),
-                ancPUI.getAge(), ancPUI.getSex(), ancPUI.getEmail());
-
+                ancPUI.getDay()+"/"+ancPUI.getMonth()+"/"+ancPUI.getYear(), ancPUI.getSex(), ancPUI.getEmail());
     }
 
     private boolean isPresent(){
@@ -81,7 +79,12 @@ public class AddClientControl implements ActionListener, Observer {
 
         if(ancPUI.getSurName() != null && ! ancPUI.getSurName().isEmpty() &&
                 ancPUI.getName() != null && ! ancPUI.getName().isEmpty() &&
-                ancPUI.getAge() != null && ! ancPUI.getAge().isEmpty() &&
+                ancPUI.getDay() != null && ! ancPUI.getDay().isEmpty() &&
+                Integer.parseInt(ancPUI.getDay()) > 0 && Integer.parseInt(ancPUI.getDay()) <= 31 &&
+                ancPUI.getMonth() != null && ! ancPUI.getMonth().isEmpty() &&
+                Integer.parseInt(ancPUI.getMonth()) > 0 && Integer.parseInt(ancPUI.getMonth()) <= 12 &&
+                ancPUI.getYear() != null && ! ancPUI.getYear().isEmpty() &&
+                Integer.parseInt(ancPUI.getYear()) > 1915 && Integer.parseInt(ancPUI.getMonth()) <= 1995 &&
                 ancPUI.getSex() != null && ! ancPUI.getSex().isEmpty() &&
                 ancPUI.getEmail() != null && ! ancPUI.getEmail().isEmpty()){
             return true;
