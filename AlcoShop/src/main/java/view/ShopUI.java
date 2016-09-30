@@ -45,21 +45,6 @@ public class ShopUI {
         this.shop = shop;
         this.serv = new Service(shop);
         this.hp = new HeadPanel(shop);
-        this.spUI = new SalePanelUI(shop, serv);
-        this.ordpUI = new OrderPanelUI(shop, serv);
-        this.anclPUI = new AddNewClientPanelUI(shop, serv);
-        this.anvsPUI = new AddNewVisitorPanelUI(shop, serv);
-        this.oTosPUI = new OrderToSalePanelUI(shop, serv);
-        this.anpPUI = new AddNewProductPanelUI(shop, serv);
-        this.perPUI = new SetAdjustedPeriodPanelUI(shop, serv, this);
-        this.buyerPUI = new SetAdjustedBuyerPanelUI(shop, serv, this);
-        this.tsUI = new TableOfSales(shop);
-        this.toUI = new TableOfOrders(shop);
-        this.tclUI = new TableClient(shop);
-        this.tvsUI = new TableVisitors(shop);
-        this.tPL = new TablePriceList(shop);
-        this.tSabyDate = new AdjustedByDateTableOfSales(shop, perPUI);
-        this.tSbyBuyer = new AdjusyedByBuyerTableOfSales(shop, buyerPUI);
 
         this.frame.setDefaultLookAndFeelDecorated(true);
         frame = new JFrame(head);
@@ -80,6 +65,8 @@ public class ShopUI {
         return frame;
     }
 
+
+    //create FileMenu
     private JMenuBar createMenuBar(){
 
         Font bigFont = new Font("Verdana", Font.BOLD, 21);
@@ -307,7 +294,9 @@ public class ShopUI {
         return menuBar;
     }
 
+    // sales history
     public void salesTableShow(){
+        tsUI = new TableOfSales(shop);
         getFrame().getContentPane().removeAll();
         JTable table = tsUI.createSalesTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -317,7 +306,9 @@ public class ShopUI {
         getFrame().repaint();
     }
 
+    // order's journal
     public void ordersJournalShow(){
+        toUI = new TableOfOrders(shop);
         getFrame().getContentPane().removeAll();
         JTable table = toUI.createOrdersTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -327,7 +318,9 @@ public class ShopUI {
         getFrame().repaint();
     }
 
+    // customers
     public void clientsTableShow(){
+        tclUI = new TableClient(shop);
         getFrame().getContentPane().removeAll();
         JTable table = tclUI.createClientsTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -338,6 +331,7 @@ public class ShopUI {
     }
 
     public void visitorsTableShow(){
+        tvsUI = new TableVisitors(shop);
         getFrame().getContentPane().removeAll();
         JTable table = tvsUI.createVisitorsTable() ;
         JScrollPane scrollPane = new JScrollPane(table);
@@ -348,6 +342,7 @@ public class ShopUI {
     }
 
     public void priceListShow(){
+        tPL = new TablePriceList(shop);
         getFrame().getContentPane().removeAll();
         JTable table = tPL.createPriceListTable();
         JScrollPane scrollPane = new JScrollPane(table);
@@ -357,7 +352,9 @@ public class ShopUI {
         getFrame().repaint();
     }
 
+    //Price-List
     private void showTransactionGUI(){
+        spUI = new SalePanelUI(shop, serv);
         getFrame().getContentPane().removeAll();
         panel = spUI.getSalePanel();
         getFrame().getContentPane().add(panel);
@@ -367,7 +364,9 @@ public class ShopUI {
         getFrame().repaint();
     }
 
+    // service methods
     private void showOrderGUI(){
+        ordpUI = new OrderPanelUI(shop, serv);
         getFrame().getContentPane().removeAll();
         panel = ordpUI.getOrderPanel();
         getFrame().getContentPane().add(panel);
@@ -378,6 +377,7 @@ public class ShopUI {
     }
 
     private void showAddingNewClientGUI(){
+        anclPUI = new AddNewClientPanelUI(shop, serv);
         getFrame().getContentPane().removeAll();
         panel = anclPUI.getNcPanel();
         getFrame().getContentPane().add(panel);
@@ -388,6 +388,7 @@ public class ShopUI {
     }
 
     private void showAddingNewVisitorGUI(){
+        anvsPUI = new AddNewVisitorPanelUI(shop, serv);
         getFrame().getContentPane().removeAll();
         panel = anvsPUI.getNvPanel();
         getFrame().getContentPane().add(panel);
@@ -398,6 +399,7 @@ public class ShopUI {
     }
 
     private void showAddingNewProductGUI(){
+        anpPUI = new AddNewProductPanelUI(shop, serv);
         getFrame().getContentPane().removeAll();
         panel = anpPUI.getNPPanel();
         getFrame().getContentPane().add(panel);
@@ -410,6 +412,7 @@ public class ShopUI {
 
 
     private void showSaleFromOrderGUI(){
+        oTosPUI = new OrderToSalePanelUI(shop, serv);
         getFrame().getContentPane().removeAll();
         panel = oTosPUI.getoToSPanel();
         getFrame().getContentPane().add(panel);
@@ -420,9 +423,9 @@ public class ShopUI {
     }
 
 
-    //util methods
+    //util methods for sales history
     private void showAdjustPeriodGUI(){
-
+        perPUI = new SetAdjustedPeriodPanelUI(shop, serv, this);
         getFrame().getContentPane().removeAll();
         panel = perPUI.getPeriodPanel();
         getFrame().getContentPane().add(panel);
@@ -431,7 +434,7 @@ public class ShopUI {
     }
 
     private void showAdjustBuyerGUI(){
-
+        buyerPUI = new SetAdjustedBuyerPanelUI(shop, serv, this);
         getFrame().getContentPane().removeAll();
         panel = buyerPUI.getBuyerPanel();
         getFrame().getContentPane().add(panel);
@@ -439,9 +442,8 @@ public class ShopUI {
         getFrame().repaint();
     }
 
-
     public void adjustedByDateSalesTableShow(){
-
+        tSabyDate = new AdjustedByDateTableOfSales(shop, perPUI);
         getFrame().getContentPane().removeAll();
         JTable table = tSabyDate.createAdjustedByDateSalesTable(perPUI.getInitialDate(), perPUI.getFinishDate());
         JScrollPane scrollPane = new JScrollPane(table);
@@ -452,7 +454,7 @@ public class ShopUI {
     }
 
     public void adjustedByBuyerSalesTableShow(){
-
+        tSbyBuyer = new AdjusyedByBuyerTableOfSales(shop, buyerPUI);
         getFrame().getContentPane().removeAll();
         JTable table = tSbyBuyer.createAdjustedByBuyerSalesTable(buyerPUI.getBuyersID());
         JScrollPane scrollPane = new JScrollPane(table);

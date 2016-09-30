@@ -4,6 +4,7 @@ import bl.Shop;
 import util.Service;
 import view.panels.OrderPanelUI;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,6 +30,30 @@ public class DisplayVisitor implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        opUI.setVisitortAreaText(shop.getIdbI().getVisitors().get(Integer.parseInt(opUI.getVisitorID())-1).visitorInfoShow());
+
+        int code = 0;
+        if(isInt(opUI.getVisitorID())){
+            code = Integer.parseInt(opUI.getVisitorID())-1;
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct Buyer's ID and try again!",
+                    "Error message", JOptionPane.PLAIN_MESSAGE);
+            return;
+        }
+        if(code >=0 && code <= shop.getIdbI().getClts().size() - 1){
+            opUI.setVisitortAreaText(shop.getIdbI().getVisitors().get(code).visitorInfoShow());
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct Buyer's ID and try again!",
+                    "Error message", JOptionPane.PLAIN_MESSAGE);
+            return;
+        }
+    }
+
+    private boolean isInt(String s) throws NumberFormatException {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

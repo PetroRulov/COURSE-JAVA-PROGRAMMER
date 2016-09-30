@@ -31,12 +31,22 @@ public class AddItemToOrder implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(opUI.getSelectedWater()!=null && Integer.parseInt(opUI.getQuantity()) > 0){
+        int quantity = 0;
+        if(isInt(opUI.getQuantity())){
+            quantity = Integer.parseInt(opUI.getQuantity());
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct Quantity and try again!",
+                    "Error message", JOptionPane.PLAIN_MESSAGE);
+            return;
+        }
+
+
+        if(opUI.getSelectedWater()!=null && quantity > 0){
             Product product = null;
             for (int i = 0; i < list.size(); i++) {
                 if (opUI.getSelectedWater().equals(list.get(i))) {
                     product = list.get(i);
-                    product.setCount(Integer.parseInt(opUI.getQuantity()));
+                    product.setCount(quantity);
 
                 }
             }
@@ -55,6 +65,15 @@ public class AddItemToOrder implements ActionListener {
             JOptionPane.showConfirmDialog(null, "Order is not formed! \n Please, select item and try again with new quantity",
                     "Order's execution possibility", JOptionPane.OK_CANCEL_OPTION);
             return;
+        }
+    }
+
+    private boolean isInt(String s) throws NumberFormatException {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
 }

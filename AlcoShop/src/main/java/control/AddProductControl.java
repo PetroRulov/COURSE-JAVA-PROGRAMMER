@@ -111,11 +111,6 @@ public class AddProductControl implements ActionListener, Observer {
         return false;
     }
 
-    private Product setProduct(){
-
-        return (Product) new Water();
-    }
-
     private boolean isDigit(String s) throws NumberFormatException {
         try {
             Double.parseDouble(s);

@@ -108,7 +108,7 @@ public class Water implements Product, Serializable {
     public String toString(){
 
         return "id #" + getId_water() + " " + getDrink() + " " + getName() + ", " + getTare() + " " + getVolume() +
-                "L, price: UAH " + getPrice().setScale(2, BigDecimal.ROUND_HALF_UP).toString();
+        "L, price: UAH " + getPrice().setScale(2, BigDecimal.ROUND_HALF_UP).toString() + ", " + getQuant() + " item(s) left";
     }
 
     @Override

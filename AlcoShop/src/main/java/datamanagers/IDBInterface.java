@@ -42,6 +42,9 @@ public interface IDBInterface {
     // add new Client
     List<Client> updateClientBase(Client client);
     List<Visitor> updateVisitorsBase(Visitor visitor);
-    List<Product>updateStock(Product product);
+
+    // add new Product
+    List<Product> addToStock(Product product);
+    List<Product> updateStock();
 
 }

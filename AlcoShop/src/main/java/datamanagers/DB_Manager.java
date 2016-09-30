@@ -294,9 +294,14 @@ public class DB_Manager implements IDBInterface {
     }
 
     @Override
-    public List<Product> updateStock(Product product) {
+    public List<Product> addToStock(Product product) {
         products.add(product);
         return products;
+    }
+
+    @Override
+    public List<Product> updateStock() {
+        return null;
     }
 
     @Override

@@ -10,6 +10,8 @@ public class Main {
 
         new Splash();
 
+        //MySQL_DB_Manager dbManager = new MySQL_DB_Manager();
+
         Shop shop = new Shop();
 
         //shop.setDBManager(new DB_Manager());

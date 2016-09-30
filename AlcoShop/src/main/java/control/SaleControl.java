@@ -57,7 +57,14 @@ public class SaleControl implements ActionListener, Observer {
 
             Water wat = spUI.getSelectedWater();
 
-            int quant = Integer.parseInt(spUI.getQuantity());
+            int quant = 0;
+            if(isInt(spUI.getQuantity())){
+                quant = Integer.parseInt(spUI.getQuantity());
+            }else{
+                JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct Quantity and try again!",
+                        "Error message", JOptionPane.PLAIN_MESSAGE);
+                return;
+            }
 
             if(wat.getQuant() >= quant){
                 shop.getIdbI().soldWaterMinus(wat, quant);
@@ -72,6 +79,7 @@ public class SaleControl implements ActionListener, Observer {
                 long orderID = 0;
                 neo.setOrderID(orderID);
                 shop.addSaleTransaction(neo);
+                shop.getIdbI().updateStock();
             }else{
                 JOptionPane.showConfirmDialog(null, "Transaction is NOT possible! \n Please, try again with new quantity of item",
                         "Transaction possibility", JOptionPane.OK_CANCEL_OPTION);
@@ -111,6 +119,15 @@ public class SaleControl implements ActionListener, Observer {
 
     private Client setDefaultClient(){
         return new Client(0, "Unknown", "Unknown", "Unknown", "none", "Unknown");
+    }
+
+    private boolean isInt(String s) throws NumberFormatException {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     @Override

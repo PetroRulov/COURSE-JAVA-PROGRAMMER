@@ -28,9 +28,8 @@ public class Shop extends Observable {
     private List<Water> waters;
     private List<Product> products;
 
-
     public Shop(){
-
+        //this.idbI = idbI;
         this.waters = new ArrayList<Water>();
         this.products = new ArrayList<>();
         this.clts = new ArrayList<Client>();
@@ -48,7 +47,6 @@ public class Shop extends Observable {
     }
 
     public List<Client> getClts() {
-
         if(clts == null || clts.isEmpty()){
             idbI.initClientsBase();
         }
@@ -60,30 +58,24 @@ public class Shop extends Observable {
     }
 
     public void addNewProduct(Product product){
-        products = idbI.updateStock(product);
+        products = idbI.addToStock(product);
         setChanged();
         notifyObservers(product);
-        //setProducts(products);
     }
 
     public void addNewClient(Client client){
-
         clts = idbI.updateClientBase(client);
         setChanged();
         notifyObservers(client);
-        //setClts(clts);
     }
 
     public void addNewVisitor(Visitor visitor){
-
         visitors = idbI.updateVisitorsBase(visitor);
         setChanged();
         notifyObservers(visitor);
-        //setVisitors(visitors);
     }
 
     public List<Water> getWaters(){
-
         if(waters == null || waters.isEmpty()){
             idbI.initStock();
         }
@@ -94,16 +86,7 @@ public class Shop extends Observable {
         this.waters = watersCatalog;
     }
 
-//    public List<Product> getProducts(){
-//
-//        for(Water water : getWaters()){
-//            products.add((Product) water);
-//        }
-//        return products;
-//    }
-
     public List<Product> getProducts(){
-
         if(products == null || products.isEmpty()){
             idbI.initStock();
         }
@@ -115,7 +98,6 @@ public class Shop extends Observable {
     }
 
     public List<Sale> getSales() {
-
         if(sales == null){
             idbI.initSalesJournal();
         }
@@ -152,15 +134,11 @@ public class Shop extends Observable {
         sales = idbI.updateSales(sale);
         setChanged();
         notifyObservers(sale);
-        //setSales(sales);
     }
 
     public void addNewOrderInJournal(Order order){
         orders = idbI.updateOrders(order);
         setChanged();
         notifyObservers(order);
-        //setOrders(orders);
     }
-
-
 }

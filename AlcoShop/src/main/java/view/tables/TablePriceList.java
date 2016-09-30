@@ -1,12 +1,15 @@
 package view.tables;
 
 import bl.Shop;
+import domain.Sale;
 import domain.waters.Product;
 import domain.waters.Water;
 
 import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.math.BigDecimal;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by prulov on 09.07.2016.
@@ -49,7 +52,6 @@ public class TablePriceList {
     }
 
     private Object[] fillColumns() {
-
         String[] heads = new String[]{
                 "#", "ID", "Type", "Name", "Tare", "Volume, L",  "Quantity", "Price, UAH"};
         Object[] colNames = new Object[heads.length];
@@ -57,14 +59,11 @@ public class TablePriceList {
             colNames[i] = heads[i];
         }
         return colNames;
-
     }
 
     private Object[][] fillData() {
-
         Object[][] data = new Object[shop.getIdbI().getProducts().size()][columns];
         int j = 1, i = 0;
-
         for(Product product : shop.getIdbI().getProducts()){
             data[i] = new Object[]{
                     j++,
@@ -79,6 +78,5 @@ public class TablePriceList {
             i++;
         }
         return data;
-
     }
 }

@@ -7,6 +7,7 @@ import util.Service;
 import view.panels.OrderPanelUI;
 import view.panels.SalePanelUI;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -32,6 +33,31 @@ public class DisplayClient implements ActionListener {
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        spUI.setTextArea(shop.getIdbI().getClts().get(Integer.parseInt(spUI.getBuyerID())).clientInfoShow());
+
+        int code = 0;
+        if(isInt(spUI.getBuyerID())){
+            code = Integer.parseInt(spUI.getBuyerID());
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct Buyer's ID and try again!",
+                    "Error message", JOptionPane.PLAIN_MESSAGE);
+            return;
+        }
+        if(code >=0 && code <= shop.getIdbI().getClts().size() - 1){
+            spUI.setTextArea(shop.getIdbI().getClts().get(code).clientInfoShow());
+        }else{
+            JOptionPane.showConfirmDialog(null, "ERROR: Please, input correct Buyer's ID and try again!",
+                    "Error message", JOptionPane.PLAIN_MESSAGE);
+            return;
+        }
+
+    }
+
+    private boolean isInt(String s) throws NumberFormatException {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 }

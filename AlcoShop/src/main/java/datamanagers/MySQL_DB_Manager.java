@@ -40,7 +40,6 @@ public class MySQL_DB_Manager implements IDBInterface {
         this.waters = new ArrayList<Water>();
         waters = initStock();
         this.products = new ArrayList<>();
-        //products = getProducts();
         products = fillStock();
         this.clts = new ArrayList<Client>();
         clts = initClientsBase();
@@ -321,13 +320,6 @@ public class MySQL_DB_Manager implements IDBInterface {
 
     @Override
     public void soldWaterMinus(Water wat, int quant) {
-        Water sold = null;
-        for(Water i : waters){
-            if(i.equals(wat)){
-                sold = i;
-                break;
-            }
-        }
         String soldWaterminus = "UPDATE `alcoshop`.`stock` SET `quant`=? WHERE `id_water`=?;";
         PreparedStatement preparedStatement = null;
         try{
@@ -339,7 +331,7 @@ public class MySQL_DB_Manager implements IDBInterface {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        sold.setQuant(sold.getQuant() - quant);
+        waters.get((int)wat.getId_water()-1).setQuant(wat.getQuant() - quant);
     }
 
     @Override
@@ -387,7 +379,7 @@ public class MySQL_DB_Manager implements IDBInterface {
     }
 
     @Override
-    public List<Product> updateStock(Product product) {
+    public List<Product> addToStock(Product product) {
         products.add(product);
         String update = "INSERT INTO stock(id_water, drink, name, tare, volume, quant, value, price, count) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
@@ -405,6 +397,42 @@ public class MySQL_DB_Manager implements IDBInterface {
             preparedStatement.setInt(9, product.getCount());
             preparedStatement.execute();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+    @Override
+    public List<Product> updateStock() {
+
+        String watersQuery = "select * from stock";
+        try {
+            Statement statement = mySQLWorker.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(watersQuery);
+            while(resultSet.next()){
+                Water sql = new Water();
+                sql.setId_water(resultSet.getLong("id_water"));
+                sql.setDrink(resultSet.getString("drink"));
+                sql.setName(resultSet.getString("name"));
+                String tare = resultSet.getString("tare");
+                if(tare.equals("GLASS")){
+                    sql.setTare(Tare.GLASS);
+                }else if(tare.equals("PAT")){
+                    sql.setTare(Tare.PAT);
+                }else if(tare.equals("CLAY")){
+                    sql.setTare(Tare.CLAY);
+                }else if(tare.equals("TOY")){
+                    sql.setTare(Tare.TOY);
+                }else{
+                    sql.setTare(Tare.TETRAPAC);
+                }
+                sql.setVolume(resultSet.getDouble("volume"));
+                sql.setQuant(resultSet.getInt("quant"));
+                sql.setValue(resultSet.getBigDecimal("value"));
+                sql.setPrice(resultSet.getBigDecimal("price"));
+                products.add(sql);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
