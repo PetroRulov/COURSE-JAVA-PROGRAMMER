@@ -140,7 +140,7 @@ public class SalePanelUI {
 
         JButton confirmBuyer = new JButton("Confirm the Buyer");
         confirmBuyer.setFont(new Font("Garamond", Font.BOLD, 20));
-        salePanel.add(confirmBuyer, new GridBagConstraints(5, 5, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
+        salePanel.add(confirmBuyer, new GridBagConstraints(1, 3, 1, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
         confirmBuyer.setBorder(empty);
         confirmBuyer.setForeground(Color.RED);
         confirmBuyer.setBackground(Color.DARK_GRAY);
