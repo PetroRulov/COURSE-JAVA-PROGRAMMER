@@ -350,7 +350,7 @@ public class OrderPanelUI {
         StringBuilder s = new StringBuilder();
         int j = 1;
         for (int i = 0; i < serv.getOrderItems().size(); i++) {
-            s.append(j + ". " + serv.getOrderItems().get(i).productInfo());
+            s.append(j + ". " + serv.getOrderItems().get(i).productInOrderInfo());
             j++;
         }
         getArea().setText(s.toString());

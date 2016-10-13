@@ -150,7 +150,7 @@ public class Water implements Product, Serializable {
                 "|"+getPrice(), "|   " + getQuant() + "    |" + getCount() + "    |");
     }
 
-    public String productInfo(){
+    public String productInOrderInfo(){
         return getDrink()+", "+getName()+", "+getTare()+", "+getVolume()+", "+
                 getPrice()+" - " + getCount() +" items,"+ "\n";
     }

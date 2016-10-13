@@ -23,7 +23,7 @@ public interface Product {
 
     void setCount(int count);
 
-    String productInfo();
+    String productInOrderInfo();
 
     int getCount();
 }

@@ -53,7 +53,7 @@ public class AddItemToOrder implements ActionListener {
             serv.addOrderItems(product);
 
             for (int i = 0; i < serv.getOrderItems().size(); i++) {
-                opUI.setTextArea(serv.getOrderItems().get(i).productInfo());
+                opUI.setTextArea(serv.getOrderItems().get(i).productInOrderInfo());
             }
 
             BigDecimal outcome = new BigDecimal(0.0);
