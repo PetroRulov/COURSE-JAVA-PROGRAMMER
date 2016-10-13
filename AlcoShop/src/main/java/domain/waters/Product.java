@@ -23,7 +23,7 @@ public interface Product {
 
     void setCount(int count);
 
-    String waterShow();
+    String productInfo();
 
     int getCount();
 }

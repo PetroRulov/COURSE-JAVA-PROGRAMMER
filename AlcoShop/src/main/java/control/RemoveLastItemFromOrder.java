@@ -31,7 +31,7 @@ public class RemoveLastItemFromOrder implements ActionListener {
             opUI.setTextOrderValue(BigDecimal.ZERO);
         }else{
             for (int i = 0; i < serv.getOrderItems().size(); i++) {
-                opUI.setTextArea(serv.getOrderItems().get(i).waterShow());
+                opUI.setTextArea(serv.getOrderItems().get(i).productInfo());
             }
             BigDecimal outcome = new BigDecimal(0.0);
             for (Product prod : serv.getOrderItems()) {
