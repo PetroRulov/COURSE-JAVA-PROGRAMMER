@@ -416,8 +416,6 @@ public class ShopUI {
         getFrame().getContentPane().removeAll();
         panel = oTosPUI.getoToSPanel();
         getFrame().getContentPane().add(panel);
-//        Observer obs = new AddVisitorControl(shop, anvsPUI, this, serv);
-//        shop.addObserver(obs);
         getFrame().pack();
         getFrame().repaint();
     }

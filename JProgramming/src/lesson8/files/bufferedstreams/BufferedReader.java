@@ -12,8 +12,8 @@ public class BufferedReader extends FileReader {
 
         StringBuilder builder = new StringBuilder();
 
-        try(    FileInputStream fis = new FileInputStream(fileName);
-                BufferedInputStream bis = new BufferedInputStream(fis);
+        try(FileInputStream fis = new FileInputStream(fileName);
+            BufferedInputStream bis = new BufferedInputStream(fis);
                 ) {
             int i;
             while((i = bis.read()) != -1){
