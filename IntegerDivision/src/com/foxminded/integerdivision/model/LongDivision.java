@@ -6,6 +6,12 @@ import java.util.List;
 
 public class LongDivision {
 
+    private int searchPeriod;
+
+    public void setSearchPeriod(int searchPeriod) {
+        this.searchPeriod = searchPeriod;
+    }
+
     public boolean isIntNumber(String str) {
         if (str.length() == 0) {
             return false;
@@ -69,7 +75,99 @@ public class LongDivision {
         return indentComposer.toString() + "|";
     }
 
-    void composeLongDivisionView(int dividend, int diviser) {
+    public String receiveQuotient(int dividend, int diviser) {
+        String result = "";
+        if ((dividend < 0) ^ (diviser < 0)) {
+            result += "-";
+        }
+        int integerQuotient = Math.abs(dividend) / Math.abs(diviser);
+        result += String.valueOf(integerQuotient);
+        int modulo = (Math.abs(dividend) % Math.abs(diviser)) * 10;
+        if (modulo == 0) {
+            return result;
+        }
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        result += ".";
+        String finish = "";
+        StringBuilder resultBuilder = new StringBuilder(result);
+        while (/*modulo != 0 ||*/ finish.length() < searchPeriod) {
+            if (map.containsKey(modulo)) {
+                int beg = map.get(modulo);
+                String part1 = resultBuilder.toString().substring(0, beg);
+                String part2 = resultBuilder.toString().substring(beg, resultBuilder.toString().length());
+                if (!"0".equals(part2)) {
+                    result = part1 + "(" + part2 + ")";
+                } else {
+                    result = part1;
+                }
+                return result;
+            }
+            map.put(modulo, resultBuilder.toString().length());
+            integerQuotient = modulo / Math.abs(diviser);
+            resultBuilder.append(String.valueOf(integerQuotient));
+            modulo = (modulo % diviser) * 10;
+            int dotIndex = resultBuilder.toString().indexOf(".");
+            finish = resultBuilder.toString().substring(dotIndex + 1);
+        }
+        return resultBuilder.toString();
+    }
+
+    public boolean printRESULT(String dvdnd, String dvsr) {
+        boolean isExit = false;
+        if ((isIntNumber(dvdnd) && isIntNumber(dvsr)) && (!"0".equals(dvsr))
+                && (!"exit".equals(dvdnd) && !"exit".equals(dvsr))) {
+            int dividend = Integer.parseInt(dvdnd), diviser = Integer.parseInt(dvsr);
+            int modulo = dividend - (dividend/diviser * diviser);
+            int initialDividend = dividend;
+            if (Math.abs(dividend) >= Math.abs(diviser)) {
+                System.out.println("_" + Math.abs(dividend) + "|" + Math.abs(diviser));
+                if (Math.abs(dividend) == Math.abs(diviser)) {
+                    System.out.println(" " + dividend + "|" + "1");
+                    int linesLength = String.valueOf(dividend).length();
+                    StringBuilder indent = new StringBuilder();
+                    for (int j = 0; j < linesLength; j++) {
+                        indent.append(" ");
+                    }
+                    System.out.println(indent.toString() + "0");
+                } else {
+                    if (modulo == 0) {
+                        composeLongDivisionView(dividend, diviser);
+                    } else {
+                        composeLongDivisionViewWithModulo(dividend, diviser, initialDividend);
+                    }
+                }
+            } else {
+                if (dividend == 0) {
+                    System.out.println("_" + Math.abs(dividend) + "|" + Math.abs(diviser));
+                    System.out.println(" " + Math.abs(dividend) + "|" + "0");
+
+                } else {
+                    while(Math.abs(dividend) < Math.abs(diviser)) {
+                        dividend *= 10;
+                    }
+                    StringBuilder lessIndent = new StringBuilder();
+                    for (int i = 0; i < String.valueOf(dividend).length() - String.valueOf(initialDividend).length(); i++) {
+                        lessIndent.append(" ");
+                    }
+                    System.out.println("_" + Math.abs(initialDividend) + lessIndent.toString() + "|" + Math.abs(diviser));
+                    composeLongDivisionViewIfDividendLessThanDiviser(dividend, diviser, initialDividend);
+                }
+            }
+        } else {
+            if ("exit".equals(dvdnd) || "exit".equals(dvsr)) {
+                isExit = true;
+            } else {
+                if (!isIntNumber(dvdnd)) {
+                    System.out.println("Dividend has invalid value! Try again, please!");
+                } else {
+                    System.out.println("Diviser has invalid value! Try again, please!");
+                }
+            }
+        }
+        return isExit;
+    }
+
+    private void composeLongDivisionView(int dividend, int diviser) {
         int modulo = dividend - (dividend/diviser * diviser);
         List<Integer> subtrahendsList = computeSubtrahends(dividend, diviser);
         String currentDivident = "";
@@ -110,105 +208,7 @@ public class LongDivision {
         }
     }
 
-    public static String receiveQuotient(int dividend, int diviser) {
-        String result = "";
-        if ((dividend < 0) ^ (diviser < 0)) {
-            result += "-";
-        }
-        int integerQuotient = Math.abs(dividend) / Math.abs(diviser);
-        result += String.valueOf(integerQuotient);
-        int modulo = (Math.abs(dividend) % Math.abs(diviser)) * 10;
-        if (modulo == 0) {
-            return result;
-        }
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        result += ".";
-
-        String finish = "";
-        StringBuilder resultBuilder = new StringBuilder(result);
-        while (/*modulo != 0 ||*/ finish.length() < 11) {
-            if (map.containsKey(modulo)) {
-                int beg = map.get(modulo);
-                String part1 = resultBuilder.toString().substring(0, beg);
-                String part2 = resultBuilder.toString().substring(beg, resultBuilder.toString().length());
-                if (!"0".equals(part2)) {
-                    result = part1 + "(" + part2 + ")";
-                } else {
-                    result = part1;
-                }
-                return result;
-            }
-            map.put(modulo, resultBuilder.toString().length());
-            integerQuotient = modulo / Math.abs(diviser);
-            resultBuilder.append(String.valueOf(integerQuotient));
-            modulo = (modulo % diviser) * 10;
-            int dotIndex = resultBuilder.toString().indexOf(".");
-            finish = resultBuilder.toString().substring(dotIndex + 1);
-        }
-        return resultBuilder.toString();
-    }
-
-    public boolean printRESULT(String dvdnd, String dvsr) {
-        boolean isExit = false;
-
-        if ((isIntNumber(dvdnd) && isIntNumber(dvsr)) && (!"0".equals(dvsr))
-                && (!"exit".equals(dvdnd) && !"exit".equals(dvsr))) {
-            int dividend = Integer.parseInt(dvdnd), diviser = Integer.parseInt(dvsr);
-            int modulo = dividend - (dividend/diviser * diviser);
-            int initialDividend = dividend;
-
-            if (Math.abs(dividend) >= Math.abs(diviser)) {
-                // first Line if dividend >= diviser
-                System.out.println("_" + Math.abs(dividend) + "|" + Math.abs(diviser));
-                if (Math.abs(dividend) == Math.abs(diviser)) {
-                    System.out.println(" " + dividend + "|" + "1");
-                    int linesLength = String.valueOf(dividend).length();
-                    StringBuilder indent = new StringBuilder();
-                    for (int j = 0; j < linesLength; j++) {
-                        indent.append(" ");
-                    }
-                    System.out.println(indent.toString() + "0");
-                } else {
-                    if (modulo == 0) {
-                        composeLongDivisionView(dividend, diviser);
-                    } else {
-                        composeLongDivisionViewForBigDividend(dividend, diviser, initialDividend);
-                    }
-                }
-            } else {
-                if (dividend == 0) {
-                    System.out.println("_" + Math.abs(dividend) + "|" + Math.abs(diviser));
-                    System.out.println(" " + Math.abs(dividend) + "|" + "0");
-
-                } else {
-                    while(Math.abs(dividend) < Math.abs(diviser)) {
-                        dividend *= 10;
-                    }
-                    StringBuilder lessIndent = new StringBuilder();
-                    for (int i = 0; i < String.valueOf(dividend).length() - String.valueOf(initialDividend).length(); i++) {
-                        lessIndent.append(" ");
-                    }
-                    // first line if dividend < diviser
-                    System.out.println("_" + Math.abs(initialDividend) + lessIndent.toString() + "|" + Math.abs(diviser));
-                    composeLongDivisionViewForSmallDividend(dividend, diviser, initialDividend);
-                }
-            }
-
-        } else {
-            if ("exit".equals(dvdnd) || "exit".equals(dvsr)) {
-                isExit = true;
-            } else {
-                if (!isIntNumber(dvdnd)) {
-                    System.out.println("Dividend has invalid value! Try again, please!");
-                } else {
-                    System.out.println("Diviser has invalid value! Try again, please!");
-                }
-            }
-        }
-        return isExit;
-    }
-
-    private void composeLongDivisionViewForBigDividend(int dividend, int diviser, int initialDividend) {
+    private void composeLongDivisionViewWithModulo(int dividend, int diviser, int initialDividend) {
         int modulo = Math.abs(dividend - (dividend/diviser * diviser));
         List<Integer> subtrahendsList = computeSubtrahends(dividend, diviser);
         String currentDivident = "";
@@ -238,13 +238,13 @@ public class LongDivision {
         composeAfterPointLongDivisionView(initialDividend, modulo, diviser, indent.toString().length());
     }
 
-    private void composeAfterPointLongDivisionView(int dividend, int moduloDividend, int diviser, int length) {
+    private void composeAfterPointLongDivisionView(int dividend, int moduloDividend, int diviser, int previousLineLength) {
         List<Integer> subtrahendsList = computeAfterPointSubtrahends(dividend, diviser);
         String currentDivident = "";
         int minuend = 0, delta = 0;
         String lastLine = "";
         StringBuilder previousIndent = new StringBuilder();
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < previousLineLength; i++) {
             previousIndent.append(" ");
         }
         StringBuilder indent = new StringBuilder(previousIndent);
@@ -252,11 +252,14 @@ public class LongDivision {
             minuend = calculateAfterPointMinuend(moduloDividend, diviser);
             delta = minuend - Math.abs(subtrahendsList.get(i));
             if (delta != 0) {
-                currentDivident = String.valueOf(delta).concat(calculateAfterPointIntermediateDividend(moduloDividend, diviser));
+                while (delta < Math.abs(diviser)){
+                    delta *= 10;
+                }
+                moduloDividend = delta;
             } else {
                 currentDivident = calculateAfterPointIntermediateDividend(moduloDividend, diviser);
+                moduloDividend = Integer.parseInt(currentDivident);
             }
-            moduloDividend = Integer.parseInt(currentDivident);
             indent.append(" ");
             System.out.println(indent.toString()+ "_" + minuend);
             lastLine = indent.toString()+ " " + Math.abs(subtrahendsList.get(i));
@@ -264,43 +267,37 @@ public class LongDivision {
         }
         int lengthLastLine = lastLine.length() - String.valueOf(delta).length();
         StringBuilder lastLineIdents = new StringBuilder();
-        for (int k = 0; k < lengthLastLine; k++) {
+        for (int k = 0; k < (lengthLastLine + String.valueOf(moduloDividend).length() - 1); k++) {
             lastLineIdents.append(" ");
         }
-        System.out.println(lastLineIdents.toString() + delta);
+        System.out.println(lastLineIdents.toString() + delta / 10);
     }
 
-    public void composeLongDivisionViewForSmallDividend(int dividend, int diviser, int initialDividend) {
-
+    private void composeLongDivisionViewIfDividendLessThanDiviser(int dividend, int diviser, int initialDividend) {
         int modulo = (Math.abs(dividend) % Math.abs(diviser)) * 10;
         List<Integer> subtrahendsList = computeSubtrahends(dividend, diviser);
         String currentDivident = "";
         int minuend = 0, delta = 0;
         System.out.println(" " + Math.abs(subtrahendsList.get(0)) + composeSecondLineIndent(dividend, subtrahendsList.get(0)) +
                 receiveQuotient(initialDividend, diviser));
-        subtrahendsList = computeAfterPointSubtrahends(dividend, diviser);
-        int j = 0;
-        for (Integer integer : subtrahendsList) {
-            System.out.println(j + " subtrahend = " + integer);
-            j++;
-        }
+        subtrahendsList = computeAfterPointSubtrahends(initialDividend, diviser);
         String lastLine = "";
         StringBuilder indent = new StringBuilder();
-        for (int i = 0; i < subtrahendsList.size(); i++) {
+        for (int i = 0, j = 1; i < subtrahendsList.size() - 1; i++, j++) {
             minuend = calculateAfterPointMinuend(modulo, diviser);
-            delta = minuend - Math.abs(subtrahendsList.get(i));
+            delta = minuend - Math.abs(subtrahendsList.get(j));
             if (delta != 0) {
                 while (delta < Math.abs(diviser)){
                     delta *= 10;
                 }
                 modulo = delta;
             } else {
-                currentDivident = calculateAfterPointIntermediateDividend(modulo, diviser);// dividend
+                currentDivident = calculateAfterPointIntermediateDividend(modulo, diviser);
                 modulo = Integer.parseInt(currentDivident);
             }
             indent.append(" ");
             System.out.println(indent.toString() + "_" + minuend);
-            lastLine = indent.toString()+ " " + Math.abs(subtrahendsList.get(i));
+            lastLine = indent.toString()+ " " + Math.abs(subtrahendsList.get(j));
             System.out.println(lastLine);
         }
         int lengthLastLine = lastLine.length() - String.valueOf(delta).length();
@@ -309,21 +306,17 @@ public class LongDivision {
             lastLineIdents.append(" ");
         }
         System.out.println(lastLineIdents.toString() + delta / 10);
-
     }
 
-    // !!!AFTER POINT CALCULATIONS!!!
     List<Integer> computeAfterPointSubtrahends(int dividend, int diviser) {
         String quotient = receiveQuotient(dividend, diviser);
         int dotIndex = quotient.indexOf(".");
         String afterPointQutient = quotient.substring(dotIndex + 1);
         char afterPointQuotientDigits[] = afterPointQutient.toCharArray();
-        Integer firstSubtrahend = computeSubtrahends(dividend, diviser).get(0);
         List<Integer> subtrahendsList = new ArrayList<>();
         for (int i = 0; i < afterPointQuotientDigits.length; i++) {
             char c = afterPointQuotientDigits[i];
-            if (!"0".equals(String.valueOf(c)) && Character.isDigit(c) &&
-                    !firstSubtrahend.equals(Integer.parseInt(String.valueOf(c)) * Math.abs(diviser))) {
+            if (!"0".equals(String.valueOf(c)) && Character.isDigit(c)) {
                 subtrahendsList.add(Integer.parseInt(String.valueOf(c)) * Math.abs(diviser));
             }
         }
@@ -331,21 +324,20 @@ public class LongDivision {
     }
 
     int calculateAfterPointMinuend(int dividend, int diviser) {
-        int minuend = 0;
-        char dividendsDigits[] = receiveDividendsDigits(Math.abs(dividend));
-        StringBuilder minuendBuilder = new StringBuilder();
-        for (int i = 0; i < dividendsDigits.length; i++) {
-            if (minuend < Math.abs(diviser)) {
-                minuendBuilder.append(String.valueOf(dividendsDigits[i]));
-                minuend = Integer.parseInt(minuendBuilder.toString());
-            }
+        int minuend = Math.abs(dividend);
+        StringBuilder minuendBuilder = new StringBuilder(String.valueOf(minuend));
+        while(minuend < Math.abs(diviser)) {
+            minuendBuilder.append("0");
+            minuend = Integer.parseInt(minuendBuilder.toString());
         }
         return minuend;
     }
 
-    String calculateAfterPointIntermediateDividend(int dividend, int diviser) {
+    public String calculateAfterPointIntermediateDividend(int dividend, int diviser) {
         String stringDividend = new String(receiveDividendsDigits(dividend));
+        System.out.println("stringDividend = " + stringDividend);
         String minuend = String.valueOf(calculateAfterPointMinuend(dividend, diviser));
+        System.out.println("minuend = " + minuend);
         String newDividendsValue = stringDividend.replaceFirst(minuend, "");
         if (newDividendsValue.equals("")) {
             return "0";

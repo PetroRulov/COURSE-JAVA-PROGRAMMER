@@ -2,9 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8fa95600-8ead-403f-a97a-325fe5931584" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AgrIntel.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AgrIntel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AgrLogic.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/AgrLogic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/actions/Slider.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/AbstractComponent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/BattleField.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Black$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Black$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Black.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Black.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Brick.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Explosive$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Explosive$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Explosive.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Explosive.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/HQ.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Plant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Rock.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/StringFields.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/StringFields.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/battleFields/Water.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/domains/Bullet$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/domains/Bullet$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/domains/Bullet.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/domains/Bullet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/domains/Coord.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/domains/Coord.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/enumerations/Direct.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/enumerations/Direct.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/IDestroyable.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/IDestroyable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/IDrawable.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/IDrawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/INonDestructable.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/interfaces/INonDestructable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/AbstractTank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/BT7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$1.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$2.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$3.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$4.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/T34.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/Tiger.class" afterPath="$PROJECT_DIR$/../Fury/out/production/Fury/tanks/Tiger.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Fury/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Fury/src/ugis/FuryGUI.java" afterPath="$PROJECT_DIR$/../Fury/src/ugis/FuryGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IntegerDivision/src/com/foxminded/integerdivision/Main.java" afterPath="$PROJECT_DIR$/../IntegerDivision/src/com/foxminded/integerdivision/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../IntegerDivision/src/com/foxminded/integerdivision/model/LongDivision.java" afterPath="$PROJECT_DIR$/../IntegerDivision/src/com/foxminded/integerdivision/model/LongDivision.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JProgramming.iml" afterPath="$PROJECT_DIR$/JProgramming.iml" />
     </list>
     <ignored path="JProgramming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,26 +70,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LegacyFileWriter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/LegacyFileWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BufferedReader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/bufferedstreams/BufferedReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DefaultFileWriter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileWriter.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,61 +80,61 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="FileReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDKReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JDKWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="113" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="15" selection-end-column="113" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PrintData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lesson8/files/printdata/PrintData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+            <state relative-caret-position="272">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateTextFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/CreateTextFile.java">
+      <file leaf-file-name="DefaultFilesReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PathToFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/PathToFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Balls.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/threads/Balls.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowDirectoriesTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/files/ShowDirectoriesTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrintInFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lesson8/encoding/PrintInFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="69" column="36" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+            <state relative-caret-position="153">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -126,6 +145,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LegacyFilesReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LegacyFileWriter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -225,7 +264,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1376" />
+    <option name="width" value="1372" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -247,7 +286,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -271,8 +309,119 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lesson8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lesson8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lesson8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readandwritefiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JProgramming" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lesson8" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="readandwritefiles" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fileinterfaces" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1073,7 +1222,7 @@
     <option name="totallyTimeSpent" value="28040000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1372" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1090,7 +1239,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22416413" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23094513" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1162,8 +1311,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lesson9/listbasedonfile/FSListLauncher.java" />
-    <entry file="file://$PROJECT_DIR$/src/lesson9/listbasedonfile/FileSimpleList.java" />
     <entry file="file://$PROJECT_DIR$/src/lesson9/listbasedonfile/SimpleList.java" />
     <entry file="file://$PROJECT_DIR$/src/myjdbcbasic/mysqldatabase/MySQL_DBWorker.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1270,20 +1417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/archivation/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/CopyFileDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1326,13 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/streams/bytes/BAIReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
@@ -1351,20 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="113" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="15" selection-end-column="113" />
         </state>
       </provider>
     </entry>
@@ -1424,34 +1536,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lesson8/encoding/PrintInFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
           <caret line="69" column="36" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1459,7 +1547,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1475,23 +1565,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/bufferedstreams/BufferedReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lesson8/files/printdata/PrintData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1507,6 +1583,99 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/archivation/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="35" lean-forward="false" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/bufferedstreams/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/printdata/PrintData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFilesReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/DefaultFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/JDKWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="113" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="15" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFilesReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lesson8/files/readandwritefiles/fileinterfaces/LegacyFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>

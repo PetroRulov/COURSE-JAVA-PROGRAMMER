@@ -4,8 +4,6 @@ import actions.Slider;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Vector;
 
@@ -73,18 +71,18 @@ public class FuryGUI extends JPanel {
         start[0].setFont(new Font("Garamond", Font.BOLD, 20));
         panel.add(start[0], new GridBagConstraints(1, 2, 3, 1, 0, 0, GridBagConstraints.LINE_START, GridBagConstraints.BOTH, new Insets(10, 0, 10, 10), 0, 0));
 
-        start[0].addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                f.dispose();
-                if(combo.getSelectedItem().equals("Tank T-34")) {
-
-                    setN(5);
-                }
-            }
-        });
+//        start[0].addActionListener(new ActionListener() {
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//                f.dispose();
+//                if("Tank T-34".equals(combo.getSelectedItem())) {
+//
+//                    setN(5);
+//                }
+//            }
+//        });
 
         return panel;
     }
