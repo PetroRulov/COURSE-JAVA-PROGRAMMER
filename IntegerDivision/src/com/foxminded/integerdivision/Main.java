@@ -1,8 +1,9 @@
 package com.foxminded.integerdivision;
 
-import com.foxminded.integerdivision.model.LongDivision;
+import com.foxminded.integerdivision.model.Division;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
@@ -11,32 +12,26 @@ public class Main {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         boolean isExit = false;
-        LongDivision division = new LongDivision();
-        division.setSearchPeriod(10);
+        Division division = new Division();
 
-//        while (!isExit) {
-//            String dividend = "", diviser = "";
-//            try {
-//                dividend = reader.readLine();
-//                diviser = reader.readLine();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            isExit = division.printRESULT(dividend, diviser);
-//        }
-//        if (reader != null) {
-//            try {
-//                reader.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-
-        //System.out.println(division.receiveQuotient(1000, 3));
-
-        String c = division.calculateAfterPointIntermediateDividend(56, 135);
-        System.out.print("c = " + c);
-
-
+        while (!isExit) {
+            String dividend = "", diviser = "";
+            String arguments[] = null;
+            try {
+                dividend = reader.readLine();
+                diviser = reader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            arguments = new String[] { dividend, diviser };
+            isExit = division.printResult(arguments);
+        }
+        if (reader != null) {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
