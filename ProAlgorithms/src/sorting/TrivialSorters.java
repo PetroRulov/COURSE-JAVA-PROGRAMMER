@@ -9,8 +9,8 @@ public class TrivialSorters {
         // ASC - ascending
         // DESC - descending
 
-        int unsorted[] = new int[]{12, 7, -3, 0, 1, 4, 14, 6, 3, 26, -6, 2, 0, 1, 5, -18, 2, 15};
-        //int[] unsorted = composeArray(10_000);
+        //int unsorted[] = new int[]{12, 7, -3, 0, 1, 4, 14, 6, 3, 26, -6, 2, 0, 1, 5, -18, 2, 15};
+        int[] unsorted = composeArray(20_000);
         System.out.println(Arrays.toString(unsorted));
         System.out.println();
         bubbleSorterASC(unsorted);
