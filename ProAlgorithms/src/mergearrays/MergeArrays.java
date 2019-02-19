@@ -1,94 +1,40 @@
 package mergearrays;
 
-import java.util.Arrays;
-
 public class MergeArrays {
 
     public static void main(String[] args) {
 
-        int a[] = new int[]{ -20, -8, -4, 0, 0, 1, 2, 2, 4, 6, 6, 8, 14, 14, 16, 27, 41, 48, 99};
-        int b[] = new int[]{ -54,-10, -6, 0, 0, 1, 1, 4, 8, 12, 12, 20, 34, 46, 48, 87, 124};
-        displayArr(mergeArrays(a, b));
+        String[] a = new String[]{"Вася", "Петя", "Маша", "Николай", "Егор", "Марина", "Елена", "Ольга", "Наталья", "Максим"};
+        String[] b = new String[]{"2", "3", "0", "4", "5", "13", "6"};
+        String[] c = mergeArrays(a, b);
+        for (String s: c) {
+            System.out.print("\"" + s + "\" ");
+        }
         System.out.println();
 
-        int c[] = new int[]{48, 0, 89, -4, 12, -55, 48, 7, -12, 20, 5, 6, 0, 4, 2, 1, 124, 2, -8, 18, 25};
-        recMergeSort(c, 0, c.length - 1);
-        displayArr(c);
-
     }
 
-    static int[] mergeArrays(int[] a1, int[] a2) {
-
-        int[] a3 = new int[a1.length + a2.length];
-
-        int i=0, j=0;
-        for (int k = 0; k < a3.length; k++) {
-            if (i > a1.length - 1) {
-                int a = a2[j];
-                a3[k] = a;
-                j++;
+    static String[] mergeArrays(String[] first, String[] second) {
+        String[] result = new String[first.length + second.length];
+        int l1 = first.length, l2 = second.length, aux = 0;
+        int k = 0, i = 0;
+        if (l1 >= l2) {
+            for (; k < l2 * 2; i++, k+=2) {
+                result[k] = first[i];
+                result[k+1] = second[i];
             }
-            else if (j > a2.length - 1) {
-                int a = a1[i];
-                a3[k] = a;
-                i++;
+            for(; k < result.length; i++, k++) {
+                result[k] = first[i];
             }
-            else if (a1[i] < a2[j]) {
-                int a = a1[i];
-                a3[k] = a;
-                i++;
+        } else {
+            for (; k < l1 * 2; i++, k+=2) {
+                result[k] = first[i];
+                result[k+1] = second[i];
             }
-            else {
-                int b = a2[j];
-                a3[k] = b;
-                j++;
+            for(; k < result.length; i++, k++) {
+                result[k] = second[i];
             }
         }
-        return a3;
+        return result;
     }
-
-    static void displayArr(int[] arr) {
-
-        for(int i : arr) {
-            System.out.print(i + ", ");
-        }
-    }
-
-    /*Здесь:
-    a – массив;
-    lo – позиция первого элемента в массиве (для первой итерации = 0);
-    hi – позиция последнего элемента в массиве (для первой итерации = a.length — 1).*/
-
-    static void recMergeSort(int[] a, int lo, int hi) {
-
-        if (hi <= lo)
-            return;
-        int mid = lo + (hi - lo) / 2;
-        recMergeSort(a, lo, mid);
-        recMergeSort(a, mid + 1, hi);
-
-        int[] buf = Arrays.copyOf(a, a.length);
-
-        for (int k = lo; k <= hi; k++)
-            buf[k] = a[k];
-
-        int i = lo, j = mid + 1;
-        for (int k = lo; k <= hi; k++) {
-
-            if (i > mid) {
-                a[k] = buf[j];
-                j++;
-            } else if (j > hi) {
-                a[k] = buf[i];
-                i++;
-            } else if (buf[j] < buf[i]) {
-                a[k] = buf[j];
-                j++;
-            } else {
-                a[k] = buf[i];
-                i++;
-            }
-        }
-    }
-
 }

@@ -17,11 +17,4 @@ public class ResultsHolder {
         resultsMap.put(str, result);
     }
 
-    public boolean checkIfExit(String str) {
-        boolean isExit = false;
-        if ("exit".equals(str)) {
-            isExit = true;
-        }
-        return isExit;
-    }
 }

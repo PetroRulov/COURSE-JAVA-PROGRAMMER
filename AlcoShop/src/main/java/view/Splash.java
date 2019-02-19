@@ -2,9 +2,6 @@ package view;
 
 import java.awt.*;
 
-/**
- * Created by prulov on 30.05.2016.
- */
 public class Splash {
 
     public Splash() throws InterruptedException{

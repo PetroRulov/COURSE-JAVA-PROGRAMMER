@@ -70,7 +70,6 @@ public class SimpleArrayList implements Iterable<Object> {
 
     // auxiliary method
     private void checkCapasity(){
-
         if(counter == list.length){
             Object[] increasedCapArr = new Object[(list.length * 3) / 2 + 1];
             System.arraycopy(list, 0, increasedCapArr, 0, list.length);
@@ -94,7 +93,6 @@ public class SimpleArrayList implements Iterable<Object> {
     }
 
     public void printList(){
-
         System.out.println(Arrays.toString(list));
     }
 
@@ -107,7 +105,6 @@ public class SimpleArrayList implements Iterable<Object> {
     }
 
     private int receiveCount(){
-
         int index = 0;
         for(int i = 0; i < list.length; i++){
             if(list[i] == null){

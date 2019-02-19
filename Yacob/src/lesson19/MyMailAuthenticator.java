@@ -6,6 +6,6 @@ public class MyMailAuthenticator extends Authenticator {
 
     @Override
     protected PasswordAuthentication getPasswordAuthentication() {
-        return new PasswordAuthentication("prulov.pr@gmail.com", "89082d6PR@");
+        return new PasswordAuthentication("prulovpr@outlook.com", "MS89082d6PR@");
     }
 }

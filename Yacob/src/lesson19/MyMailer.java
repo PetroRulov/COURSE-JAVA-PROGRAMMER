@@ -14,18 +14,22 @@ import java.util.*;
 
 public class MyMailer {
 
-    private Session session = null;
+    //Разблокировать небезопасные приложения для своего google-аккаунта
+    //https://myaccount.google.com/lesssecureapps
 
-    private static String emailSenderAddress = "prulov.pr@gmail.com";
+    private Session session = null;
+    private static String emailSenderAddress = "prulovpr@outlook.com";
     private static String emailSubject = "Happy Birthday!!!";
-    private String emailText = "Happy Birthday dear %s!!!";
+    private String emailText = "Happy Birthday, my dear Friend!!!";
 
     private List<String> friends = new ArrayList<>();
 
     public MyMailer(){
 
         Properties sessionProperties = new Properties();
-        sessionProperties.put("mail.smtp.host", "smtp.gmail.com");
+        sessionProperties.put("mail.smtp.starttls.enable", "true");
+        //sessionProperties.put("mail.smtp.host", "smtp.gmail.com");
+        sessionProperties.put("mail.smtp.host", "smtp.outlook.com");
         sessionProperties.put("mail.smtp.user", emailSenderAddress);
         sessionProperties.put("mail.smtp.port", "587");
         sessionProperties.put("mail.smtp.auth", "true");
@@ -35,8 +39,7 @@ public class MyMailer {
     }
 
     private void setPropsAndSendEmail(String emailRecipient, String emailText){
-
-        try{
+        try {
             Message emailMessage = new MimeMessage(session);
             emailMessage.setFrom(new InternetAddress(emailSenderAddress));
             emailMessage.addRecipients(Message.RecipientType.TO, InternetAddress.parse(emailRecipient, false));
@@ -44,19 +47,18 @@ public class MyMailer {
             emailMessage.setSentDate(new Date());
             emailMessage.setText(emailText);
             Transport.send(emailMessage);
-            System.out.println("Yout e-mail to "+emailRecipient+" has been sent successfully");
-        }catch (Exception e){
-            System.out.println("Your e-mail to "+emailRecipient+" has not been send: "+e.getMessage());
+            System.out.println("Yout e-mail to " + emailRecipient + " has been sent successfully");
+        } catch (Exception e) {
+            System.out.println("Your e-mail to " + emailRecipient + " has not been send: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
     private void readTheBirthdaysFile() throws IOException{
-
-        FileInputStream birthdaysFile = new FileInputStream("The birthdays.txt");
+        FileInputStream birthdaysFile = new FileInputStream("resources/birthdays.txt");
         BufferedReader birthdaysFileReader = new BufferedReader(new InputStreamReader(birthdaysFile));
         String friendInfo;
-        while((friendInfo=birthdaysFileReader.readLine()) !=null){
+        while((friendInfo = birthdaysFileReader.readLine()) != null){
             friends.add(friendInfo);
         }
         birthdaysFileReader.close();
@@ -71,14 +73,11 @@ public class MyMailer {
     }
 
     private void scanForManInfoAndSendEmail(String next) {
-
         Scanner scannerOfLines = new Scanner(next).useDelimiter("[, \n]");
         if(scannerOfLines.next().equals(getCurrentDateMMMd())){
-
             String emailAddressee = scannerOfLines.next();
             String emailAddress = scannerOfLines.next();
             setPropsAndSendEmail(emailAddress, String.format(emailText, emailAddressee));
-
         }
     }
 
@@ -87,9 +86,7 @@ public class MyMailer {
     }
 
     public static void main(String[] args) {
-
         MyMailer mm = new MyMailer();
-
         try{
             mm.readTheBirthdaysFile();
             mm.iterateThroughBirhtdays();

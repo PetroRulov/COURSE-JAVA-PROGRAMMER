@@ -7,10 +7,6 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by prulov on 05.07.2016.
- */
-
 public class MyComboBoxModel<E extends Product> extends AbstractListModel implements ComboBoxModel {
 
     List<E> data = new ArrayList<E>();
