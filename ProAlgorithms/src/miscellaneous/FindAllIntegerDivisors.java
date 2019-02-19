@@ -9,30 +9,17 @@ public class FindAllIntegerDivisors {
 
         String number = null;
         Scanner scan = new Scanner(System.in);
-
+        long num = 0;
         while (!"exit".equals(number)) {
-            System.out.println("Input a value of number not more than 999'999'999'999'999'999: ");
-            number = scan.next();
-            ArrayList<Long> results = null;
-            long a = 0;
-            if (!inputIsANumber(number)) {
-                if ("exit".equals(number))
-                {
-                    System.out.println("You have input an \"exit\"! The program finishes it's running!");
-                    System.exit(0);
+            number = scan.nextLine();
+            if (inputIsANumber(number)) {
+                num = Long.parseLong(number);
+                for (long l:findAllID(num)) {
+                    System.out.print(l+", ");
                 }
-                System.out.println("Error!!! You had input not a number!!!");
+                System.out.println();
             } else {
-                if (number.length() > 18) {
-                    System.out.println("Error!!! You input to much value");
-                } else {
-                    a = Long.parseLong(number);
-                    results = findAllID(a);
-                    for (Long div: results) {
-                        System.out.print(div + ", ");
-                    }
-                    System.out.println();
-                }
+                System.out.println("Not a number! Try again, please!");
             }
         }
         System.out.println("You have input an \"exit\"! The program finishes it's running!");
@@ -51,14 +38,9 @@ public class FindAllIntegerDivisors {
     }
 
     static boolean inputIsANumber(String line){
-        char ch;
-        char arr[] = line.toCharArray();
-        for (int i = 0; i < arr.length; i++){
-            ch = arr[i];
-            if (!Character.isDigit(ch))
-                return false;
-        }
-        return true;
+        if (line.matches("[-+]?\\d+"))
+            return true;
+        return false;
     }
 
 }
